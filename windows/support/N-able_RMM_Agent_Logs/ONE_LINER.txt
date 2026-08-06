@@ -1,0 +1,25 @@
+================================================================================
+1) N-able official Support Log Collector (GUI — matches support instructions)
+   Run in an elevated PowerShell on the device while someone is logged on at
+   the console (not ideal from N-sight Session 0). After it opens: leave defaults,
+   click Gather Logs, then send the ZIP from the Desktop.
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop';$d=Join-Path $env:TEMP 'NableSupportLogCollector';if(Test-Path $d){Remove-Item $d -Recurse -Force};New-Item -ItemType Directory -Path $d -Force|Out-Null;$z=Join-Path $d 'N-ableSupportLogCollector.zip';Invoke-WebRequest -Uri 'https://s3.amazonaws.com/new-swmsp-net-supportfiles/PermanentFiles/N-ableSupportLogCollector.zip' -OutFile $z -UseBasicParsing;Expand-Archive -Path $z -DestinationPath $d -Force;$e=Get-ChildItem -Path $d -Recurse -Filter *.exe -File|Where-Object { $_.Name -match 'Support|Log|Collector' }|Select-Object -First 1;if(-not $e){$e=Get-ChildItem -Path $d -Recurse -Filter *.exe -File|Select-Object -First 1};if(-not $e){Write-Host 'CRITICAL: No executable found after extract.';exit 1002};Start-Process -FilePath $e.FullName -WorkingDirectory $e.DirectoryName;Write-Host 'OK: N-able Support Log Collector started — use defaults, Gather Logs, upload Desktop ZIP to support.'"
+
+================================================================================
+2) Silent ZIP of common RMM agent paths (no GUI — works from N-sight / SYSTEM)
+   Default: **log folders only** (avoids PowerShell Compress-Archive ~2GB limit). Uses tar.exe for ZIP when present.
+   Optional full install trees: cmd /c "set NSIGHT_BUNDLE_WIDE=1&& powershell ..." (may be huge).
+   First line is suitable to paste into email; attach the ZIP path shown.
+   Run elevated. Remote one-liner (iex) must be from an elevated PowerShell window.
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "FULL_PATH_TO_REPO\windows\support\N-able_RMM_Agent_Logs\Bundle-NsightRmmAgentLogs.ps1"
+
+   Remote (use HEAD in the URL — raw.githubusercontent.com sometimes serves a stale blob for /main/):
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm 'https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/HEAD/windows/support/N-able_RMM_Agent_Logs/Bundle-NsightRmmAgentLogs.ps1')"
+
+================================================================================
+What to send N-able
+- Preferred: the ZIP produced by their Support Log Collector (Desktop).
+- Alternative: the ZIP from option 2 plus a short note that Session 0 could not run the GUI tool.

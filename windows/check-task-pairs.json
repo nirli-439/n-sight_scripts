@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "pairs": [
+    { "id": "chrome-installed", "check": "Check_Chrome_Installed.ps1", "task": "Install_Chrome.ps1" },
+    { "id": "chrome-default-browser", "check": "Check_Chrome_Default_Browser.ps1", "task": "Enforce_Chrome_Default_Browser.ps1" },
+    { "id": "gcpw-registry", "check": "Check_GCPW_Registry.ps1", "task": "Install_GCPW.ps1" },
+    { "id": "openssh", "check": "Check_OpenSSH.ps1", "task": "Install_OpenSSH.ps1" },
+    { "id": "hevc", "check": "Check_HEVC_Installed.ps1", "task": "Install_HEVC_Codec.ps1" },
+    { "id": "google-drive", "check": "Check_GoogleDrive_Installed.ps1", "task": "Install_GoogleDrive.ps1" },
+    { "id": "slack", "check": "Check_Slack_Installed.ps1", "task": "Install_Slack.ps1" },
+    { "id": "tailscale-installed", "check": "Check_Tailscale_Installed.ps1", "task": "Install_Tailscale.ps1" },
+    { "id": "tailscale-remove", "check": "Check_Tailscale_Not_Installed.ps1", "task": "Remove_Tailscale.ps1" },
+    { "id": "tailscale-performance", "check": "Check_Tailscale_Performance.ps1", "task": "Optimize-TailscalePerformance.ps1" },
+    { "id": "twingate-install", "check": "Check_Twingate_Installed.ps1", "task": "Install_Twingate.ps1" },
+    { "id": "twingate-remove", "check": "Check_Twingate_Installed.ps1", "task": "Remove_Twingate.ps1" },
+    { "id": "mcafee-remove", "check": "Check_McAfee_Installed.ps1", "task": "Remove_McAfee.ps1" },
+    { "id": "edge-blocked", "check": "Check_Edge_Blocked.ps1", "task": "Block_Edge.ps1" },
+    { "id": "screen-lock", "check": "Check_ScreenLock_Timeout.ps1", "task": "Remediate_ScreenLock_Timeout.ps1" },
+    { "id": "brother-printer", "check": "Check_Brother_MFC-L5750DW.ps1", "task": "Install_Brother_MFC-L5750DW.ps1" },
+    { "id": "takecontrol-refresh", "check": "Check_TakeControl_Health.ps1", "task": "Refresh_N-Sight_Agent.ps1" },
+    { "id": "wu-bandwidth", "check": "Check_WindowsUpdate_Bandwidth.ps1", "task": "Limit_WindowsUpdate_Bandwidth.ps1" }
+  ]
+}

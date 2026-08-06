@@ -1,0 +1,1686 @@
+﻿*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:12,864 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:12,893 INFO  - 1 Advanced Monitoring Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:12,976 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:12,978 INFO  - 1 Advanced Monitoring Agent Network Management
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,006 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,008 INFO  - 1 Cloudflare WARP
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,040 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,041 INFO  - 1 File Cache Service Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,069 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,070 INFO  - 1 Google Chrome
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,100 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,101 INFO  - 1 Google Credential Provider for Windows
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,135 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,137 INFO  - 1 Google Drive
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,168 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,170 INFO  - 1 Lenovo AI Now 1.3
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,199 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,200 INFO  - 1 Lenovo Vantage Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,227 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,229 INFO  - 1 Microsoft .NET Host - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,265 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,267 INFO  - 1 Microsoft .NET Host FX Resolver - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,303 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,306 INFO  - 1 Microsoft .NET Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,340 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,342 INFO  - 1 Microsoft 365 - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,368 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,369 INFO  - 1 Microsoft 365 - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,398 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,401 INFO  - 1 Microsoft Edge
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,435 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,436 INFO  - 1 Microsoft Edge WebView2 Runtime
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,467 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,468 INFO  - 1 Microsoft OneNote - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,494 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,496 INFO  - 1 Microsoft OneNote - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,522 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,524 INFO  - 1 Microsoft Teams Meeting Add-in for Microsoft Office
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,553 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,555 INFO  - 1 Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,618 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,619 INFO  - 1 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,650 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,652 INFO  - 1 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,678 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,679 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,711 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,712 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,744 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,745 INFO  - 1 Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,774 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,775 INFO  - 1 Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,808 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,810 INFO  - 1 Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,846 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,848 INFO  - 1 Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,885 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,886 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,945 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,946 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:13,976 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:13,978 INFO  - 1 MSP Core Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,007 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,008 INFO  - 1 Office 16 Click-to-Run Extensibility Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,039 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,041 INFO  - 1 Office 16 Click-to-Run Licensing Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,073 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,075 INFO  - 1 Office 16 Click-to-Run Localization Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,108 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,109 INFO  - 1 Patch Management Service Controller
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,139 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,140 INFO  - 1 Request Handler Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,174 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,175 INFO  - 1 ScriptRunner Bootstrap Installer
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,206 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,208 INFO  - 1 ScriptRunner.Installer 2.98.2.2
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,232 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,234 INFO  - 1 Slack (Machine - MSI)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,263 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,265 INFO  - 1 Slack (Machine)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,290 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,291 INFO  - 1 Tailscale
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,350 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,352 INFO  - 1 TAP-Windows-Twingate 9.24.6
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 06:48:14,389 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 06:48:14,391 INFO  - 1 Twingate 2026.36.4338
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,190 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,219 INFO  - 1 Advanced Monitoring Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,297 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,299 INFO  - 1 Advanced Monitoring Agent Network Management
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,335 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,335 INFO  - 1 Cloudflare WARP
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,358 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,360 INFO  - 1 File Cache Service Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,382 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,384 INFO  - 1 Google Chrome
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,409 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,410 INFO  - 1 Google Credential Provider for Windows
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,434 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,435 INFO  - 1 Google Drive
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,458 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,459 INFO  - 1 Lenovo AI Now 1.3
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,485 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,487 INFO  - 1 Lenovo Vantage Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,508 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,508 INFO  - 1 Microsoft .NET Host - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,530 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,531 INFO  - 1 Microsoft .NET Host FX Resolver - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,553 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,555 INFO  - 1 Microsoft .NET Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,581 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,581 INFO  - 1 Microsoft 365 - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,601 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,602 INFO  - 1 Microsoft 365 - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,626 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,627 INFO  - 1 Microsoft Edge
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,651 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,653 INFO  - 1 Microsoft Edge WebView2 Runtime
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,683 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,684 INFO  - 1 Microsoft OneNote - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,716 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,717 INFO  - 1 Microsoft OneNote - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,748 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,749 INFO  - 1 Microsoft Teams Meeting Add-in for Microsoft Office
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,774 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,775 INFO  - 1 Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,803 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,807 INFO  - 1 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,829 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,830 INFO  - 1 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,853 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,854 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,879 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,880 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,904 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,905 INFO  - 1 Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,927 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,928 INFO  - 1 Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,953 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,954 INFO  - 1 Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:14,977 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:14,978 INFO  - 1 Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,000 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,001 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,025 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,026 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,048 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,049 INFO  - 1 MSP Core Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,070 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,073 INFO  - 1 Office 16 Click-to-Run Extensibility Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,095 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,096 INFO  - 1 Office 16 Click-to-Run Licensing Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,117 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,118 INFO  - 1 Office 16 Click-to-Run Localization Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,141 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,142 INFO  - 1 Patch Management Service Controller
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,164 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,166 INFO  - 1 Request Handler Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,187 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,189 INFO  - 1 ScriptRunner Bootstrap Installer
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,211 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,212 INFO  - 1 ScriptRunner.Installer 2.98.2.2
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,236 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,237 INFO  - 1 Slack (Machine - MSI)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,261 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,262 INFO  - 1 Slack (Machine)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,285 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,286 INFO  - 1 Tailscale
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,307 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,309 INFO  - 1 TAP-Windows-Twingate 9.24.6
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-16 09:06:15,329 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-16 09:06:15,330 INFO  - 1 Twingate 2026.36.4338
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,239 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,266 INFO  - 1 Advanced Monitoring Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,322 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,334 INFO  - 1 Advanced Monitoring Agent Network Management
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,342 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,342 INFO  - 1 Cloudflare WARP
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,348 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,351 INFO  - 1 File Cache Service Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,356 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,357 INFO  - 1 Google Chrome
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,361 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,363 INFO  - 1 Google Credential Provider for Windows
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,368 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,370 INFO  - 1 Google Drive
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,376 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,377 INFO  - 1 Lenovo AI Now 1.3
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,388 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,389 INFO  - 1 Lenovo Vantage Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,396 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,397 INFO  - 1 Microsoft .NET Host - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,406 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,408 INFO  - 1 Microsoft .NET Host FX Resolver - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,415 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,416 INFO  - 1 Microsoft .NET Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,423 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,424 INFO  - 1 Microsoft 365 - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,430 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,431 INFO  - 1 Microsoft 365 - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,437 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,438 INFO  - 1 Microsoft Edge
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,444 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,446 INFO  - 1 Microsoft Edge WebView2 Runtime
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,451 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,452 INFO  - 1 Microsoft OneNote - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,457 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,458 INFO  - 1 Microsoft OneNote - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,463 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,465 INFO  - 1 Microsoft Teams Meeting Add-in for Microsoft Office
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,470 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,472 INFO  - 1 Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,477 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,479 INFO  - 1 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,484 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,485 INFO  - 1 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,493 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,493 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,499 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,500 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,539 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,541 INFO  - 1 Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,551 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,553 INFO  - 1 Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,559 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,561 INFO  - 1 Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,568 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,569 INFO  - 1 Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,576 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,577 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,586 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,586 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,596 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,597 INFO  - 1 MSP Core Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,604 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,605 INFO  - 1 Office 16 Click-to-Run Extensibility Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,613 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,615 INFO  - 1 Office 16 Click-to-Run Licensing Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,623 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,624 INFO  - 1 Office 16 Click-to-Run Localization Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,631 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,632 INFO  - 1 Patch Management Service Controller
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,640 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,641 INFO  - 1 Request Handler Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,647 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,648 INFO  - 1 ScriptRunner Bootstrap Installer
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,655 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,656 INFO  - 1 ScriptRunner.Installer 2.98.2.2
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,661 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,662 INFO  - 1 Slack (Machine - MSI)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,668 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,669 INFO  - 1 Slack (Machine)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,674 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,675 INFO  - 1 Tailscale
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,682 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,683 INFO  - 1 TAP-Windows-Twingate 9.24.6
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-23 15:32:06,717 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-23 15:32:06,719 INFO  - 1 Twingate 2026.36.4338
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,427 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,470 INFO  - 1 Advanced Monitoring Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,557 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,560 INFO  - 1 Advanced Monitoring Agent Network Management
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,569 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,570 INFO  - 1 Cloudflare WARP
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,579 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,582 INFO  - 1 File Cache Service Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,592 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,594 INFO  - 1 Google Chrome
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,604 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,605 INFO  - 1 Google Credential Provider for Windows
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,612 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,613 INFO  - 1 Google Drive
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,624 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,641 INFO  - 1 Lenovo AI Now 1.3
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,647 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,648 INFO  - 1 Lenovo Vantage Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,659 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,662 INFO  - 1 Microsoft .NET Host - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,669 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,673 INFO  - 1 Microsoft .NET Host FX Resolver - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,684 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,687 INFO  - 1 Microsoft .NET Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,696 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,697 INFO  - 1 Microsoft 365 - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,704 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,705 INFO  - 1 Microsoft 365 - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,718 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,720 INFO  - 1 Microsoft Edge
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,730 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,731 INFO  - 1 Microsoft Edge WebView2 Runtime
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,741 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,742 INFO  - 1 Microsoft OneNote - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,749 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,750 INFO  - 1 Microsoft OneNote - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,762 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,763 INFO  - 1 Microsoft Teams Meeting Add-in for Microsoft Office
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,773 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,777 INFO  - 1 Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,792 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,794 INFO  - 1 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,805 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,806 INFO  - 1 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,813 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,814 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,826 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,828 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,839 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,841 INFO  - 1 Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,848 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,849 INFO  - 1 Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,857 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,859 INFO  - 1 Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,873 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,875 INFO  - 1 Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,885 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,889 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,899 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,900 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,909 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,911 INFO  - 1 MSP Core Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,921 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,923 INFO  - 1 Office 16 Click-to-Run Extensibility Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,928 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,929 INFO  - 1 Office 16 Click-to-Run Licensing Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,941 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,943 INFO  - 1 Office 16 Click-to-Run Localization Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,953 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,954 INFO  - 1 Patch Management Service Controller
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,963 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,965 INFO  - 1 Request Handler Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,973 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,974 INFO  - 1 ScriptRunner Bootstrap Installer
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,982 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,985 INFO  - 1 ScriptRunner.Installer 2.98.2.2
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:18,993 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:18,994 INFO  - 1 Slack (Machine - MSI)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:19,004 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:19,006 INFO  - 1 Slack (Machine)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:19,013 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:19,014 INFO  - 1 Tailscale
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:19,023 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:19,025 INFO  - 1 TAP-Windows-Twingate 9.24.6
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-24 05:48:19,035 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-24 05:48:19,037 INFO  - 1 Twingate 2026.36.4338
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,020 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,051 INFO  - 1 Advanced Monitoring Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,120 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,123 INFO  - 1 Advanced Monitoring Agent Network Management
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,130 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,132 INFO  - 1 Cloudflare WARP
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,138 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,139 INFO  - 1 File Cache Service Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,146 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,147 INFO  - 1 Google Chrome
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,152 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,153 INFO  - 1 Google Credential Provider for Windows
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,159 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,160 INFO  - 1 Google Drive
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,165 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,167 INFO  - 1 Lenovo AI Now 1.3
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,179 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,180 INFO  - 1 Lenovo Vantage Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,187 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,188 INFO  - 1 Microsoft .NET Host - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,195 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,196 INFO  - 1 Microsoft .NET Host FX Resolver - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,203 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,204 INFO  - 1 Microsoft .NET Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,209 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,210 INFO  - 1 Microsoft 365 - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,216 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,217 INFO  - 1 Microsoft 365 - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,223 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,224 INFO  - 1 Microsoft Edge
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,230 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,231 INFO  - 1 Microsoft Edge WebView2 Runtime
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,237 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,239 INFO  - 1 Microsoft OneNote - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,248 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,249 INFO  - 1 Microsoft OneNote - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,256 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,258 INFO  - 1 Microsoft Teams Meeting Add-in for Microsoft Office
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,267 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,268 INFO  - 1 Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,277 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,279 INFO  - 1 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,286 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,288 INFO  - 1 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,294 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,295 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,308 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,310 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,324 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,326 INFO  - 1 Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,334 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,334 INFO  - 1 Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,347 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,349 INFO  - 1 Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,362 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,364 INFO  - 1 Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,372 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,373 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,381 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,382 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,390 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,391 INFO  - 1 MSP Core Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,400 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,403 INFO  - 1 Office 16 Click-to-Run Extensibility Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,411 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,413 INFO  - 1 Office 16 Click-to-Run Licensing Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,427 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,428 INFO  - 1 Office 16 Click-to-Run Localization Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,437 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,438 INFO  - 1 Patch Management Service Controller
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,465 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,467 INFO  - 1 Request Handler Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,475 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,477 INFO  - 1 ScriptRunner Bootstrap Installer
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,484 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,486 INFO  - 1 ScriptRunner.Installer 2.98.2.2
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,493 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,495 INFO  - 1 Slack (Machine - MSI)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,503 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,504 INFO  - 1 Slack (Machine)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,513 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,514 INFO  - 1 Tailscale
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,523 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,524 INFO  - 1 TAP-Windows-Twingate 9.24.6
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-25 09:43:34,532 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-25 09:43:34,533 INFO  - 1 Twingate 2026.36.4338
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,376 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,408 INFO  - 1 Advanced Monitoring Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,482 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,485 INFO  - 1 Advanced Monitoring Agent Network Management
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,496 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,498 INFO  - 1 File Cache Service Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,510 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,511 INFO  - 1 Google Chrome
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,531 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,533 INFO  - 1 Google Credential Provider for Windows
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,546 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,548 INFO  - 1 Google Drive
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,560 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,562 INFO  - 1 Lenovo AI Now 1.3
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,576 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,578 INFO  - 1 Lenovo Vantage Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,588 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,590 INFO  - 1 Managed Antivirus
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,601 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,602 INFO  - 1 Managed Antivirus Master Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,613 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,615 INFO  - 1 Microsoft .NET Host - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,626 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,628 INFO  - 1 Microsoft .NET Host FX Resolver - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,644 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,647 INFO  - 1 Microsoft .NET Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,659 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,662 INFO  - 1 Microsoft 365 - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,674 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,676 INFO  - 1 Microsoft 365 - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,687 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,689 INFO  - 1 Microsoft Edge
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,700 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,703 INFO  - 1 Microsoft Edge WebView2 Runtime
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,716 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,718 INFO  - 1 Microsoft OneNote - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,730 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,732 INFO  - 1 Microsoft OneNote - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,744 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,746 INFO  - 1 Microsoft Teams Meeting Add-in for Microsoft Office
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,756 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,758 INFO  - 1 Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,768 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,770 INFO  - 1 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,780 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,782 INFO  - 1 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,793 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,795 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,808 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,810 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,820 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,822 INFO  - 1 Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,835 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,836 INFO  - 1 Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,847 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,849 INFO  - 1 Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,858 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,862 INFO  - 1 Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,876 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,878 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,889 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,891 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,903 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,905 INFO  - 1 MSP Core Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,915 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,917 INFO  - 1 Office 16 Click-to-Run Extensibility Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,928 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,930 INFO  - 1 Office 16 Click-to-Run Localization Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,943 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,945 INFO  - 1 Patch Management Service Controller
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,956 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,960 INFO  - 1 Request Handler Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,971 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,973 INFO  - 1 ScriptRunner Bootstrap Installer
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,983 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:34,985 INFO  - 1 ScriptRunner.Installer 2.98.2.2
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:34,998 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:35,000 INFO  - 1 Slack (Machine - MSI)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:35,011 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:35,012 INFO  - 1 Slack (Machine)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:35,022 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:35,024 INFO  - 1 Tailscale
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:35,034 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:35,036 INFO  - 1 TAP-Windows-Twingate 9.24.6
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-03-30 08:48:35,047 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-03-30 08:48:35,048 INFO  - 1 Twingate 2026.36.4338
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,559 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,604 INFO  - 1 Advanced Monitoring Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,688 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,690 INFO  - 1 Advanced Monitoring Agent Network Management
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,701 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,704 INFO  - 1 File Cache Service Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,713 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,714 INFO  - 1 Google Chrome
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,726 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,727 INFO  - 1 Google Credential Provider for Windows
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,739 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,741 INFO  - 1 Google Drive
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,761 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,763 INFO  - 1 Lenovo AI Now 1.3
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,775 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,777 INFO  - 1 Lenovo Vantage Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,788 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,790 INFO  - 1 Microsoft .NET Host - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,800 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,803 INFO  - 1 Microsoft .NET Host FX Resolver - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,814 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,815 INFO  - 1 Microsoft .NET Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,827 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,829 INFO  - 1 Microsoft 365 - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,841 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,843 INFO  - 1 Microsoft 365 - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,855 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,857 INFO  - 1 Microsoft Edge
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,866 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,866 INFO  - 1 Microsoft Edge WebView2 Runtime
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,877 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,878 INFO  - 1 Microsoft OneNote - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,891 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,894 INFO  - 1 Microsoft OneNote - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,904 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,905 INFO  - 1 Microsoft Teams Meeting Add-in for Microsoft Office
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,916 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,918 INFO  - 1 Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,931 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,932 INFO  - 1 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,946 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,948 INFO  - 1 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,956 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,958 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,971 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,973 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,984 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:50,986 INFO  - 1 Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:50,998 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,000 INFO  - 1 Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,007 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,009 INFO  - 1 Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,021 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,023 INFO  - 1 Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,033 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,036 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,047 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,050 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,061 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,063 INFO  - 1 MSP Core Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,072 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,073 INFO  - 1 Office 16 Click-to-Run Extensibility Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,085 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,086 INFO  - 1 Office 16 Click-to-Run Localization Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,097 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,100 INFO  - 1 Patch Management Service Controller
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,111 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,113 INFO  - 1 Request Handler Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,124 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,127 INFO  - 1 ScriptRunner Bootstrap Installer
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,139 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,140 INFO  - 1 ScriptRunner.Installer 2.98.2.2
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,156 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,159 INFO  - 1 Slack (Machine - MSI)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,169 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,173 INFO  - 1 Slack (Machine)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,184 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,188 INFO  - 1 Tailscale
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,197 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,199 INFO  - 1 TAP-Windows-Twingate 9.24.6
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-06 09:10:51,211 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-06 09:10:51,213 INFO  - 1 Twingate 2026.36.4338
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,707 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,746 INFO  - 1 Advanced Monitoring Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,819 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,823 INFO  - 1 Advanced Monitoring Agent Network Management
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,832 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,834 INFO  - 1 File Cache Service Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,842 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,843 INFO  - 1 Google Chrome
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,853 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,855 INFO  - 1 Google Credential Provider for Windows
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,864 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,866 INFO  - 1 Google Drive
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,881 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,883 INFO  - 1 Lenovo AI Now 1.3
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,893 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,896 INFO  - 1 Lenovo Vantage Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,905 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,906 INFO  - 1 Microsoft .NET Host - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,915 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,917 INFO  - 1 Microsoft .NET Host FX Resolver - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,926 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,929 INFO  - 1 Microsoft .NET Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,937 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,938 INFO  - 1 Microsoft 365 - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,949 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,952 INFO  - 1 Microsoft 365 - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,962 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,964 INFO  - 1 Microsoft Edge
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,972 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,974 INFO  - 1 Microsoft Edge WebView2 Runtime
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,984 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,986 INFO  - 1 Microsoft OneNote - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:12,997 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:12,999 INFO  - 1 Microsoft OneNote - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,008 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,009 INFO  - 1 Microsoft Teams Meeting Add-in for Microsoft Office
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,017 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,020 INFO  - 1 Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,028 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,030 INFO  - 1 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,039 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,041 INFO  - 1 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,051 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,053 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,062 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,064 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,073 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,076 INFO  - 1 Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,085 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,090 INFO  - 1 Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,100 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,102 INFO  - 1 Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,114 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,116 INFO  - 1 Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,127 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,128 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,146 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,148 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.25 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,158 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,160 INFO  - 1 MSP Core Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,170 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,172 INFO  - 1 Office 16 Click-to-Run Extensibility Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,183 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,185 INFO  - 1 Office 16 Click-to-Run Localization Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,195 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,196 INFO  - 1 Patch Management Service Controller
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,205 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,209 INFO  - 1 Request Handler Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,220 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,222 INFO  - 1 ScriptRunner Bootstrap Installer
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,231 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,233 INFO  - 1 ScriptRunner.Installer 2.98.2.2
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,241 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,244 INFO  - 1 Slack (Machine - MSI)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,252 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,254 INFO  - 1 Slack (Machine)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,263 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,265 INFO  - 1 TAP-Windows-Twingate 9.24.6
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-13 08:52:13,277 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-13 08:52:13,278 INFO  - 1 Twingate 2026.36.4338
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,263 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,311 INFO  - 1 Advanced Monitoring Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,387 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,390 INFO  - 1 Advanced Monitoring Agent Network Management
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,401 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,405 INFO  - 1 File Cache Service Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,416 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,418 INFO  - 1 Google Chrome
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,427 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,429 INFO  - 1 Google Credential Provider for Windows
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,448 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,450 INFO  - 1 Google Drive
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,463 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,466 INFO  - 1 Lenovo AI Now 1.3
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,477 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,479 INFO  - 1 Lenovo Vantage Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,487 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,489 INFO  - 1 Microsoft .NET Host - 8.0.26 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,498 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,499 INFO  - 1 Microsoft .NET Host FX Resolver - 8.0.26 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,508 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,510 INFO  - 1 Microsoft .NET Runtime - 8.0.26 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,517 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,519 INFO  - 1 Microsoft 365 - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,527 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,528 INFO  - 1 Microsoft 365 - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,535 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,538 INFO  - 1 Microsoft Edge
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,546 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,547 INFO  - 1 Microsoft Edge WebView2 Runtime
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,555 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,557 INFO  - 1 Microsoft OneNote - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,564 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,566 INFO  - 1 Microsoft OneNote - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,574 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,575 INFO  - 1 Microsoft Teams Meeting Add-in for Microsoft Office
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,583 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,584 INFO  - 1 Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,592 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,595 INFO  - 1 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,604 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,605 INFO  - 1 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,617 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,619 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,633 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,634 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,647 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,649 INFO  - 1 Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,661 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,664 INFO  - 1 Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,672 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,674 INFO  - 1 Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,685 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,687 INFO  - 1 Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,696 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,698 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.26 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,706 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,707 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.26 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,716 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,717 INFO  - 1 MSP Core Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,726 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,727 INFO  - 1 Office 16 Click-to-Run Extensibility Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,736 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,737 INFO  - 1 Office 16 Click-to-Run Localization Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,747 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,748 INFO  - 1 Patch Management Service Controller
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,756 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,757 INFO  - 1 Request Handler Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,765 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,767 INFO  - 1 ScriptRunner Bootstrap Installer
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,775 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,776 INFO  - 1 ScriptRunner.Installer 2.98.2.2
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,787 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,789 INFO  - 1 Slack (Machine - MSI)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,809 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,811 INFO  - 1 Slack (Machine)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,822 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,824 INFO  - 1 TAP-Windows-Twingate 9.24.6
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-20 08:17:13,833 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-20 08:17:13,835 INFO  - 1 Twingate 2026.36.4338
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:51,802 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:51,838 INFO  - 1 Advanced Monitoring Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:51,905 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:51,908 INFO  - 1 Advanced Monitoring Agent Network Management
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:51,928 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:51,929 INFO  - 1 File Cache Service Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:51,936 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:51,937 INFO  - 1 Google Chrome
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:51,945 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:51,946 INFO  - 1 Google Credential Provider for Windows
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:51,953 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:51,955 INFO  - 1 Google Drive
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:51,962 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:51,963 INFO  - 1 Lenovo AI Now 1.3
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:51,970 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:51,972 INFO  - 1 Lenovo Vantage Service
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:51,979 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:51,985 INFO  - 1 Microsoft .NET Host - 8.0.26 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:51,993 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:51,995 INFO  - 1 Microsoft .NET Host FX Resolver - 8.0.26 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,004 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,006 INFO  - 1 Microsoft .NET Runtime - 8.0.26 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,014 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,015 INFO  - 1 Microsoft 365 - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,022 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,023 INFO  - 1 Microsoft 365 - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,030 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,033 INFO  - 1 Microsoft Edge
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,041 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,042 INFO  - 1 Microsoft Edge WebView2 Runtime
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,049 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,050 INFO  - 1 Microsoft OneNote - en-us
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,059 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,060 INFO  - 1 Microsoft OneNote - he-il
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,067 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,068 INFO  - 1 Microsoft Teams Meeting Add-in for Microsoft Office
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,075 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,077 INFO  - 1 Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,086 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,089 INFO  - 1 Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,098 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,099 INFO  - 1 Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,106 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,108 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,114 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,117 INFO  - 1 Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,125 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,127 INFO  - 1 Microsoft Visual C++ 2022 X64 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,134 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,135 INFO  - 1 Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,144 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,146 INFO  - 1 Microsoft Visual C++ 2022 X86 Additional Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,153 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,154 INFO  - 1 Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.44.35211
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,163 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,165 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.26 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,173 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,175 INFO  - 1 Microsoft Windows Desktop Runtime - 8.0.26 (x64)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,183 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,185 INFO  - 1 MSP Core Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,192 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,193 INFO  - 1 Office 16 Click-to-Run Extensibility Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,201 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,202 INFO  - 1 Office 16 Click-to-Run Localization Component
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,211 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,212 INFO  - 1 Patch Management Service Controller
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,222 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,223 INFO  - 1 Request Handler Agent
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,234 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,235 INFO  - 1 ScriptRunner Bootstrap Installer
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,245 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,246 INFO  - 1 ScriptRunner.Installer 2.98.2.2
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,254 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,255 INFO  - 1 Slack (Machine - MSI)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,265 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,267 INFO  - 1 Slack (Machine)
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,275 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,276 INFO  - 1 TAP-Windows-Twingate 9.24.6
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-27 08:51:52,285 INFO  - ===========================================
+Policy:  Get Installed Application
+2026-04-27 08:51:52,286 INFO  - 1 Twingate 2026.36.4338

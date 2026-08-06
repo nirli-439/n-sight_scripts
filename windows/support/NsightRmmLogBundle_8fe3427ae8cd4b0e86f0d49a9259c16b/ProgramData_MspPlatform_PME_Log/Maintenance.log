@@ -1,0 +1,1493 @@
+[4] 2026-03-09 10:21:39,116 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-09 10:21:39,184 DEBUG Last maintenance was run 71744.4 hours ago, maintenance period is 24 hours.
+[4] 2026-03-09 10:21:39,188 INFO  Starting maintenance...
+[4] 2026-03-09 10:21:39,188 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[4] 2026-03-09 10:21:39,188 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[4] 2026-03-09 10:21:39,199 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[4] 2026-03-09 10:21:39,200 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[4] 2026-03-09 10:21:39,200 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[4] 2026-03-09 10:21:39,231 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[4] 2026-03-09 10:21:39,231 INFO  Maintenance finished.
+[4] 2026-03-09 10:21:39,231 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-09 10:21:39,359 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-09 10:21:39,359 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-03-09 10:21:39,359 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-09 11:01:03,203 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-09 11:01:03,276 DEBUG Last maintenance was run 0.7 hours ago, maintenance period is 24 hours.
+[4] 2026-03-09 11:01:03,277 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-09 11:01:03,420 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-09 11:01:03,422 DEBUG Last maintenance was run 0.7 hours ago, maintenance period is 24 hours.
+[4] 2026-03-09 11:01:03,422 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-09 11:01:04,370 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-09 11:01:04,372 DEBUG Last maintenance was run 0.7 hours ago, maintenance period is 24 hours.
+[4] 2026-03-09 11:01:04,372 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-03-10 08:57:32,474 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-03-10 08:57:32,489 DEBUG Last maintenance was run 22.6 hours ago, maintenance period is 24 hours.
+[11] 2026-03-10 08:57:32,490 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-03-10 08:57:32,523 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-03-10 08:57:32,524 DEBUG Last maintenance was run 22.6 hours ago, maintenance period is 24 hours.
+[11] 2026-03-10 08:57:32,524 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:00:36,009 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:00:36,009 DEBUG Last maintenance was run 22.6 hours ago, maintenance period is 24 hours.
+[13] 2026-03-10 09:00:36,010 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:00:36,040 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:00:36,040 DEBUG Last maintenance was run 22.6 hours ago, maintenance period is 24 hours.
+[13] 2026-03-10 09:00:36,040 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:00:36,278 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:00:36,279 DEBUG Last maintenance was run 22.6 hours ago, maintenance period is 24 hours.
+[13] 2026-03-10 09:00:36,279 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:01:36,282 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:01:36,283 DEBUG Last maintenance was run 22.7 hours ago, maintenance period is 24 hours.
+[13] 2026-03-10 09:01:36,283 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:01:36,311 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:01:36,312 DEBUG Last maintenance was run 22.7 hours ago, maintenance period is 24 hours.
+[13] 2026-03-10 09:01:36,312 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:01:36,345 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-03-10 09:01:36,346 DEBUG Last maintenance was run 22.7 hours ago, maintenance period is 24 hours.
+[13] 2026-03-10 09:01:36,346 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-03-10 11:00:52,416 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-03-10 11:00:52,423 DEBUG Last maintenance was run 24.7 hours ago, maintenance period is 24 hours.
+[10] 2026-03-10 11:00:52,424 INFO  Starting maintenance...
+[10] 2026-03-10 11:00:52,429 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[10] 2026-03-10 11:00:52,431 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[10] 2026-03-10 11:00:52,433 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[10] 2026-03-10 11:00:52,434 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[10] 2026-03-10 11:00:52,435 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[10] 2026-03-10 11:00:52,436 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[10] 2026-03-10 11:00:52,441 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[10] 2026-03-10 11:00:52,441 INFO  Maintenance finished.
+[10] 2026-03-10 11:00:52,442 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-03-10 11:00:52,471 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-03-10 11:00:52,471 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[10] 2026-03-10 11:00:52,471 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-03-10 11:00:52,514 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-03-10 11:00:52,514 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[10] 2026-03-10 11:00:52,514 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-11 09:08:56,063 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-11 09:08:56,083 DEBUG Last maintenance was run 22.1 hours ago, maintenance period is 24 hours.
+[4] 2026-03-11 09:08:56,083 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-11 09:08:56,188 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-11 09:08:56,196 DEBUG Last maintenance was run 22.1 hours ago, maintenance period is 24 hours.
+[4] 2026-03-11 09:08:56,196 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[RequestHandlerAgentThread] 2026-03-11 09:09:03,716 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[RequestHandlerAgentThread] 2026-03-11 09:09:03,716 DEBUG Last maintenance was run 22.1 hours ago, maintenance period is 24 hours.
+[RequestHandlerAgentThread] 2026-03-11 09:09:03,716 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-11 09:09:40,282 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-03-11 09:09:40,339 DEBUG Last maintenance was run 71791.2 hours ago, maintenance period is 24 hours.
+[4] 2026-03-11 09:09:40,341 INFO  Starting maintenance...
+[4] 2026-03-11 09:09:40,344 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[4] 2026-03-11 09:09:40,348 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[4] 2026-03-11 09:09:40,350 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[4] 2026-03-11 09:09:40,350 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[4] 2026-03-11 09:09:40,350 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[4] 2026-03-11 09:09:40,350 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[4] 2026-03-11 09:09:40,374 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[4] 2026-03-11 09:09:40,376 INFO  Maintenance finished.
+[4] 2026-03-11 09:09:40,376 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-03-11 09:10:53,926 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-03-11 09:10:53,926 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[9] 2026-03-11 09:10:53,926 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-03-11 09:10:53,957 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-03-11 09:10:53,957 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[9] 2026-03-11 09:10:53,957 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-03-11 09:10:54,105 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-03-11 09:10:54,105 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[9] 2026-03-11 09:10:54,105 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-03-11 09:12:54,457 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-03-11 09:12:54,457 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[9] 2026-03-11 09:12:54,457 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-03-11 09:12:54,508 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-03-11 09:12:54,510 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[9] 2026-03-11 09:12:54,510 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-11 11:01:18,701 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-11 11:01:18,701 DEBUG Last maintenance was run 1.9 hours ago, maintenance period is 24 hours.
+[35] 2026-03-11 11:01:18,701 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-11 11:01:18,735 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-11 11:01:18,735 DEBUG Last maintenance was run 1.9 hours ago, maintenance period is 24 hours.
+[35] 2026-03-11 11:01:18,735 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-11 11:01:18,772 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-11 11:01:18,772 DEBUG Last maintenance was run 1.9 hours ago, maintenance period is 24 hours.
+[35] 2026-03-11 11:01:18,772 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 09:42:30,454 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 09:42:30,463 DEBUG Last maintenance was run 24.5 hours ago, maintenance period is 24 hours.
+[71] 2026-03-12 09:42:30,465 INFO  Starting maintenance...
+[71] 2026-03-12 09:42:30,466 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[71] 2026-03-12 09:42:30,467 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[71] 2026-03-12 09:42:30,467 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[71] 2026-03-12 09:42:30,469 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[71] 2026-03-12 09:42:30,471 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[71] 2026-03-12 09:42:30,471 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[71] 2026-03-12 09:42:30,473 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[71] 2026-03-12 09:42:30,473 INFO  Maintenance finished.
+[71] 2026-03-12 09:42:30,473 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 09:42:30,503 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 09:42:30,503 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[71] 2026-03-12 09:42:30,503 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 09:42:30,765 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 09:42:30,767 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[71] 2026-03-12 09:42:30,767 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 10:08:21,704 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 10:08:21,704 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[71] 2026-03-12 10:08:21,704 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 10:08:21,730 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 10:08:21,730 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[71] 2026-03-12 10:08:21,730 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 10:08:21,772 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 10:08:21,774 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[71] 2026-03-12 10:08:21,774 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 10:10:22,261 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 10:10:22,261 DEBUG Last maintenance was run 0.5 hours ago, maintenance period is 24 hours.
+[71] 2026-03-12 10:10:22,261 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 10:10:22,292 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[71] 2026-03-12 10:10:22,292 DEBUG Last maintenance was run 0.5 hours ago, maintenance period is 24 hours.
+[71] 2026-03-12 10:10:22,292 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[60] 2026-03-12 11:01:02,634 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[60] 2026-03-12 11:01:02,654 DEBUG Last maintenance was run 1.3 hours ago, maintenance period is 24 hours.
+[60] 2026-03-12 11:01:02,654 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[60] 2026-03-12 11:01:02,685 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[60] 2026-03-12 11:01:02,685 DEBUG Last maintenance was run 1.3 hours ago, maintenance period is 24 hours.
+[60] 2026-03-12 11:01:02,685 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[60] 2026-03-12 11:01:02,755 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[60] 2026-03-12 11:01:02,755 DEBUG Last maintenance was run 1.3 hours ago, maintenance period is 24 hours.
+[60] 2026-03-12 11:01:02,755 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-15 09:39:46,265 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-15 09:39:46,277 DEBUG Last maintenance was run 72.0 hours ago, maintenance period is 24 hours.
+[35] 2026-03-15 09:39:46,278 INFO  Starting maintenance...
+[35] 2026-03-15 09:39:46,279 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[35] 2026-03-15 09:39:46,279 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[35] 2026-03-15 09:39:46,280 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[35] 2026-03-15 09:39:46,281 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[35] 2026-03-15 09:39:46,282 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[35] 2026-03-15 09:39:46,283 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[35] 2026-03-15 09:39:46,285 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[35] 2026-03-15 09:39:46,285 INFO  Maintenance finished.
+[35] 2026-03-15 09:39:46,285 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-15 09:39:46,308 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-15 09:39:46,308 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[35] 2026-03-15 09:39:46,308 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-15 09:40:03,123 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-15 09:40:03,124 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[35] 2026-03-15 09:40:03,124 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[55] 2026-03-15 09:44:50,805 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[55] 2026-03-15 09:44:50,806 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[55] 2026-03-15 09:44:50,806 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[55] 2026-03-15 09:44:50,832 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[55] 2026-03-15 09:44:50,833 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[55] 2026-03-15 09:44:50,833 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[55] 2026-03-15 09:44:50,871 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[55] 2026-03-15 09:44:50,872 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[55] 2026-03-15 09:44:50,872 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[55] 2026-03-15 09:45:51,046 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[55] 2026-03-15 09:45:51,047 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[55] 2026-03-15 09:45:51,047 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[55] 2026-03-15 09:45:51,081 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[55] 2026-03-15 09:45:51,081 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[55] 2026-03-15 09:45:51,081 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[64] 2026-03-15 11:01:12,985 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[64] 2026-03-15 11:01:12,997 DEBUG Last maintenance was run 1.4 hours ago, maintenance period is 24 hours.
+[64] 2026-03-15 11:01:12,997 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[64] 2026-03-15 11:01:13,024 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[64] 2026-03-15 11:01:13,024 DEBUG Last maintenance was run 1.4 hours ago, maintenance period is 24 hours.
+[64] 2026-03-15 11:01:13,024 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[64] 2026-03-15 11:01:13,080 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[64] 2026-03-15 11:01:13,082 DEBUG Last maintenance was run 1.4 hours ago, maintenance period is 24 hours.
+[64] 2026-03-15 11:01:13,082 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:06:06,180 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:06:06,182 DEBUG Last maintenance was run 23.4 hours ago, maintenance period is 24 hours.
+[37] 2026-03-16 09:06:06,182 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:06:06,216 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:06:06,216 DEBUG Last maintenance was run 23.4 hours ago, maintenance period is 24 hours.
+[37] 2026-03-16 09:06:06,217 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:06:24,666 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:06:24,667 DEBUG Last maintenance was run 23.4 hours ago, maintenance period is 24 hours.
+[37] 2026-03-16 09:06:24,667 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:07:09,285 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:07:09,285 DEBUG Last maintenance was run 23.5 hours ago, maintenance period is 24 hours.
+[37] 2026-03-16 09:07:09,286 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:07:09,314 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:07:09,315 DEBUG Last maintenance was run 23.5 hours ago, maintenance period is 24 hours.
+[37] 2026-03-16 09:07:09,315 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:07:09,348 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:07:09,349 DEBUG Last maintenance was run 23.5 hours ago, maintenance period is 24 hours.
+[37] 2026-03-16 09:07:09,349 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:09:09,869 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:09:09,870 DEBUG Last maintenance was run 23.5 hours ago, maintenance period is 24 hours.
+[37] 2026-03-16 09:09:09,870 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:09:09,903 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[37] 2026-03-16 09:09:09,903 DEBUG Last maintenance was run 23.5 hours ago, maintenance period is 24 hours.
+[37] 2026-03-16 09:09:09,903 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[59] 2026-03-16 11:00:56,789 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[59] 2026-03-16 11:00:56,790 DEBUG Last maintenance was run 25.4 hours ago, maintenance period is 24 hours.
+[59] 2026-03-16 11:00:56,790 INFO  Starting maintenance...
+[59] 2026-03-16 11:00:56,791 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[59] 2026-03-16 11:00:56,791 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[59] 2026-03-16 11:00:56,792 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[59] 2026-03-16 11:00:56,793 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[59] 2026-03-16 11:00:56,793 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[59] 2026-03-16 11:00:56,794 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[59] 2026-03-16 11:00:56,796 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[59] 2026-03-16 11:00:56,796 INFO  Maintenance finished.
+[59] 2026-03-16 11:00:56,796 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[59] 2026-03-16 11:00:56,829 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[59] 2026-03-16 11:00:56,831 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[59] 2026-03-16 11:00:56,831 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[59] 2026-03-16 11:00:56,878 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[59] 2026-03-16 11:00:56,878 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[59] 2026-03-16 11:00:56,878 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 04:36:29,708 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 04:36:29,711 DEBUG Last maintenance was run 17.6 hours ago, maintenance period is 24 hours.
+[22] 2026-03-17 04:36:29,712 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 04:36:29,803 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 04:36:29,804 DEBUG Last maintenance was run 17.6 hours ago, maintenance period is 24 hours.
+[22] 2026-03-17 04:36:29,804 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:09:06,804 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:09:06,805 DEBUG Last maintenance was run 22.1 hours ago, maintenance period is 24 hours.
+[22] 2026-03-17 09:09:06,806 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:09:06,893 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:09:06,894 DEBUG Last maintenance was run 22.1 hours ago, maintenance period is 24 hours.
+[22] 2026-03-17 09:09:06,895 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:09:07,381 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:09:07,382 DEBUG Last maintenance was run 22.1 hours ago, maintenance period is 24 hours.
+[22] 2026-03-17 09:09:07,383 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:11:09,595 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:11:09,598 DEBUG Last maintenance was run 22.2 hours ago, maintenance period is 24 hours.
+[22] 2026-03-17 09:11:09,598 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:11:09,673 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:11:09,674 DEBUG Last maintenance was run 22.2 hours ago, maintenance period is 24 hours.
+[22] 2026-03-17 09:11:09,675 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:11:09,744 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[22] 2026-03-17 09:11:09,745 DEBUG Last maintenance was run 22.2 hours ago, maintenance period is 24 hours.
+[22] 2026-03-17 09:11:09,745 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[72] 2026-03-17 11:03:03,155 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[72] 2026-03-17 11:03:32,186 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[72] 2026-03-17 11:03:32,187 INFO  Starting maintenance...
+[72] 2026-03-17 11:03:32,187 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[72] 2026-03-17 11:03:32,190 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[72] 2026-03-17 11:03:32,193 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[72] 2026-03-17 11:03:32,197 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[72] 2026-03-17 11:03:32,200 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[72] 2026-03-17 11:03:32,204 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[72] 2026-03-17 11:04:01,458 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[72] 2026-03-17 11:04:01,459 INFO  Maintenance finished.
+[72] 2026-03-17 11:04:01,470 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[72] 2026-03-17 11:04:02,054 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[72] 2026-03-17 11:04:02,055 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[72] 2026-03-17 11:04:02,055 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[72] 2026-03-17 11:04:02,169 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[72] 2026-03-17 11:04:02,172 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[72] 2026-03-17 11:04:02,174 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:40:03,891 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:40:03,893 DEBUG Last maintenance was run 46.6 hours ago, maintenance period is 24 hours.
+[65] 2026-03-19 09:40:03,893 INFO  Starting maintenance...
+[65] 2026-03-19 09:40:03,893 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[65] 2026-03-19 09:40:03,894 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[65] 2026-03-19 09:40:03,894 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[65] 2026-03-19 09:40:03,896 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[65] 2026-03-19 09:40:03,896 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[65] 2026-03-19 09:40:03,897 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[65] 2026-03-19 09:40:03,899 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[65] 2026-03-19 09:40:03,899 INFO  Maintenance finished.
+[65] 2026-03-19 09:40:03,900 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:40:03,939 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:40:03,939 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[65] 2026-03-19 09:40:03,939 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:40:04,219 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:40:04,220 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[65] 2026-03-19 09:40:04,221 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:42:05,838 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:42:05,840 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[65] 2026-03-19 09:42:05,840 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:42:05,906 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:42:05,907 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[65] 2026-03-19 09:42:05,907 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:42:05,982 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:42:05,983 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[65] 2026-03-19 09:42:05,983 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:44:06,576 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:44:06,577 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[65] 2026-03-19 09:44:06,578 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:44:06,663 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-19 09:44:06,665 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[65] 2026-03-19 09:44:06,666 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-22 15:00:33,407 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-22 15:00:33,408 DEBUG Last maintenance was run 77.3 hours ago, maintenance period is 24 hours.
+[39] 2026-03-22 15:00:33,409 INFO  Starting maintenance...
+[39] 2026-03-22 15:00:33,409 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[39] 2026-03-22 15:00:33,410 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[39] 2026-03-22 15:00:33,411 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[39] 2026-03-22 15:00:33,414 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[39] 2026-03-22 15:00:33,415 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[39] 2026-03-22 15:00:33,416 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[39] 2026-03-22 15:00:33,418 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[39] 2026-03-22 15:00:33,418 INFO  Maintenance finished.
+[39] 2026-03-22 15:00:33,418 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-22 15:00:33,455 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-22 15:00:33,457 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[39] 2026-03-22 15:00:33,458 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-22 15:00:33,500 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-22 15:00:33,502 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[39] 2026-03-22 15:00:33,502 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-23 15:32:33,702 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-23 15:32:33,702 DEBUG Last maintenance was run 24.5 hours ago, maintenance period is 24 hours.
+[65] 2026-03-23 15:32:33,702 INFO  Starting maintenance...
+[65] 2026-03-23 15:32:33,702 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[65] 2026-03-23 15:32:33,703 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[65] 2026-03-23 15:32:33,703 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[65] 2026-03-23 15:32:33,704 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[65] 2026-03-23 15:32:33,704 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[65] 2026-03-23 15:32:33,704 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[65] 2026-03-23 15:32:33,707 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[65] 2026-03-23 15:32:33,707 INFO  Maintenance finished.
+[65] 2026-03-23 15:32:33,707 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-23 15:32:33,720 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-23 15:32:33,720 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[65] 2026-03-23 15:32:33,720 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:43:59,462 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:43:59,464 DEBUG Last maintenance was run 42.2 hours ago, maintenance period is 24 hours.
+[39] 2026-03-25 09:43:59,464 INFO  Starting maintenance...
+[39] 2026-03-25 09:43:59,465 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[39] 2026-03-25 09:43:59,465 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[39] 2026-03-25 09:43:59,466 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[39] 2026-03-25 09:43:59,467 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[39] 2026-03-25 09:43:59,467 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[39] 2026-03-25 09:43:59,468 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[39] 2026-03-25 09:43:59,470 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[39] 2026-03-25 09:43:59,470 INFO  Maintenance finished.
+[39] 2026-03-25 09:43:59,471 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:43:59,507 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:43:59,508 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[39] 2026-03-25 09:43:59,508 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:43:59,553 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:43:59,553 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[39] 2026-03-25 09:43:59,554 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:46:00,301 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:46:00,302 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[39] 2026-03-25 09:46:00,302 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:46:00,371 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:46:00,371 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[39] 2026-03-25 09:46:00,372 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:46:00,647 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[39] 2026-03-25 09:46:00,648 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[39] 2026-03-25 09:46:00,649 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-25 09:48:11,225 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-25 09:48:11,226 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[51] 2026-03-25 09:48:11,227 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-25 09:48:11,296 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-25 09:48:11,297 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[51] 2026-03-25 09:48:11,299 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-25 09:48:11,386 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-25 09:48:11,388 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[51] 2026-03-25 09:48:11,388 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-25 09:49:11,634 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-25 09:49:11,636 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[51] 2026-03-25 09:49:11,636 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-25 09:49:11,705 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-25 09:49:11,707 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[51] 2026-03-25 09:49:11,707 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-25 14:31:39,479 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-25 14:31:39,481 DEBUG Last maintenance was run 4.8 hours ago, maintenance period is 24 hours.
+[56] 2026-03-25 14:31:39,481 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-25 14:31:39,527 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-25 14:31:39,528 DEBUG Last maintenance was run 4.8 hours ago, maintenance period is 24 hours.
+[56] 2026-03-25 14:31:39,529 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-25 14:31:39,594 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-25 14:31:39,595 DEBUG Last maintenance was run 4.8 hours ago, maintenance period is 24 hours.
+[56] 2026-03-25 14:31:39,595 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:01:54,527 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:01:54,528 DEBUG Last maintenance was run 23.3 hours ago, maintenance period is 24 hours.
+[14] 2026-03-26 09:01:54,529 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:01:54,615 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:01:54,616 DEBUG Last maintenance was run 23.3 hours ago, maintenance period is 24 hours.
+[14] 2026-03-26 09:01:54,618 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:01:55,256 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:01:55,257 DEBUG Last maintenance was run 23.3 hours ago, maintenance period is 24 hours.
+[14] 2026-03-26 09:01:55,257 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:26:47,050 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:26:47,051 DEBUG Last maintenance was run 23.7 hours ago, maintenance period is 24 hours.
+[14] 2026-03-26 09:26:47,051 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:26:47,071 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:26:47,072 DEBUG Last maintenance was run 23.7 hours ago, maintenance period is 24 hours.
+[14] 2026-03-26 09:26:47,072 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:26:47,104 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-03-26 09:26:47,104 DEBUG Last maintenance was run 23.7 hours ago, maintenance period is 24 hours.
+[14] 2026-03-26 09:26:47,106 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-26 09:27:47,286 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-26 09:27:47,286 DEBUG Last maintenance was run 23.7 hours ago, maintenance period is 24 hours.
+[65] 2026-03-26 09:27:47,286 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-26 09:27:47,318 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-26 09:27:47,319 DEBUG Last maintenance was run 23.7 hours ago, maintenance period is 24 hours.
+[65] 2026-03-26 09:27:47,319 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[48] 2026-03-26 11:00:14,871 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[48] 2026-03-26 11:00:14,871 DEBUG Last maintenance was run 25.3 hours ago, maintenance period is 24 hours.
+[48] 2026-03-26 11:00:14,872 INFO  Starting maintenance...
+[48] 2026-03-26 11:00:14,872 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[48] 2026-03-26 11:00:14,873 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[48] 2026-03-26 11:00:14,874 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[48] 2026-03-26 11:00:14,875 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[48] 2026-03-26 11:00:14,875 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[48] 2026-03-26 11:00:14,876 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[48] 2026-03-26 11:00:14,878 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[48] 2026-03-26 11:00:14,878 INFO  Maintenance finished.
+[48] 2026-03-26 11:00:14,878 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[48] 2026-03-26 11:00:14,919 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[48] 2026-03-26 11:00:14,920 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[48] 2026-03-26 11:00:14,920 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[48] 2026-03-26 11:00:14,965 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[48] 2026-03-26 11:00:14,965 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[48] 2026-03-26 11:00:14,966 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-27 08:40:07,875 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-27 08:40:07,875 DEBUG Last maintenance was run 21.7 hours ago, maintenance period is 24 hours.
+[51] 2026-03-27 08:40:07,875 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-27 08:40:07,929 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-27 08:40:07,930 DEBUG Last maintenance was run 21.7 hours ago, maintenance period is 24 hours.
+[51] 2026-03-27 08:40:07,930 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-28 08:10:02,806 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-28 08:10:02,808 DEBUG Last maintenance was run 45.2 hours ago, maintenance period is 24 hours.
+[51] 2026-03-28 08:10:02,808 INFO  Starting maintenance...
+[51] 2026-03-28 08:10:02,809 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[51] 2026-03-28 08:10:02,810 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[51] 2026-03-28 08:10:02,811 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[51] 2026-03-28 08:10:02,813 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[51] 2026-03-28 08:10:02,814 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[51] 2026-03-28 08:10:02,816 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[51] 2026-03-28 08:10:02,818 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[51] 2026-03-28 08:10:02,819 INFO  Maintenance finished.
+[51] 2026-03-28 08:10:02,819 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-28 08:10:02,859 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-28 08:10:02,861 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[51] 2026-03-28 08:10:02,861 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-28 08:11:03,430 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-28 08:11:03,430 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[51] 2026-03-28 08:11:03,430 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-28 08:11:03,489 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-28 08:11:03,489 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[51] 2026-03-28 08:11:03,489 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-28 08:11:03,530 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-28 08:11:03,530 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[51] 2026-03-28 08:11:03,532 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[38] 2026-03-29 08:12:11,130 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[38] 2026-03-29 08:12:11,132 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[38] 2026-03-29 08:12:11,132 INFO  Starting maintenance...
+[38] 2026-03-29 08:12:11,132 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[38] 2026-03-29 08:12:11,133 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[38] 2026-03-29 08:12:11,134 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[38] 2026-03-29 08:12:11,135 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[38] 2026-03-29 08:12:11,137 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[38] 2026-03-29 08:12:11,138 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[38] 2026-03-29 08:12:11,140 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[38] 2026-03-29 08:12:11,140 INFO  Maintenance finished.
+[38] 2026-03-29 08:12:11,141 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[38] 2026-03-29 08:12:11,183 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[38] 2026-03-29 08:12:11,184 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[38] 2026-03-29 08:12:11,185 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[38] 2026-03-29 08:13:14,173 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[38] 2026-03-29 08:13:14,173 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[38] 2026-03-29 08:13:14,174 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[38] 2026-03-29 08:13:14,203 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[38] 2026-03-29 08:13:14,204 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[38] 2026-03-29 08:13:14,204 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[38] 2026-03-29 08:13:14,246 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[38] 2026-03-29 08:13:14,248 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[38] 2026-03-29 08:13:14,248 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:00:28,008 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:00:28,010 DEBUG Last maintenance was run 0.8 hours ago, maintenance period is 24 hours.
+[51] 2026-03-29 09:00:28,010 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:00:28,037 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:00:28,038 DEBUG Last maintenance was run 0.8 hours ago, maintenance period is 24 hours.
+[51] 2026-03-29 09:00:28,038 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:00:28,326 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:00:28,326 DEBUG Last maintenance was run 0.8 hours ago, maintenance period is 24 hours.
+[51] 2026-03-29 09:00:28,326 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:03:28,731 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:03:28,732 DEBUG Last maintenance was run 0.9 hours ago, maintenance period is 24 hours.
+[51] 2026-03-29 09:03:28,732 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:03:28,759 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:03:28,760 DEBUG Last maintenance was run 0.9 hours ago, maintenance period is 24 hours.
+[51] 2026-03-29 09:03:28,760 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:03:28,796 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-03-29 09:03:28,796 DEBUG Last maintenance was run 0.9 hours ago, maintenance period is 24 hours.
+[51] 2026-03-29 09:03:28,796 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-29 11:04:02,073 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-29 11:04:02,074 DEBUG Last maintenance was run 2.9 hours ago, maintenance period is 24 hours.
+[56] 2026-03-29 11:04:02,074 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-29 11:04:02,118 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-29 11:04:02,118 DEBUG Last maintenance was run 2.9 hours ago, maintenance period is 24 hours.
+[56] 2026-03-29 11:04:02,118 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-29 11:04:02,187 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-29 11:04:02,187 DEBUG Last maintenance was run 2.9 hours ago, maintenance period is 24 hours.
+[56] 2026-03-29 11:04:02,187 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-30 06:01:52,896 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-30 06:01:52,897 DEBUG Last maintenance was run 21.8 hours ago, maintenance period is 24 hours.
+[56] 2026-03-30 06:01:52,897 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-30 06:01:52,935 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-30 06:01:52,936 DEBUG Last maintenance was run 21.8 hours ago, maintenance period is 24 hours.
+[56] 2026-03-30 06:01:52,936 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-30 09:00:35,712 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-30 09:00:35,712 DEBUG Last maintenance was run 24.8 hours ago, maintenance period is 24 hours.
+[65] 2026-03-30 09:00:35,714 INFO  Starting maintenance...
+[65] 2026-03-30 09:00:35,714 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[65] 2026-03-30 09:00:35,715 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[65] 2026-03-30 09:00:35,716 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[65] 2026-03-30 09:00:35,716 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[65] 2026-03-30 09:00:35,717 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[65] 2026-03-30 09:00:35,718 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[65] 2026-03-30 09:00:35,720 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[65] 2026-03-30 09:00:35,720 INFO  Maintenance finished.
+[65] 2026-03-30 09:00:35,721 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-30 09:00:35,753 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-30 09:00:35,754 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[65] 2026-03-30 09:00:35,754 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-30 09:00:35,998 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[65] 2026-03-30 09:00:35,999 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[65] 2026-03-30 09:00:35,999 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-03-30 09:01:35,972 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-03-30 09:01:35,973 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[57] 2026-03-30 09:01:35,973 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-03-30 09:01:36,006 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-03-30 09:01:36,007 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[57] 2026-03-30 09:01:36,007 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-03-30 09:01:36,048 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-03-30 09:01:36,048 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[57] 2026-03-30 09:01:36,049 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[58] 2026-03-30 11:01:07,732 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[58] 2026-03-30 11:01:07,733 DEBUG Last maintenance was run 2.0 hours ago, maintenance period is 24 hours.
+[58] 2026-03-30 11:01:07,733 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[58] 2026-03-30 11:01:07,767 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[58] 2026-03-30 11:01:07,768 DEBUG Last maintenance was run 2.0 hours ago, maintenance period is 24 hours.
+[58] 2026-03-30 11:01:07,768 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[58] 2026-03-30 11:01:07,817 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[58] 2026-03-30 11:01:07,817 DEBUG Last maintenance was run 2.0 hours ago, maintenance period is 24 hours.
+[58] 2026-03-30 11:01:07,818 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-03-31 08:21:24,464 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-03-31 08:21:24,465 DEBUG Last maintenance was run 23.3 hours ago, maintenance period is 24 hours.
+[12] 2026-03-31 08:21:24,466 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-03-31 08:21:24,528 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-03-31 08:21:24,529 DEBUG Last maintenance was run 23.3 hours ago, maintenance period is 24 hours.
+[12] 2026-03-31 08:21:24,529 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-31 09:10:12,607 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-31 09:10:12,608 DEBUG Last maintenance was run 24.2 hours ago, maintenance period is 24 hours.
+[35] 2026-03-31 09:10:12,609 INFO  Starting maintenance...
+[35] 2026-03-31 09:10:12,609 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[35] 2026-03-31 09:10:12,610 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[35] 2026-03-31 09:10:12,611 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[35] 2026-03-31 09:10:12,612 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[35] 2026-03-31 09:10:12,613 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[35] 2026-03-31 09:10:12,613 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[35] 2026-03-31 09:10:12,616 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[35] 2026-03-31 09:10:12,617 INFO  Maintenance finished.
+[35] 2026-03-31 09:10:12,617 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-31 09:10:12,664 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[35] 2026-03-31 09:10:12,665 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[35] 2026-03-31 09:10:12,665 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-31 13:15:49,833 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-31 13:15:49,834 DEBUG Last maintenance was run 4.1 hours ago, maintenance period is 24 hours.
+[56] 2026-03-31 13:15:49,834 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-31 13:15:49,887 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-31 13:15:49,888 DEBUG Last maintenance was run 4.1 hours ago, maintenance period is 24 hours.
+[56] 2026-03-31 13:15:49,888 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-31 13:15:49,948 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[56] 2026-03-31 13:15:49,948 DEBUG Last maintenance was run 4.1 hours ago, maintenance period is 24 hours.
+[56] 2026-03-31 13:15:49,950 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-01 09:12:26,630 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-01 09:12:26,631 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[14] 2026-04-01 09:12:26,631 INFO  Starting maintenance...
+[14] 2026-04-01 09:12:26,632 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[14] 2026-04-01 09:12:26,633 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[14] 2026-04-01 09:12:26,634 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[14] 2026-04-01 09:12:26,636 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[14] 2026-04-01 09:12:26,637 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[14] 2026-04-01 09:12:26,638 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[14] 2026-04-01 09:12:26,641 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[14] 2026-04-01 09:12:26,641 INFO  Maintenance finished.
+[14] 2026-04-01 09:12:26,642 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-01 09:12:26,684 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-01 09:12:26,684 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[14] 2026-04-01 09:12:26,684 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-02 07:59:07,578 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-02 07:59:07,588 DEBUG Last maintenance was run 22.8 hours ago, maintenance period is 24 hours.
+[14] 2026-04-02 07:59:07,610 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-02 07:59:07,811 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-02 07:59:07,813 DEBUG Last maintenance was run 22.8 hours ago, maintenance period is 24 hours.
+[14] 2026-04-02 07:59:07,814 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-02 07:59:08,064 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-02 07:59:08,065 DEBUG Last maintenance was run 22.8 hours ago, maintenance period is 24 hours.
+[14] 2026-04-02 07:59:08,065 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-02 08:04:09,750 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-02 08:04:09,750 DEBUG Last maintenance was run 22.9 hours ago, maintenance period is 24 hours.
+[14] 2026-04-02 08:04:09,751 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-02 08:04:09,805 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-02 08:04:09,805 DEBUG Last maintenance was run 22.9 hours ago, maintenance period is 24 hours.
+[14] 2026-04-02 08:04:09,806 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-04 07:48:52,003 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-04 07:48:52,005 DEBUG Last maintenance was run 70.6 hours ago, maintenance period is 24 hours.
+[12] 2026-04-04 07:48:52,006 INFO  Starting maintenance...
+[12] 2026-04-04 07:48:52,006 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[12] 2026-04-04 07:48:52,007 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[12] 2026-04-04 07:48:52,007 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[12] 2026-04-04 07:48:52,009 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[12] 2026-04-04 07:48:52,010 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[12] 2026-04-04 07:48:52,010 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[12] 2026-04-04 07:48:52,015 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[12] 2026-04-04 07:48:52,015 INFO  Maintenance finished.
+[12] 2026-04-04 07:48:52,016 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-04 07:48:52,067 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-04 07:48:52,068 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-04 07:48:52,068 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-04 07:48:52,130 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-04 07:48:52,131 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-04 07:48:52,132 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-04 07:51:53,442 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-04 07:51:53,444 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[12] 2026-04-04 07:51:53,444 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-04 07:51:53,506 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-04 07:51:53,510 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[12] 2026-04-04 07:51:53,510 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-04-05 08:24:17,937 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-04-05 08:24:17,938 DEBUG Last maintenance was run 24.6 hours ago, maintenance period is 24 hours.
+[51] 2026-04-05 08:24:17,938 INFO  Starting maintenance...
+[51] 2026-04-05 08:24:17,938 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[51] 2026-04-05 08:24:17,938 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[51] 2026-04-05 08:24:17,939 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[51] 2026-04-05 08:24:17,940 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[51] 2026-04-05 08:24:17,940 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[51] 2026-04-05 08:24:17,940 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[51] 2026-04-05 08:24:17,942 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[51] 2026-04-05 08:24:17,942 INFO  Maintenance finished.
+[51] 2026-04-05 08:24:17,943 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-04-05 08:24:17,967 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-04-05 08:24:17,968 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[51] 2026-04-05 08:24:17,968 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-04-05 08:24:17,998 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-04-05 08:24:17,998 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[51] 2026-04-05 08:24:17,998 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-04-05 08:26:18,472 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-04-05 08:26:18,473 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[51] 2026-04-05 08:26:18,473 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-04-05 08:26:18,507 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[51] 2026-04-05 08:26:18,508 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[51] 2026-04-05 08:26:18,508 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-04-05 09:00:27,775 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-04-05 09:00:27,776 DEBUG Last maintenance was run 0.6 hours ago, maintenance period is 24 hours.
+[57] 2026-04-05 09:00:27,777 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-04-05 09:00:27,809 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-04-05 09:00:27,810 DEBUG Last maintenance was run 0.6 hours ago, maintenance period is 24 hours.
+[57] 2026-04-05 09:00:27,810 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-04-05 09:00:28,051 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[57] 2026-04-05 09:00:28,052 DEBUG Last maintenance was run 0.6 hours ago, maintenance period is 24 hours.
+[57] 2026-04-05 09:00:28,052 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 09:51:03,448 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 09:51:03,480 DEBUG Last maintenance was run 1.4 hours ago, maintenance period is 24 hours.
+[4] 2026-04-05 09:51:03,481 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 09:51:03,549 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 09:51:03,550 DEBUG Last maintenance was run 1.4 hours ago, maintenance period is 24 hours.
+[4] 2026-04-05 09:51:03,550 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 09:51:04,033 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 09:51:04,033 DEBUG Last maintenance was run 1.4 hours ago, maintenance period is 24 hours.
+[4] 2026-04-05 09:51:04,033 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 10:02:04,500 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 10:02:04,502 DEBUG Last maintenance was run 1.6 hours ago, maintenance period is 24 hours.
+[4] 2026-04-05 10:02:04,502 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 10:02:04,535 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 10:02:04,535 DEBUG Last maintenance was run 1.6 hours ago, maintenance period is 24 hours.
+[4] 2026-04-05 10:02:04,535 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 10:02:04,578 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-05 10:02:04,578 DEBUG Last maintenance was run 1.6 hours ago, maintenance period is 24 hours.
+[4] 2026-04-05 10:02:04,579 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 10:44:07,937 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 10:44:07,938 DEBUG Last maintenance was run 2.3 hours ago, maintenance period is 24 hours.
+[8] 2026-04-05 10:44:07,938 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 10:44:08,039 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 10:44:08,040 DEBUG Last maintenance was run 2.3 hours ago, maintenance period is 24 hours.
+[8] 2026-04-05 10:44:08,041 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 10:44:08,175 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 10:44:08,177 DEBUG Last maintenance was run 2.3 hours ago, maintenance period is 24 hours.
+[8] 2026-04-05 10:44:08,177 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 11:09:13,959 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 11:09:13,959 DEBUG Last maintenance was run 2.7 hours ago, maintenance period is 24 hours.
+[8] 2026-04-05 11:09:13,961 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 11:09:14,051 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 11:09:14,052 DEBUG Last maintenance was run 2.7 hours ago, maintenance period is 24 hours.
+[8] 2026-04-05 11:09:14,053 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 11:09:14,175 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-05 11:09:14,177 DEBUG Last maintenance was run 2.7 hours ago, maintenance period is 24 hours.
+[8] 2026-04-05 11:09:14,178 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[21] 2026-04-06 09:10:44,261 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[21] 2026-04-06 09:10:44,262 DEBUG Last maintenance was run 24.8 hours ago, maintenance period is 24 hours.
+[21] 2026-04-06 09:10:44,263 INFO  Starting maintenance...
+[21] 2026-04-06 09:10:44,269 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[21] 2026-04-06 09:10:44,273 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[21] 2026-04-06 09:10:44,278 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[21] 2026-04-06 09:10:44,283 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[21] 2026-04-06 09:10:44,286 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[21] 2026-04-06 09:10:44,288 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[21] 2026-04-06 09:10:44,295 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[21] 2026-04-06 09:10:44,295 INFO  Maintenance finished.
+[21] 2026-04-06 09:10:44,296 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[21] 2026-04-06 09:10:44,376 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[21] 2026-04-06 09:10:44,377 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[21] 2026-04-06 09:10:44,377 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[21] 2026-04-06 09:11:46,486 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[21] 2026-04-06 09:11:46,488 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[21] 2026-04-06 09:11:46,488 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[21] 2026-04-06 09:11:46,540 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[21] 2026-04-06 09:11:46,543 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[21] 2026-04-06 09:11:46,544 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[18] 2026-04-06 11:01:18,945 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[18] 2026-04-06 11:01:18,948 DEBUG Last maintenance was run 1.8 hours ago, maintenance period is 24 hours.
+[18] 2026-04-06 11:01:18,949 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[18] 2026-04-06 11:01:19,011 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[18] 2026-04-06 11:01:19,014 DEBUG Last maintenance was run 1.8 hours ago, maintenance period is 24 hours.
+[18] 2026-04-06 11:01:19,014 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[18] 2026-04-06 11:01:19,105 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[18] 2026-04-06 11:01:19,107 DEBUG Last maintenance was run 1.8 hours ago, maintenance period is 24 hours.
+[18] 2026-04-06 11:01:19,107 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[19] 2026-04-07 05:21:52,336 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[19] 2026-04-07 05:21:52,336 DEBUG Last maintenance was run 20.2 hours ago, maintenance period is 24 hours.
+[19] 2026-04-07 05:21:52,337 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[19] 2026-04-07 05:21:52,372 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[19] 2026-04-07 05:21:52,372 DEBUG Last maintenance was run 20.2 hours ago, maintenance period is 24 hours.
+[19] 2026-04-07 05:21:52,372 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-07 09:08:24,496 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-07 09:08:24,498 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[13] 2026-04-07 09:08:24,498 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-07 09:08:24,546 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-07 09:08:24,547 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[13] 2026-04-07 09:08:24,547 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-07 11:01:29,856 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-07 11:01:29,858 DEBUG Last maintenance was run 25.8 hours ago, maintenance period is 24 hours.
+[10] 2026-04-07 11:01:29,858 INFO  Starting maintenance...
+[10] 2026-04-07 11:01:29,859 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[10] 2026-04-07 11:01:29,860 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[10] 2026-04-07 11:01:29,861 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[10] 2026-04-07 11:01:29,892 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[10] 2026-04-07 11:01:29,896 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[10] 2026-04-07 11:01:29,898 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[10] 2026-04-07 11:01:29,903 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[10] 2026-04-07 11:01:29,903 INFO  Maintenance finished.
+[10] 2026-04-07 11:01:29,904 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-07 11:01:29,962 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-07 11:01:29,962 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[10] 2026-04-07 11:01:29,963 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-07 11:01:30,040 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-07 11:01:30,042 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[10] 2026-04-07 11:01:30,042 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:24:42,951 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:24:42,953 DEBUG Last maintenance was run 45.4 hours ago, maintenance period is 24 hours.
+[15] 2026-04-09 08:24:42,953 INFO  Starting maintenance...
+[15] 2026-04-09 08:24:42,955 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[15] 2026-04-09 08:24:42,956 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[15] 2026-04-09 08:24:42,959 INFO  File C:\ProgramData\MspPlatform\PME\archives\ThirdPartyPatch_2.13.11.5031.exe deleted.
+[15] 2026-04-09 08:24:42,960 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[15] 2026-04-09 08:24:42,963 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[15] 2026-04-09 08:24:42,964 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[15] 2026-04-09 08:24:42,965 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_671343.json deleted.
+[15] 2026-04-09 08:24:42,966 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[15] 2026-04-09 08:24:42,969 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[15] 2026-04-09 08:24:42,970 INFO  Maintenance finished.
+[15] 2026-04-09 08:24:42,970 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:24:43,023 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:24:43,024 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-09 08:24:43,024 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:25:43,427 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:25:43,427 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-09 08:25:43,427 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:25:43,468 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:25:43,468 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-09 08:25:43,468 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:25:43,514 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:25:43,515 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-09 08:25:43,515 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:37:09,767 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:37:09,768 DEBUG Last maintenance was run 0.2 hours ago, maintenance period is 24 hours.
+[15] 2026-04-09 08:37:09,768 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:37:09,796 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 08:37:09,796 DEBUG Last maintenance was run 0.2 hours ago, maintenance period is 24 hours.
+[15] 2026-04-09 08:37:09,797 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 11:13:24,541 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 11:13:24,542 DEBUG Last maintenance was run 2.8 hours ago, maintenance period is 24 hours.
+[15] 2026-04-09 11:13:24,543 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 11:13:24,616 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 11:13:24,617 DEBUG Last maintenance was run 2.8 hours ago, maintenance period is 24 hours.
+[15] 2026-04-09 11:13:24,617 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 11:13:24,728 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-09 11:13:24,729 DEBUG Last maintenance was run 2.8 hours ago, maintenance period is 24 hours.
+[15] 2026-04-09 11:13:24,730 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-10 07:27:20,378 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-10 07:27:20,379 DEBUG Last maintenance was run 23.0 hours ago, maintenance period is 24 hours.
+[17] 2026-04-10 07:27:20,379 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-10 07:27:20,425 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-10 07:27:20,426 DEBUG Last maintenance was run 23.0 hours ago, maintenance period is 24 hours.
+[17] 2026-04-10 07:27:20,426 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-12 08:26:40,953 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-12 08:26:40,955 DEBUG Last maintenance was run 72.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-12 08:26:40,956 INFO  Starting maintenance...
+[12] 2026-04-12 08:26:40,957 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[12] 2026-04-12 08:26:40,958 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[12] 2026-04-12 08:26:40,959 INFO  File C:\ProgramData\MspPlatform\PME\archives\PMESetup_2.13.13.5640.exe deleted.
+[12] 2026-04-12 08:26:40,960 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[12] 2026-04-12 08:26:40,961 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260310090109_1.xml deleted.
+[12] 2026-04-12 08:26:40,962 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260311091001_1.xml deleted.
+[12] 2026-04-12 08:26:40,963 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260312100814_1.xml deleted.
+[12] 2026-04-12 08:26:40,966 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\71563eb2-c3d9-49ad-88a1-ff575396a188-Installation deleted.
+[12] 2026-04-12 08:26:40,967 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\795d23d2-37ee-494b-9906-2967ffc02ef4-Installation deleted.
+[12] 2026-04-12 08:26:40,968 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\b98198fc-0776-49e2-8a96-dede64191d5c-Installation deleted.
+[12] 2026-04-12 08:26:40,969 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\bc6ca75f-ceac-4f68-a0a1-b3ccd1eac8d6-Installation deleted.
+[12] 2026-04-12 08:26:40,970 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\c76f6748-fa6a-4feb-9121-798da084a057-Installation deleted.
+[12] 2026-04-12 08:26:40,970 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[12] 2026-04-12 08:26:40,972 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[12] 2026-04-12 08:26:40,973 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_158554062.json deleted.
+[12] 2026-04-12 08:26:40,974 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_161715046.json deleted.
+[12] 2026-04-12 08:26:40,975 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_68704093.json deleted.
+[12] 2026-04-12 08:26:40,976 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_75328750.json deleted.
+[12] 2026-04-12 08:26:40,977 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_79903328.json deleted.
+[12] 2026-04-12 08:26:40,978 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_87059500.json deleted.
+[12] 2026-04-12 08:26:40,979 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[12] 2026-04-12 08:26:40,983 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[12] 2026-04-12 08:26:40,984 INFO  Maintenance finished.
+[12] 2026-04-12 08:26:40,984 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-12 08:26:41,038 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-12 08:26:41,039 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-12 08:26:41,040 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-12 08:26:41,282 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-12 08:26:41,283 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-12 08:26:41,284 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-12 08:29:42,199 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-12 08:29:42,200 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[12] 2026-04-12 08:29:42,201 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-12 08:29:42,234 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-12 08:29:42,234 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[12] 2026-04-12 08:29:42,234 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:00:07,660 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:00:07,661 DEBUG Last maintenance was run 0.6 hours ago, maintenance period is 24 hours.
+[11] 2026-04-12 09:00:07,661 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:00:07,686 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:00:07,687 DEBUG Last maintenance was run 0.6 hours ago, maintenance period is 24 hours.
+[11] 2026-04-12 09:00:07,687 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:00:08,717 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:00:08,718 DEBUG Last maintenance was run 0.6 hours ago, maintenance period is 24 hours.
+[11] 2026-04-12 09:00:08,718 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:02:08,184 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:02:08,185 DEBUG Last maintenance was run 0.6 hours ago, maintenance period is 24 hours.
+[11] 2026-04-12 09:02:08,185 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:02:08,215 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:02:08,215 DEBUG Last maintenance was run 0.6 hours ago, maintenance period is 24 hours.
+[11] 2026-04-12 09:02:08,215 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:02:08,246 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-12 09:02:08,246 DEBUG Last maintenance was run 0.6 hours ago, maintenance period is 24 hours.
+[11] 2026-04-12 09:02:08,247 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-12 10:52:45,486 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-12 10:52:45,486 DEBUG Last maintenance was run 2.4 hours ago, maintenance period is 24 hours.
+[14] 2026-04-12 10:52:45,486 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-12 10:52:45,513 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-12 10:52:45,513 DEBUG Last maintenance was run 2.4 hours ago, maintenance period is 24 hours.
+[14] 2026-04-12 10:52:45,513 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-12 10:52:45,550 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-12 10:52:45,551 DEBUG Last maintenance was run 2.4 hours ago, maintenance period is 24 hours.
+[14] 2026-04-12 10:52:45,551 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-12 11:00:58,131 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-12 11:00:58,131 DEBUG Last maintenance was run 2.6 hours ago, maintenance period is 24 hours.
+[15] 2026-04-12 11:00:58,132 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-12 11:00:58,161 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-12 11:00:58,162 DEBUG Last maintenance was run 2.6 hours ago, maintenance period is 24 hours.
+[15] 2026-04-12 11:00:58,162 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-12 11:00:58,195 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-12 11:00:58,197 DEBUG Last maintenance was run 2.6 hours ago, maintenance period is 24 hours.
+[15] 2026-04-12 11:00:58,197 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-13 08:36:32,233 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-13 08:36:32,234 DEBUG Last maintenance was run 24.2 hours ago, maintenance period is 24 hours.
+[12] 2026-04-13 08:36:32,234 INFO  Starting maintenance...
+[12] 2026-04-13 08:36:32,235 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[12] 2026-04-13 08:36:32,235 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[12] 2026-04-13 08:36:32,235 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[12] 2026-04-13 08:36:32,237 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[12] 2026-04-13 08:36:32,238 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[12] 2026-04-13 08:36:32,238 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[12] 2026-04-13 08:36:32,271 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[12] 2026-04-13 08:36:32,272 INFO  Maintenance finished.
+[12] 2026-04-13 08:36:32,272 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-13 08:36:32,309 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-13 08:36:32,310 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-13 08:36:32,311 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:00:45,347 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:00:45,348 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[8] 2026-04-13 09:00:45,349 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:00:45,376 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:00:45,376 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[8] 2026-04-13 09:00:45,377 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:00:45,590 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:00:45,590 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[8] 2026-04-13 09:00:45,590 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:02:45,889 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:02:45,889 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[8] 2026-04-13 09:02:45,890 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:02:45,919 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:02:45,920 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[8] 2026-04-13 09:02:45,920 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:02:45,961 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-13 09:02:45,962 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[8] 2026-04-13 09:02:45,962 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-13 11:10:12,251 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-13 11:10:12,252 DEBUG Last maintenance was run 2.6 hours ago, maintenance period is 24 hours.
+[9] 2026-04-13 11:10:12,253 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-13 11:10:12,319 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-13 11:10:12,320 DEBUG Last maintenance was run 2.6 hours ago, maintenance period is 24 hours.
+[9] 2026-04-13 11:10:12,321 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-13 11:10:12,412 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-13 11:10:12,413 DEBUG Last maintenance was run 2.6 hours ago, maintenance period is 24 hours.
+[9] 2026-04-13 11:10:12,414 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-14 09:04:59,516 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-14 09:04:59,557 DEBUG Last maintenance was run 24.5 hours ago, maintenance period is 24 hours.
+[4] 2026-04-14 09:04:59,557 INFO  Starting maintenance...
+[4] 2026-04-14 09:04:59,562 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[4] 2026-04-14 09:04:59,565 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[4] 2026-04-14 09:04:59,568 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[4] 2026-04-14 09:04:59,573 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[4] 2026-04-14 09:04:59,575 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[4] 2026-04-14 09:04:59,579 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[4] 2026-04-14 09:04:59,607 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[4] 2026-04-14 09:04:59,607 INFO  Maintenance finished.
+[4] 2026-04-14 09:04:59,607 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-14 09:04:59,731 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-14 09:04:59,732 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-14 09:04:59,732 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-14 09:05:00,591 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-14 09:05:00,592 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-14 09:05:00,592 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-14 09:06:53,871 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-14 09:06:53,872 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[10] 2026-04-14 09:06:53,873 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-14 09:06:53,913 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-14 09:06:53,914 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[10] 2026-04-14 09:06:53,914 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-14 09:06:53,979 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-14 09:06:53,980 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[10] 2026-04-14 09:06:53,981 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-14 09:08:54,596 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-14 09:08:54,596 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[10] 2026-04-14 09:08:54,597 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-14 09:08:54,638 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-14 09:08:54,639 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[10] 2026-04-14 09:08:54,640 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-14 11:01:55,889 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-14 11:01:55,891 DEBUG Last maintenance was run 1.9 hours ago, maintenance period is 24 hours.
+[11] 2026-04-14 11:01:55,891 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-14 11:01:55,992 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-14 11:01:55,993 DEBUG Last maintenance was run 1.9 hours ago, maintenance period is 24 hours.
+[11] 2026-04-14 11:01:55,994 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-14 11:01:56,100 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-14 11:01:56,101 DEBUG Last maintenance was run 1.9 hours ago, maintenance period is 24 hours.
+[11] 2026-04-14 11:01:56,102 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-15 08:24:51,471 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-15 08:24:51,474 DEBUG Last maintenance was run 23.3 hours ago, maintenance period is 24 hours.
+[10] 2026-04-15 08:24:51,474 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-15 08:24:51,530 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-15 08:24:51,531 DEBUG Last maintenance was run 23.3 hours ago, maintenance period is 24 hours.
+[10] 2026-04-15 08:24:51,531 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-15 09:00:07,338 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-15 09:00:07,339 DEBUG Last maintenance was run 23.9 hours ago, maintenance period is 24 hours.
+[12] 2026-04-15 09:00:07,339 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-15 09:00:07,370 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-15 09:00:07,370 DEBUG Last maintenance was run 23.9 hours ago, maintenance period is 24 hours.
+[12] 2026-04-15 09:00:07,370 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-15 11:01:22,014 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-15 11:01:22,015 DEBUG Last maintenance was run 25.9 hours ago, maintenance period is 24 hours.
+[10] 2026-04-15 11:01:22,015 INFO  Starting maintenance...
+[10] 2026-04-15 11:01:22,016 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[10] 2026-04-15 11:01:22,016 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[10] 2026-04-15 11:01:22,017 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[10] 2026-04-15 11:01:22,019 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260315094359_1.xml deleted.
+[10] 2026-04-15 11:01:22,019 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260316090655_1.xml deleted.
+[10] 2026-04-15 11:01:22,020 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\0b5db432-4ae5-4ec9-a250-42b3e1b714da-Installation deleted.
+[10] 2026-04-15 11:01:22,021 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\1092a81e-6385-4289-92be-fda86b4a9627-Installation deleted.
+[10] 2026-04-15 11:01:22,022 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[10] 2026-04-15 11:01:22,023 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[10] 2026-04-15 11:01:22,024 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_416345343.json deleted.
+[10] 2026-04-15 11:01:22,025 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_420927562.json deleted.
+[10] 2026-04-15 11:01:22,025 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_500485171.json deleted.
+[10] 2026-04-15 11:01:22,026 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[10] 2026-04-15 11:01:22,028 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[10] 2026-04-15 11:01:22,028 INFO  Maintenance finished.
+[10] 2026-04-15 11:01:22,028 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-15 11:01:22,055 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-15 11:01:22,055 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[10] 2026-04-15 11:01:22,056 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-15 11:01:22,089 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-15 11:01:22,090 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[10] 2026-04-15 11:01:22,090 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[18] 2026-04-16 08:41:22,833 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[18] 2026-04-16 08:41:22,834 DEBUG Last maintenance was run 21.7 hours ago, maintenance period is 24 hours.
+[18] 2026-04-16 08:41:22,834 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[18] 2026-04-16 08:41:22,870 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[18] 2026-04-16 08:41:22,871 DEBUG Last maintenance was run 21.7 hours ago, maintenance period is 24 hours.
+[18] 2026-04-16 08:41:22,871 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:00:30,982 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:00:30,982 DEBUG Last maintenance was run 22.0 hours ago, maintenance period is 24 hours.
+[11] 2026-04-16 09:00:30,983 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:00:31,008 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:00:31,009 DEBUG Last maintenance was run 22.0 hours ago, maintenance period is 24 hours.
+[11] 2026-04-16 09:00:31,009 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:00:31,365 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:00:31,366 DEBUG Last maintenance was run 22.0 hours ago, maintenance period is 24 hours.
+[11] 2026-04-16 09:00:31,366 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:30:39,089 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:30:39,091 DEBUG Last maintenance was run 22.5 hours ago, maintenance period is 24 hours.
+[11] 2026-04-16 09:30:39,091 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:30:39,120 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:30:39,121 DEBUG Last maintenance was run 22.5 hours ago, maintenance period is 24 hours.
+[11] 2026-04-16 09:30:39,121 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:30:39,155 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-16 09:30:39,156 DEBUG Last maintenance was run 22.5 hours ago, maintenance period is 24 hours.
+[11] 2026-04-16 09:30:39,156 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-16 11:01:48,788 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-16 11:01:48,789 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[9] 2026-04-16 11:01:48,789 INFO  Starting maintenance...
+[9] 2026-04-16 11:01:48,790 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[9] 2026-04-16 11:01:48,790 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[9] 2026-04-16 11:01:48,791 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[9] 2026-04-16 11:01:48,791 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260317091043_1.xml deleted.
+[9] 2026-04-16 11:01:48,792 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\5b850e92-f7f5-4358-a8ad-93a304a17ecf-Installation deleted.
+[9] 2026-04-16 11:01:48,793 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[9] 2026-04-16 11:01:48,793 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[9] 2026-04-16 11:01:48,794 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_507312703.json deleted.
+[9] 2026-04-16 11:01:48,794 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_587125546.json deleted.
+[9] 2026-04-16 11:01:48,795 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[9] 2026-04-16 11:01:48,796 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[9] 2026-04-16 11:01:48,797 INFO  Maintenance finished.
+[9] 2026-04-16 11:01:48,797 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-16 11:01:48,824 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-16 11:01:48,825 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[9] 2026-04-16 11:01:48,825 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-16 11:01:48,858 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-16 11:01:48,859 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[9] 2026-04-16 11:01:48,859 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-17 09:45:47,268 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-17 09:45:47,270 DEBUG Last maintenance was run 22.7 hours ago, maintenance period is 24 hours.
+[13] 2026-04-17 09:45:47,271 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-17 09:45:47,320 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-17 09:45:47,320 DEBUG Last maintenance was run 22.7 hours ago, maintenance period is 24 hours.
+[13] 2026-04-17 09:45:47,321 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-18 08:33:59,473 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-18 08:33:59,475 DEBUG Last maintenance was run 45.5 hours ago, maintenance period is 24 hours.
+[13] 2026-04-18 08:33:59,475 INFO  Starting maintenance...
+[13] 2026-04-18 08:33:59,476 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[13] 2026-04-18 08:33:59,478 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[13] 2026-04-18 08:33:59,480 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[13] 2026-04-18 08:33:59,482 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[13] 2026-04-18 08:33:59,483 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[13] 2026-04-18 08:33:59,485 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_593897953.json deleted.
+[13] 2026-04-18 08:33:59,486 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[13] 2026-04-18 08:33:59,492 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[13] 2026-04-18 08:33:59,492 INFO  Maintenance finished.
+[13] 2026-04-18 08:33:59,493 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-18 08:33:59,539 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-18 08:33:59,539 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[13] 2026-04-18 08:33:59,540 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-18 08:33:59,606 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-18 08:33:59,606 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[13] 2026-04-18 08:33:59,607 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-19 08:33:13,083 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-19 08:33:13,084 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[17] 2026-04-19 08:33:13,084 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-19 08:33:13,139 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-19 08:33:13,140 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[17] 2026-04-19 08:33:13,141 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-19 08:34:15,589 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-19 08:34:15,590 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[17] 2026-04-19 08:34:15,590 INFO  Starting maintenance...
+[17] 2026-04-19 08:34:15,590 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[17] 2026-04-19 08:34:15,591 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[17] 2026-04-19 08:34:15,592 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[17] 2026-04-19 08:34:15,593 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260319094125_1.xml deleted.
+[17] 2026-04-19 08:34:15,595 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[17] 2026-04-19 08:34:15,596 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[17] 2026-04-19 08:34:15,597 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_761781781.json deleted.
+[17] 2026-04-19 08:34:15,598 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[17] 2026-04-19 08:34:15,601 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[17] 2026-04-19 08:34:15,602 INFO  Maintenance finished.
+[17] 2026-04-19 08:34:15,602 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-19 08:34:15,650 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-19 08:34:15,651 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[17] 2026-04-19 08:34:15,651 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-19 08:34:15,703 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[17] 2026-04-19 08:34:15,704 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[17] 2026-04-19 08:34:15,704 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-19 09:00:01,731 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-19 09:00:01,733 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[14] 2026-04-19 09:00:01,734 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-19 09:00:01,802 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-19 09:00:01,803 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[14] 2026-04-19 09:00:01,803 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-19 09:00:31,401 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-19 09:00:31,403 DEBUG Last maintenance was run 0.4 hours ago, maintenance period is 24 hours.
+[14] 2026-04-19 09:00:31,403 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[16] 2026-04-19 09:04:04,920 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[16] 2026-04-19 09:04:04,920 DEBUG Last maintenance was run 0.5 hours ago, maintenance period is 24 hours.
+[16] 2026-04-19 09:04:04,921 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[16] 2026-04-19 09:04:04,946 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[16] 2026-04-19 09:04:04,946 DEBUG Last maintenance was run 0.5 hours ago, maintenance period is 24 hours.
+[16] 2026-04-19 09:04:04,946 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[16] 2026-04-19 09:04:04,976 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[16] 2026-04-19 09:04:04,976 DEBUG Last maintenance was run 0.5 hours ago, maintenance period is 24 hours.
+[16] 2026-04-19 09:04:04,978 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-19 11:00:38,112 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-19 11:00:38,113 DEBUG Last maintenance was run 2.4 hours ago, maintenance period is 24 hours.
+[4] 2026-04-19 11:00:38,113 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-19 11:00:38,145 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-19 11:00:38,145 DEBUG Last maintenance was run 2.4 hours ago, maintenance period is 24 hours.
+[4] 2026-04-19 11:00:38,145 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-19 11:00:38,179 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-19 11:00:38,180 DEBUG Last maintenance was run 2.4 hours ago, maintenance period is 24 hours.
+[4] 2026-04-19 11:00:38,180 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-20 08:16:33,798 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-20 08:16:33,799 DEBUG Last maintenance was run 23.7 hours ago, maintenance period is 24 hours.
+[8] 2026-04-20 08:16:33,800 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-20 08:16:33,840 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-20 08:16:33,841 DEBUG Last maintenance was run 23.7 hours ago, maintenance period is 24 hours.
+[8] 2026-04-20 08:16:33,841 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:03:35,845 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:03:35,847 DEBUG Last maintenance was run 24.5 hours ago, maintenance period is 24 hours.
+[15] 2026-04-20 09:03:35,848 INFO  Starting maintenance...
+[15] 2026-04-20 09:03:35,849 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[15] 2026-04-20 09:03:35,851 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[15] 2026-04-20 09:03:35,852 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[15] 2026-04-20 09:03:35,853 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[15] 2026-04-20 09:03:35,856 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[15] 2026-04-20 09:03:35,860 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[15] 2026-04-20 09:03:35,864 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[15] 2026-04-20 09:03:35,866 INFO  Maintenance finished.
+[15] 2026-04-20 09:03:35,867 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:03:35,937 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:03:35,938 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-20 09:03:35,939 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:07:20,607 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:07:20,609 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[15] 2026-04-20 09:07:20,611 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:08:15,738 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:08:15,740 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[15] 2026-04-20 09:08:15,740 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:08:15,803 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:08:15,804 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[15] 2026-04-20 09:08:15,805 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:08:15,879 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-20 09:08:15,880 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[15] 2026-04-20 09:08:15,880 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-20 11:01:50,600 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-20 11:01:50,602 DEBUG Last maintenance was run 2.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-20 11:01:50,602 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-20 11:01:50,664 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-20 11:01:50,664 DEBUG Last maintenance was run 2.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-20 11:01:50,666 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-20 11:01:50,735 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-20 11:01:50,737 DEBUG Last maintenance was run 2.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-20 11:01:50,739 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-21 09:05:18,241 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-21 09:05:18,242 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-21 09:05:18,242 INFO  Starting maintenance...
+[15] 2026-04-21 09:05:18,243 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[15] 2026-04-21 09:05:18,244 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[15] 2026-04-21 09:05:18,246 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[15] 2026-04-21 09:05:18,247 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[15] 2026-04-21 09:05:18,248 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[15] 2026-04-21 09:05:18,250 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[15] 2026-04-21 09:05:18,253 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[15] 2026-04-21 09:05:18,254 INFO  Maintenance finished.
+[15] 2026-04-21 09:05:18,254 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-21 09:05:18,297 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-21 09:05:18,299 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-21 09:05:18,299 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-21 09:05:28,556 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-21 09:05:28,557 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-21 09:05:28,557 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-21 09:51:19,526 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-21 09:51:19,527 DEBUG Last maintenance was run 0.8 hours ago, maintenance period is 24 hours.
+[14] 2026-04-21 09:51:19,527 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-21 09:51:19,556 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-21 09:51:19,557 DEBUG Last maintenance was run 0.8 hours ago, maintenance period is 24 hours.
+[14] 2026-04-21 09:51:19,557 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-21 09:51:19,602 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-21 09:51:19,603 DEBUG Last maintenance was run 0.8 hours ago, maintenance period is 24 hours.
+[14] 2026-04-21 09:51:19,603 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-21 09:53:20,507 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-21 09:53:20,508 DEBUG Last maintenance was run 0.8 hours ago, maintenance period is 24 hours.
+[15] 2026-04-21 09:53:20,509 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-21 09:53:20,573 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-21 09:53:20,573 DEBUG Last maintenance was run 0.8 hours ago, maintenance period is 24 hours.
+[15] 2026-04-21 09:53:20,574 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-23 08:44:38,635 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-23 08:44:38,637 DEBUG Last maintenance was run 47.7 hours ago, maintenance period is 24 hours.
+[4] 2026-04-23 08:44:38,637 INFO  Starting maintenance...
+[4] 2026-04-23 08:44:38,639 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[4] 2026-04-23 08:44:38,640 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[4] 2026-04-23 08:44:38,641 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[4] 2026-04-23 08:44:38,645 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[4] 2026-04-23 08:44:38,646 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[4] 2026-04-23 08:44:38,649 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[4] 2026-04-23 08:44:38,653 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[4] 2026-04-23 08:44:38,654 INFO  Maintenance finished.
+[4] 2026-04-23 08:44:38,655 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-23 08:44:38,719 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-23 08:44:38,721 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-23 08:44:38,723 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-23 08:44:38,801 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-23 08:44:38,802 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-23 08:44:38,802 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-23 08:46:39,231 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-23 08:46:39,231 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-23 08:46:39,231 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-23 08:46:39,263 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-23 08:46:39,264 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-23 08:46:39,264 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-23 08:47:39,492 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-23 08:47:39,492 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[10] 2026-04-23 08:47:39,492 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-23 08:47:39,521 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-23 08:47:39,522 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[10] 2026-04-23 08:47:39,522 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-23 08:47:39,554 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-23 08:47:39,554 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[10] 2026-04-23 08:47:39,554 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-23 08:48:39,761 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-23 08:48:39,761 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[10] 2026-04-23 08:48:39,762 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-23 08:48:39,788 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-23 08:48:39,789 DEBUG Last maintenance was run 0.1 hours ago, maintenance period is 24 hours.
+[10] 2026-04-23 08:48:39,789 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-23 13:50:12,054 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-23 13:50:12,055 DEBUG Last maintenance was run 5.1 hours ago, maintenance period is 24 hours.
+[14] 2026-04-23 13:50:12,056 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-23 13:50:12,087 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-23 13:50:12,087 DEBUG Last maintenance was run 5.1 hours ago, maintenance period is 24 hours.
+[14] 2026-04-23 13:50:12,087 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-23 13:50:12,122 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[14] 2026-04-23 13:50:12,123 DEBUG Last maintenance was run 5.1 hours ago, maintenance period is 24 hours.
+[14] 2026-04-23 13:50:12,123 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-25 07:37:42,861 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-25 07:37:42,866 DEBUG Last maintenance was run 46.9 hours ago, maintenance period is 24 hours.
+[9] 2026-04-25 07:37:42,866 INFO  Starting maintenance...
+[9] 2026-04-25 07:37:42,867 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[9] 2026-04-25 07:37:42,869 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[9] 2026-04-25 07:37:42,870 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[9] 2026-04-25 07:37:42,871 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260325094647_1.xml deleted.
+[9] 2026-04-25 07:37:42,875 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\5d1c7bba-b21d-4dd2-8c0f-3962f9ca6509-Installation deleted.
+[9] 2026-04-25 07:37:42,876 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\9684e7f5-b4d1-4b0c-8a74-d398e819e46c-Installation deleted.
+[9] 2026-04-25 07:37:42,877 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[9] 2026-04-25 07:37:42,878 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[9] 2026-04-25 07:37:42,881 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1040089328.json deleted.
+[9] 2026-04-25 07:37:42,882 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1280305312.json deleted.
+[9] 2026-04-25 07:37:42,883 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1280557109.json deleted.
+[9] 2026-04-25 07:37:42,884 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1297565343.json deleted.
+[9] 2026-04-25 07:37:42,885 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[9] 2026-04-25 07:37:42,890 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[9] 2026-04-25 07:37:42,891 INFO  Maintenance finished.
+[9] 2026-04-25 07:37:42,891 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-25 07:37:42,950 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-25 07:37:42,951 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[9] 2026-04-25 07:37:42,951 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-25 07:38:46,485 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-25 07:38:46,486 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[13] 2026-04-25 07:38:46,487 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-25 07:38:46,518 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-25 07:38:46,519 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[13] 2026-04-25 07:38:46,519 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-25 07:38:46,569 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[13] 2026-04-25 07:38:46,569 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[13] 2026-04-25 07:38:46,569 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-26 08:06:27,521 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-26 08:06:27,522 DEBUG Last maintenance was run 24.5 hours ago, maintenance period is 24 hours.
+[15] 2026-04-26 08:06:27,523 INFO  Starting maintenance...
+[15] 2026-04-26 08:06:27,523 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[15] 2026-04-26 08:06:27,523 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[15] 2026-04-26 08:06:27,525 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[15] 2026-04-26 08:06:27,527 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260326092624_1.xml deleted.
+[15] 2026-04-26 08:06:27,529 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\423a4fe8-e093-4176-8b5b-ef29f4cba0f0-Installation deleted.
+[15] 2026-04-26 08:06:27,530 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\b2cfa72a-8953-4249-ae4c-07a19f86869f-Installation deleted.
+[15] 2026-04-26 08:06:27,532 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[15] 2026-04-26 08:06:27,533 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[15] 2026-04-26 08:06:27,534 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1365672875.json deleted.
+[15] 2026-04-26 08:06:27,534 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1371285390.json deleted.
+[15] 2026-04-26 08:06:27,535 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[15] 2026-04-26 08:06:27,537 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[15] 2026-04-26 08:06:27,538 INFO  Maintenance finished.
+[15] 2026-04-26 08:06:27,538 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-26 08:06:27,599 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-26 08:06:27,600 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-26 08:06:27,601 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-26 08:06:27,672 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-26 08:06:27,673 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-26 08:06:27,673 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-26 08:08:28,324 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-26 08:08:28,327 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-26 08:08:28,329 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-26 08:08:28,393 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[15] 2026-04-26 08:08:28,393 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[15] 2026-04-26 08:08:28,394 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:00:49,391 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:00:49,392 DEBUG Last maintenance was run 0.9 hours ago, maintenance period is 24 hours.
+[11] 2026-04-26 09:00:49,392 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:00:49,419 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:00:49,419 DEBUG Last maintenance was run 0.9 hours ago, maintenance period is 24 hours.
+[11] 2026-04-26 09:00:49,419 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:00:49,645 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:00:49,645 DEBUG Last maintenance was run 0.9 hours ago, maintenance period is 24 hours.
+[11] 2026-04-26 09:00:49,645 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:01:49,660 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:01:49,660 DEBUG Last maintenance was run 0.9 hours ago, maintenance period is 24 hours.
+[11] 2026-04-26 09:01:49,660 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:01:49,687 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:01:49,687 DEBUG Last maintenance was run 0.9 hours ago, maintenance period is 24 hours.
+[11] 2026-04-26 09:01:49,687 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:01:49,723 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-26 09:01:49,725 DEBUG Last maintenance was run 0.9 hours ago, maintenance period is 24 hours.
+[11] 2026-04-26 09:01:49,725 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-26 11:00:43,351 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-26 11:00:43,352 DEBUG Last maintenance was run 2.9 hours ago, maintenance period is 24 hours.
+[10] 2026-04-26 11:00:43,352 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-26 11:00:43,378 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-26 11:00:43,379 DEBUG Last maintenance was run 2.9 hours ago, maintenance period is 24 hours.
+[10] 2026-04-26 11:00:43,379 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-26 11:00:43,422 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-26 11:00:43,422 DEBUG Last maintenance was run 2.9 hours ago, maintenance period is 24 hours.
+[10] 2026-04-26 11:00:43,422 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-27 08:51:39,394 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-27 08:51:39,397 DEBUG Last maintenance was run 24.8 hours ago, maintenance period is 24 hours.
+[9] 2026-04-27 08:51:39,397 INFO  Starting maintenance...
+[9] 2026-04-27 08:51:39,398 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[9] 2026-04-27 08:51:39,398 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[9] 2026-04-27 08:51:39,399 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[9] 2026-04-27 08:51:39,400 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[9] 2026-04-27 08:51:39,401 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[9] 2026-04-27 08:51:39,402 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1530333953.json deleted.
+[9] 2026-04-27 08:51:39,403 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[9] 2026-04-27 08:51:39,406 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[9] 2026-04-27 08:51:39,406 INFO  Maintenance finished.
+[9] 2026-04-27 08:51:39,406 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-27 08:51:39,452 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-27 08:51:39,453 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[9] 2026-04-27 08:51:39,453 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[RequestHandlerAgentThread] 2026-04-27 08:51:47,492 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[RequestHandlerAgentThread] 2026-04-27 08:51:47,493 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[RequestHandlerAgentThread] 2026-04-27 08:51:47,493 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:00:43,806 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:00:43,829 DEBUG Last maintenance was run 72919.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-27 09:00:43,829 INFO  Starting maintenance...
+[4] 2026-04-27 09:00:43,832 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[4] 2026-04-27 09:00:43,834 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[4] 2026-04-27 09:00:43,835 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[4] 2026-04-27 09:00:43,836 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[4] 2026-04-27 09:00:43,837 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[4] 2026-04-27 09:00:43,839 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[4] 2026-04-27 09:00:43,853 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[4] 2026-04-27 09:00:43,853 INFO  Maintenance finished.
+[4] 2026-04-27 09:00:43,853 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:00:43,917 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:00:43,917 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-27 09:00:43,918 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:00:44,281 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:00:44,281 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-27 09:00:44,282 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:01:42,051 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:01:42,051 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-27 09:01:42,051 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:01:42,076 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:01:42,076 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-27 09:01:42,076 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:01:42,111 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 09:01:42,111 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[4] 2026-04-27 09:01:42,111 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 10:31:42,409 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 10:31:42,435 DEBUG Last maintenance was run 1.5 hours ago, maintenance period is 24 hours.
+[4] 2026-04-27 10:31:42,435 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 10:31:42,498 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 10:31:42,503 DEBUG Last maintenance was run 1.5 hours ago, maintenance period is 24 hours.
+[4] 2026-04-27 10:31:42,503 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 10:31:42,744 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[4] 2026-04-27 10:31:42,744 DEBUG Last maintenance was run 1.5 hours ago, maintenance period is 24 hours.
+[4] 2026-04-27 10:31:42,744 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-27 11:01:50,505 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-27 11:01:50,505 DEBUG Last maintenance was run 2.0 hours ago, maintenance period is 24 hours.
+[8] 2026-04-27 11:01:50,505 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-27 11:01:50,536 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-27 11:01:50,536 DEBUG Last maintenance was run 2.0 hours ago, maintenance period is 24 hours.
+[8] 2026-04-27 11:01:50,536 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-27 11:01:50,569 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[8] 2026-04-27 11:01:50,569 DEBUG Last maintenance was run 2.0 hours ago, maintenance period is 24 hours.
+[8] 2026-04-27 11:01:50,569 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-28 08:59:01,499 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-28 08:59:01,500 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[11] 2026-04-28 08:59:01,501 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-28 08:59:01,556 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-28 08:59:01,556 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[11] 2026-04-28 08:59:01,558 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-28 09:00:01,830 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-28 09:00:01,830 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[11] 2026-04-28 09:00:01,830 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-28 09:00:01,854 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[11] 2026-04-28 09:00:01,854 DEBUG Last maintenance was run 24.0 hours ago, maintenance period is 24 hours.
+[11] 2026-04-28 09:00:01,854 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-28 11:12:58,324 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-28 11:12:58,334 DEBUG Last maintenance was run 26.2 hours ago, maintenance period is 24 hours.
+[12] 2026-04-28 11:12:58,334 INFO  Starting maintenance...
+[12] 2026-04-28 11:12:58,341 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[12] 2026-04-28 11:12:58,343 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[12] 2026-04-28 11:12:58,345 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[12] 2026-04-28 11:12:58,345 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260329090242_1.xml deleted.
+[12] 2026-04-28 11:12:58,349 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\4d69bd5e-0bb4-4e24-a64c-48655d19e02b-Installation deleted.
+[12] 2026-04-28 11:12:58,349 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\b3299488-8cc5-405e-a1f4-304855b2e644-Installation deleted.
+[12] 2026-04-28 11:12:58,349 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[12] 2026-04-28 11:12:58,349 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[12] 2026-04-28 11:12:58,359 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1616864671.json deleted.
+[12] 2026-04-28 11:12:58,364 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1619879218.json deleted.
+[12] 2026-04-28 11:12:58,364 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1627112593.json deleted.
+[12] 2026-04-28 11:12:58,364 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[12] 2026-04-28 11:12:58,401 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[12] 2026-04-28 11:12:58,401 INFO  Maintenance finished.
+[12] 2026-04-28 11:12:58,401 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-28 11:12:58,428 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-28 11:12:58,428 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-28 11:12:58,428 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-28 11:12:58,464 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-28 11:12:58,464 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-28 11:12:58,464 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-29 09:42:38,638 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-29 09:42:38,638 DEBUG Last maintenance was run 22.5 hours ago, maintenance period is 24 hours.
+[10] 2026-04-29 09:42:38,638 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-29 09:42:38,687 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[10] 2026-04-29 09:42:38,687 DEBUG Last maintenance was run 22.5 hours ago, maintenance period is 24 hours.
+[10] 2026-04-29 09:42:38,687 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-30 09:23:18,282 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-30 09:23:18,284 DEBUG Last maintenance was run 46.2 hours ago, maintenance period is 24 hours.
+[12] 2026-04-30 09:23:18,284 INFO  Starting maintenance...
+[12] 2026-04-30 09:23:18,286 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\*.* which are older than 30 days...
+[12] 2026-04-30 09:23:18,286 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\archives\*.* which are older than 30 days...
+[12] 2026-04-30 09:23:18,288 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\data\*.* which are older than 30 days...
+[12] 2026-04-30 09:23:18,291 INFO  File C:\ProgramData\MspPlatform\PME\data\Pme.Install_20260330090059_1.xml deleted.
+[12] 2026-04-30 09:23:18,293 INFO  File C:\ProgramData\MspPlatform\PME\data\ActionResults\7c46d84b-e4c8-4dba-a3f9-b1e9818bb7ff-Installation deleted.
+[12] 2026-04-30 09:23:18,293 DEBUG Deleting files in C:\ProgramData\MspPlatform\PME\ThirdPartyPatch\Downloads\*.* which are older than 30 days...
+[12] 2026-04-30 09:23:18,295 DEBUG Deleting files in C:\Program Files (x86)\Advanced Monitoring Agent\scans\*.* which are older than 30 days...
+[12] 2026-04-30 09:23:18,296 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1706170578.json deleted.
+[12] 2026-04-30 09:23:18,297 INFO  File C:\Program Files (x86)\Advanced Monitoring Agent\scans\PatchMan_1713342343.json deleted.
+[12] 2026-04-30 09:23:18,297 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => deleting old configuration file [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[12] 2026-04-30 09:23:18,305 DEBUG PME.Core.Maintenance.PmeMaintenanceConfigurationProvider.SaveConfiguration => file successfully saved [C:\ProgramData\MspPlatform\PME\Config\Maintenance.xml]
+[12] 2026-04-30 09:23:18,305 INFO  Maintenance finished.
+[12] 2026-04-30 09:23:18,307 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-30 09:23:18,349 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-30 09:23:18,349 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-30 09:23:18,351 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-30 09:23:18,424 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-30 09:23:18,426 DEBUG Last maintenance was run 0.0 hours ago, maintenance period is 24 hours.
+[12] 2026-04-30 09:23:18,427 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-30 09:39:25,784 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-30 09:39:25,784 DEBUG Last maintenance was run 0.3 hours ago, maintenance period is 24 hours.
+[12] 2026-04-30 09:39:25,784 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-30 09:39:25,809 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[12] 2026-04-30 09:39:25,809 DEBUG Last maintenance was run 0.3 hours ago, maintenance period is 24 hours.
+[12] 2026-04-30 09:39:25,810 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-30 11:00:36,369 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-30 11:00:36,371 DEBUG Last maintenance was run 1.6 hours ago, maintenance period is 24 hours.
+[9] 2026-04-30 11:00:36,371 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-30 11:00:36,465 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-30 11:00:36,466 DEBUG Last maintenance was run 1.6 hours ago, maintenance period is 24 hours.
+[9] 2026-04-30 11:00:36,466 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-30 11:00:36,597 DEBUG Enter >>> PME.Core.Maintenance.Maintenance.Execute()
+[9] 2026-04-30 11:00:36,598 DEBUG Last maintenance was run 1.6 hours ago, maintenance period is 24 hours.
+[9] 2026-04-30 11:00:36,599 DEBUG Exit  <<< PME.Core.Maintenance.Maintenance.Execute()

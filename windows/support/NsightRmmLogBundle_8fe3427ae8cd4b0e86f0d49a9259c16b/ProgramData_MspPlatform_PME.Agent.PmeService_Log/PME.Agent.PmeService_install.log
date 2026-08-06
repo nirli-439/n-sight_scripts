@@ -1,0 +1,87 @@
+﻿
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log.
+Installing assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe
+   logfile = C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log
+Installing service PME.Agent.PmeService...
+Service PME.Agent.PmeService has been successfully installed.
+Creating EventLog source PME.Agent.PmeService in log Application...
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log.
+Committing assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe
+   logfile = C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log.
+Installing assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe
+   logfile = C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log
+Installing service PME.Agent.PmeService...
+Creating EventLog source PME.Agent.PmeService in log Application...
+
+An exception occurred during the Install phase.
+System.ComponentModel.Win32Exception: The specified service already exists
+
+The Rollback phase of the installation is beginning.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log.
+Rolling back assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe
+   logfile = C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log
+Restoring event log to previous state for source PME.Agent.PmeService.
+
+The Rollback phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log.
+Installing assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe
+   logfile = C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log
+Installing service PME.Agent.PmeService...
+Creating EventLog source PME.Agent.PmeService in log Application...
+
+An exception occurred during the Install phase.
+System.ComponentModel.Win32Exception: The specified service already exists
+
+The Rollback phase of the installation is beginning.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log.
+Rolling back assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\patchman\PME.Agent.exe
+   logfile = C:\ProgramData\MspPlatform\PME.Agent.PmeService\log\PME.Agent.PmeService_install.log
+Restoring event log to previous state for source PME.Agent.PmeService.
+
+The Rollback phase completed successfully.
+
+The transacted install has completed.

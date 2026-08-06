@@ -1,0 +1,81 @@
+﻿
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log.
+Installing assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe
+Installing service SolarWinds.MSP.RpcServerService...
+Service SolarWinds.MSP.RpcServerService has been successfully installed.
+Creating EventLog source SolarWinds.MSP.RpcServerService in log Application...
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log.
+Committing assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log.
+Installing assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe
+Installing service SolarWinds.MSP.RpcServerService...
+Service SolarWinds.MSP.RpcServerService has been successfully installed.
+Creating EventLog source SolarWinds.MSP.RpcServerService in log Application...
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log.
+Committing assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log.
+Installing assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe
+Installing service SolarWinds.MSP.RpcServerService...
+Service SolarWinds.MSP.RpcServerService has been successfully installed.
+Creating EventLog source SolarWinds.MSP.RpcServerService in log Application...
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe assembly's progress.
+The file is located at C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log.
+Committing assembly 'C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\ProgramData\MspPlatform\SolarWinds.MSP.RpcServerService\log\SolarWinds.MSP.RpcServerService_install.log
+   assemblypath = C:\Program Files (x86)\Advanced Monitoring Agent\RequestHandlerAgent\RequestHandlerAgent.exe
+
+The Commit phase completed successfully.
+
+The transacted install has completed.

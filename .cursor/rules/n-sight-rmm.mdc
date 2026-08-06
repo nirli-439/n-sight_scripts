@@ -1,0 +1,159 @@
+---
+description: N-able N-sight RMM — agent deployment, monitoring, and platform context for Cursor AI
+globs: ["**/*.ps1", "**/*.sh", "**/*.py", "**/checks/**", "**/tasks/**", "**/policies/**"]
+alwaysApply: true
+---
+
+# N-able N-sight RMM — Cursor AI Rules
+
+## AUTHORITY ORDER — READ FIRST
+
+When rules conflict, this is the precedence:
+
+1. `N-SIGHT_SCRIPT_STANDARDS.md` — **wins for all scripting decisions** (exit codes, output format, limits, templates, execution context)
+2. This file — platform/deployment context and agent management guidance
+3. N-able official docs — https://documentation.n-able.com/remote-management/userguide/
+
+If anything below contradicts `N-SIGHT_SCRIPT_STANDARDS.md`, follow the standards doc.
+
+---
+
+## DOCUMENTATION RETRIEVAL POLICY (MANDATORY)
+
+When working on any N-sight service, API, agent deployment, monitoring integration, or platform behavior:
+
+- Retrieve the relevant guidance from official N-able N-sight documentation first (or confirm against it before finalizing).
+- Prefer exact N-able documented behavior over assumptions or generic RMM patterns.
+- If docs and local assumptions differ, follow the documentation and update the script/plan accordingly.
+- Cite the specific documentation page used in notes, commit message context, or change explanation when practical.
+- If documentation is unclear or unavailable, state that uncertainty explicitly and propose a safe fallback.
+
+---
+
+## SCRIPTING — DEFER TO N-SIGHT_SCRIPT_STANDARDS.md
+
+**Do not use generic exit code patterns (0/1) for N-sight scripts.**
+Always follow the repo standard:
+
+```
+0     = Success
+1001  = Warning
+1002  = Critical Error
+1003+ = Custom errors
+1–999 = RESERVED by N-sight system — never use
+```
+
+Before writing any script also check:
+- Output limits: 10,000 chars total, 255 chars dashboard display (first line)
+- Script size: 65,535 char max
+- Execution: SYSTEM/root, Session 0, no user interaction, no GUI
+- First output line format: `<STATUS>: <message>` where STATUS = OK | PASS | WARNING | CRITICAL
+- Linux scripts must run on **both Fedora and Ubuntu** in a single file (branch on distro at runtime)
+- All scripts must be idempotent — safe to re-run
+
+Refer to `N-SIGHT_SCRIPT_STANDARDS.md` for full templates, naming conventions, and the script inventory.
+
+---
+
+## PLATFORM CONTEXT — AGENT DEPLOYMENT
+
+### Core rules (all platforms)
+- Agent types: Windows Agent, Mac Agent, Linux Agent (V2 only — V1 is EOL, remove on sight)
+- Each agent gets a unique UUID. **Never image/clone after agent install** — install agent post-clone
+- Agent → N-sight cloud over HTTPS TLS 1.2+. TLS 1.0/1.1 are blocked
+- Only current + previous GA releases supported. Use GA in production, never RC
+- Always assign a **Monitoring Template** at install time — never rely on Standard checks default
+
+### Windows
+- Preferred deploy: All Devices → Add Devices → download RW package → deploy via Intune/GPO/script
+- Package bakes in Client+Site auth — no manual login at endpoint
+- Manual install: run as Administrator, set proxy **before** entering credentials (use IP, not NetBIOS)
+- Workstation vs Server mode: only selectable on workstations; servers always install as Server
+- Name devices meaningfully — name appears in dashboard, alerts, reports (e.g. `hostname-dept-loc`)
+- If package credentials change → regenerate the package
+
+### macOS
+- Preferred deploy: RW package via MDM (Jamf / ABM / N-sight DMA) for zero-touch
+- Only Remote Worker installer available for Mac — no legacy site package
+- Post-install: grant **Full Disk Access + Accessibility** in System Settings → Privacy & Security
+- Take Control also needs **Screen Recording** permission
+- Pre-approve PKG via MDM profile to avoid Gatekeeper blocks
+- Use Device Management for Apple (DMA) for corporate fleet where possible
+
+### Linux
+- **V2 agent only** — check for and replace any V1 installations
+- All Linux = Server mode (no workstation mode)
+- Preferred deploy: RW package → `chmod +x *.sh && sudo ./AGENT_CLIENT_SITE_RW.sh`
+- Manual: `sudo dpkg -i agent.deb` (Debian/Ubuntu) or `sudo rpm -i agent.rpm` (RHEL/Fedora)
+- Verify TLS 1.2: `openssl s_client -connect <territory-url>:443 -tls1_2`
+- Firewall: outbound TCP 443 to territory URL required — no inbound ports needed
+- Supported distros vary by feature — check https://documentation.n-able.com/remote-management/userguide/Content/linux_os.htm before deploying checks
+
+---
+
+## MONITORING TEMPLATES
+
+- Create one template per device role: `Template-Windows-Workstation`, `Template-Windows-Server`, `Template-Mac-Workstation`, `Template-Linux-Server`
+- Templates define: 24x7 checks, DSC, Automated Tasks, patch policy, MAV policy
+- Apply at install time (wizard) — bulk reassign via All Devices view if missed
+- Document template versions in Confluence with change records
+
+### Recommended check thresholds (starting point — tune per environment)
+| Check | Warning | Critical |
+|---|---|---|
+| CPU | 80% | 95% |
+| Memory | 85% | 95% |
+| Disk free | 15% | 5% |
+| AV defs age | 2 days | 4 days |
+
+---
+
+## ALERTING
+
+- Single destination preferred — route to Slack, not multiple targets simultaneously
+- Escalation: warning → notify; critical → notify + open ticket (Jira via webhook or MSP Manager)
+- Use Alert Suppression for maintenance windows
+
+---
+
+## NETWORK REQUIREMENTS
+
+Before deploying to a new network segment, verify outbound HTTPS (443) to:
+- Territory URL (e.g. `dashboard.systemmonitor.us` / `.eu`)
+- `agent.systemmonitor.us` (or regional equivalent)
+
+Full list: https://documentation.n-able.com/remote-management/userguide/Content/network_connection_reqs.htm
+
+---
+
+## SECURITY
+
+- Use **Agent Key** for automated installs — do not embed staff credentials in packages
+- Field techs: site-level permissions only, not global admin
+- Regenerate packages when credentials rotate
+- macOS: enforce FDA + Accessibility via MDM profile, not manual user action
+- Audit periodically: User Audit Report → catch orphaned/duplicate device entries
+
+---
+
+## COMMON ERRORS
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| Agent missing from dashboard | Firewall blocking outbound 443 | Verify connectivity to territory URL |
+| Duplicate device entry | Cloned after agent install | Remove duplicate, reinstall on clone |
+| macOS agent inactive | Missing FDA / Accessibility | Grant in System Settings → Privacy & Security |
+| Linux agent offline post-update | TLS 1.0/1.1 still in use | Update TLS config, restart agent service |
+| Script output missing in dashboard | Exit code in 1–999 range | Migrate to 0 / 1001 / 1002 per standards doc |
+| Template not applied | Assigned after install | Reassign from All Devices view |
+
+---
+
+## REFERENCES
+
+- N-sight RMM User Guide: https://documentation.n-able.com/remote-management/userguide/Default.htm
+- Script Writing Guidelines: https://documentation.n-able.com/remote-management/userguide/Content/script_guide.htm
+- Script Return Codes: https://documentation.n-able.com/remote-management/userguide/Content/script_guide_return.htm
+- Supported Linux OS: https://documentation.n-able.com/remote-management/userguide/Content/linux_os.htm
+- Network Requirements: https://documentation.n-able.com/remote-management/userguide/Content/network_connection_reqs.htm
+- N-able API: https://developer.n-able.com/n-sight/docs/getting-started-with-the-n-sight-api

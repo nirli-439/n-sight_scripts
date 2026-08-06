@@ -1,0 +1,114 @@
+﻿*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-01 09:12:32,306 INFO  - ===========================================
+Policy:  System Details
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 07:59:55,090 INFO  - ===========================================
+Policy:  System Details
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 07:59:55,262 INFO  - ===========================================
+Policy:  System Details
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 07:59:55,353 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 07:59:55,380 INFO  - 1 localhost
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 07:59:55,456 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 07:59:55,457 INFO  - 1 .
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 07:59:55,623 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 07:59:55,626 INFO  - 1 All
+2026-04-02 07:59:55,627 INFO  - 1 localhost
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 07:59:57,522 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 07:59:57,875 INFO  - 3 Executing using DISM facilities
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,570 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,572 INFO  - 1 Access Control Assistance Operators
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,643 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,646 INFO  - 1 Administrators
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,693 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,694 INFO  - 1 Backup Operators
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,709 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,711 INFO  - 1 Cryptographic Operators
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,738 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,739 INFO  - 1 Device Owners
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,757 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,759 INFO  - 1 Distributed COM Users
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,775 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,776 INFO  - 1 Event Log Readers
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,792 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,795 INFO  - 1 Guests
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,814 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,815 INFO  - 1 Hyper-V Administrators
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,832 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,833 INFO  - 1 IIS_IUSRS
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,850 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,852 INFO  - 1 Network Configuration Operators
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,867 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,868 INFO  - 1 OpenSSH Users
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,888 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,890 INFO  - 1 Performance Log Users
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,904 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,905 INFO  - 1 Performance Monitor Users
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,922 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,924 INFO  - 1 Power Users
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,943 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,945 INFO  - 1 Remote Desktop Users
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,962 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,964 INFO  - 1 Remote Management Users
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,979 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,980 INFO  - 1 Replicator
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:09,994 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:09,995 INFO  - 1 System Managed Accounts Group
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:10,012 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:10,014 INFO  - 1 User Mode Hardware Operators
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:10,026 INFO  - ===========================================
+Policy:  System Details
+2026-04-02 08:00:10,027 INFO  - 1 Users
+*** N-Able AutomationManager Policy Execution Engine v2.98.2.2, .Net Runtime v4.0.30319 ***
+2026-04-02 08:00:10,076 INFO  - ===========================================
+Policy:  System Details

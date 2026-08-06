@@ -1,0 +1,6 @@
+.DS_Store
+*.edtz
+
+# GCPW – ignore large installers only (script/reg are in repo; set your token/domains locally)
+windows/gcpw/*.exe
+windows/gcpw/*.msi

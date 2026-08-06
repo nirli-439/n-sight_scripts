@@ -1,0 +1,17 @@
+Windows Registry Editor Version 5.00
+
+; GCPW configuration. Import: reg import set_gcpw_token.reg
+; Or run Install_GCPW.ps1 to install GCPW and apply these settings.
+
+; Enrollment token (Google Workspace) – replace with your token
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\CloudManagement]
+"EnrollmentToken"="5f8a8760-820d-404a-bc6e-0a7cda2bf96a"
+
+; GCPW settings – replace with your domain(s)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Google\GCPW]
+"domains_allowed_to_login"="helfy.co,doktorabc.com"
+"is_enrolled_to_google"=dword:00000001
+"enable_multi_user_login"=dword:00000001
+"use_shorter_account_name"=dword:00000001
+"enable_dm_enrollment"=dword:00000001
+"validity_period_in_days"=dword:0000016d
