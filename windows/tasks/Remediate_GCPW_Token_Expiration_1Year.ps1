@@ -16,7 +16,7 @@
 .EXECUTION
     Windows (local):  iex (Get-Content ".\Remediate_GCPW_Token_Expiration.ps1" -Raw)
     Or:              powershell -NoProfile -ExecutionPolicy Bypass -File ".\Remediate_GCPW_Token_Expiration.ps1"
-    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Remediate_GCPW_Token_Expiration.ps1")
+    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Remediate_GCPW_Token_Expiration_1Year.ps1")
 
 .NOTES
     Author: IT Admin

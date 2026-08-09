@@ -21,7 +21,7 @@
 .EXECUTION
     Windows (local):  iex (Get-Content ".\Check_GCPW_Registry.ps1" -Raw)
     Or:              powershell -NoProfile -ExecutionPolicy Bypass -File ".\Check_GCPW_Registry.ps1"
-    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/checks/Check_GCPW_Registry.ps1")
+    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/checks/Check_GCPW_Registry.ps1")
 .NOTES
     Author: IT Admin
     Version: 2.0
@@ -57,8 +57,8 @@ $EXIT_REMEDIATED_SUCCESS = 0        # Pass after successful remediation
 $EXIT_REMEDIATION_FAILED = 1003     # Critical after failed remediation
 
 # GCPW Installation Script URLs (GitHub repo)
-$GCPWInstallScriptUrl = "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Install_GCPW.ps1"
-$ChromeInstallScriptUrl = "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Install_Chrome.ps1"
+$GCPWInstallScriptUrl = "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Install_GCPW.ps1"
+$ChromeInstallScriptUrl = "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Install_Chrome.ps1"
 
 # Expected GCPW Registry Values
 $ExpectedEnrollmentToken = "5f8a8760-820d-404a-bc6e-0a7cda2bf96a"
