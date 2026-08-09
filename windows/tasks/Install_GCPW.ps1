@@ -9,12 +9,15 @@
     Prerequisite: Chrome 81+ must be installed (Google requirement; missing Chrome causes 73120).
 .EXECUTION
     Windows (local):  powershell -NoProfile -ExecutionPolicy Bypass -File ".\Install_GCPW.ps1"
+    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Install_GCPW.ps1")
     N-Sight:         Upload script as payload; optionally upload set_gcpw_token.reg to the same
                      location as the script (or rely on embedded config below).
 .NOTES
+    Requires: Administrator privileges
     Exit: 0=OK, 1001=Warning, 1002=Critical
 #>
 
+#Requires -RunAsAdministrator
 #Requires -Version 5.1
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
@@ -30,7 +33,7 @@ Windows Registry Editor Version 5.00
 "enable_multi_user_login"=dword:00000001
 "use_shorter_account_name"=dword:00000001
 "enable_dm_enrollment"=dword:00000001
-"validity_period_in_days"=dword:0000001e
+"validity_period_in_days"=dword:0000016d
 "@
 
 $EXIT_SUCCESS = 0
@@ -40,7 +43,7 @@ $EXIT_CRITICAL = 1002
 # Log to C:\logs\<date> per WINDOWS_COMPLIANCE.md
 $LogDir = "C:\logs\$(Get-Date -Format 'yyyyMMdd')"
 if (-not (Test-Path $LogDir)) { New-Item -Path $LogDir -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null }
-$LogFile = Join-Path $LogDir "Install_GCPW_$(Get-Date -Format 'yyyyMMdd_HHmmss').log"
+$LogFile = Join-Path $LogDir "Install_GCPW_$($env:COMPUTERNAME)_$(Get-Date -Format 'yyyyMMdd_HHmmss').log"
 
 # Payload directory (GCPW MSI download)
 $PayloadDir = Join-Path $env:TEMP "gcpw"
@@ -164,7 +167,7 @@ $IsEnrolled = if ($cfg.IsEnrolled -ne $null) { $cfg.IsEnrolled } else { 1 }
 $EnableMultiUserLogin = if ($cfg.EnableMultiUserLogin -ne $null) { $cfg.EnableMultiUserLogin } else { 1 }
 $UseShorterAccountName = if ($cfg.UseShorterAccountName -ne $null) { $cfg.UseShorterAccountName } else { 1 }
 $EnableDmEnrollment = if ($cfg.EnableDmEnrollment -ne $null) { $cfg.EnableDmEnrollment } else { 1 }
-$ValidityPeriodInDays = if ($cfg.ValidityPeriodInDays -ne $null) { $cfg.ValidityPeriodInDays } else { 30 }
+$ValidityPeriodInDays = if ($cfg.ValidityPeriodInDays -ne $null) { $cfg.ValidityPeriodInDays } else { 365 }
 
 Write-Log "Payload directory: $PayloadDir"
 try {
