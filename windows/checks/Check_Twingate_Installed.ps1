@@ -1,8 +1,6 @@
 <#
 .SYNOPSIS
-    Checks whether Twingate is installed for all users.
-.DESCRIPTION
-    This check passes only when the Twingate system-wide executable exists.
+    Checks whether Twingate and .NET Desktop Runtime 8.0.29 x64 are installed.
 .EXECUTION
     iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/checks/Check_Twingate_Installed.ps1")
 .NOTES
@@ -13,6 +11,8 @@
 $ErrorActionPreference = "Stop"
 $EXIT_SUCCESS = 0
 $EXIT_CRITICAL = 1002
+$RuntimeVersion = "8.0.29"
+$RuntimePath = "${env:ProgramFiles}\dotnet\shared\Microsoft.WindowsDesktop.App\$RuntimeVersion"
 
 try {
     $twingate = @(
@@ -20,13 +20,11 @@ try {
         "${env:ProgramFiles(x86)}\Twingate\Twingate.exe"
     ) | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
 
-    if (-not $twingate) {
-        Write-Host "CRITICAL: Twingate is not installed"
-        exit $EXIT_CRITICAL
-    }
+    if (-not $twingate) { throw "Twingate is not installed" }
+    if (-not (Test-Path -LiteralPath $RuntimePath)) { throw ".NET Desktop Runtime $RuntimeVersion x64 is not installed" }
 
     $version = (Get-Item -LiteralPath $twingate).VersionInfo.ProductVersion
-    Write-Host "PASS: Twingate $version is installed at $twingate"
+    Write-Host "PASS: Twingate $version and .NET Desktop Runtime $RuntimeVersion x64 are installed"
     exit $EXIT_SUCCESS
 }
 catch {
