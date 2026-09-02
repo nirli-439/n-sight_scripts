@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+; GCPW login only. Offline sign-in remains available indefinitely.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Google\GCPW]
+"domains_allowed_to_login"="helfy.co,doktorabc.com"
+"enable_dm_enrollment"=dword:00000000
