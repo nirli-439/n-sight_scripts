@@ -2,8 +2,8 @@
 .SYNOPSIS
     Checks and repairs GCPW registry configuration.
 .DESCRIPTION
-    Installs GCPW first if needed by invoking Install_GCPW.ps1, then verifies
-    and repairs the required GCPW registry values.
+    Installs GCPW first if needed, then allows only Helfy and DoktorABC Google
+    Workspace accounts to sign in. Google device-management enrollment is off.
 .EXECUTION
     iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/checks/Check_GCPW_Registry.ps1")
 .NOTES
@@ -17,11 +17,9 @@ $ProgressPreference = "SilentlyContinue"
 $EXIT_SUCCESS = 0
 $EXIT_WARNING = 1001
 $EXIT_CRITICAL = 1002
-$EnrollmentToken = "5f8a8760-820d-404a-bc6e-0a7cda2bf96a"
 $DomainsAllowed = "helfy.co,doktorabc.com"
-$ValidityDays = 365
-$CloudMgmtPath = "HKLM:\SOFTWARE\Policies\Google\CloudManagement"
 $GCPWPath = "HKLM:\SOFTWARE\Google\GCPW"
+$CloudMgmtPath = "HKLM:\SOFTWARE\Policies\Google\CloudManagement"
 $InstallScriptUrl = "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Install_GCPW.ps1"
 
 function Test-GCPWInstalled {
@@ -51,19 +49,24 @@ try {
     }
 
     $fixes = @()
-    $wanted = @(
-        @{ Path = $CloudMgmtPath; Name = "EnrollmentToken"; Value = $EnrollmentToken; Type = "String" },
-        @{ Path = $GCPWPath; Name = "domains_allowed_to_login"; Value = $DomainsAllowed; Type = "String" },
-        @{ Path = $GCPWPath; Name = "is_enrolled_to_google"; Value = 1; Type = "DWord" },
-        @{ Path = $GCPWPath; Name = "enable_multi_user_login"; Value = 1; Type = "DWord" },
-        @{ Path = $GCPWPath; Name = "use_shorter_account_name"; Value = 1; Type = "DWord" },
-        @{ Path = $GCPWPath; Name = "enable_dm_enrollment"; Value = 1; Type = "DWord" },
-        @{ Path = $GCPWPath; Name = "validity_period_in_days"; Value = $ValidityDays; Type = "DWord" }
-    )
+    if ((Get-RegValue $GCPWPath "domains_allowed_to_login") -ne $DomainsAllowed) {
+        Set-RegValue $GCPWPath "domains_allowed_to_login" $DomainsAllowed
+        $fixes += "domains_allowed_to_login"
+    }
+    if ((Get-RegValue $GCPWPath "enable_dm_enrollment") -ne 0) {
+        Set-RegValue $GCPWPath "enable_dm_enrollment" 0 "DWord"
+        $fixes += "enable_dm_enrollment"
+    }
 
-    foreach ($entry in $wanted) {
-        if ((Get-RegValue -Path $entry.Path -Name $entry.Name) -ne $entry.Value) {
-            Set-RegValue -Path $entry.Path -Name $entry.Name -Value $entry.Value -Type $entry.Type
+    foreach ($entry in @(
+        @{ Path = $CloudMgmtPath; Name = "EnrollmentToken" },
+        @{ Path = $GCPWPath; Name = "is_enrolled_to_google" },
+        @{ Path = $GCPWPath; Name = "enable_multi_user_login" },
+        @{ Path = $GCPWPath; Name = "use_shorter_account_name" },
+        @{ Path = $GCPWPath; Name = "validity_period_in_days" }
+    )) {
+        if (Get-RegValue $entry.Path $entry.Name) {
+            Remove-ItemProperty -Path $entry.Path -Name $entry.Name -Force
             $fixes += $entry.Name
         }
     }
