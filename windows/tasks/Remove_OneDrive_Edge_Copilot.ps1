@@ -68,6 +68,7 @@ try {
     $oneDrivePolicy = Get-ItemPropertyValue -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive' -Name DisableFileSyncNGSC -ErrorAction SilentlyContinue
     $copilot = Get-AppxPackage -AllUsers -ErrorAction SilentlyContinue | Where-Object { $_.Name -like 'Microsoft.Copilot*' -or $_.Name -like 'MicrosoftWindows.Client.Copilot*' }
     if ($edge -or $oneDrive -or $oneDrivePolicy -ne 1 -or $copilot) { throw 'Verification found one or more removed products still present or unblocked.' }
-    Log 'OK: OneDrive, Edge, and Copilot removed; OneDrive user files and Edge WebView2 retained.'
+    Remove-Item $Log -Force -ErrorAction SilentlyContinue
+    Write-Host 'OK: OneDrive, Edge, and Copilot removed; OneDrive user files and Edge WebView2 retained.'
     exit $OK
 } catch { Log "CRITICAL: $($_.Exception.Message)"; exit $CRIT }
