@@ -23,13 +23,16 @@ function Remove-AppxLike([string]$Pattern) {
 }
 function Remove-OneDrive {
     Get-Process OneDrive -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
-    @("$env:SystemRoot\System32\OneDriveSetup.exe", "$env:SystemRoot\SysWOW64\OneDriveSetup.exe") | Where-Object { Test-Path $_ } | Select-Object -First 1 | ForEach-Object {
+    # OneDriveSetup.exe can return 0x8004069B under SYSTEM when no per-user client is registered.
+    # The policy and actual-client checks below are authoritative; its exit code is not.
+    @("$env:SystemRoot\System32\OneDriveSetup.exe", "$env:SystemRoot\SysWOW64\OneDriveSetup.exe") | Where-Object { Test-Path $_ } | ForEach-Object {
         $p = Start-Process -FilePath $_ -ArgumentList '/uninstall' -Wait -PassThru -WindowStyle Hidden
-        if ($p.ExitCode -ne 0) { throw "OneDrive uninstall failed ($($p.ExitCode))." }
+        if ($p.ExitCode -ne 0) { Log "WARNING: OneDriveSetup returned $($p.ExitCode); continuing with policy cleanup." }
     }
     Remove-AppxLike '*OneDrive*'
     $policy = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive'
     New-Item -Path $policy -Force | Out-Null
+    Set-ItemProperty -Path $policy -Name DisableFileSync -Type DWord -Value 1
     Set-ItemProperty -Path $policy -Name DisableFileSyncNGSC -Type DWord -Value 1
     # ponytail: synced user folders are preserved; delete only after a verified migration.
 }
@@ -61,9 +64,10 @@ try {
     Log 'Removing OneDrive, Edge, and Copilot...'
     Remove-OneDrive; Remove-Edge; Remove-Copilot
     $edge = Test-Path "$env:ProgramFiles(x86)\Microsoft\Edge\Application\msedge.exe"
-    $oneDrive = Test-Path "$env:SystemRoot\System32\OneDriveSetup.exe" -and (Get-Process OneDrive -ErrorAction SilentlyContinue)
+    $oneDrive = Get-Process OneDrive -ErrorAction SilentlyContinue
+    $oneDrivePolicy = Get-ItemPropertyValue -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive' -Name DisableFileSyncNGSC -ErrorAction SilentlyContinue
     $copilot = Get-AppxPackage -AllUsers -ErrorAction SilentlyContinue | Where-Object { $_.Name -like 'Microsoft.Copilot*' -or $_.Name -like 'MicrosoftWindows.Client.Copilot*' }
-    if ($edge -or $oneDrive -or $copilot) { throw 'Verification found one or more removed products still present.' }
+    if ($edge -or $oneDrive -or $oneDrivePolicy -ne 1 -or $copilot) { throw 'Verification found one or more removed products still present or unblocked.' }
     Log 'OK: OneDrive, Edge, and Copilot removed; OneDrive user files and Edge WebView2 retained.'
     exit $OK
 } catch { Log "CRITICAL: $($_.Exception.Message)"; exit $CRIT }
