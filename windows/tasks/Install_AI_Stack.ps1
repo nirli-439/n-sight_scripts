@@ -23,9 +23,46 @@ function Add-MachinePath([string]$Path) {
     if (($p -split ';' | Where-Object { $_ -eq $Path }).Count -eq 0) { [Environment]::SetEnvironmentVariable('Path', "$p;$Path", 'Machine') }
     if (($env:Path -split ';' | Where-Object { $_ -eq $Path }).Count -eq 0) { $env:Path += ";$Path" }
 }
+function Get-WingetPath {
+    $command = Get-Command winget.exe -ErrorAction SilentlyContinue
+    if ($command) { return $command.Source }
+    $app = Get-AppxPackage -AllUsers -Name 'Microsoft.DesktopAppInstaller' -ErrorAction SilentlyContinue | Select-Object -First 1
+    if ($app -and (Test-Path (Join-Path $app.InstallLocation 'winget.exe'))) { return (Join-Path $app.InstallLocation 'winget.exe') }
+    $windowsApps = Join-Path $env:ProgramFiles 'WindowsApps'
+    Get-ChildItem -Path $windowsApps -Directory -Filter 'Microsoft.DesktopAppInstaller_*' -ErrorAction SilentlyContinue |
+        Sort-Object Name -Descending | ForEach-Object { Join-Path $_.FullName 'winget.exe' } |
+        Where-Object { Test-Path $_ } | Select-Object -First 1
+}
+function Install-Winget {
+    $release = Invoke-RestMethod -Uri 'https://api.github.com/repos/microsoft/winget-cli/releases/latest'
+    $assets = @($release.assets)
+    $bundle = $assets | Where-Object { $_.name -eq 'Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle' } | Select-Object -First 1
+    $deps = $assets | Where-Object { $_.name -eq 'DesktopAppInstaller_Dependencies.zip' } | Select-Object -First 1
+    if (-not $bundle -or -not $deps) { throw 'Microsoft App Installer release assets were incomplete.' }
+    $dir = Join-Path $env:TEMP 'winget-bootstrap'
+    Remove-Item $dir -Recurse -Force -ErrorAction SilentlyContinue
+    New-Item -ItemType Directory -Path $dir | Out-Null
+    $bundlePath = Join-Path $dir $bundle.name; $depsZip = Join-Path $dir $deps.name
+    Invoke-WebRequest -UseBasicParsing -Uri $bundle.browser_download_url -OutFile $bundlePath
+    Invoke-WebRequest -UseBasicParsing -Uri $deps.browser_download_url -OutFile $depsZip
+    foreach ($asset in @(@($bundle, $deps))) {
+        $path = if ($asset.name -eq $bundle.name) { $bundlePath } else { $depsZip }
+        $expected = $asset.digest -replace '^sha256:', ''
+        if ($expected -and (Get-FileHash -Algorithm SHA256 -Path $path).Hash.ToLower() -ne $expected.ToLower()) { throw "Checksum verification failed: $($asset.name)" }
+    }
+    Expand-Archive -Path $depsZip -DestinationPath (Join-Path $dir 'deps') -Force
+    $arch = if ([Environment]::Is64BitOperatingSystem) { 'x64' } else { 'x86' }
+    $dependencyPaths = @(Get-ChildItem -Path (Join-Path $dir 'deps') -Recurse -File -Include '*.appx','*.msix','*.appxbundle','*.msixbundle' |
+        Where-Object { $_.Name -match "($arch|neutral)" } | Select-Object -ExpandProperty FullName)
+    Add-AppxProvisionedPackage -Online -PackagePath $bundlePath -DependencyPackagePath $dependencyPaths -SkipLicense | Out-Null
+    Remove-Item $dir -Recurse -Force -ErrorAction SilentlyContinue
+    $winget = Get-WingetPath
+    if (-not $winget) { throw 'Microsoft App Installer installed but winget.exe is unavailable.' }
+    return $winget
+}
 function Winget([string]$Id, [string]$Source = 'winget') {
-    $w = (Get-Command winget.exe -ErrorAction SilentlyContinue).Source
-    if (-not $w) { throw 'winget.exe is required; install Microsoft App Installer first.' }
+    $w = Get-WingetPath
+    if (-not $w) { Log 'Bootstrapping Microsoft App Installer/winget...'; $w = Install-Winget }
     & $w install --id $Id --exact --source $Source --silent --accept-source-agreements --accept-package-agreements | Out-Null
     if ($LASTEXITCODE -notin 0, -1978335189) { throw "winget failed for $Id ($LASTEXITCODE)" }
 }
