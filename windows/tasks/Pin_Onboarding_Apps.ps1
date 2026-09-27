@@ -54,6 +54,19 @@ function Get-FirstPath {
     return $null
 }
 
+function Get-UserExe {
+    param([string[]]$Relative)
+    $roots = Get-ChildItem 'C:\Users' -Directory -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -notin @('Public', 'Default', 'Default User', 'All Users') }
+    foreach ($root in $roots) {
+        foreach ($rel in $Relative) {
+            $p = Join-Path $root.FullName $rel
+            if (Test-Path -LiteralPath $p) { return $p }
+        }
+    }
+    return $null
+}
+
 function Get-AppUserModelId {
     param([string]$NameLike)
     $pkg = Get-AppxPackage -AllUsers -ErrorAction SilentlyContinue |
@@ -61,7 +74,7 @@ function Get-AppUserModelId {
         Select-Object -First 1
     if (-not $pkg) {
         $prov = Get-AppxProvisionedPackage -Online -ErrorAction SilentlyContinue |
-            Where-Object { $_.DisplayName -like $NameLike } |
+            Where-Object { $_.DisplayName -like $NameLike -or $_.PackageName -like $NameLike } |
             Select-Object -First 1
         if (-not $prov) { return $null }
         $pkg = $prov
@@ -79,6 +92,9 @@ function Get-AppUserModelId {
         }
     }
     $family = $pkg.PackageFamilyName
+    if (-not $family -and $pkg.PackageName -match '^(?<n>.+?)_[\d.]+_[^_]+__(?<p>[A-Za-z0-9]+)$') {
+        $family = "$($Matches.n)_$($Matches.p)"
+    }
     if (-not $family) { return $null }
     return "$family!$id"
 }
@@ -95,14 +111,15 @@ function Get-OnboardingShortcuts {
         "$env:ProgramFiles\Slack\slack.exe",
         "${env:ProgramFiles(x86)}\Slack\slack.exe"
     )
+    if (-not $slackExe) { $slackExe = Get-UserExe @('AppData\Local\slack\slack.exe') }
     $slackId = Get-AppUserModelId 'SlackTechnologies.Slack*'
-    if (-not $slackId -and ($slackExe -or (Get-AppxProvisionedPackage -Online -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName -like 'SlackTechnologies.Slack*' }))) {
-        $slackId = 'SlackTechnologies.Slack_8she8kybcnzg4!App'
-    }
+    if (-not $slackId) { $slackId = Get-AppUserModelId '*Slack*' }
     if ($slackId) {
         $icon = if ($slackExe) { "$slackExe,0" } else { "$env:SystemRoot\System32\imageres.dll,15" }
         $links += New-PublicLnk -Name 'Slack' -Target "$env:SystemRoot\explorer.exe" -Arguments "shell:AppsFolder\$slackId" -Icon $icon
-    }
+    } elseif ($slackExe) {
+        $links += New-PublicLnk -Name 'Slack' -Target $slackExe -Icon "$slackExe,0"
+    } else { $script:Skipped += 'Slack' }
 
     $drive = Get-FirstPath @(
         "$env:ProgramFiles\Google\Drive File Stream\GoogleDriveFS.exe",
@@ -110,22 +127,31 @@ function Get-OnboardingShortcuts {
         "$env:ProgramFiles\Google\DriveFS\GoogleDriveFS.exe",
         "${env:ProgramFiles(x86)}\Google\DriveFS\GoogleDriveFS.exe"
     )
+    if (-not $drive) {
+        $drive = Get-UserExe @(
+            'AppData\Local\Google\DriveFS\GoogleDriveFS.exe',
+            'AppData\Local\Google\Drive File Stream\GoogleDriveFS.exe',
+            'AppData\Local\Programs\Google\Drive File Stream\GoogleDriveFS.exe'
+        )
+    }
     if ($drive) { $links += New-PublicLnk -Name 'Google Drive' -Target $drive -Icon "$drive,0" }
+    else { $script:Skipped += 'Google Drive' }
 
     $twingate = Get-FirstPath @(
         "$env:ProgramFiles\Twingate\Twingate.exe",
         "${env:ProgramFiles(x86)}\Twingate\Twingate.exe"
     )
     if ($twingate) { $links += New-PublicLnk -Name 'Twingate' -Target $twingate -Icon "$twingate,0" }
+    else { $script:Skipped += 'Twingate' }
 
     foreach ($app in @(
-        @{ Name = 'Claude'; Like = 'Anthropic.Claude*' },
-        @{ Name = 'ChatGPT'; Like = 'OpenAI.ChatGPT*' }
+        @{ Name = 'Claude'; Like = '*Claude*' },
+        @{ Name = 'ChatGPT'; Like = '*ChatGPT*' }
     )) {
         $id = Get-AppUserModelId $app.Like
         if ($id) {
             $links += New-PublicLnk -Name $app.Name -Target "$env:SystemRoot\explorer.exe" -Arguments "shell:AppsFolder\$id" -Icon "$env:SystemRoot\System32\imageres.dll,15"
-        }
+        } else { $script:Skipped += $app.Name }
     }
     return @($links | Where-Object { $_ })
 }
@@ -209,6 +235,7 @@ $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIden
 if (-not $isAdmin) { Write-Host 'CRITICAL: Run as Administrator.'; exit $CRIT }
 
 try {
+    $script:Skipped = @()
     $links = @(Get-OnboardingShortcuts)
     if ($links.Count -eq 0) {
         Write-Host 'WARNING: no onboarding desktop apps installed.'
@@ -244,8 +271,9 @@ try {
         Register-UserPinTask -UserId $account -TaskName "N-Sight-PinApps-Now-$safe" -StartNow:$start
     }
 
-    Write-Host ("OK: {0} desktop shortcuts on Public Desktop. Taskbar layout set for new profiles. Logged-on users are pinned at next logon if the pin task could not start now." -f $links.Count)
+    Write-Host ("OK: {0} desktop shortcuts on Public Desktop." -f $links.Count)
     $links | ForEach-Object { Write-Host "  $_" }
+    if ($script:Skipped) { Write-Host ("Not installed, skipped: {0}" -f ($script:Skipped -join ', ')) }
     exit $OK
 }
 catch {
