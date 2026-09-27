@@ -1,8 +1,6 @@
 <#
 .SYNOPSIS
-    Run onboarding tasks from GitHub (unattended, N-Sight-friendly).
-    Slack, hibernate, and screen lock start immediately and overlap McAfee.
-    Tasks that use msiexec or winget run one at a time after McAfee exits.
+    Run onboarding tasks from GitHub, one script after another.
 
 .DESCRIPTION
     Downloads each task script from the repo (TLS 1.2, retries), runs via
@@ -46,10 +44,11 @@
 
 .NOTES
     Author: IT Admin
-    Version: 2.5
+    Version: 2.6
     Requires: Administrator privileges
     Platform: Windows 10/11
     Changelog:
+    - 2.6: One script after another. Pin_Onboarding_Apps.ps1 is the last step.
     - 2.5: After installs, Pin_Onboarding_Apps.ps1 puts Chrome, Slack, Drive,
       Twingate, Claude, and ChatGPT on the public desktop and in one taskbar layout.
     - 2.4: Skip is in Remove_McAfee (no MCPR, no takeown /R, when McAfee is absent).
@@ -110,7 +109,8 @@ $Tasks = @(
     @{ Name = "Screen lock timeout";    Script = "Remediate_ScreenLock_Timeout.ps1" },
     @{ Name = "GCPW";                   Script = "Install_GCPW.ps1" },
     @{ Name = "OpenSSH";                Script = "Install_OpenSSH.ps1" },
-    @{ Name = "AI Stack (Claude/GPT/Codex)"; Script = "Install_AI_Stack.ps1" }
+    @{ Name = "AI Stack (Claude/GPT/Codex)"; Script = "Install_AI_Stack.ps1" },
+    @{ Name = "Pin desktop apps";         Script = "Pin_Onboarding_Apps.ps1" }
 )
 
 function Write-Log {
@@ -270,28 +270,7 @@ Write-Log "Post-GCPW registry verify: $(if ($doGcpwVerify) { 'enabled (AutoRemed
 $gcpwTaskRan = $false
 $gcpwTaskOk = $false
 
-# Slack/hibernate/screen lock do not take the Windows Installer lock. They overlap McAfee.
-# msiexec and winget tasks stay serial, and start only after McAfee has exited.
-$FastScripts = @(
-    'Remediate_Hibernate_LidClose.ps1',
-    'Remediate_ScreenLock_Timeout.ps1',
-    'Install_Slack.ps1'
-)
-
-$fastHandles = [System.Collections.Generic.List[object]]::new()
 foreach ($task in $Tasks) {
-    if ($FastScripts -notcontains $task.Script) { continue }
-    try {
-        $fastHandles.Add((Start-OnboardTask $task))
-    }
-    catch {
-        Write-Log "  -> $($task.Name) exception: $_" -Level "WARN"
-        $Script:AnyCritical = $true
-    }
-}
-
-foreach ($task in $Tasks) {
-    if ($task.Script -ne 'Remove_McAfee.ps1') { continue }
     try {
         Complete-OnboardTask (Start-OnboardTask $task)
     }
@@ -299,30 +278,6 @@ foreach ($task in $Tasks) {
         Write-Log "  -> $($task.Name) exception: $_" -Level "WARN"
         $Script:AnyCritical = $true
     }
-}
-
-foreach ($task in $Tasks) {
-    if ($FastScripts -contains $task.Script) { continue }
-    if ($task.Script -eq 'Remove_McAfee.ps1') { continue }
-    try {
-        Complete-OnboardTask (Start-OnboardTask $task)
-    }
-    catch {
-        Write-Log "  -> $($task.Name) exception: $_" -Level "WARN"
-        $Script:AnyCritical = $true
-    }
-}
-
-foreach ($handle in $fastHandles) {
-    Complete-OnboardTask $handle
-}
-
-try {
-    Complete-OnboardTask (Start-OnboardTask @{ Name = 'Pin desktop apps'; Script = 'Pin_Onboarding_Apps.ps1' })
-}
-catch {
-    Write-Log "  -> Pin desktop apps exception: $_" -Level "WARN"
-    $Script:AnyCritical = $true
 }
 
 # Optional: verify GCPW registry vs. expected identity settings (no auto-install from check in this flow)

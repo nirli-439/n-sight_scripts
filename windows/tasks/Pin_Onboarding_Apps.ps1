@@ -6,8 +6,7 @@
     Creates a verified shortcut on the public desktop for each installed app:
     Chrome, Slack, Google Drive, Twingate, Claude, ChatGPT.
     Writes one StartLayoutFile so those shortcuts pin for new profiles.
-    Registers a logon task that pins the same shortcuts for existing users.
-    SYSTEM cannot pin the current taskbar itself. Missing apps are skipped.
+    Missing apps are skipped. No scheduled tasks.
 
 .EXECUTION
     Windows (repo): iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Pin_Onboarding_Apps.ps1")
@@ -20,8 +19,6 @@
     Exit 1002 = shortcut or layout write failed
 #>
 #Requires -Version 5.1
-[CmdletBinding()]
-param([switch]$PinCurrentUser)
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
@@ -29,8 +26,6 @@ $OK = 0
 $WARN = 1001
 $CRIT = 1002
 $LayoutPath = Join-Path $env:ProgramData 'OnboardingTaskbarLayout.xml'
-$ScriptCopy = Join-Path $env:ProgramData 'nsight\Pin_Onboarding_Apps.ps1'
-$GroupTask = 'N-Sight-PinOnboardingApps'
 
 function New-PublicLnk {
     param([string]$Name, [string]$Target, [string]$Arguments, [string]$Icon)
@@ -201,35 +196,6 @@ function Invoke-TaskbarPin {
     Write-Host "OK: pin requested for $leaf"
 }
 
-function Register-UserPinTask {
-    param([string]$UserId, [string]$TaskName, [switch]$StartNow)
-    $arg = "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$ScriptCopy`" -PinCurrentUser"
-    $action = New-ScheduledTaskAction -Execute "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument $arg
-    $trigger = New-ScheduledTaskTrigger -AtLogOn -User $UserId
-    $principal = New-ScheduledTaskPrincipal -UserId $UserId -LogonType Interactive -RunLevel Limited
-    $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -MultipleInstances IgnoreNew
-    Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Force | Out-Null
-    if ($StartNow) {
-        try { Start-ScheduledTask -TaskName $TaskName } catch { Write-Host "WARNING: could not start pin task for $UserId" }
-    }
-}
-
-if ($PinCurrentUser) {
-    $desktop = Join-Path $env:PUBLIC 'Desktop'
-    $names = @('Google Chrome.lnk','Slack.lnk','Google Drive.lnk','Twingate.lnk','Claude.lnk','ChatGPT.lnk')
-    foreach ($name in $names) {
-        $lnk = Join-Path $desktop $name
-        if (Test-Path -LiteralPath $lnk) {
-            try { Invoke-TaskbarPin $lnk } catch { Write-Host "WARNING: pin failed for $name - $($_.Exception.Message)" }
-        }
-    }
-    $me = [Security.Principal.WindowsIdentity]::GetCurrent().Name
-    Get-ScheduledTask -TaskName 'N-Sight-PinApps-Now-*' -ErrorAction SilentlyContinue |
-        Where-Object { $_.Principal.UserId -eq $me } |
-        Unregister-ScheduledTask -Confirm:$false -ErrorAction SilentlyContinue
-    exit $OK
-}
-
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(
     [Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) { Write-Host 'CRITICAL: Run as Administrator.'; exit $CRIT }
@@ -242,35 +208,9 @@ try {
         exit $WARN
     }
     Set-OnboardingTaskbarLayout -Links $links
-    New-Item -Path (Split-Path $ScriptCopy) -ItemType Directory -Force | Out-Null
-    if ($PSCommandPath) { Copy-Item -LiteralPath $PSCommandPath -Destination $ScriptCopy -Force }
-    else {
-        Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Pin_Onboarding_Apps.ps1' -OutFile $ScriptCopy
+    foreach ($link in $links) {
+        try { Invoke-TaskbarPin $link } catch { Write-Host "WARNING: pin failed for $link - $($_.Exception.Message)" }
     }
-    if (-not (Test-Path -LiteralPath $ScriptCopy)) { throw "Could not save $ScriptCopy" }
-
-    $action = New-ScheduledTaskAction -Execute "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$ScriptCopy`" -PinCurrentUser"
-    $trigger = New-ScheduledTaskTrigger -AtLogOn
-    $principal = New-ScheduledTaskPrincipal -GroupId 'S-1-5-32-545' -RunLevel Limited
-    $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -MultipleInstances IgnoreNew
-    Register-ScheduledTask -TaskName $GroupTask -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Force | Out-Null
-
-    $loggedOn = @{}
-    Get-CimInstance Win32_Process -Filter "Name='explorer.exe'" -ErrorAction SilentlyContinue | ForEach-Object {
-        $owner = Invoke-CimMethod -InputObject $_ -MethodName GetOwner
-        if ($owner.ReturnValue -eq 0 -and $owner.User -and $owner.User -notin @('SYSTEM','LOCAL SERVICE','NETWORK SERVICE')) {
-            $loggedOn["$($owner.Domain)\$($owner.User)"] = $true
-        }
-    }
-    Get-CimInstance Win32_UserProfile -ErrorAction SilentlyContinue | Where-Object { -not $_.Special -and $_.LocalPath -match '\\Users\\' } | ForEach-Object {
-        try {
-            $account = (New-Object System.Security.Principal.SecurityIdentifier($_.SID)).Translate([System.Security.Principal.NTAccount]).Value
-        } catch { return }
-        $safe = ($account -replace '[^A-Za-z0-9]', '_')
-        $start = [bool]$loggedOn[$account]
-        Register-UserPinTask -UserId $account -TaskName "N-Sight-PinApps-Now-$safe" -StartNow:$start
-    }
-
     Write-Host ("OK: {0} desktop shortcuts on Public Desktop." -f $links.Count)
     $links | ForEach-Object { Write-Host "  $_" }
     if ($script:Skipped) { Write-Host ("Not installed, skipped: {0}" -f ($script:Skipped -join ', ')) }
