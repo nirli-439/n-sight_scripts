@@ -2,15 +2,18 @@
 .SYNOPSIS
     Downloads installer files for the Windows AI Stack into C:\Download. Does not install anything.
 .DESCRIPTION
-    Fetches the installer files for Git, Node.js LTS, Python, and the VC++ Redistributable via
-    "winget download" (download only, no install), plus ChatGPT Desktop (MSIX + license XML),
-    Claude Desktop (MSIX), and the Antigravity CLI installer script via direct download - all
-    saved to C:\Download and left in place for a manual/offline install later.
+    Fetches the real installer file for Git, Node.js LTS, Python, and the VC++ Redistributable via
+    "winget download" (download only, no install), plus ChatGPT Desktop (MSIX + license XML) and
+    Claude Desktop (MSIX) via direct download - all saved as plain files directly in C:\Download
+    (no per-package subfolders, no .yaml manifest files - winget's manifest output is discarded,
+    only the actual .msix/.exe/.msi installer is kept) and left in place for a manual/offline
+    install later.
 
-    WSL/Ubuntu and the npm-based CLI tools (Claude Code, Codex) are intentionally skipped: neither
-    has a standalone installer file to fetch (WSL is enabled via wsl.exe + a Microsoft Store
-    package, the CLIs install via "npm install" from the npm registry), so there is nothing for
-    a download-only task to grab for them.
+    Antigravity CLI, WSL/Ubuntu, and the npm-based CLI tools (Claude Code, Codex) are intentionally
+    skipped: none of them has a standalone .msix/.exe/.msi installer file to fetch (Antigravity
+    ships as a .ps1 bootstrap script, WSL installs via wsl.exe + a Microsoft Store package, the
+    CLIs install via "npm install" from the npm registry) - this task only downloads real
+    installer files, so there's nothing for it to grab for those.
 .NOTES
     Requires: Administrator (bootstrapping the App Installer/winget package still needs it, even
     though nothing else here installs anything).
@@ -21,22 +24,26 @@
     ChatGPT source: https://learn.chatgpt.com/docs/enterprise/windows-deployment (same MSIX +
     License XML URLs used for the offline/system-context deployment pattern - downloaded here
     without being installed).
-    Version: 4.0
+    Version: 4.1
     Changelog:
-    - 4.0: Converted from an installer into a download-only task per Nir's request. This script
-      no longer installs, registers, or runs anything - it only downloads the installer files
-      listed above into C:\Download so they can be installed later (manually, by a separate task,
-      or as part of an offline kit). Removed: winget install calls, the WSL/Ubuntu install step,
-      Add-AppxProvisionedPackage calls, the npm global install of the CLIs, and Antigravity's
-      installer-script execution. Kept: the same download + integrity checks for the MSIX/
-      license/installer-script files (still written to C:\Download, still not deleted after use).
-      Exit status is now based on how many of the 7 tracked installer files downloaded
-      successfully (7/7 = OK, partial = WARNING, 0/7 = CRITICAL) rather than on install success.
-      NOTE: the "ai-stack" entry in check-task-pairs.json was removed as part of this change -
-      Check_AI_Stack.ps1 still checks whether the stack is actually INSTALLED, which this task no
-      longer causes, so auto-remediating that check by re-running this task would just re-download
-      files forever without ever fixing it. Re-pair them only if a task that actually installs
-      from the C:\Download cache is added later.
+    - 4.1: Dropped Antigravity CLI entirely per Nir's request - it installs via a .ps1 bootstrap
+      script, not an .msix/.exe/.msi, so it doesn't belong in a "download the installer files"
+      task. Winget-downloaded packages (Git, Node, Python, VC++ Redist) are now flattened: each
+      downloads into a throwaway per-package staging folder, only the real installer file(s) are
+      moved into C:\Download, and the staging folder - including winget's .yaml manifest files -
+      is deleted. C:\Download now ends up with just the installer files, one flat batch, no
+      subfolders and no .yaml clutter. Tracked file count dropped from 7 to 6 accordingly.
+    - 4.0: Converted from an installer into a download-only task. This script no longer installs,
+      registers, or runs anything - it only downloads installer files into C:\Download so they
+      can be installed later (manually, by a separate task, or as part of an offline kit).
+      Removed: winget install calls, the WSL/Ubuntu install step, Add-AppxProvisionedPackage
+      calls, the npm global install of the CLIs, and Antigravity's installer-script execution
+      (Antigravity's download was kept in 4.0 and removed in 4.1 above). The "ai-stack" entry in
+      check-task-pairs.json was removed as part of this change - Check_AI_Stack.ps1 still checks
+      whether the stack is actually INSTALLED, which this task no longer causes, so
+      auto-remediating that check by re-running this task would just re-download files forever
+      without ever fixing it. Re-pair them only if a task that actually installs from the
+      C:\Download cache is added later.
     - 3.3 and earlier (superseded by 4.0 - kept for history): the script installed the full AI
       Stack (Git, Node, Python, WSL/Ubuntu, ChatGPT Desktop, Claude Desktop, Claude Code, Codex,
       Antigravity), downloading MSIX/license/installer-script files to %TEMP% (later C:\Download
@@ -89,15 +96,26 @@ function Install-Winget {
 function Download-WingetPackage([string]$Id, [string]$Source = 'winget') {
     $w = Get-WingetPath
     if (-not $w) { Log 'Bootstrapping Microsoft App Installer/winget...'; $w = Install-Winget }
+    $staging = Join-Path $env:TEMP "aistack-dl-$($Id -replace '[^A-Za-z0-9.]', '_')"
     $attempts = 2
     for ($i = 1; $i -le $attempts; $i++) {
-        & $w download --id $Id --exact --source $Source --download-directory $DownloadDir --accept-source-agreements --accept-package-agreements | Out-Null
-        if ($LASTEXITCODE -eq 0) { Log "Downloaded $Id installer to C:\Download."; return $true }
+        Remove-Item $staging -Recurse -Force -ErrorAction SilentlyContinue
+        New-Item -ItemType Directory -Path $staging -Force | Out-Null
+        & $w download --id $Id --exact --source $Source --download-directory $staging --accept-source-agreements --accept-package-agreements | Out-Null
+        if ($LASTEXITCODE -eq 0) {
+            $installerFiles = @(Get-ChildItem -Path $staging -Recurse -File | Where-Object { $_.Extension -notin '.yaml', '.yml' })
+            if (-not $installerFiles) { throw "winget download for $Id reported success but produced no installer file (only manifests)." }
+            foreach ($f in $installerFiles) { Move-Item -Path $f.FullName -Destination (Join-Path $DownloadDir $f.Name) -Force }
+            Remove-Item $staging -Recurse -Force -ErrorAction SilentlyContinue
+            Log "Downloaded $Id installer to C:\Download."
+            return $true
+        }
         if ($i -lt $attempts) {
             Log "WARNING: winget download failed for $Id ($LASTEXITCODE), retrying in 5s (attempt $i of $attempts)..."
             Start-Sleep -Seconds 5
         }
     }
+    Remove-Item $staging -Recurse -Force -ErrorAction SilentlyContinue
     Log "WARNING: winget download failed for $Id ($LASTEXITCODE) after $attempts attempts - skipping."
     return $false
 }
@@ -138,20 +156,6 @@ function Download-ClaudeDesktop {
         return $false
     }
 }
-function Download-Antigravity {
-    $installer = Join-Path $DownloadDir 'antigravity-install.ps1'
-    if (Test-Path $installer) { Log 'Antigravity CLI installer already present in C:\Download - skipping.'; return $true }
-    try {
-        Invoke-WebRequest -UseBasicParsing -Uri 'https://antigravity.google/cli/install.ps1' -OutFile $installer
-        if ((Get-Item $installer).Length -eq 0) { throw 'Antigravity installer script download was empty.' }
-        Log 'Downloaded Antigravity CLI installer script to C:\Download.'
-        return $true
-    } catch {
-        Log "WARNING: Antigravity CLI installer download failed: $($_.Exception.Message)"
-        Remove-Item $installer -Force -ErrorAction SilentlyContinue
-        return $false
-    }
-}
 try {
     $admin = [Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()
     if (-not $admin.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) { throw 'Administrator privileges are required.' }
@@ -162,10 +166,9 @@ try {
     }
     if (-not (Download-ChatGPTDesktop)) { $failed += 'ChatGPT Desktop' }
     if (-not (Download-ClaudeDesktop)) { $failed += 'Claude Desktop' }
-    if (-not (Download-Antigravity)) { $failed += 'Antigravity CLI' }
-    $total = 7
+    $total = 6
     if ($failed.Count -eq 0) {
-        Log 'OK: All AI Stack installer files are in C:\Download (Git, Node.js LTS, Python, VC++ Redist, ChatGPT Desktop, Claude Desktop, Antigravity CLI). WSL/Ubuntu and the npm CLIs (Claude Code, Codex) were skipped - no installer file exists for those.'
+        Log 'OK: All AI Stack installer files are in C:\Download (Git, Node.js LTS, Python, VC++ Redist, ChatGPT Desktop, Claude Desktop) - one flat batch, no subfolders, no .yaml manifests.'
         exit $OK
     } elseif ($failed.Count -lt $total) {
         Log "WARNING: $($failed.Count) of $total installer(s) failed to download: $($failed -join ', '). The rest are in C:\Download."
