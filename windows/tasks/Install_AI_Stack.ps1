@@ -11,8 +11,14 @@
     deployment: MSIX + companion License XML via Add-AppxProvisionedPackage, no Microsoft Store account
     needed - confirmed with Nir directly against the doc, Sep 2026). MSIX/License URLs are OpenAI's own
     static CDN links from that page, not tenant-specific.
-    Version: 3.2
+    Version: 3.3
     Changelog:
+    - 3.3: Downloaded installer files (ChatGPT Desktop MSIX + license, Claude Desktop MSIX,
+      Antigravity CLI installer script) are now saved to C:\Download instead of %TEMP%, and are
+      no longer deleted after use - so each machine keeps a local copy of the installers it
+      pulled down, useful for offline re-installs or auditing what was fetched. Winget-managed
+      packages (Git, Node, Python, VCRedist, WSL) are unaffected - winget manages its own
+      download cache and this script does not intercept those files.
     - 3.2: Real root cause of "AI Stack step never gets to ChatGPT/Claude Desktop at all" found
       from an actual run's AIStack.log: `winget install Python.Python.3.14` was failing every
       time with 0x8A150006 (APPINSTALLER_CLI_ERROR_SHELLEXEC_INSTALL_FAILED) before the script
@@ -42,8 +48,9 @@ $OK = 0; $WARN = 1001; $CRIT = 1002
 $Root = Join-Path $env:ProgramFiles 'AIStack'
 $Bin = Join-Path $Root 'bin'
 $NpmPrefix = Join-Path $Root 'npm'
+$DownloadDir = 'C:\Download'
 $Log = Join-Path $env:ProgramData 'nsight\logs\AIStack.log'
-New-Item -ItemType Directory -Force -Path (Split-Path $Log), $Root, $Bin | Out-Null
+New-Item -ItemType Directory -Force -Path (Split-Path $Log), $Root, $Bin, $DownloadDir | Out-Null
 function Log([string]$Text) { Write-Host $Text; Add-Content -Path $Log -Value "$(Get-Date -Format s) $Text" }
 function Add-MachinePath([string]$Path) {
     $p = [Environment]::GetEnvironmentVariable('Path', 'Machine')
@@ -105,8 +112,8 @@ function Appx([string]$Name) { return [bool](Get-AppxPackage -AllUsers -ErrorAct
 function Install-ChatGPTDesktop {
     if (Appx 'OpenAI.ChatGPT*') { return }
     $arch = if ($env:PROCESSOR_ARCHITECTURE -eq 'ARM64') { 'arm64' } else { 'x64' }
-    $msix = Join-Path $env:TEMP 'ChatGPT.msix'
-    $license = Join-Path $env:TEMP 'ChatGPT-License.xml'
+    $msix = Join-Path $DownloadDir 'ChatGPT.msix'
+    $license = Join-Path $DownloadDir 'ChatGPT-License.xml'
     Invoke-WebRequest -UseBasicParsing -Uri "https://persistent.oaistatic.com/codex-app-prod/ChatGPT-$arch.msix" -OutFile $msix
     Invoke-WebRequest -UseBasicParsing -Uri 'https://persistent.oaistatic.com/codex-app-prod/ChatGPT-License.xml' -OutFile $license
     $fs = [System.IO.File]::OpenRead($msix)
@@ -116,26 +123,23 @@ function Install-ChatGPTDesktop {
     if ($sig[0] -ne 0x50 -or $sig[1] -ne 0x4B) { throw 'ChatGPT Desktop MSIX download does not look like a valid package (missing PK zip signature - likely an HTML error page instead).' }
     if ((Get-Item $license).Length -lt 10) { throw 'ChatGPT Desktop license file download was empty or missing.' }
     Add-AppxProvisionedPackage -Online -PackagePath $msix -LicensePath $license -Regions all | Out-Null
-    Remove-Item $msix, $license -Force -ErrorAction SilentlyContinue
     if (-not (Appx 'OpenAI.ChatGPT*')) { throw 'ChatGPT Desktop verification failed.' }
 }
 function Install-ClaudeDesktop {
     if (Appx 'Anthropic.Claude*') { return }
     $arch = if ($env:PROCESSOR_ARCHITECTURE -eq 'ARM64') { 'arm64' } else { 'x64' }
-    $msix = Join-Path $env:TEMP 'ClaudeDesktop.msix'
+    $msix = Join-Path $DownloadDir 'ClaudeDesktop.msix'
     Invoke-WebRequest -UseBasicParsing -Uri "https://claude.ai/api/desktop/win32/$arch/msix/latest/redirect" -OutFile $msix
     if ((Get-Item $msix).Length -lt 50MB) { throw 'Claude Desktop download was not the full MSIX.' }
     Add-AppxProvisionedPackage -Online -PackagePath $msix -SkipLicense -Regions all | Out-Null
-    Remove-Item $msix -Force -ErrorAction SilentlyContinue
     if (-not (Appx 'Anthropic.Claude*')) { throw 'Claude Desktop verification failed.' }
 }
 function Install-Antigravity {
     $agy = Join-Path $Bin 'agy.exe'
     if (Test-Path $agy) { return }
-    $installer = Join-Path $env:TEMP 'antigravity-install.ps1'
+    $installer = Join-Path $DownloadDir 'antigravity-install.ps1'
     Invoke-WebRequest -UseBasicParsing -Uri 'https://antigravity.google/cli/install.ps1' -OutFile $installer
     & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $installer --dir $Bin | Out-Null
-    Remove-Item $installer -Force -ErrorAction SilentlyContinue
     if (-not (Test-Path $agy)) { throw 'Antigravity CLI verification failed.' }
 }
 try {
@@ -158,6 +162,6 @@ try {
     Install-Antigravity
     $required = @((Join-Path $NpmPrefix 'claude.cmd'), (Join-Path $NpmPrefix 'codex.cmd'), (Join-Path $Bin 'agy.exe'))
     if ($required | Where-Object { -not (Test-Path $_) }) { throw 'One or more AI CLI binaries are missing.' }
-    Log 'OK: AI Stack installed. Reboot if WSL requests it. Claude Desktop and ChatGPT Desktop are provisioned but only register (Start Menu tile, launchable) for a user at their NEXT sign-in - not this admin/SYSTEM session. Desktop shortcuts and taskbar pins are applied by Pin_Onboarding_Apps.ps1. CLI: claude, codex, agy.'
+    Log 'OK: AI Stack installed. Downloaded installers kept in C:\Download. Reboot if WSL requests it. Claude Desktop and ChatGPT Desktop are provisioned but only register (Start Menu tile, launchable) for a user at their NEXT sign-in - not this admin/SYSTEM session. Desktop shortcuts and taskbar pins are applied by Pin_Onboarding_Apps.ps1. CLI: claude, codex, agy.'
     exit $OK
 } catch { Log "CRITICAL: $($_.Exception.Message)"; exit $CRIT }
