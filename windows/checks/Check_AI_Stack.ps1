@@ -4,6 +4,12 @@
 .DESCRIPTION
     Reports whether desktop apps, WSL, and CLI prerequisites are present.
     Does not change the device.
+
+    Note: ChatGPT/Claude Desktop are installed via Add-AppxProvisionedPackage, which can show up
+    in Get-AppxPackage -AllUsers (what this check reads) before the app is actually registered/
+    launchable for a user - full registration happens at that user's next sign-in. A FAIL here
+    right after Install_AI_Stack.ps1 ran, with no sign-in since, may just mean "not registered
+    yet" rather than a real install failure - retry after a fresh logon before treating it as broken.
 #>
 $ErrorActionPreference = 'SilentlyContinue'
 $OK = 0; $CRIT = 1002
