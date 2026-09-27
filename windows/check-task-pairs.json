@@ -97,11 +97,6 @@
       "task": "Remediate_Hibernate_LidClose.ps1"
     },
     {
-      "id": "ai-stack",
-      "check": "Check_AI_Stack.ps1",
-      "task": "Install_AI_Stack.ps1"
-    },
-    {
       "id": "onedrive-removed",
       "check": "Check_OneDrive_Edge_Copilot_Removed.ps1",
       "task": "Remove_OneDrive.ps1"

@@ -1,15 +1,23 @@
 <#
 .SYNOPSIS
-    Checks the Windows AI Stack installed by Install_AI_Stack.ps1.
+    Checks whether the Windows AI Stack (Git, curl, Node, Python, WSL, ChatGPT Desktop, Claude
+    Desktop, Claude Code, Codex, Antigravity) is actually installed.
 .DESCRIPTION
     Reports whether desktop apps, WSL, and CLI prerequisites are present.
     Does not change the device.
 
-    Note: ChatGPT/Claude Desktop are installed via Add-AppxProvisionedPackage, which can show up
-    in Get-AppxPackage -AllUsers (what this check reads) before the app is actually registered/
+    NOTE (added when Install_AI_Stack.ps1 became download-only, v4.0): this check is no longer
+    paired with Install_AI_Stack.ps1 in check-task-pairs.json. That task now only downloads
+    installer files to C:\Download - it does not install anything - so a FAIL here will no
+    longer be auto-remediated by re-running it. Nothing currently installs this stack
+    automatically; re-pair a task here only once one exists that installs from the C:\Download
+    cache (or elsewhere).
+
+    Note: ChatGPT/Claude Desktop, when installed via Add-AppxProvisionedPackage, can show up in
+    Get-AppxPackage -AllUsers (what this check reads) before the app is actually registered/
     launchable for a user - full registration happens at that user's next sign-in. A FAIL here
-    right after Install_AI_Stack.ps1 ran, with no sign-in since, may just mean "not registered
-    yet" rather than a real install failure - retry after a fresh logon before treating it as broken.
+    right after an install, with no sign-in since, may just mean "not registered yet" rather than
+    a real install failure - retry after a fresh logon before treating it as broken.
 #>
 $ErrorActionPreference = 'SilentlyContinue'
 $OK = 0; $CRIT = 1002
