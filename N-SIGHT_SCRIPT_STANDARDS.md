@@ -911,7 +911,7 @@ fi
 
 ## Script Inventory
 
-Purpose text is each script's own synopsis. `windows/experimental/` is not a deployable check or task.
+Purpose text is each script's own synopsis. `windows/tools/` (consolidated from tools/, support/, and experimental/ in Sep 2026) is not a deployable check or task.
 
 ### Windows (.ps1)
 
@@ -1005,11 +1005,18 @@ Purpose text is each script's own synopsis. `windows/experimental/` is not a dep
 | `Show_RebootReminder.ps1` | If a restart is pending, prompt the user to reboot or snooze reminders for 4 hours. |
 | `Unblock_Edge.ps1` | Unblock Microsoft Edge (reverses Block_Edge.ps1 script). |
 
-#### Experimental (windows/experimental/)
+#### Tools (windows/tools/)
+
+Misc helper scripts not organized as a check/task pair. Consolidated from the former separate
+`tools/`, `support/`, and `experimental/` folders (Sep 2026) - a stale incident log dump that had
+accumulated in `support/` was moved to `_to_delete/` rather than kept here, since it was data, not
+a script.
 
 | Script | Purpose |
 | --- | --- |
+| `Invoke-CheckTaskValidation.ps1` | Validate check/task pairs from check-task-pairs.json, or run check -> task -> check on Windows. |
 | `Test-VpnConnectivity.ps1` | Tests VPN connectivity by checking access to a specific internal/VPN-protected resource. |
+| `N-able_RMM_Agent_Logs/Bundle-NsightRmmAgentLogs.ps1` | Bundles common N-sight RMM / N-able Windows agent log folders into one ZIP (silent, no GUI) for support requests. |
 
 ### Linux (.sh)
 

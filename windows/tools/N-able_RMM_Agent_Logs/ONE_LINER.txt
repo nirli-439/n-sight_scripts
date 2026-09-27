@@ -13,11 +13,11 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreferen
    First line is suitable to paste into email; attach the ZIP path shown.
    Run elevated. Remote one-liner (iex) must be from an elevated PowerShell window.
 
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "FULL_PATH_TO_REPO\windows\support\N-able_RMM_Agent_Logs\Bundle-NsightRmmAgentLogs.ps1"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "FULL_PATH_TO_REPO\windows\tools\N-able_RMM_Agent_Logs\Bundle-NsightRmmAgentLogs.ps1"
 
    Remote (use HEAD in the URL — raw.githubusercontent.com sometimes serves a stale blob for /main/):
 
-powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm 'https://raw.githubusercontent.com/nirli-439/n-sight_scripts/HEAD/windows/support/N-able_RMM_Agent_Logs/Bundle-NsightRmmAgentLogs.ps1')"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm 'https://raw.githubusercontent.com/nirli-439/n-sight_scripts/HEAD/windows/tools/N-able_RMM_Agent_Logs/Bundle-NsightRmmAgentLogs.ps1')"
 
 ================================================================================
 What to send N-able
