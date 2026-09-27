@@ -217,7 +217,10 @@ try {
     Set-OnboardingTaskbarLayout -Links $links
     New-Item -Path (Split-Path $ScriptCopy) -ItemType Directory -Force | Out-Null
     if ($PSCommandPath) { Copy-Item -LiteralPath $PSCommandPath -Destination $ScriptCopy -Force }
-    else { throw 'Script path missing; run with -File so the logon task can call this copy.' }
+    else {
+        Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Pin_Onboarding_Apps.ps1' -OutFile $ScriptCopy
+    }
+    if (-not (Test-Path -LiteralPath $ScriptCopy)) { throw "Could not save $ScriptCopy" }
 
     $action = New-ScheduledTaskAction -Execute "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$ScriptCopy`" -PinCurrentUser"
     $trigger = New-ScheduledTaskTrigger -AtLogOn
