@@ -1,0 +1,251 @@
+<#
+.SYNOPSIS
+    Public desktop shortcuts and one taskbar pin list for onboarding desktop apps.
+
+.DESCRIPTION
+    Creates a verified shortcut on the public desktop for each installed app:
+    Chrome, Slack, Google Drive, Twingate, Claude, ChatGPT.
+    Writes one StartLayoutFile so those shortcuts pin for new profiles.
+    Registers a logon task that pins the same shortcuts for existing users.
+    SYSTEM cannot pin the current taskbar itself. Missing apps are skipped.
+
+.EXECUTION
+    Windows (repo): iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Pin_Onboarding_Apps.ps1")
+
+.NOTES
+    Author: IT Admin
+    Version: 1.0
+    Exit 0 = shortcuts and layout written
+    Exit 1001 = no onboarding desktop apps installed
+    Exit 1002 = shortcut or layout write failed
+#>
+#Requires -Version 5.1
+[CmdletBinding()]
+param([switch]$PinCurrentUser)
+
+$ErrorActionPreference = 'Stop'
+$ProgressPreference = 'SilentlyContinue'
+$OK = 0
+$WARN = 1001
+$CRIT = 1002
+$LayoutPath = Join-Path $env:ProgramData 'OnboardingTaskbarLayout.xml'
+$ScriptCopy = Join-Path $env:ProgramData 'nsight\Pin_Onboarding_Apps.ps1'
+$GroupTask = 'N-Sight-PinOnboardingApps'
+
+function New-PublicLnk {
+    param([string]$Name, [string]$Target, [string]$Arguments, [string]$Icon)
+    $link = Join-Path $env:PUBLIC "Desktop\$Name.lnk"
+    $shell = New-Object -ComObject WScript.Shell
+    $shortcut = $shell.CreateShortcut($link)
+    $shortcut.TargetPath = $Target
+    $shortcut.Arguments = $Arguments
+    if ($Icon) { $shortcut.IconLocation = $Icon }
+    $shortcut.Description = $Name
+    $shortcut.Save()
+    if (-not (Test-Path -LiteralPath $link)) { throw "Desktop shortcut verification failed: $Name" }
+    return $link
+}
+
+function Get-FirstPath {
+    param([string[]]$Candidates)
+    foreach ($p in $Candidates) {
+        if ($p -and (Test-Path -LiteralPath $p)) { return $p }
+    }
+    return $null
+}
+
+function Get-AppUserModelId {
+    param([string]$NameLike)
+    $pkg = Get-AppxPackage -AllUsers -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -like $NameLike } |
+        Select-Object -First 1
+    if (-not $pkg) {
+        $prov = Get-AppxProvisionedPackage -Online -ErrorAction SilentlyContinue |
+            Where-Object { $_.DisplayName -like $NameLike } |
+            Select-Object -First 1
+        if (-not $prov) { return $null }
+        $pkg = $prov
+    }
+    $id = 'App'
+    $root = $pkg.InstallLocation
+    if ($root) {
+        $manifest = Join-Path $root 'AppxManifest.xml'
+        if (Test-Path -LiteralPath $manifest) {
+            try {
+                [xml]$xml = Get-Content -LiteralPath $manifest -Raw
+                $app = @($xml.Package.Applications.Application)[0]
+                if ($app.Id) { $id = [string]$app.Id }
+            } catch { }
+        }
+    }
+    $family = $pkg.PackageFamilyName
+    if (-not $family) { return $null }
+    return "$family!$id"
+}
+
+function Get-OnboardingShortcuts {
+    $links = @()
+    $chrome = Get-FirstPath @(
+        "$env:ProgramFiles\Google\Chrome\Application\chrome.exe",
+        "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe"
+    )
+    if ($chrome) { $links += New-PublicLnk -Name 'Google Chrome' -Target $chrome -Icon "$chrome,0" }
+
+    $slackExe = Get-FirstPath @(
+        "$env:ProgramFiles\Slack\slack.exe",
+        "${env:ProgramFiles(x86)}\Slack\slack.exe"
+    )
+    $slackId = Get-AppUserModelId 'SlackTechnologies.Slack*'
+    if (-not $slackId -and ($slackExe -or (Get-AppxProvisionedPackage -Online -ErrorAction SilentlyContinue | Where-Object { $_.DisplayName -like 'SlackTechnologies.Slack*' }))) {
+        $slackId = 'SlackTechnologies.Slack_8she8kybcnzg4!App'
+    }
+    if ($slackId) {
+        $icon = if ($slackExe) { "$slackExe,0" } else { "$env:SystemRoot\System32\imageres.dll,15" }
+        $links += New-PublicLnk -Name 'Slack' -Target "$env:SystemRoot\explorer.exe" -Arguments "shell:AppsFolder\$slackId" -Icon $icon
+    }
+
+    $drive = Get-FirstPath @(
+        "$env:ProgramFiles\Google\Drive File Stream\GoogleDriveFS.exe",
+        "${env:ProgramFiles(x86)}\Google\Drive File Stream\GoogleDriveFS.exe",
+        "$env:ProgramFiles\Google\DriveFS\GoogleDriveFS.exe",
+        "${env:ProgramFiles(x86)}\Google\DriveFS\GoogleDriveFS.exe"
+    )
+    if ($drive) { $links += New-PublicLnk -Name 'Google Drive' -Target $drive -Icon "$drive,0" }
+
+    $twingate = Get-FirstPath @(
+        "$env:ProgramFiles\Twingate\Twingate.exe",
+        "${env:ProgramFiles(x86)}\Twingate\Twingate.exe"
+    )
+    if ($twingate) { $links += New-PublicLnk -Name 'Twingate' -Target $twingate -Icon "$twingate,0" }
+
+    foreach ($app in @(
+        @{ Name = 'Claude'; Like = 'Anthropic.Claude*' },
+        @{ Name = 'ChatGPT'; Like = 'OpenAI.ChatGPT*' }
+    )) {
+        $id = Get-AppUserModelId $app.Like
+        if ($id) {
+            $links += New-PublicLnk -Name $app.Name -Target "$env:SystemRoot\explorer.exe" -Arguments "shell:AppsFolder\$id" -Icon "$env:SystemRoot\System32\imageres.dll,15"
+        }
+    }
+    return @($links | Where-Object { $_ })
+}
+
+function Set-OnboardingTaskbarLayout {
+    param([string[]]$Links)
+    $pins = ($Links | ForEach-Object {
+        $name = Split-Path -Leaf $_
+        "        <taskbar:DesktopApp DesktopApplicationLinkPath=`"%PUBLIC%\Desktop\$name`" />"
+    }) -join "`r`n"
+    $xml = @"
+<?xml version="1.0" encoding="utf-8"?>
+<LayoutModificationTemplate xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification" xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" Version="1" xmlns:taskbar="http://schemas.microsoft.com/Start/2014/TaskbarLayout">
+  <CustomTaskbarLayoutCollection PinListPlacement="Append">
+    <defaultlayout:TaskbarLayout>
+      <taskbar:TaskbarPinList>
+$pins
+      </taskbar:TaskbarPinList>
+    </defaultlayout:TaskbarLayout>
+  </CustomTaskbarLayoutCollection>
+</LayoutModificationTemplate>
+"@
+    Set-Content -Path $LayoutPath -Value $xml -Encoding UTF8
+    $policy = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Explorer'
+    New-Item -Path $policy -Force | Out-Null
+    Set-ItemProperty -Path $policy -Name StartLayoutFile -Type String -Value $LayoutPath
+    if ((Get-ItemPropertyValue -Path $policy -Name StartLayoutFile) -ne $LayoutPath) {
+        throw 'Taskbar layout verification failed.'
+    }
+}
+
+function Invoke-TaskbarPin {
+    param([string]$Lnk)
+    $dir = Split-Path -Parent $Lnk
+    $leaf = Split-Path -Leaf $Lnk
+    $shell = New-Object -ComObject Shell.Application
+    $item = $shell.NameSpace($dir).ParseName($leaf)
+    if (-not $item) { throw "Shortcut not visible: $Lnk" }
+    $verbs = @($item.Verbs())
+    $unpin = $verbs | Where-Object { ($_.Name -replace '&','') -match 'Unpin from taskbar' } | Select-Object -First 1
+    if ($unpin) {
+        Write-Host "OK: $leaf already pinned"
+        return
+    }
+    $pin = $verbs | Where-Object { ($_.Name -replace '&','') -match 'Pin to taskbar|taskbarpin' } | Select-Object -First 1
+    if ($pin) { $pin.DoIt() } else { $item.InvokeVerb('taskbarpin') }
+    Write-Host "OK: pin requested for $leaf"
+}
+
+function Register-UserPinTask {
+    param([string]$UserId, [string]$TaskName, [switch]$StartNow)
+    $arg = "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$ScriptCopy`" -PinCurrentUser"
+    $action = New-ScheduledTaskAction -Execute "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument $arg
+    $trigger = New-ScheduledTaskTrigger -AtLogOn -User $UserId
+    $principal = New-ScheduledTaskPrincipal -UserId $UserId -LogonType Interactive -RunLevel Limited
+    $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -MultipleInstances IgnoreNew
+    Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Force | Out-Null
+    if ($StartNow) {
+        try { Start-ScheduledTask -TaskName $TaskName } catch { Write-Host "WARNING: could not start pin task for $UserId" }
+    }
+}
+
+if ($PinCurrentUser) {
+    $desktop = Join-Path $env:PUBLIC 'Desktop'
+    $names = @('Google Chrome.lnk','Slack.lnk','Google Drive.lnk','Twingate.lnk','Claude.lnk','ChatGPT.lnk')
+    foreach ($name in $names) {
+        $lnk = Join-Path $desktop $name
+        if (Test-Path -LiteralPath $lnk) {
+            try { Invoke-TaskbarPin $lnk } catch { Write-Host "WARNING: pin failed for $name - $($_.Exception.Message)" }
+        }
+    }
+    $me = [Security.Principal.WindowsIdentity]::GetCurrent().Name
+    Get-ScheduledTask -TaskName 'N-Sight-PinApps-Now-*' -ErrorAction SilentlyContinue |
+        Where-Object { $_.Principal.UserId -eq $me } |
+        Unregister-ScheduledTask -Confirm:$false -ErrorAction SilentlyContinue
+    exit $OK
+}
+
+$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(
+    [Security.Principal.WindowsBuiltInRole]::Administrator)
+if (-not $isAdmin) { Write-Host 'CRITICAL: Run as Administrator.'; exit $CRIT }
+
+try {
+    $links = @(Get-OnboardingShortcuts)
+    if ($links.Count -eq 0) {
+        Write-Host 'WARNING: no onboarding desktop apps installed.'
+        exit $WARN
+    }
+    Set-OnboardingTaskbarLayout -Links $links
+    New-Item -Path (Split-Path $ScriptCopy) -ItemType Directory -Force | Out-Null
+    if ($PSCommandPath) { Copy-Item -LiteralPath $PSCommandPath -Destination $ScriptCopy -Force }
+    else { throw 'Script path missing; run with -File so the logon task can call this copy.' }
+
+    $action = New-ScheduledTaskAction -Execute "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$ScriptCopy`" -PinCurrentUser"
+    $trigger = New-ScheduledTaskTrigger -AtLogOn
+    $principal = New-ScheduledTaskPrincipal -GroupId 'S-1-5-32-545' -RunLevel Limited
+    $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -MultipleInstances IgnoreNew
+    Register-ScheduledTask -TaskName $GroupTask -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Force | Out-Null
+
+    $loggedOn = @{}
+    Get-CimInstance Win32_Process -Filter "Name='explorer.exe'" -ErrorAction SilentlyContinue | ForEach-Object {
+        $owner = Invoke-CimMethod -InputObject $_ -MethodName GetOwner
+        if ($owner.ReturnValue -eq 0 -and $owner.User -and $owner.User -notin @('SYSTEM','LOCAL SERVICE','NETWORK SERVICE')) {
+            $loggedOn["$($owner.Domain)\$($owner.User)"] = $true
+        }
+    }
+    Get-CimInstance Win32_UserProfile -ErrorAction SilentlyContinue | Where-Object { -not $_.Special -and $_.LocalPath -match '\\Users\\' } | ForEach-Object {
+        try {
+            $account = (New-Object System.Security.Principal.SecurityIdentifier($_.SID)).Translate([System.Security.Principal.NTAccount]).Value
+        } catch { return }
+        $safe = ($account -replace '[^A-Za-z0-9]', '_')
+        $start = [bool]$loggedOn[$account]
+        Register-UserPinTask -UserId $account -TaskName "N-Sight-PinApps-Now-$safe" -StartNow:$start
+    }
+
+    Write-Host ("OK: {0} desktop shortcuts on Public Desktop. Taskbar layout set for new profiles. Logged-on users are pinned at next logon if the pin task could not start now." -f $links.Count)
+    $links | ForEach-Object { Write-Host "  $_" }
+    exit $OK
+}
+catch {
+    Write-Host "CRITICAL: $($_.Exception.Message)"
+    exit $CRIT
+}

@@ -981,6 +981,7 @@ Purpose text is each script's own synopsis. `windows/experimental/` is not a dep
 | `Install_Twingate.ps1` | Installs Twingate and .NET Desktop Runtime 8.0.29 x64 for all users. |
 | `Limit_WindowsUpdate_Bandwidth.ps1` | Cap Windows Update (Delivery Optimization) bandwidth to 1MB/s up and down. |
 | `Optimize-TailscalePerformance.ps1` | Optimizes network performance for Tailscale on Windows endpoints. |
+| `Pin_Onboarding_Apps.ps1` | Public desktop shortcuts and one taskbar pin list for Chrome, Slack, Drive, Twingate, Claude, and ChatGPT. |
 | `Refresh_N-Sight_Agent.ps1` | Refresh N-Sight agent, TakeControl, and background checks. First and last line of defense. |
 | `Register_RebootReminder.ps1` | Register (or remove) a per-user scheduled task that runs Show_RebootReminder.ps1 at logon and every 4 hours. |
 | `Remediate_BitLocker.ps1` | Enable BitLocker on the system drive (C:) and ensure recovery key is backed up and printed. |

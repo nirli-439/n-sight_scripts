@@ -46,10 +46,12 @@
 
 .NOTES
     Author: IT Admin
-    Version: 2.4
+    Version: 2.5
     Requires: Administrator privileges
     Platform: Windows 10/11
     Changelog:
+    - 2.5: After installs, Pin_Onboarding_Apps.ps1 puts Chrome, Slack, Drive,
+      Twingate, Claude, and ChatGPT on the public desktop and in one taskbar layout.
     - 2.4: Skip is in Remove_McAfee (no MCPR, no takeown /R, when McAfee is absent).
       Slack, hibernate, and screen lock overlap McAfee. msiexec/winget tasks stay
       serial after McAfee so Windows Installer does not deadlock.
@@ -313,6 +315,14 @@ foreach ($task in $Tasks) {
 
 foreach ($handle in $fastHandles) {
     Complete-OnboardTask $handle
+}
+
+try {
+    Complete-OnboardTask (Start-OnboardTask @{ Name = 'Pin desktop apps'; Script = 'Pin_Onboarding_Apps.ps1' })
+}
+catch {
+    Write-Log "  -> Pin desktop apps exception: $_" -Level "WARN"
+    $Script:AnyCritical = $true
 }
 
 # Optional: verify GCPW registry vs. expected identity settings (no auto-install from check in this flow)

@@ -273,25 +273,6 @@ function Add-SlackDesktopShortcut {
     Write-Log "Created desktop shortcut: $shortcutPath"
 }
 
-function Add-SlackTaskbarPinForNewUsers {
-    $layoutPath = Join-Path $env:ProgramData 'SlackTaskbarLayout.xml'
-    @'
-<?xml version="1.0" encoding="utf-8"?>
-<LayoutModificationTemplate xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification" xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns:taskbar="http://schemas.microsoft.com/Start/2014/TaskbarLayout">
-  <CustomTaskbarLayoutCollection PinListPlacement="Append">
-    <defaultlayout:TaskbarLayout>
-      <taskbar:TaskbarPinList><taskbar:DesktopApp DesktopApplicationLinkPath="%PUBLIC%\Desktop\Slack.lnk" /></taskbar:TaskbarPinList>
-    </defaultlayout:TaskbarLayout>
-  </CustomTaskbarLayoutCollection>
-</LayoutModificationTemplate>
-'@ | Set-Content -Path $layoutPath -Encoding UTF8
-    $policy = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Explorer'
-    New-Item -Path $policy -Force | Out-Null
-    Set-ItemProperty -Path $policy -Name StartLayoutFile -Value $layoutPath -Type String
-    if ((Get-ItemPropertyValue -Path $policy -Name StartLayoutFile) -ne $layoutPath) { throw 'Slack taskbar layout verification failed.' }
-    Write-Log 'Slack taskbar pin configured for new user profiles; existing users retain their current taskbar pins.'
-}
-
 # ============================================================================
 # MAIN EXECUTION
 # ============================================================================
@@ -318,7 +299,6 @@ try {
     
     if ($slackStatus.Installed) {
         Add-SlackDesktopShortcut
-        Add-SlackTaskbarPinForNewUsers
         Write-Log "Slack is already installed"
         Write-Log "Path: $($slackStatus.Path)"
         Write-Log "Version: $($slackStatus.Version)"
@@ -339,7 +319,6 @@ try {
 
     if ($verifyStatus -and $verifyStatus.Installed) {
         Add-SlackDesktopShortcut
-        Add-SlackTaskbarPinForNewUsers
         Write-Log "Installation verified"
         Write-Log "Version: $($verifyStatus.Version)"
         Write-Log "Path: $($verifyStatus.Path)"

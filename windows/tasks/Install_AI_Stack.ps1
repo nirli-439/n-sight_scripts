@@ -107,8 +107,6 @@ try {
     Install-Antigravity
     $required = @((Join-Path $NpmPrefix 'claude.cmd'), (Join-Path $NpmPrefix 'codex.cmd'), (Join-Path $Bin 'agy.exe'))
     if ($required | Where-Object { -not (Test-Path $_) }) { throw 'One or more AI CLI binaries are missing.' }
-    # Taskbar pinning is per-user; N-Sight runs as SYSTEM and Windows blocks silent SYSTEM-to-user pinning.
-    # Desktop apps are provisioned and placed in Start. Pin through Intune TaskbarLayout for managed user profiles.
-    Log 'OK: AI Stack installed. Reboot if WSL requests it. ChatGPT and Claude Desktop are in Start; CLI: claude, codex, agy.'
+    Log 'OK: AI Stack installed. Reboot if WSL requests it. Desktop shortcuts and taskbar pins are applied by Pin_Onboarding_Apps.ps1. CLI: claude, codex, agy.'
     exit $OK
 } catch { Log "CRITICAL: $($_.Exception.Message)"; exit $CRIT }

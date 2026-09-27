@@ -1,6 +1,7 @@
 <#
 .SYNOPSIS
-    Installs Chrome, makes it the default browser, pins it for new profiles, and blocks Edge updates.
+    Installs Chrome, makes it the default browser, and creates a public desktop shortcut.
+    Taskbar pins are applied by Pin_Onboarding_Apps.ps1 so one layout covers every app.
 .DESCRIPTION
     Silent N-Sight task for Windows 10/11. A public desktop shortcut is created.
     Taskbar layouts only apply to new profiles; SYSTEM cannot reliably pin existing users.
@@ -37,17 +38,6 @@ function Set-ChromeDesktopAndTaskbar([string]$Chrome) {
     $shortcut.IconLocation = "$Chrome,0"
     $shortcut.Save()
     if (-not (Test-Path $link)) { throw 'Chrome desktop shortcut verification failed.' }
-    $layout = Join-Path $env:ProgramData 'ChromeTaskbarLayout.xml'
-    @'
-<?xml version="1.0" encoding="utf-8"?>
-<LayoutModificationTemplate xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification" xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" Version="1" xmlns:taskbar="http://schemas.microsoft.com/Start/2014/TaskbarLayout">
-  <CustomTaskbarLayoutCollection PinListPlacement="Append"><defaultlayout:TaskbarLayout><taskbar:TaskbarPinList><taskbar:DesktopApp DesktopApplicationLinkPath="%PUBLIC%\Desktop\Google Chrome.lnk" /></taskbar:TaskbarPinList></defaultlayout:TaskbarLayout></CustomTaskbarLayoutCollection>
-</LayoutModificationTemplate>
-'@ | Set-Content -Path $layout -Encoding UTF8
-    $explorer = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Explorer'
-    New-Item $explorer -Force | Out-Null
-    Set-ItemProperty $explorer -Name StartLayoutFile -Type String -Value $layout
-    if ((Get-ItemPropertyValue $explorer -Name StartLayoutFile) -ne $layout) { throw 'Chrome taskbar layout verification failed.' }
 }
 function Set-ChromeDefault([string]$Chrome) {
     $xml = Join-Path $env:ProgramData 'ChromeDefaultAssociations.xml'
