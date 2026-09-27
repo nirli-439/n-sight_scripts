@@ -4,16 +4,22 @@
 
 .DESCRIPTION
     Creates a verified shortcut on the public desktop for each installed app:
-    Chrome, Slack, Google Drive, Twingate, Claude, ChatGPT.
-    Writes one StartLayoutFile so those shortcuts pin for new profiles.
-    Missing apps are skipped. No scheduled tasks.
+    Chrome, Slack, Google Drive, Twingate, Claude, ChatGPT, and a Gemini web-app
+    shortcut (chrome.exe --app=, chromeless window - Gemini has no native Windows
+    desktop app, so this is the closest equivalent to the others). Writes one
+    StartLayoutFile so those shortcuts pin for new profiles. Missing apps are
+    skipped. No scheduled tasks.
 
 .EXECUTION
     Windows (repo): iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Pin_Onboarding_Apps.ps1")
 
 .NOTES
     Author: IT Admin
-    Version: 1.0
+    Version: 1.1
+    Changelog:
+    - 1.1: Added a Gemini web-app shortcut (chrome.exe --app=https://gemini.google.com/app,
+      a chromeless "app mode" window - long-documented Chromium behavior, not a real
+      installed PWA/extension). Requires Chrome already installed; skipped otherwise.
     Exit 0 = shortcuts and layout written
     Exit 1001 = no onboarding desktop apps installed
     Exit 1002 = shortcut or layout write failed
@@ -100,7 +106,11 @@ function Get-OnboardingShortcuts {
         "$env:ProgramFiles\Google\Chrome\Application\chrome.exe",
         "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe"
     )
-    if ($chrome) { $links += New-PublicLnk -Name 'Google Chrome' -Target $chrome -Icon "$chrome,0" }
+    if ($chrome) { $links += New-PublicLnk -Name 'Google Chrome' -Target $chrome -Icon "$chrome,0" } else { $script:Skipped += 'Google Chrome' }
+
+    if ($chrome) {
+        $links += New-PublicLnk -Name 'Gemini' -Target $chrome -Arguments '--app=https://gemini.google.com/app --profile-directory=Default' -Icon "$chrome,0"
+    } else { $script:Skipped += 'Gemini' }
 
     $slackExe = Get-FirstPath @(
         "$env:ProgramFiles\Slack\slack.exe",
