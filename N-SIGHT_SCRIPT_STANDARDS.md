@@ -1000,7 +1000,7 @@ Purpose text is each script's own synopsis. `windows/experimental/` is not a dep
 | `Rename_Computer.ps1` | Rename a Windows computer to a new hostname. |
 | `Restore_Hibernate_ThinkPad.ps1` | Restores proper sleep + hibernate behavior on Lenovo ThinkPad devices (reverts Remediate_Lenovo_ThinkPad_AMD_Sleep.ps1). |
 | `Run_Onboarding_From_GitHub.cmd` | Elevated launcher for Run_Onboarding_Tasks.ps1 from GitHub |
-| `Run_Onboarding_Tasks.ps1` | Run onboarding tasks by executing GitHub-hosted scripts in sequence (unattended, N-Sight-friendly). |
+| `Run_Onboarding_Tasks.ps1` | Slack, hibernate, and screen lock overlap McAfee. msiexec/winget tasks run one at a time after McAfee. |
 | `Show_RebootReminder.ps1` | If a restart is pending, prompt the user to reboot or snooze reminders for 4 hours. |
 | `Unblock_Edge.ps1` | Unblock Microsoft Edge (reverses Block_Edge.ps1 script). |
 

@@ -128,18 +128,36 @@ function Remove-McAfeeTasks {
     }
 }
 
+function Test-McAfeeInstalled {
+    $svc = Get-Service -ErrorAction SilentlyContinue | Where-Object {
+        $_.DisplayName -match '(?i)mcafee' -or $_.Name -match '(?i)^(mcafee|mcshield|masvc|mfefire|mcagent)'
+    }
+    if ($svc) { return $true }
+    $roots = @(
+        'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall',
+        'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall'
+    )
+    foreach ($root in $roots) {
+        if (-not (Test-Path $root)) { continue }
+        foreach ($key in (Get-ChildItem $root -ErrorAction SilentlyContinue)) {
+            $name = (Get-ItemProperty -Path $key.PSPath -ErrorAction SilentlyContinue).DisplayName
+            if ($name -match '(?i)mcafee') { return $true }
+        }
+    }
+    return $false
+}
+
 function Remove-McAfeeFolders {
     Write-Log "Removing McAfee folders..."
     foreach ($folder in $McAfeeFolders) {
         if (Test-Path $folder) {
             try {
-                & takeown /F "$folder" /R /A /D Y 2>$null
-                & icacls "$folder" /reset /T /C /Q 2>$null
                 Remove-Item -Path $folder -Recurse -Force -ErrorAction Stop
                 Write-Log "Removed: $folder"
             } catch {
-                try { & cmd.exe /c "rd /s /q `"$folder`"" 2>$null } catch { }
+                & cmd.exe /c "rd /s /q `"$folder`"" 2>$null
                 if (-not (Test-Path $folder)) { Write-Log "Removed via cmd: $folder" }
+                else { Write-Log "Could not remove $folder" -Level "WARNING" }
             }
         }
     }
@@ -205,6 +223,25 @@ Write-Log "Computer: $env:COMPUTERNAME | Log: $LogFile"
 if (-not (Test-IsAdmin)) {
     Write-Log "Requires Administrator." -Level "ERROR"
     exit 1002
+}
+
+$mcAfeeInstalled = Test-McAfeeInstalled
+$mcAfeeFolder = $false
+foreach ($folder in $McAfeeFolders) {
+    if (Test-Path $folder) { $mcAfeeFolder = $true; break }
+}
+if (-not $mcAfeeInstalled -and -not $mcAfeeFolder) {
+    Write-Log "No McAfee product or folder. Skipping MCPR."
+    Write-Host "OK: McAfee not installed."
+    exit 0
+}
+if (-not $mcAfeeInstalled) {
+    Write-Log "No McAfee product. Removing leftover folders only."
+    Remove-McAfeeTasks
+    Remove-McAfeeFolders
+    Remove-McAfeeRegistry
+    Write-Host "OK: McAfee leftovers removed."
+    exit 0
 }
 
 try {

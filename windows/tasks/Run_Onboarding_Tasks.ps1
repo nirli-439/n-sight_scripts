@@ -1,6 +1,8 @@
 <#
 .SYNOPSIS
-    Run onboarding tasks by executing GitHub-hosted scripts in sequence (unattended, N-Sight-friendly).
+    Run onboarding tasks from GitHub (unattended, N-Sight-friendly).
+    Slack, hibernate, and screen lock start immediately and overlap McAfee.
+    Tasks that use msiexec or winget run one at a time after McAfee exits.
 
 .DESCRIPTION
     Downloads each task script from the repo (TLS 1.2, retries), runs via
@@ -44,13 +46,14 @@
 
 .NOTES
     Author: IT Admin
-    Version: 2.3
+    Version: 2.4
     Requires: Administrator privileges
     Platform: Windows 10/11
     Changelog:
-    - 2.3: Added step 13, Install_AI_Stack.ps1 (Claude Desktop w/ Cowork, ChatGPT
-      Desktop, Claude Code CLI, Codex CLI, Antigravity CLI, plus their Git/Node/Python/
-      WSL prerequisites). Runs last since it can trigger a WSL-related reboot prompt.
+    - 2.4: Skip is in Remove_McAfee (no MCPR, no takeown /R, when McAfee is absent).
+      Slack, hibernate, and screen lock overlap McAfee. msiexec/winget tasks stay
+      serial after McAfee so Windows Installer does not deadlock.
+    - 2.3: Added Install_AI_Stack.ps1 last (can prompt for a WSL reboot).
     - 2.2: Renamed step 3 to Remediate_Hibernate_LidClose.ps1 - it now enables hibernate
       (HiberbootEnabled=1) and shows the Hibernate button instead of disabling Fast
       Startup, per Nir's clarification (Sep 2026) of what was actually wanted. This
@@ -148,55 +151,96 @@ function Save-RemoteScript {
     throw "Failed to download script after $MaxAttempts attempts: $Url; $lastErr"
 }
 
-function Invoke-LocalPs1File {
-    <#
-    Run a downloaded .ps1 with preserved exit code; merge stdout/stderr into a log file (N-Sight output limit).
-    #>
+function Start-LocalPs1File {
     param(
         [Parameter(Mandatory)][string]$Path,
         [Parameter(Mandatory)][string]$OutputLog,
         [string[]]$ExtraArgs = @()
     )
-    if (-not (Test-Path -LiteralPath $Path)) {
-        throw "Script not found: $Path"
-    }
+    if (-not (Test-Path -LiteralPath $Path)) { throw "Script not found: $Path" }
     $argList = [System.Collections.Generic.List[string]]::new()
     $argList.AddRange([string[]]@('-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', $Path))
     foreach ($a in $ExtraArgs) { $argList.Add($a) }
-
-    $p = Start-Process -FilePath "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" `
-        -ArgumentList $argList -Wait -PassThru -NoNewWindow `
-        -RedirectStandardOutput $OutputLog -RedirectStandardError "${OutputLog}.err"
     $errFile = "${OutputLog}.err"
+    $proc = Start-Process -FilePath "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" `
+        -ArgumentList $argList -PassThru -NoNewWindow `
+        -RedirectStandardOutput $OutputLog -RedirectStandardError $errFile
+    return @{ Process = $proc; OutputLog = $OutputLog; ErrFile = $errFile }
+}
+
+function Finish-LocalPs1File {
+    param($Started)
+    $null = $Started.Process.WaitForExit()
+    $errFile = $Started.ErrFile
     if (Test-Path -LiteralPath $errFile) {
-        $errSize = (Get-Item -LiteralPath $errFile).Length
-        if ($errSize -gt 0) {
-            Add-Content -Path $OutputLog -Value "`n--- stderr ---`n" -ErrorAction SilentlyContinue
-            Get-Content -LiteralPath $errFile -Raw -ErrorAction SilentlyContinue | Add-Content -Path $OutputLog -ErrorAction SilentlyContinue
+        if ((Get-Item -LiteralPath $errFile).Length -gt 0) {
+            Add-Content -Path $Started.OutputLog -Value "`n--- stderr ---`n" -ErrorAction SilentlyContinue
+            Get-Content -LiteralPath $errFile -Raw -ErrorAction SilentlyContinue | Add-Content -Path $Started.OutputLog -ErrorAction SilentlyContinue
         }
         Remove-Item -LiteralPath $errFile -Force -ErrorAction SilentlyContinue
     }
-    $code = $p.ExitCode
+    $code = $Started.Process.ExitCode
     if ($null -eq $code) { return 0 }
     return [int]$code
 }
 
-function Invoke-RemoteTaskScript {
+function Invoke-LocalPs1File {
     param(
-        [Parameter(Mandatory)][string]$Url,
-        [Parameter(Mandatory)][string]$TaskLabel
+        [Parameter(Mandatory)][string]$Path,
+        [Parameter(Mandatory)][string]$OutputLog,
+        [string[]]$ExtraArgs = @()
     )
+    $started = Start-LocalPs1File -Path $Path -OutputLog $OutputLog -ExtraArgs $ExtraArgs
+    return (Finish-LocalPs1File $started)
+}
+
+function Start-OnboardTask {
+    param($Task)
+    $url = "$RepoBase/windows/tasks/$($Task.Script)"
     $tmp = $null
     try {
-        $tmp = Save-RemoteScript -Url $Url
-        $part = Get-SafeLogNamePart -Text $TaskLabel
+        $tmp = Save-RemoteScript -Url $url
+        $part = Get-SafeLogNamePart -Text $Task.Name
         $taskLog = Join-Path $LogDir ("task_{0}_{1}.log" -f $part, (Get-Date -Format 'HHmmss'))
-        $code = Invoke-LocalPs1File -Path $tmp -OutputLog $taskLog
-        return @{ ExitCode = $code; TaskLog = $taskLog }
+        Write-Log "Starting: $($Task.Name) ($($Task.Script)). Detail: $taskLog"
+        $started = Start-LocalPs1File -Path $tmp -OutputLog $taskLog
+        return @{ Task = $Task; Tmp = $tmp; Started = $started; TaskLog = $taskLog }
     }
-    finally {
+    catch {
         if ($tmp -and (Test-Path -LiteralPath $tmp)) {
             Remove-Item -LiteralPath $tmp -Force -ErrorAction SilentlyContinue
+        }
+        throw
+    }
+}
+
+function Complete-OnboardTask {
+    param($Handle)
+    $task = $Handle.Task
+    try {
+        $code = Finish-LocalPs1File $Handle.Started
+        if ($task.Script -eq 'Install_GCPW.ps1') {
+            $script:gcpwTaskRan = $true
+            if ($code -eq 0 -or $code -eq 1001) { $script:gcpwTaskOk = $true }
+        }
+        if ($code -eq 0) {
+            Write-Log "  -> $($task.Name) OK (exit $code). Detail: $($Handle.TaskLog)"
+        }
+        elseif ($code -eq 1001) {
+            Write-Log "  -> $($task.Name) WARNING (exit $code). Detail: $($Handle.TaskLog)" -Level "WARN"
+        }
+        else {
+            Write-Log "  -> $($task.Name) FAIL (exit $code). Detail: $($Handle.TaskLog)" -Level "WARN"
+            $Script:AnyCritical = $true
+        }
+    }
+    catch {
+        Write-Log "  -> $($task.Name) exception: $_" -Level "WARN"
+        $Script:AnyCritical = $true
+    }
+    finally {
+        if ($Handle.Tmp -and (Test-Path -LiteralPath $Handle.Tmp)) {
+            Remove-Item -LiteralPath $Handle.Tmp -Force -ErrorAction SilentlyContinue
         }
     }
 }
@@ -224,32 +268,51 @@ Write-Log "Post-GCPW registry verify: $(if ($doGcpwVerify) { 'enabled (AutoRemed
 $gcpwTaskRan = $false
 $gcpwTaskOk = $false
 
+# Slack/hibernate/screen lock do not take the Windows Installer lock. They overlap McAfee.
+# msiexec and winget tasks stay serial, and start only after McAfee has exited.
+$FastScripts = @(
+    'Remediate_Hibernate_LidClose.ps1',
+    'Remediate_ScreenLock_Timeout.ps1',
+    'Install_Slack.ps1'
+)
+
+$fastHandles = [System.Collections.Generic.List[object]]::new()
 foreach ($task in $Tasks) {
-    $url = "$RepoBase/windows/tasks/$($task.Script)"
-    Write-Log "Running: $($task.Name) ($($task.Script))..."
+    if ($FastScripts -notcontains $task.Script) { continue }
     try {
-        $run = Invoke-RemoteTaskScript -Url $url -TaskLabel $task.Name
-        $code = $run.ExitCode
-        $taskLogPath = $run.TaskLog
-        if ($task.Script -eq 'Install_GCPW.ps1') {
-            $gcpwTaskRan = $true
-            if ($code -eq 0 -or $code -eq 1001) { $gcpwTaskOk = $true }
-        }
-        if ($code -eq 0) {
-            Write-Log "  -> $($task.Name) OK (exit $code). Detail: $taskLogPath"
-        }
-        elseif ($code -eq 1001) {
-            Write-Log "  -> $($task.Name) WARNING (exit $code). Detail: $taskLogPath" -Level "WARN"
-        }
-        else {
-            Write-Log "  -> $($task.Name) FAIL (exit $code). Detail: $taskLogPath" -Level "WARN"
-            $Script:AnyCritical = $true
-        }
+        $fastHandles.Add((Start-OnboardTask $task))
     }
     catch {
         Write-Log "  -> $($task.Name) exception: $_" -Level "WARN"
         $Script:AnyCritical = $true
     }
+}
+
+foreach ($task in $Tasks) {
+    if ($task.Script -ne 'Remove_McAfee.ps1') { continue }
+    try {
+        Complete-OnboardTask (Start-OnboardTask $task)
+    }
+    catch {
+        Write-Log "  -> $($task.Name) exception: $_" -Level "WARN"
+        $Script:AnyCritical = $true
+    }
+}
+
+foreach ($task in $Tasks) {
+    if ($FastScripts -contains $task.Script) { continue }
+    if ($task.Script -eq 'Remove_McAfee.ps1') { continue }
+    try {
+        Complete-OnboardTask (Start-OnboardTask $task)
+    }
+    catch {
+        Write-Log "  -> $($task.Name) exception: $_" -Level "WARN"
+        $Script:AnyCritical = $true
+    }
+}
+
+foreach ($handle in $fastHandles) {
+    Complete-OnboardTask $handle
 }
 
 # Optional: verify GCPW registry vs. expected identity settings (no auto-install from check in this flow)
