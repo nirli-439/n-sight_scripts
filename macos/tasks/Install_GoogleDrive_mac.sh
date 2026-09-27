@@ -33,7 +33,7 @@
 # EXECUTION:
 #     macOS (local):  sudo bash /path/to/Install_GoogleDrive_mac.sh
 #     Or:             bash /path/to/Install_GoogleDrive_mac.sh   (run as root when required)
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Install_GoogleDrive_mac.sh" | sudo bash
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Install_GoogleDrive_mac.sh" | sudo bash
 #
 # NOTES:
 #     Author: IT Admin

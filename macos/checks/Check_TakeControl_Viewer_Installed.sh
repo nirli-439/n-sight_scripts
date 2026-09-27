@@ -61,7 +61,7 @@ readonly SYSTEM_INSTALL_PATH="/Applications/${APP_NAME}"
 # Bundle ID will be detected from installed app
 
 # GitHub repository configuration (for auto-remediation)
-readonly GITHUB_REPO="nirl-droid/n-sight_scripts"
+readonly GITHUB_REPO="nirli-439/n-sight_scripts"
 readonly GITHUB_BRANCH="main"
 readonly GITHUB_BASE_URL="https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}"
 

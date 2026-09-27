@@ -10,7 +10,7 @@
 # macos/tasks/Refresh_RMM_Agent_mac.sh keep working.
 #
 # EXECUTION (unchanged URL path):
-#     curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Refresh_RMM_Agent_mac.sh" | sudo bash
+#     curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Refresh_RMM_Agent_mac.sh" | sudo bash
 #
 # =============================================================================
 set -euo pipefail

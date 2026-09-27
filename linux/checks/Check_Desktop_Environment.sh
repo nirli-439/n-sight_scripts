@@ -23,7 +23,7 @@
 #
 # EXECUTION:
 #     Linux (local):  sudo bash /path/to/Check_Desktop_Environment.sh
-#     Linux (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/linux/checks/Check_Desktop_Environment.sh" | sudo bash
+#     Linux (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux/checks/Check_Desktop_Environment.sh" | sudo bash
 #
 # NOTES:
 #     Author: IT Admin

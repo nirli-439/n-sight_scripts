@@ -17,7 +17,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "FULL_PATH_TO_REPO\windo
 
    Remote (use HEAD in the URL — raw.githubusercontent.com sometimes serves a stale blob for /main/):
 
-powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm 'https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/HEAD/windows/support/N-able_RMM_Agent_Logs/Bundle-NsightRmmAgentLogs.ps1')"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "iex (irm 'https://raw.githubusercontent.com/nirli-439/n-sight_scripts/HEAD/windows/support/N-able_RMM_Agent_Logs/Bundle-NsightRmmAgentLogs.ps1')"
 
 ================================================================================
 What to send N-able

@@ -23,7 +23,7 @@
 #     1002 = Critical/Error (Chrome not set as default or not installed)
 #
 # EXECUTION:
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/checks/Check_Chrome_Default_Browser.sh" | sudo bash
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/checks/Check_Chrome_Default_Browser.sh" | sudo bash
 #     macOS: sudo bash /path/to/Check_Chrome_Default_Browser.sh
 #     Or:    bash /path/to/Check_Chrome_Default_Browser.sh (as root when required)
 #

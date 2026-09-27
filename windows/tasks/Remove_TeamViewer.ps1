@@ -13,7 +13,7 @@
 .EXECUTION
     Windows (local):  iex (Get-Content ".\Remove_TeamViewer.ps1" -Raw)
     Or:              powershell -NoProfile -ExecutionPolicy Bypass -File ".\Remove_TeamViewer.ps1"
-    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Remove_TeamViewer.ps1")
+    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Remove_TeamViewer.ps1")
 .NOTES
     Exit 0 = success; 1002 = failure (N-Sight reserved 1-999).
     Uninstall: TeamViewer uninstall.exe uses capital /S for silent uninstall.

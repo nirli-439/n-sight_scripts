@@ -9,7 +9,7 @@
 
 .EXECUTION
     Windows (local):  powershell -NoProfile -ExecutionPolicy Bypass -File ".\Remediate_Disable_BuiltIn_Administrator.ps1"
-    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Remediate_Disable_BuiltIn_Administrator.ps1")
+    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Remediate_Disable_BuiltIn_Administrator.ps1")
 
 .NOTES
     Version: 1.0

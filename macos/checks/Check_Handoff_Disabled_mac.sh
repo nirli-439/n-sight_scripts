@@ -21,7 +21,7 @@
 #
 # EXECUTION:
 #     macOS (local):  sudo bash /path/to/Check_Handoff_Disabled_mac.sh
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/checks/Check_Handoff_Disabled_mac.sh" | sudo bash
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/checks/Check_Handoff_Disabled_mac.sh" | sudo bash
 #
 # NOTES:
 #     Pair with macos/tasks/Remediate_Disable_Handoff_mac.sh for remediation.

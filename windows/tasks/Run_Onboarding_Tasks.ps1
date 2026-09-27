@@ -11,15 +11,17 @@
     Task order:
     1. Remove_McAfee
     2. Remove_OneDrive
-    3. Install_Twingate
-    4. Install_Slack
-    5. Install_GoogleDrive
-    6. Install_Chrome
-    7. Enforce_Chrome_Default_Browser
-    8. Install_Brother_MFC-L5750DW
-    9. Remediate_ScreenLock_Timeout
-    10. Install_GCPW
-    11. Install_OpenSSH
+    3. Remediate_Hibernate_LidClose
+    4. Install_Twingate
+    5. Install_Slack
+    6. Install_GoogleDrive
+    7. Install_Chrome
+    8. Enforce_Chrome_Default_Browser
+    9. Install_Brother_MFC-L5750DW
+    10. Remediate_ScreenLock_Timeout
+    11. Install_GCPW
+    12. Install_OpenSSH
+    13. Install_AI_Stack (Claude Desktop, ChatGPT Desktop, Claude Code CLI, Codex CLI, Antigravity CLI)
 
     After GCPW install, optionally runs Check_GCPW_Registry.ps1 with -AutoRemediate:$false to verify
     identity/GCPW registry alignment (same expectations as Install_GCPW / your Admin Console).
@@ -32,7 +34,7 @@
 
 .EXECUTION
     Windows (from GitHub - elevated PowerShell):
-        iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Run_Onboarding_Tasks.ps1")
+        iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Run_Onboarding_Tasks.ps1")
     Or: Run_Onboarding_From_GitHub.cmd (UAC prompt)
 
     Windows (local):  powershell -NoProfile -ExecutionPolicy Bypass -File ".\Run_Onboarding_Tasks.ps1"
@@ -42,9 +44,21 @@
 
 .NOTES
     Author: IT Admin
-    Version: 2.0
+    Version: 2.3
     Requires: Administrator privileges
     Platform: Windows 10/11
+    Changelog:
+    - 2.3: Added step 13, Install_AI_Stack.ps1 (Claude Desktop w/ Cowork, ChatGPT
+      Desktop, Claude Code CLI, Codex CLI, Antigravity CLI, plus their Git/Node/Python/
+      WSL prerequisites). Runs last since it can trigger a WSL-related reboot prompt.
+    - 2.2: Renamed step 3 to Remediate_Hibernate_LidClose.ps1 - it now enables hibernate
+      (HiberbootEnabled=1) and shows the Hibernate button instead of disabling Fast
+      Startup, per Nir's clarification (Sep 2026) of what was actually wanted. This
+      also resolves the ThinkPad Hiberboot conflict flagged in 2.1.
+    - 2.1: Added "Fast Boot & Lid Close" step (Remediate_FastBoot_LidClose.ps1, renamed
+      from "Disable Fast Boot & Lid Close.ps1"). Fixed default repo base URL (was
+      nirl-droid, should be nirli-439 per `git remote -v`).
+    - 2.0: Prior version.
 
 .OUTPUTS
     Exit 0    = All tasks completed (task exit 0 or 1001; GCPW verify 0 or 1001 if enabled)
@@ -71,7 +85,7 @@ $EXIT_SUCCESS = 0
 $EXIT_CRITICAL = 1002
 $Script:AnyCritical = $false
 
-$RepoBase = "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main"
+$RepoBase = "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main"
 if ($env:NSIGHT_SCRIPTS_REPO_BASE) {
     $custom = $env:NSIGHT_SCRIPTS_REPO_BASE.Trim().TrimEnd('/')
     if ($custom.Length -gt 0) { $RepoBase = $custom }
@@ -81,6 +95,7 @@ if ($env:NSIGHT_SCRIPTS_REPO_BASE) {
 $Tasks = @(
     @{ Name = "Remove McAfee";          Script = "Remove_McAfee.ps1" },
     @{ Name = "Remove OneDrive";         Script = "Remove_OneDrive.ps1" },
+    @{ Name = "Hibernate & Lid Close";  Script = "Remediate_Hibernate_LidClose.ps1" },
     @{ Name = "Twingate";               Script = "Install_Twingate.ps1" },
     @{ Name = "Slack";                  Script = "Install_Slack.ps1" },
     @{ Name = "Google Drive";           Script = "Install_GoogleDrive.ps1" },
@@ -89,7 +104,8 @@ $Tasks = @(
     @{ Name = "Brother MFC-L5750DW";    Script = "Install_Brother_MFC-L5750DW.ps1" },
     @{ Name = "Screen lock timeout";    Script = "Remediate_ScreenLock_Timeout.ps1" },
     @{ Name = "GCPW";                   Script = "Install_GCPW.ps1" },
-    @{ Name = "OpenSSH";                Script = "Install_OpenSSH.ps1" }
+    @{ Name = "OpenSSH";                Script = "Install_OpenSSH.ps1" },
+    @{ Name = "AI Stack (Claude/GPT/Codex)"; Script = "Install_AI_Stack.ps1" }
 )
 
 function Write-Log {

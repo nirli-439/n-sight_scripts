@@ -10,7 +10,7 @@
 
 .EXECUTION
     Windows (local):  .\Test-VpnConnectivity.ps1
-    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/exprimental/Test-VpnConnectivity.ps1?v=$([guid]::NewGuid())")
+    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/experimental/Test-VpnConnectivity.ps1?v=$([guid]::NewGuid())")
 
 .OUTPUTS
     Exit 0    = Success (VPN seems to be working and resource is reachable)

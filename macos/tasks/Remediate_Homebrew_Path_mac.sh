@@ -19,7 +19,7 @@
 #
 # EXECUTION:
 #     macOS (local):  sudo bash /path/to/Remediate_Homebrew_Path_mac.sh
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Remediate_Homebrew_Path_mac.sh" | sudo bash
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Remediate_Homebrew_Path_mac.sh" | sudo bash
 #
 # NOTES:
 #     Requires root. Pair with macos/checks/Check_Homebrew_Path_mac.sh.

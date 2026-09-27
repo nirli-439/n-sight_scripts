@@ -14,7 +14,7 @@
 .EXECUTION
     Windows (local):  powershell -NoProfile -ExecutionPolicy Bypass -File ".\Fix_AdobeCreativeCloud_Loading.ps1"
     Windows (repo):   Prefer commit-pinned raw URL (main branch CDN can be stale), e.g.
-                      iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/<COMMIT_SHA>/windows/tasks/Fix_AdobeCreativeCloud_Loading.ps1")
+                      iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/<COMMIT_SHA>/windows/tasks/Fix_AdobeCreativeCloud_Loading.ps1")
 
 .PARAMETER SkipCacheRename
     Only stop processes and services; do not rename cache folders.

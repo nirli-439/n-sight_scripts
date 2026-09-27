@@ -15,7 +15,7 @@
 
 .EXECUTION
     Windows (local):  powershell -NoProfile -ExecutionPolicy Bypass -File ".\Check_Applied_Policies.ps1"
-    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/checks/Check_Applied_Policies.ps1")
+    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/checks/Check_Applied_Policies.ps1")
 
 .NOTES
     Author: IT Admin

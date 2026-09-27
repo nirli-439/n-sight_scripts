@@ -27,7 +27,7 @@
 # EXECUTION:
 #     macOS (local):  sudo bash /path/to/Rename_Hostname_mac.sh "NEW-HOSTNAME"
 #     Or:             bash /path/to/Rename_Hostname_mac.sh "NEW-HOSTNAME"   (run as root when required)
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Rename_Hostname_mac.sh" | sudo bash -s "NEW-HOSTNAME"
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Rename_Hostname_mac.sh" | sudo bash -s "NEW-HOSTNAME"
 #     In N-Sight, pass NEW_HOSTNAME as a script parameter or environment variable.
 #
 # NOTES:

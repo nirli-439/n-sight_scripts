@@ -9,7 +9,7 @@
     
 .EXECUTION
     Windows (local):  iex (Get-Content ".\Check_Sofortarzt.ps1" -Raw)
-    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/checks/Check_Sofortarzt.ps1")
+    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/checks/Check_Sofortarzt.ps1")
     
 .NOTES
     Author: AI Assistant

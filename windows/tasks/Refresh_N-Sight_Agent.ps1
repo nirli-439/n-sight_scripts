@@ -11,7 +11,7 @@
 
 .EXECUTION
     Windows (local):  powershell -NoProfile -ExecutionPolicy Bypass -File ".\Refresh_N-Sight_Agent.ps1"
-    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Refresh_N-Sight_Agent.ps1")
+    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Refresh_N-Sight_Agent.ps1")
 
 .OUTPUTS
     0 = All refreshed. 1001 = Partial. 1002 = Agent or TakeControl not found/failed.

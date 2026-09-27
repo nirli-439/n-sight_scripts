@@ -17,7 +17,7 @@
 .EXECUTION
     Windows (local):  iex (Get-Content ".\Remove_Edge.ps1" -Raw)
     Or:              powershell -NoProfile -ExecutionPolicy Bypass -File ".\Remove_Edge.ps1"
-    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Remove_Edge.ps1")
+    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Remove_Edge.ps1")
 .NOTES
     Author: IT Admin
     Version: 2.0
@@ -247,7 +247,7 @@ function Register-PersistentTask {
     
     # When run via iex(irm ...), $PSCommandPath is empty; do not use $MyInvocation.MyCommand (strict-mode .Path throw)
     $actionExe = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
-    $repoUrl = "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Remove_Edge.ps1"
+    $repoUrl = "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Remove_Edge.ps1"
     $tmpScript = "`$env:TEMP\Remove_Edge.ps1"
     $actionArgs = $null
     

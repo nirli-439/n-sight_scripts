@@ -185,7 +185,7 @@ Windows Agent supports: AMP, DOS Batch, JavaScript, Perl, PHP, **PowerShell**, P
 .EXECUTION
     Windows (local):  iex (Get-Content ".\Script_Name.ps1" -Raw)
     Or:              powershell -NoProfile -ExecutionPolicy Bypass -File ".\Script_Name.ps1"
-    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Script_Name.ps1")
+    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Script_Name.ps1")
     (Every task must document the iex GitHub command above for one-line run-from-repo.)
     
 .NOTES
@@ -642,8 +642,8 @@ fi
 # EXECUTION:
 #     macOS (local):  sudo bash /path/to/Script_Name_mac.sh
 #     Or:             bash /path/to/Script_Name_mac.sh   (run as root when required)
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Script_Name_mac.sh" | sudo bash
-#     For scripts with parameters: curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Script_Name_mac.sh" | sudo bash -s "parameter1" "parameter2"
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Script_Name_mac.sh" | sudo bash
+#     For scripts with parameters: curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Script_Name_mac.sh" | sudo bash -s "parameter1" "parameter2"
 #
 # NOTES:
 #     Author: IT Admin
@@ -911,147 +911,184 @@ fi
 
 ## Script Inventory
 
+Purpose text is each script's own synopsis. `windows/experimental/` is not a deployable check or task.
+
 ### Windows (.ps1)
 
-**Deployable policies**: When used, task policies in `windows/policies/*.json` and triggers in `windows/policies/triggers/`; see that folder’s README and any Windows compliance doc if present.
-
-**Exit codes**: Windows scripts use 0 (success), 1001 (warning), 1002 (critical) per N-Sight.
+**Exit codes**: 0 success, 1001 warning, 1002 critical, unless that script's header says otherwise.
 
 #### Checks (windows/checks/)
 
-
-| Script                                | Purpose                                  | Exit Codes                                  |
-| ------------------------------------- | ---------------------------------------- | ------------------------------------------- |
-| `Check_Chrome_Installed.ps1`          | Chrome installation monitoring           | 0=Installed, 1002=Missing                   |
-| `Check_Edge_Installed.ps1`            | Edge installation status                 | 0=Installed, 1002=Missing                   |
-| `Check_Edge_Blocked.ps1`              | Edge blocking policy check               | 0=Blocked, 1002=Not blocked                 |
-| `Check_GoogleDrive_Installed.ps1`     | Google Drive installation                | 0=Installed, 1002=Missing                   |
-| `Check_HEVC_Installed.ps1`            | HEVC/MOV (iPhone video) playback         | 0=Available, 1002=Missing                   |
-| `Check_Twingate_Installed.ps1`        | Twingate client status                   | 0=Installed, 1002=Missing                   |
-| `Check_HVCI_Enabled.ps1`              | Memory Integrity (HVCI) status           | 0=Enabled, 1001/1002=Disabled/Error         |
-| `Check_Office_Macros_Disabled.ps1`    | Office macro security                    | 0=Secure, 1001/1002=Insecure                |
-| `Check_PowerShell_v2_Disabled.ps1`    | PowerShell v2 disabled                   | 0=Disabled, 1001=Enabled                    |
-| `Check_ScreenLock_Timeout.ps1`        | Screen lock configuration                | 0=Compliant, 1001/1002=Non-compliant        |
-| `Check_Uptime_Windows.ps1`            | System uptime monitoring                 | 0=OK, 1001=Warning, 1002=Reboot needed      |
-| `Check_Credential_Manager_Health.ps1` | Credential Manager status                | 0=Healthy, 1002=Issues                      |
-| `Check_TakeControl_Health.ps1`        | TakeControl service health               | 0=Healthy, 1002=Issues                      |
-| `Check_GCPW_Registry.ps1`             | Google Credential Provider               | 0=Configured, 1002=Missing                  |
-| `Check_McAfee_Installed.ps1`          | McAfee presence detection                | 0=Not found, 1001=Found, 1002=Error         |
-| `Check_OneDrive_Installed.ps1`        | OneDrive presence                        | 0/1002 based on policy                      |
-| `Check_Slack_Installed.ps1`           | Slack installation                       | 0=Installed, 1002=Missing                   |
-| `Check_Tailscale_Installed.ps1`       | Tailscale VPN installation               | 0=Installed, 1001=Not running, 1002=Missing |
-| `Check_WinRAR_Installed.ps1`          | WinRAR installation                      | 0=Installed, 1002=Missing                   |
-| `Check_Brother_MFC-L5750DW.ps1`       | Printer driver check                     | 0=Installed, 1001/1002=Missing              |
-| `Check_ComputerName_Inventory.ps1`    | Computer naming inventory                | 0=Compliant, 1002=Issues                    |
-| `Check_Applied_Policies.ps1`          | List applied Group Policy Objects (GPOs) | 0=OK, 1002=Error                            |
-
+| Script | Purpose | Exit |
+| --- | --- | --- |
+| `Check_AI_Stack.ps1` | Checks the Windows AI Stack installed by Install_AI_Stack.ps1. | — |
+| `Check_All_Local_Users_Are_Administrators.ps1` | Checks that every local user except built-in Guest is an Administrator. | — |
+| `Check_Applied_Policies.ps1` | List all Group Policy Objects (GPOs) applied to the computer. | — |
+| `Check_Brother_MFC-L5750DW.ps1` | Check if Brother MFC-L5750DW printer is installed and ready. | — |
+| `Check_Chrome_Default_Browser.ps1` | Check if Google Chrome is the default browser on Windows 10/11. | — |
+| `Check_Chrome_Installed.ps1` | Checks whether Google Chrome is installed and runnable for all users. | — |
+| `Check_ComputerName_Inventory.ps1` | Check if the computer name starts with "IA" (Inventory Asset naming convention). | — |
+| `Check_Edge_Blocked.ps1` | Check if Microsoft Edge is blocked and Chrome is set as default. | — |
+| `Check_Edge_Installed.ps1` | Check if Microsoft Edge is installed on the system. | — |
+| `Check_GCPW_Registry.ps1` | Checks and repairs GCPW registry configuration. | — |
+| `Check_GoogleDrive_Installed.ps1` | Checks whether Google Drive for desktop is installed and runnable. | — |
+| `Check_HEVC_Installed.ps1` | Check if HEVC/MOV (e.g. iPhone video) playback is available on Windows. | Exit 0 = Success (HEVC/MOV playback available); Exit 1002 = Critical (no HEVC decoder or player found) |
+| `Check_Hibernate_Enabled.ps1` | Checks whether hibernate is enabled on this ThinkPad (companion to Restore_Hibernate_ThinkPad.ps1). | Exit 0 = PASS (hibernate enabled); Exit 1001 = WARNING (hibernate disabled); Exit 1002 = CRITICAL (could not read state) |
+| `Check_Hibernate_LidClose.ps1` | Verifies hibernate is enabled (and visible) and lid-close power actions match policy (Do Nothing on AC, Sleep on battery). | Exit 0 = PASS (hibernate enabled; lid does nothing on AC, sleeps on battery); Exit 1001 = WARNING (one or more settings have drifted from policy); Exit 1002 = CRITICAL (could not read power/registry state) |
+| `Check_HP_SleepBlockers.ps1` | Check if HP/print services known to block sleep are stopped and disabled. | — |
+| `Check_McAfee_Installed.ps1` | Checks if McAfee products are installed on the system. | Exit 0 = McAfee NOT installed (OK); Exit 1001 = McAfee IS installed (Warning) |
+| `Check_OneDrive_Edge_Copilot_Removed.ps1` | Checks that OneDrive, Microsoft Edge, and Copilot are removed. | — |
+| `Check_OpenSSH.ps1` | Check if OpenSSH Server is installed and running. | — |
+| `Check_PendingReboot.ps1` | Detect whether Windows has a pending restart (updates, CBS, rename, etc.). | — |
+| `Check_PowerShell_v2_Disabled.ps1` | Check if PowerShell v2 Windows feature is disabled. | — |
+| `Check_ScreenLock_Timeout.ps1` | Check if screen lock timeout is set correctly (3 min battery, 8 min AC). | — |
+| `Check_Slack_Installed.ps1` | Check if Slack is installed on the system. | — |
+| `Check_Sofortarzt.ps1` | Checks if a specific website was visited across all major browsers. | Exit 0 = Success (Not visited); Exit 1002 = Critical/Error (Visited) |
+| `Check_Tailscale_Installed.ps1` | Check if Tailscale VPN is installed and (optionally) running. | — |
+| `Check_Tailscale_Not_Installed.ps1` | Check that Tailscale VPN is not installed (compliance / removal verification). | — |
+| `Check_Tailscale_Performance.ps1` | Checks if network performance optimizations for Tailscale are applied. | — |
+| `Check_TakeControl_Health.ps1` | Check N-sight Take Control (BASupSrvc) service health status. | — |
+| `Check_Twingate_Installed.ps1` | Checks whether Twingate and .NET Desktop Runtime 8.0.29 x64 are installed. | — |
+| `Check_WindowsUpdate_Bandwidth.ps1` | Check whether Windows Update (Delivery Optimization) bandwidth is capped to 1MB/s up/down. | — |
 
 #### Tasks (windows/tasks/)
 
+| Script | Purpose |
+| --- | --- |
+| `Add_All_Local_Users_To_Administrators.ps1` | Adds every local user except the built-in Guest account to Administrators. |
+| `Block_Edge.ps1` | Block Microsoft Edge via policy (light) so the readiness check passes. |
+| `Enforce_Chrome_Default_Browser.ps1` | Enforce Google Chrome as the default browser on Windows 10/11. |
+| `Fix_AdobeCreativeCloud_Loading.ps1` | Remediates Adobe Creative Cloud installer or app stuck on infinite loading. |
+| `Fix_GCPW_SignIn_Allowed.ps1` | Removes stale GCPW enrollment policy that blocks an allowed Google account. |
+| `Fix_HP_SleepBlockers.ps1` | Stop and disable HP/print services that prevent the machine from sleeping. |
+| `Get_Chrome_GaiaAccountEmail.ps1` | Reads Chrome Default profile Preferences and outputs the Google account email from gaia_cookie data. |
+| `Install_AdobeAcrobatPro.ps1` | Install Adobe Acrobat Pro DC (Windows) via winget. |
+| `Install_AdobeCreativeCloud.ps1` | Installs the Adobe Creative Cloud desktop app (the Creative Cloud “suite” hub; bootstrapper, silent). |
+| `Install_AI_Code_CLIs.ps1` | Install Claude Code, OpenAI Codex, and Google Gemini CLI via winget and npm. |
+| `Install_AI_Stack.ps1` | Silently installs the Windows AI Stack for N-Sight. |
+| `Install_BitdefenderAgent.ps1` | Download and silently install the Bitdefender GravityZone Windows agent (setup downloader). |
+| `Install_Brother_MFC-L5750DW.ps1` | Install and configure Brother MFC-L5750DW network printer. |
+| `Install_Chrome.ps1` | Installs Chrome, makes it the default browser, pins it for new profiles, and blocks Edge updates. |
+| `Install_ClaudeDesktop.ps1` | Install Anthropic Claude Desktop (Windows) using the full MSIX package. |
+| `Install_Dropbox.ps1` | Install Dropbox desktop app for all users (enterprise MSI, silent). |
+| `Install_GCPW.ps1` | Installs Google Credential Provider for Windows (GCPW). |
+| `Install_GoogleDrive.ps1` | Install Google Drive for Desktop for all users. |
+| `Install_HEVC_Codec.ps1` | Install HEVC (H.265) codec so Windows can play iPhone MOV / HEVC video files. |
+| `Install_OpenSSH.ps1` | Install OpenSSH Server and ensure the sshd service is running. |
+| `Install_Slack.ps1` | Install Slack for Desktop for all users. |
+| `Install_Surfshark.ps1` | Install Surfshark VPN for Windows (silent/unattended). |
+| `Install_Tailscale.ps1` | Install Tailscale VPN client (silent/unattended). |
+| `Install_Twingate.ps1` | Installs Twingate and .NET Desktop Runtime 8.0.29 x64 for all users. |
+| `Limit_WindowsUpdate_Bandwidth.ps1` | Cap Windows Update (Delivery Optimization) bandwidth to 1MB/s up and down. |
+| `Optimize-TailscalePerformance.ps1` | Optimizes network performance for Tailscale on Windows endpoints. |
+| `Refresh_N-Sight_Agent.ps1` | Refresh N-Sight agent, TakeControl, and background checks. First and last line of defense. |
+| `Register_RebootReminder.ps1` | Register (or remove) a per-user scheduled task that runs Show_RebootReminder.ps1 at logon and every 4 hours. |
+| `Remediate_BitLocker.ps1` | Enable BitLocker on the system drive (C:) and ensure recovery key is backed up and printed. |
+| `Remediate_Disable_BuiltIn_Administrator.ps1` | Disables the built-in local Administrator account (SID ending in -500). |
+| `Remediate_GCPW_Token_Expiration_1Year.ps1` | Fixes Google Credential Provider for Windows (GCPW) token expiration issues that break Windows Hello (PIN/fingerprint) login. |
+| `Remediate_Hibernate_LidClose.ps1` | Enables hibernate (visible in the Start menu power flyout) and sets lid-close behavior: do nothing on AC power, sleep on battery. |
+| `Remediate_Lenovo_ThinkPad_AMD_Sleep.ps1` | Applies sleep/black-screen mitigations for Lenovo ThinkPad P14s Gen 6 AMD (Ryzen AI 350) class devices on Windows 11 Pro. |
+| `Remediate_ScreenLock_Timeout.ps1` | Configure screen lock timeout to meet security policy (3 min battery, 8 min AC). |
+| `Remove_Edge.ps1` | Keep Edge out of the way: remove shortcuts and prevent it from being default browser. |
+| `Remove_McAfee.ps1` | Remove pre-installed McAfee from Windows (new PCs / OEM installs). |
+| `Remove_OneDrive.ps1` | Remove Microsoft OneDrive from Windows 11 completely (for environments using Google Drive). |
+| `Remove_OneDrive_Edge_Copilot.ps1` | Removes OneDrive, Microsoft Edge browser, and Microsoft Copilot. |
+| `Remove_Tailscale.ps1` | Remove Tailscale VPN silently, including services, uninstall, and leftover folders. |
+| `Remove_TeamViewer.ps1` | Remove TeamViewer from Windows and clean leftover services, tasks, folders, and registry. |
+| `Remove_Twingate.ps1` | Remove the Twingate client silently, including services, tasks, folders, and registry entries. |
+| `Remove_Windows_Consumer_Bloat.ps1` | Removes consumer Windows apps from a business laptop. |
+| `Rename_Computer.ps1` | Rename a Windows computer to a new hostname. |
+| `Restore_Hibernate_ThinkPad.ps1` | Restores proper sleep + hibernate behavior on Lenovo ThinkPad devices (reverts Remediate_Lenovo_ThinkPad_AMD_Sleep.ps1). |
+| `Run_Onboarding_From_GitHub.cmd` | Elevated launcher for Run_Onboarding_Tasks.ps1 from GitHub |
+| `Run_Onboarding_Tasks.ps1` | Run onboarding tasks by executing GitHub-hosted scripts in sequence (unattended, N-Sight-friendly). |
+| `Show_RebootReminder.ps1` | If a restart is pending, prompt the user to reboot or snooze reminders for 4 hours. |
+| `Unblock_Edge.ps1` | Unblock Microsoft Edge (reverses Block_Edge.ps1 script). |
 
-| Script                              | Purpose                                   |
-| ----------------------------------- | ----------------------------------------- |
-| `Install_Chrome.ps1`                | Chrome Enterprise installation            |
-| `Install_GoogleDrive.ps1`           | Google Drive for Desktop                  |
-| `Install_Slack.ps1`                 | Slack desktop client                      |
-| `Install_Tailscale.ps1`             | Tailscale VPN installation                |
-| `Install_WinRAR.ps1`                | WinRAR installation                       |
-| `Install_DaVinciResolve.ps1`        | DaVinci Resolve installer                 |
-| `Install_Brother_MFC-L5750DW.ps1`   | Brother printer driver                    |
-| `Remove_McAfee.ps1`                 | Complete McAfee removal                   |
-| `Remove_TeamViewer.ps1`             | TeamViewer removal and cleanup            |
-| `Remove_OneDrive.ps1`               | OneDrive removal                          |
-| `Remove_Edge.ps1`                   | Microsoft Edge removal                    |
-| `Block_Edge.ps1`                    | Block Edge via policy                     |
-| `Unblock_Edge.ps1`                  | Remove Edge blocking                      |
-| `Rename_Computer.ps1`               | Computer hostname change                  |
-| `Remediate_GCPW_Registry.ps1`       | Fix GCPW configuration                    |
-| `Remediate_GCPW_Token_Expiration.ps1` | Fix GCPW token expiration breaking Windows Hello |
-| `Remediate_Office_Macros.ps1`       | Set macro security                        |
-| `Remediate_ScreenLock_Timeout.ps1`  | Configure screen lock                     |
-| `Remediate_Credential_Manager.ps1`  | Fix Credential Manager                    |
-| `Remediate_TakeControl_Service.ps1` | Repair TakeControl                        |
-| `Remediate_Uptime_Reboot.ps1`       | Force system reboot                       |
-| `Install_HEVC_Codec.ps1`            | HEVC/MOV (iPhone video) codec and players |
-| `openoffice_winget.ps1`             | OpenOffice via WinGet                     |
+#### Experimental (windows/experimental/)
 
+| Script | Purpose |
+| --- | --- |
+| `Test-VpnConnectivity.ps1` | Tests VPN connectivity by checking access to a specific internal/VPN-protected resource. |
 
 ### Linux (.sh)
 
 #### Checks (linux/checks/)
 
-
-| Script                         | Purpose                                             | Exit Codes                           |
-| ------------------------------ | --------------------------------------------------- | ------------------------------------ |
-| `Check_Linux_Memory.sh`        | Memory usage monitoring                             | 0=OK, 1=Warn, 2=Critical             |
-| `Check_Linux_Daemons.sh`       | Daemon health check                                 | 0=Healthy, 1=Warn, 2=Critical        |
-| `Check_Desktop_Environment.sh` | Desktop environment detection (GNOME/KDE/XFCE/MATE) | 0=Detected, 1001=Unknown, 1002=Error |
-
+| Script | Purpose | Exit |
+| --- | --- | --- |
+| `Check_Desktop_Environment.sh` | Detect and report the desktop environment (DE) on the system. DESCRIPTION: This monitoring script identifies the desktop environment for inventory and compli... | — |
+| `Check_Disk_Encryption.sh` | Report whether detected disks and partitions are LUKS-encrypted. DESCRIPTION: Uses lsblk FSTYPE and, when present, cryptsetup isLuks. Does not modify disks.... | 0 = OK (every detected disk/partition is LUKS); 1001 = WARNING (mixed encrypted and plaintext); 1002 = CRITICAL (lsblk missing, or no encrypted device found); Linux (repo): curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux/checks/Check_Disk_Encryption.sh" / sudo bash; Version: 1.0; ENCRYPTED_DEVICES=0; UNENCRYPTED_DEVICES=0; exit 1002; DEVICES=$(lsblk -rno NAME,TYPE / awk '$2 == "part" // $2 == "disk" {print $1}'); FSTYPE=$(lsblk -rno FSTYPE "$DEV_PATH" 2>/dev/null); ENCRYPTED_DEVICES=$((ENCRYPTED_DEVICES + 1)); if cryptsetup isLuks "$DEV_PATH" 2>/dev/null; then; ENCRYPTED_DEVICES=$((ENCRYPTED_DEVICES + 1)); UNENCRYPTED_DEVICES=$((UNENCRYPTED_DEVICES + 1)); UNENCRYPTED_DEVICES=$((UNENCRYPTED_DEVICES + 1)); if [ "$ENCRYPTED_DEVICES" -gt 0 ] && [ "$UNENCRYPTED_DEVICES" -eq 0 ]; then; exit 0; elif [ "$ENCRYPTED_DEVICES" -gt 0 ] && [ "$UNENCRYPTED_DEVICES" -gt 0 ]; then; exit 1001; exit 1002 |
+| `Check_Hostname_Inventory_linux.sh` | Checks for proper hostname naming convention compliance. DESCRIPTION: This monitoring script checks if the hostname follows the inventory naming convention (... | 0 = OK (Hostname starts with IA); 2 = CRITICAL (Hostname does NOT start with IA); Linux (repo): curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux/checks/Check_Hostname_Inventory_linux.sh" / sudo bash; Version: 1.0; local level="${2:-INFO}"; echo "[$timestamp] [$level] $1" / tee -a "$LOG_FILE" 2>/dev/null; HOSTNAME_SHORT=$(hostname -s 2>/dev/null // hostname); HOSTNAME_FQDN=$(hostname -f 2>/dev/null // echo "N/A"); HOSTNAME_FILE=$(cat /etc/hostname 2>/dev/null // echo "N/A"); local hostname="$1"; local prefix="$2"; return 0; return 1; DISTRO=$(cat /etc/os-release 2>/dev/null / grep "^PRETTY_NAME" / cut -d'"' -f2 // echo "Unknown"); exit 0; exit 2 |
+| `Check_Linux_Daemons.sh` | Check health status of common Linux system daemons. DESCRIPTION: This monitoring script verifies the health of Linux system services: - D-Bus activated servi... | 0 = PASS (All services healthy or expected inactive); 1 = WARNING (Some services need attention); 2 = CRITICAL (Services failed or missing); Linux (repo): curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux/checks/Check_Linux_Daemons.sh" / sudo bash; Version: 1.0; Platform: Fedora 38+, RHEL 8+, CentOS Stream 8+; readonly SCRIPT_VERSION="1.0"; CRITICAL_COUNT=0; WARNING_COUNT=0; PASS_COUNT=0; local level="${2:-INFO}"; local message="[$timestamp] [$level] $1"; ERROR) echo -e "\033[31m${message}\033[0m" ;;; WARN) echo -e "\033[33m${message}\033[0m" ;;; SUCCESS) echo -e "\033[32m${message}\033[0m" ;;; echo "$message" >> "$LOG_FILE" 2>/dev/null; if [[ $EUID -ne 0 ]]; then; exit 2; exit 2; version=$(cat /etc/redhat-release / grep -oP '\d+' / head -1); local service="$1"; unit_file_state=$(systemctl list-unit-files "$service" 2>/dev/null / grep "$service" / awk '{print $2}'); active_state=$(systemctl show "$service" --property=ActiveState --value 2>/dev/null); load_state=$(systemctl show "$service" --property=LoadState --value 2>/dev/null); sub_state=$(systemctl show "$service" --property=SubState --value 2>/dev/null); local service="$1"; local service_type="$2"; return 0; return 0; return 0; return 0; return 0; return 0; return 0; return 1; local service="$1"; failures=$(journalctl --since "7 days ago" -p err -u "*.service" --no-pager 2>/dev/null / \; if [[ "$failures" -gt 0 ]]; then; log "Found $failures error log entries for monitored services in last 7 days" "WARN"; return 1; return 0; printf "%-40s %-12s %-50s\n" "SERVICE" "STATUS" "MESSAGE"; printf "%-40s %-12s %-50s\n" "-------" "------" "-------"; "PASS") status_display="\033[32m[PASS]\033[0m" ;;; "WARNING") status_display="\033[33m[WARN]\033[0m" ;;; "CRITICAL") status_display="\033[31m[FAIL]\033[0m" ;;; printf "%-40s " "$service"; printf " %-50s\n" "$message"; mkdir -p "$LOG_DIR" 2>/dev/null; if [[ $CRITICAL_COUNT -gt 0 ]]; then; echo -e "\033[31mFAIL: $CRITICAL_COUNT critical issue(s) detected\033[0m"; echo "1. Run the Remediate_Linux_Daemons.sh script"; echo "2. Check journalctl -xe for detailed error messages"; echo "3. Verify package installation with: dnf list installed / grep <package>"; exit 2; elif [[ $WARNING_COUNT -gt 0 ]]; then; echo -e "\033[33mWARNING: $WARNING_COUNT issue(s) may need attention\033[0m"; echo "1. Run remediation script to attempt automatic fixes"; echo "2. Review systemctl status <service> for details"; exit 1; echo -e "\033[32mPASS: All daemon services are healthy\033[0m"; exit 0 |
+| `Check_Linux_Memory.sh` | Check system memory usage with threshold alerts. DESCRIPTION: Calculates actual memory usage (excluding buffers/cache) and reports status based on configurab... | 0 = OK (Memory usage below 90%); 1 = WARNING (Memory usage 90-94%); 2 = CRITICAL (Memory usage 95%+); Linux (repo): curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux/checks/Check_Linux_Memory.sh" / sudo bash; Version: 1.1; mem_total=$(grep MemTotal /proc/meminfo / awk '{print $2}'); mem_free=$(grep MemFree /proc/meminfo / awk '{print $2}'); buffers=$(grep Buffers /proc/meminfo / awk '{print $2}'); cached=$(grep -w Cached /proc/meminfo / awk '{print $2}'); percent=$((used * 100 / mem_total)); if [ "$percent" -ge 95 ]; then; exit 2; elif [ "$percent" -ge 90 ]; then; exit 1; exit 0 |
 
 #### Tasks (linux/tasks/)
 
-
-| Script                                          | Purpose                                                                                      |
-| ----------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `Remediate_Linux_Daemons.sh`                    | Comprehensive daemon fix                                                                     |
-| `Remediate_All_Daemons_Fedora.sh`               | All daemon fixes (Fedora)                                                                    |
-| `Remediate_Hostname_Fedora.sh`                  | Hostname configuration                                                                       |
-| `Remediate_Hostname_Ubuntu.sh`                  | Hostname rename (Ubuntu)                                                                     |
-| `Remediate_Fwupd.sh`                            | fwupd service fix                                                                            |
-| `Remediate_Fprintd.sh`                          | fprintd service fix                                                                          |
-| `Remediate_Getty_TTY2.sh`                       | Getty TTY2 fix                                                                               |
-| `Remediate_NetworkManager_Dispatcher.sh`        | NM dispatcher fix                                                                            |
-| `Remediate_NetworkManager_Dispatcher_Fedora.sh` | NM dispatcher (Fedora)                                                                       |
-| `Remediate_Nvidia_Persistenced.sh`              | NVIDIA service fix                                                                           |
-| `Remediate_PackageKit.sh`                       | PackageKit disable                                                                           |
-| `Remediate_PackageKit_Fedora.sh`                | PackageKit (Fedora)                                                                          |
-| `Remediate_Realmd.sh`                           | Realmd service fix                                                                           |
-| `Remediate_Virtqemud.sh`                        | QEMU daemon fix                                                                              |
-| `Remediate_Disk_Performance.sh`                 | Disk I/O optimization                                                                        |
-| `Remediate_DisplayLink.sh`                      | DisplayLink driver fix                                                                       |
-| `Remediate_Systemd_Services.sh`                 | General systemd fixes                                                                        |
-| `Remediate_SSH_And_Admin_User.sh`               | Install/enable SSH, create user with password "1111", add to sudo/wheel                      |
-| `Install_N-Sight_Support_Ubuntu.sh`             | Install rsyslog, smartmontools, gnome-remote-desktop, kerneloops, cups, cron (Ubuntu)        |
-| `Install_N-Sight_Support_Fedora.sh`             | Install rsyslog, smartmontools, gnome-remote-desktop, abrt-kerneloops, cups, cronie (Fedora) |
-
+| Script | Purpose |
+| --- | --- |
+| `Install_Chrome_linux.sh` | Ensures flatpak + flathub remote, installs com.google.Chrome (system-wide). Pins .desktop + /usr/local/bin wrapper so app drawer / CLI work without re-login.... |
+| `Install_Fleetd_linux.sh` | install and enroll Fleet Desktop agent |
+| `Install_N-Sight_Support_Linux.sh` | Installs requirements for N-Sight RMM support (logging, disk health, SSH). DESCRIPTION: Installs and configures the following for N-Sight RMM monitoring: - r... |
+| `Remediate_Core_Platform_Services.sh` | Install, repair, and add systemd self-heal (restart on failure) for common platform services: cron, cups-browsed, kernel oops reporting, rsyslog, smartmontoo... |
+| `Remediate_Disk_Performance.sh` | Fix disk performance monitoring for N-sight agent. DESCRIPTION: - Installs sysstat, smartmontools, nvme-cli - Enables sysstat collection - Seeds initial perf... |
+| `Remediate_DisplayLink.sh` | Optimize Ubuntu system for DisplayLink dock performance. DESCRIPTION: - Installs TLP and power management tools - Sets power profile to performance - Configu... |
+| `Remediate_Fedora_Scheduled_Maintenance.sh` | Install and enable periodic maintenance on Fedora: SMART monitoring, automatic updates (equivalent to Debian unattended-upgrades), and cron. DESCRIPTION: For... |
+| `Remediate_Fprintd.sh` | Fix fprintd (fingerprint daemon) service issues on Fedora. DESCRIPTION: fprintd is a D-Bus activated service for fingerprint reader support. It's NORMAL for... |
+| `Remediate_Fwupd.sh` | Diagnose and fix fwupd service issues. DESCRIPTION: - Checks if fwupd is installed - Installs if missing - Restarts service if not active - Attempts reinstal... |
+| `Remediate_Getty_TTY2.sh` | Diagnose and fix getty@tty2 service issues. DESCRIPTION: - Checks getty@tty2 service status - Restarts if not active - Re-enables if restart fails EXECUTION:... |
+| `Remediate_Hostname_Linux.sh` | Set system hostname on Linux (systemd-based). DESCRIPTION: - Validates hostname format (letters, numbers, dots, hyphens) - Sets hostname via hostnamectl - Up... |
+| `Remediate_Linux_Daemons.sh` | Automatically diagnose and fix common Linux daemon service issues. DESCRIPTION: This remediation script addresses common Linux daemon problems including: - D... |
+| `Remediate_Nvidia_Persistenced.sh` | Diagnose and fix NVIDIA persistenced service and driver issues. DESCRIPTION: - Checks for NVIDIA GPU hardware - Installs missing packages - Attempts driver r... |
+| `Remediate_Systemd_Services.sh` | Fix systemd core services (hostnamed, localed, timedated) on Fedora. DESCRIPTION: These are D-Bus activated services that provide: - systemd-hostnamed: hostn... |
+| `Remediate_Virtqemud.sh` | Fix virtqemud (QEMU virtualization daemon) service on Fedora. DESCRIPTION: virtqemud is a socket-activated service that provides QEMU/KVM virtualization supp... |
 
 ### macOS (.sh)
 
 #### Checks (macos/checks/)
 
-
-| Script                           | Purpose                | Exit Codes             |
-| -------------------------------- | ---------------------- | ---------------------- |
-| `Check_Chrome_Installed.sh`      | Chrome installation    | 0=Installed, 2=Missing |
-| `Check_GoogleDrive_Installed.sh` | Google Drive status    | 0=Installed, 2=Missing |
-| `Check_Twingate_Installed.sh`    | Twingate client        | 0=Installed, 2=Missing |
-| `Check_macOS_Security.sh`        | SIP, Gatekeeper, kexts | 0=Secure, 2=Issues     |
-| `Check_Mac_RMM_Agent_SelfHeal.sh` | N-sight agent up + optional self-heal (LaunchDaemon) | 0=OK, 1001=Sync/heal warn, 1002=Critical |
-| `Check_Mac_RMM_Agent_Refresh.sh` | Full agent refresh (task-cancel, sync, scans) | 0=OK, 1001=Partial/restarted, 1002=Missing binary |
-| `Check_Uptime_macOS.sh`          | System uptime          | 0=OK, 1=Warn, 2=Reboot |
-| `Check_Handoff_Disabled_mac.sh`  | Handoff (Continuity) off per user | 0=OK, 1001=No users, 1002=Enabled |
-| `Check_Homebrew_Path_mac.sh`     | Homebrew present + `/etc/paths.d/homebrew` | 0=OK, 1001=brew OK paths.d missing, 1002=brew missing/broken |
-
+| Script | Purpose | Exit |
+| --- | --- | --- |
+| `Check_AppleID_Status.sh` | Check if Apple ID is logged in and Find My is active on macOS. Designed for deployment via N-Sight RMM. DESCRIPTION: This script checks the Apple ID login st... | — |
+| `Check_Chrome_Default_Browser.sh` | Checks if Google Chrome is configured as the system default browser on macOS. Verifies URL scheme handlers and file type associations. DESCRIPTION: This moni... | — |
+| `Check_Chrome_Installed.sh` | Checks for Google Chrome installation on macOS and reports: - Installation status (installed/not installed) - Chrome version if installed - Installation path... | — |
+| `Check_GoogleDrive_Installed.sh` | Checks for Google Drive installation on macOS and reports: - Installation status (installed/not installed) - Google Drive version and path if installed Adds... | — |
+| `Check_Handoff_Disabled_mac.sh` | Confirms Handoff is off for each local user by reading com.apple.coreservices.useractivityd preferences. DESCRIPTION: Handoff uses ActivityAdvertisingAllowed... | — |
+| `Check_Homebrew_Path_mac.sh` | Verifies Homebrew exists at a standard prefix and that /etc/paths.d exposes its bin directory (so root and non-login tools resolve `brew`). DESCRIPTION: N-si... | — |
+| `Check_Hostname_Inventory_mac.sh` | Checks for proper hostname naming convention compliance on macOS. DESCRIPTION: This monitoring script checks if the hostname follows the inventory naming con... | — |
+| `Check_Mac_RMM_Agent_Refresh.sh` | Clears stuck automated tasks, syncs with the dashboard, and queues 24x7, DSC, and asset scans — same behavior as the former task script. DESCRIPTION: Intende... | — |
+| `Check_Mac_RMM_Agent_SelfHeal.sh` | 24x7-style check: verifies rmmagentd is present and running; optionally recycles the LaunchDaemon and runs a dashboard sync when unhealthy. DESCRIPTION: N-si... | — |
+| `Check_macOS_Security.sh` | Checks critical macOS security settings: - System Integrity Protection (SIP) enabled - Gatekeeper enabled - No unsigned kernel extensions loaded DESCRIPTION:... | — |
+| `Check_Safari_Default_Browser.sh` | Checks if Safari is set as the default browser on macOS. Designed to trigger remediation if Safari is still active/default. DESCRIPTION: This monitoring scri... | — |
+| `Check_Slack_Installed.sh` | Check if Slack is installed on macOS | — |
+| `Check_Slack_Upgrade_Ready.sh` | Check if Slack can be automatically upgraded on macOS. Designed for deployment via N-Sight RMM. DESCRIPTION: Verifies that Slack is installed and can be upgr... | — |
+| `Check_TakeControl_Viewer_Installed.sh` | Checks for Take Control Viewer for RMM installation on macOS and reports: - Installation status (installed/not installed) - Take Control Viewer version if in... | — |
+| `Check_Twingate_Installed.sh` | Checks for Twingate installation on macOS and reports: - Installation status (installed/not installed) - Twingate version if installed - Installation path an... | — |
 
 #### Tasks (macos/tasks/)
 
-
-| Script                                 | Purpose                                                                          |
-| -------------------------------------- | -------------------------------------------------------------------------------- |
-| `Remediate_SSH_And_Admin_User_mac.sh`  | Enable Remote Login (SSH), create user with password "1111", add to admin (sudo) |
-| `Create_User_mac.sh`                   | Create new user with generated password                                          |
-| `Install_Chrome_mac.sh`                | Chrome installation                                                              |
-| `Install_GoogleDrive_mac.sh`           | Google Drive for Desktop                                                         |
-| `Install_Slack_mac.sh`                 | Slack desktop client                                                             |
-| `Disable_Safari_Default_Chrome_mac.sh` | Set Chrome as default browser                                                    |
-| `Rename_Hostname_mac.sh`               | Hostname change                                                                  |
-| `Refresh_RMM_Agent_mac.sh`             | Wrapper → runs `../checks/Check_Mac_RMM_Agent_Refresh.sh` (legacy task URL)        |
-| `Remediate_Disable_Handoff_mac.sh`     | Disable Handoff per user + verify                                                  |
-| `Remediate_Homebrew_Path_mac.sh`       | Write `/etc/paths.d/homebrew` so Homebrew `bin` is on system PATH (after brew exists) |
-
+| Script | Purpose |
+| --- | --- |
+| `Install_Canva_mac.sh` | Install_Canva_mac.sh — Canva.app to /Applications (official ARM64 DMG). |
+| `Install_Chrome_mac.sh` | Downloads and installs Google Chrome browser on macOS for ALL USERS. DESCRIPTION: This remediation script installs Google Chrome when the check script report... |
+| `Install_ClaudeDesktop_mac.sh` | Install_ClaudeDesktop_mac.sh — Claude.app to /Applications (official universal zip). |
+| `Install_DisplayLink_mac.sh` | Downloads and installs DisplayLink Manager on macOS for ALL USERS. DESCRIPTION: This remediation script installs DisplayLink Manager for USB docking station... |
+| `Install_Dropbox_mac.sh` | Downloads and installs Dropbox for macOS using the enterprise PKG from Dropbox Help (Install Dropbox for all team members). DESCRIPTION: Remediation script f... |
+| `Install_GoogleDrive_mac.sh` | Downloads and installs Google Drive for Desktop on macOS for ALL USERS. DESCRIPTION: This remediation script installs Google Drive when the check script repo... |
+| `Install_Slack_mac.sh` | Install Slack for macOS (/Applications) |
+| `Install_Tailscale_mac.sh` | Downloads and installs Tailscale VPN client on macOS for ALL USERS. Specifically designed for macOS 12.x (Monterey) and later. DESCRIPTION: This remediation... |
+| `Refresh_RMM_Agent_mac.sh` | Refresh_RMM_Agent_mac.sh — compatibility wrapper (logic lives in checks/) |
+| `Reinstall_MSP_Anywhere_mac.sh` | Reinstalls the N-Sight MSP Anywhere agent on macOS WITHOUT breaking the current remote terminal/SSH session. Self-copies to /tmp first. DESCRIPTION: Self-rel... |
+| `Remediate_Disable_Handoff_mac.sh` | Sets Handoff off for each local user, then verifies preferences. DESCRIPTION: Idempotent: if Handoff is already disabled for all users, exits OK without chan... |
+| `Remediate_Homebrew_Path_mac.sh` | Writes /etc/paths.d/homebrew so path_helper includes Homebrew for all users and typical root/non-interactive sessions. DESCRIPTION: Idempotent: if the file a... |
+| `Remediate_SSH_And_Admin_User_mac.sh` | Enable Remote Login (SSH), create a user with password "1111", and add the user to the admin group (sudo rights). DESCRIPTION: - Enables Remote Login (SSH) v... |
+| `Rename_Hostname_mac.sh` | Rename macOS hostname to a specified name. DESCRIPTION: This script renames the macOS hostname by setting: - ComputerName: The "friendly" name shown in Finde... |
+| `Restart_TakeControl_Agent_mac.sh` | Restarts the N-Sight TakeControl (MSP Anywhere) agent process on macOS WITHOUT reinstalling — preserving all existing macOS TCC permissions (Screen Recording... |
+| `Run_Onboarding_Tasks_mac.sh` | Sequentially downloads and executes all essential macOS onboarding scripts straight from the repository for a smooth, single-click setup. DESCRIPTION: This i... |
+| `Scalefusion_PreInstall_NSight_Israel.sh` | Writes settings.ini to /tmp before Scalefusion runs Install.pkg DESCRIPTION: Upload this as the Pre-Install Script in Scalefusion PKG deployment. Runs before... |
+| `Set_Chrome_Default_Browser_mac.sh` | Sets Google Chrome as the system-wide default browser for HTTP/HTTPS URLs and HTML files on macOS. DESCRIPTION: This script sets Chrome as the default browse... |
+| `Upgrade_Slack_mac.sh` | Upgrade Slack to the latest version on macOS without user interaction. Designed for deployment via N-Sight RMM. DESCRIPTION: Downloads and installs the lates... |
 
 ---
-
 ## Quick Reference Card
 
 ### Execution by platform
@@ -1060,10 +1097,10 @@ fi
 | Platform                | Run command                                                                                                                                                                                                        |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Windows (local)**     | `iex (Get-Content ".\ScriptName.ps1" -Raw)` or `powershell -NoProfile -ExecutionPolicy Bypass -File ".\ScriptName.ps1"`                                                                                            |
-| **Windows (from repo)** | `iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/ScriptName.ps1")` — every task must include this in .EXECUTION and log to `C:\logs\<date>`                              |
+| **Windows (from repo)** | `iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/ScriptName.ps1")` — every task must include this in .EXECUTION and log to `C:\logs\<date>`                              |
 | **Linux**               | `sudo bash /path/to/script.sh` or `bash /path/to/script.sh` (as root when required)                                                                                                                                |
 | **macOS (local)**       | `sudo bash /path/to/script.sh` or `bash /path/to/script.sh` (as root when required)                                                                                                                                |
-| **macOS (from repo)**   | `curl -fsSL "[https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Script_Name_mac.sh](https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Script_Name_mac.sh)" |
+| **macOS (from repo)**   | `curl -fsSL "[https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Script_Name_mac.sh](https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Script_Name_mac.sh)" |
 
 
 ### Exit Codes
@@ -1108,4 +1145,4 @@ fi
 
 ---
 
-*Last Updated: January 2026*
+*Last Updated: September 2026*

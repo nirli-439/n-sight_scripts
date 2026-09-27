@@ -25,7 +25,7 @@
 #
 # EXECUTION:
 #     Linux (local):  sudo bash /path/to/Remediate_Core_Platform_Services.sh
-#     Linux (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/linux/tasks/Remediate_Core_Platform_Services.sh" | sudo bash
+#     Linux (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux/tasks/Remediate_Core_Platform_Services.sh" | sudo bash
 #
 # NOTES:
 #     Platform: Fedora 38+, Ubuntu 22.04+ (single script; runtime detection)

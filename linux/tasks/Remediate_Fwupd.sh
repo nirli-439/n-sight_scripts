@@ -13,7 +13,7 @@
 #
 # EXECUTION:
 #     Linux (local):  sudo bash /path/to/Remediate_Fwupd.sh
-#     Linux (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/linux/tasks/Remediate_Fwupd.sh" | sudo bash
+#     Linux (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux/tasks/Remediate_Fwupd.sh" | sudo bash
 #
 # NOTES:
 #     Author: IT Admin

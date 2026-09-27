@@ -22,7 +22,7 @@
 
 .EXECUTION
     Windows (local):  .\Optimize-TailscalePerformance.ps1
-    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Optimize-TailscalePerformance.ps1")
+    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Optimize-TailscalePerformance.ps1")
 .NOTES
     Author: IT Admin
     Version: 2.2

@@ -34,12 +34,12 @@
     .\Rename_Computer.ps1 -NewName "PC-SALES-001" -AutoRestart -RestartDelay 30
     
 .EXAMPLE
-    Rename to IA-454 (via repo):  $env:NEW_HOSTNAME='IA-454'; iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Rename_Computer.ps1")
+    Rename to IA-454 (via repo):  $env:NEW_HOSTNAME='IA-454'; iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Rename_Computer.ps1")
     
 .EXECUTION
     Windows (local):  iex (Get-Content ".\Rename_Computer.ps1" -Raw)
     Or:              powershell -NoProfile -ExecutionPolicy Bypass -File ".\Rename_Computer.ps1"
-    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Rename_Computer.ps1")
+    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Rename_Computer.ps1")
 .NOTES
     Author: IT Admin
     Version: 1.0

@@ -24,7 +24,7 @@
 #     1002 = Critical/Error
 #
 # EXECUTION:
-#     Linux (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/linux/tasks/Install_N-Sight_Support_Linux.sh" | sudo bash
+#     Linux (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux/tasks/Install_N-Sight_Support_Linux.sh" | sudo bash
 #     sudo bash /path/to/Install_N-Sight_Support_Linux.sh [USERNAME]
 #
 # NOTES:

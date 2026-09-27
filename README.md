@@ -41,10 +41,10 @@ Scripts_N-Sight/
 
 | Platform | Checks | Tasks | Total |
 |----------|--------|-------|-------|
-| Windows  | 19     | 23    | 42    |
-| macOS    | 9      | 11    | 20    |
-| Linux    | 4      | 11    | 15    |
-| **Total**| **32** | **45**| **77** |
+| Windows  | 29     | 48    | 77    |
+| macOS    | 15     | 19    | 34    |
+| Linux    | 5      | 15    | 20    |
+| **Total**| **49** | **82** | **131** |
 
 ---
 
@@ -67,4 +67,4 @@ When adding or changing scripts, follow **N-SIGHT_SCRIPT_STANDARDS.md** so behav
 
 ---
 
-*Last updated: March 2025*
+*Last updated: September 2026*

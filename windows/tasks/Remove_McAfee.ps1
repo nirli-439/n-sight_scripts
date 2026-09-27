@@ -17,7 +17,7 @@
 .EXECUTION
     Windows (local):  iex (Get-Content ".\Remove_McAfee.ps1" -Raw)
     Or:              powershell -NoProfile -ExecutionPolicy Bypass -File ".\Remove_McAfee.ps1"
-    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/tasks/Remove_McAfee.ps1")
+    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Remove_McAfee.ps1")
 .NOTES
     Exit 0 = success; 1002 = failure (N-Sight reserved 1-999).
     Platform: Windows 10/11. Requires Administrator.

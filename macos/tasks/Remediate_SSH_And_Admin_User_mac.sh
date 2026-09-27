@@ -26,7 +26,7 @@
 # EXECUTION:
 #     macOS (local):  sudo bash /path/to/Remediate_SSH_And_Admin_User_mac.sh [USERNAME]
 #     Or:             bash /path/to/Remediate_SSH_And_Admin_User_mac.sh [USERNAME]   (run as root when required)
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Remediate_SSH_And_Admin_User_mac.sh" | sudo bash -s [USERNAME]
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Remediate_SSH_And_Admin_User_mac.sh" | sudo bash -s [USERNAME]
 #
 # NOTES:
 #     Author: IT Admin

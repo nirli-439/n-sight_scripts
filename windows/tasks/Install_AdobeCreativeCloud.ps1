@@ -18,7 +18,7 @@
 
 .EXECUTION
     Windows (local):  powershell -NoProfile -ExecutionPolicy Bypass -File ".\Install_AdobeCreativeCloud.ps1"
-    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/<COMMIT>/windows/tasks/Install_AdobeCreativeCloud.ps1")
+    Windows (repo):   iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/<COMMIT>/windows/tasks/Install_AdobeCreativeCloud.ps1")
 
 .PARAMETER PreferWinget
     Use winget install -e --id Adobe.CreativeCloud instead of the Adobe CDN bootstrapper.

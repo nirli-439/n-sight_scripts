@@ -24,7 +24,7 @@
 # EXECUTION:
 #     macOS (local):  sudo bash /path/to/Check_Slack_Upgrade_Ready.sh
 #     Or:             bash /path/to/Check_Slack_Upgrade_Ready.sh   (run as root when required)
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/checks/Check_Slack_Upgrade_Ready.sh" | sudo bash
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/checks/Check_Slack_Upgrade_Ready.sh" | sudo bash
 #
 # NOTES:
 #     Author: Nir Livshin

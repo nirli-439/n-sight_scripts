@@ -27,7 +27,7 @@
 #
 # EXECUTION:
 #     macOS (local):  sudo bash /path/to/Run_Onboarding_Tasks_mac.sh
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Run_Onboarding_Tasks_mac.sh" | sudo bash
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Run_Onboarding_Tasks_mac.sh" | sudo bash
 #
 # NOTES:
 #     Author: IT Admin
@@ -51,10 +51,10 @@ readonly LOG_FILE="${LOG_DIR}/Onboarding_mac_$(date +%Y%m%d_%H%M%S).log"
 # Define the tasks to run in order
 # Format: "TaskName|RawGitHubURL"
 readonly TASKS=(
-    "Google Chrome|https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Install_Chrome_mac.sh"
-    "Google Drive|https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Install_GoogleDrive_mac.sh"
-    "Slack|https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Install_Slack_mac.sh"
-    "DisplayLink|https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Install_DisplayLink_mac.sh"
+    "Google Chrome|https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Install_Chrome_mac.sh"
+    "Google Drive|https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Install_GoogleDrive_mac.sh"
+    "Slack|https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Install_Slack_mac.sh"
+    "DisplayLink|https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Install_DisplayLink_mac.sh"
 )
 
 # Exit codes for N-Sight

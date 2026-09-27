@@ -21,7 +21,7 @@
 #     1002 = Critical (not root, missing/invalid hostname, or set failed)
 #
 # EXECUTION:
-#     Linux (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/linux/tasks/Remediate_Hostname_Linux.sh" | sudo bash
+#     Linux (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux/tasks/Remediate_Hostname_Linux.sh" | sudo bash
 #     sudo bash /path/to/Remediate_Hostname_Linux.sh my-new-hostname
 #
 # NOTES:

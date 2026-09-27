@@ -15,7 +15,7 @@
     - 1002 = Critical (OpenSSH Server NOT installed)
 
 .EXECUTION
-    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/windows/checks/Check_OpenSSH.ps1")
+    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/checks/Check_OpenSSH.ps1")
     Windows (local):  powershell -NoProfile -ExecutionPolicy Bypass -File ".\Check_OpenSSH.ps1"
 .NOTES
     Author: IT Admin

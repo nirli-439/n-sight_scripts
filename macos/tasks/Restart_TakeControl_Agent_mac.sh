@@ -31,7 +31,7 @@
 #
 # EXECUTION:
 #     macOS (local):  sudo bash /path/to/Restart_TakeControl_Agent_mac.sh
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Restart_TakeControl_Agent_mac.sh" | sudo bash
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Restart_TakeControl_Agent_mac.sh" | sudo bash
 #
 # NOTES:
 #     Author: IT Admin

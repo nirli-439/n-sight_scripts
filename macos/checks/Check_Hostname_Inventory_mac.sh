@@ -18,7 +18,7 @@
 #
 # EXECUTION:
 #     macOS (local):  sudo bash /path/to/Check_Hostname_Inventory_mac.sh
-#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/checks/Check_Hostname_Inventory_mac.sh" | sudo bash
+#     macOS (repo):   curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/checks/Check_Hostname_Inventory_mac.sh" | sudo bash
 #
 # NOTES:
 #   Author: IT Admin

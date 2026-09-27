@@ -4,6 +4,21 @@
 .DESCRIPTION
     Silent N-Sight task for Windows 10/11. A public desktop shortcut is created.
     Taskbar layouts only apply to new profiles; SYSTEM cannot reliably pin existing users.
+
+.EXECUTION
+    Windows (local):  iex (Get-Content ".\Install_Chrome.ps1" -Raw)
+    Or:              powershell -NoProfile -ExecutionPolicy Bypass -File ".\Install_Chrome.ps1"
+    Windows (repo):  iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Install_Chrome.ps1")
+
+.NOTES
+    Author: IT Admin
+    Version: 1.0
+    Requires: Administrator privileges
+    Platform: Windows 10/11
+
+.OUTPUTS
+    Exit 0    = Success (Chrome installed/already present, default browser + shortcuts set)
+    Exit 1002 = Critical (not Administrator, download/install failed, or verification failed)
 #>
 #Requires -RunAsAdministrator
 $ErrorActionPreference = 'Stop'

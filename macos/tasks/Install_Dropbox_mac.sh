@@ -20,7 +20,7 @@
 #
 # EXECUTION:
 #     sudo bash /path/to/Install_Dropbox_mac.sh
-#     curl -fsSL "https://raw.githubusercontent.com/nirl-droid/n-sight_scripts/main/macos/tasks/Install_Dropbox_mac.sh" | sudo bash
+#     curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Install_Dropbox_mac.sh" | sudo bash
 #
 # NOTES:
 #     Requires root. Pair with Check_Dropbox_Installed.sh when available.
