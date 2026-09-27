@@ -60,8 +60,17 @@
 
 .EXECUTION
     Windows (from GitHub - elevated PowerShell):
-        iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Run_Onboarding_Tasks.ps1")
-    Or: Run_Onboarding_From_GitHub.cmd (UAC prompt)
+        iex (irm "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tasks/Run_Onboarding_Tasks.ps1?v=$([guid]::NewGuid())")
+    The ?v=<random> defeats raw.githubusercontent.com's CDN cache (commonly a few minutes,
+    but has been observed longer) - without it, a run shortly after pushing a fix can still
+    execute the OLD cached script with no error or warning that it's stale. Always include it
+    when testing a just-pushed change; the plain URL (no ?v=) is fine once a script has been
+    stable for a while.
+    Or: Run_Onboarding_From_GitHub.cmd (UAC prompt) - NOTE: that .cmd's embedded URL has no
+    cache-buster (its quoting is deeply nested - cmd -> powershell -> Start-Process
+    -ArgumentList -> inner powershell - and not safe to hand-edit without a Windows box to
+    test on). If a run from that launcher looks stale right after a push, wait a few minutes
+    or use the elevated-PowerShell one-liner above instead.
 
     Windows (local):  powershell -NoProfile -ExecutionPolicy Bypass -File ".\Run_Onboarding_Tasks.ps1"
 
@@ -75,10 +84,15 @@
 
 .NOTES
     Author: IT Admin
-    Version: 3.3
+    Version: 3.4
     Requires: Administrator privileges
     Platform: Windows 10/11
     Changelog:
+    - 3.4: Documented .EXECUTION one-liner now includes a ?v=$([guid]::NewGuid()) cache-buster
+      - a real run hit raw.githubusercontent.com serving the pre-fix Install_AI_Stack.ps1
+      (still Python.Python.3.14) for over 10 minutes and several retries after the fix was
+      pushed, because every retry re-requested the identical cached URL. No script logic
+      changed here, just the recommended command.
     - 3.3: Added a live HTML progress page (Onboarding_Progress.html under C:\logs\<date>\,
       auto-refreshing every 2s) that's opened automatically when run interactively - a
       checklist view of all 14 steps with the current one's live elapsed/timeout, as an
