@@ -41,10 +41,12 @@ Scripts_N-Sight/
 
 | Platform | Checks | Tasks | Total |
 |----------|--------|-------|-------|
-| Windows  | 30     | 49    | 79    |
-| macOS    | 16     | 20    | 36    |
-| Linux    | 7      | 17    | 24    |
-| **Total**| **53** | **86** | **139** |
+| Windows  | 30     | 50    | 80    |
+| macOS    | 15     | 21    | 36    |
+| Linux    | 6      | 17    | 23    |
+| **Total**| **51** | **88** | **139** |
+
+Counts cover tracked checks/tasks only; interactive tools, tests and profiles are excluded.
 
 ---
 
@@ -56,6 +58,35 @@ Scripts_N-Sight/
 - **Linux**: Ubuntu/GNOME focus; use universal `systemd` patterns where possible for portability.
 
 When adding or changing scripts, follow **N-SIGHT_SCRIPT_STANDARDS.md** so behavior and conventions stay consistent.
+
+---
+
+## Interactive macOS onboarding (Terminal)
+
+Download and run as the logged-in technician, **not** with `sudo`:
+
+```bash
+curl -fSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tools/Onboarding_Menu_mac.sh -o "$HOME/Downloads/Onboarding_Menu_mac.sh" && bash "$HOME/Downloads/Onboarding_Menu_mac.sh"
+```
+
+Use **Up/Down + Space** (or **1-8**) to select, **Enter** to run, **q** to quit.
+Selected tasks run one at a time, waiting for completion, in this order:
+Bitdefender, Chrome, Google Drive, Slack, Create admin mac, Homebrew, Twingate.
+A native macOS completion/warning/failure dialog appears after each task; results remain in the menu.
+N-sight removal is option 8, off by default, requires typing `REMOVE`, and preserves Take Control.
+
+This reuses the existing admin creation tool: it uses a predictable date password
+and grants passwordless sudo. The menu warns and requires typing `ADMIN` before
+running it; rotate that password immediately. Account/SecureToken prompts stay in
+Terminal and are not recorded in the menu's result log.
+
+Logs: `~/Library/Logs/Helfy/`; individual installer logs remain in `/var/log/nsight/`.
+Homebrew runs as the technician, not root. Twingate uses a pinned, hash-checked,
+Apple-signed vendor package and does not require Homebrew. Sign-ins, system/network
+extension approvals and Full Disk Access can still require manual approval/MDM.
+This interactive tool is **not** an unattended RMM task.
+
+Safe checks (no installs/removal): `bash macos/tools/test_onboarding_menu.sh`.
 
 ---
 
