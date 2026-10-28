@@ -27,14 +27,21 @@ if install_desktop gemini; then exit 1; fi
     install_homebrew() { :; }
     fake_brew() { [[ "$1" != --prefix ]] || printf '/usr\n'; }
     resolve_brew() { echo fake_brew; }
-    printf 'Test Technician\ntech@example.com\n' | setup_git
-    [[ $(/usr/bin/git config --global user.name) == 'Test Technician' ]]
-    [[ $(/usr/bin/git config --global user.email) == tech@example.com ]]
+    hostname() { echo test-mac; }
+    id() { echo technician; }
+    setup_git </dev/null
+    [[ $(/usr/bin/git config --global user.name) == test-mac ]]
+    [[ $(/usr/bin/git config --global user.email) == technician@test-mac.local ]]
     [[ $(/usr/bin/git config --global credential.helper) == osxkeychain ]]
     /usr/bin/git config --global credential.helper custom-helper
-    printf '\n\n' | setup_git
+    /usr/bin/git config --global user.name 'Existing Person'
+    /usr/bin/git config --global user.email person@example.com
+    setup_git </dev/null
     [[ $(/usr/bin/git config --global credential.helper) == custom-helper ]]
-    if printf 'Other Name\ninvalid\n' | setup_git; then exit 1; fi
-    [[ $(/usr/bin/git config --global user.name) == 'Test Technician' ]]
+    [[ $(/usr/bin/git config --global user.name) == 'Existing Person' ]]
+    [[ $(/usr/bin/git config --global user.email) == person@example.com ]]
+    hostname() { echo 'invalid host'; }
+    if setup_git </dev/null; then exit 1; fi
+    [[ $(/usr/bin/git config --global user.name) == 'Existing Person' ]]
 )
 echo 'PASS: app routing, correct Google Gemini cask, Git identity, Keychain default, preserved credentials and invalid-input guard'

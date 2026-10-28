@@ -11,6 +11,7 @@
 # From repo:    curl -fsSL "https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tasks/Remove_NSight_Agent_mac.sh" | sudo bash
 #
 # The current N-sight connection will disconnect during removal.
+# --no-popup: let the onboarding menu show one final queue summary.
 # =============================================================================
 
 set -o pipefail
@@ -19,6 +20,8 @@ readonly EXIT_SUCCESS=0 EXIT_CRITICAL=1002
 readonly AGENT_DIR=/usr/local/rmmagent AGENT_BIN=/usr/local/rmmagent/rmmagentd
 readonly LOG_DIR=/var/log/nsight LOG_FILE="${LOG_DIR}/RemoveNSightAgent_$(date +%Y%m%d_%H%M%S).log"
 REMOVED=()
+NO_POPUP=false
+[[ "${1:-}" != --no-popup ]] || NO_POPUP=true
 
 mkdir -p "$LOG_DIR" 2>/dev/null
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >>"$LOG_FILE"; }
@@ -37,7 +40,7 @@ popup() {
 finish() {
     local code="$1" title="$2" message="$3"
     echo "$message"
-    popup "$title" "$message"
+    [[ "$NO_POPUP" == true ]] || popup "$title" "$message"
     exit "$code"
 }
 

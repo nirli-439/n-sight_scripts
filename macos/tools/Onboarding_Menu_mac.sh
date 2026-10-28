@@ -3,10 +3,10 @@
 # Download to a file and run with bash (NOT sudo); prompts use /dev/tty.
 set -o pipefail
 BASE_URL=https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main
-NAMES=('Bitdefender' 'Google Chrome' 'Google Drive' 'Slack' 'Create admin mac' 'Homebrew' 'Twingate' 'Remove N-sight agent' 'Claude Desktop' 'ChatGPT Desktop' 'Gemini Desktop' 'Git setup' '1Password')
-PATHS=('tasks/Install_BitdefenderAgent_mac.sh' 'tasks/Install_Chrome_mac.sh' 'tasks/Install_GoogleDrive_mac.sh' 'tasks/Install_Slack_mac.sh' 'tools/Create_Admin_User_mac.sh' '' '' 'tasks/Remove_NSight_Agent_mac.sh' '' '' '' '' '')
-SELECTED=(1 1 1 1 1 1 1 0 0 0 0 0 0)
-RESULTS=('Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional')
+NAMES=('Bitdefender' 'Google Chrome' 'Google Drive' 'Slack' 'Create admin mac' 'Homebrew' 'Twingate' 'Remove N-sight agent' 'Claude Desktop' 'ChatGPT Desktop' 'Gemini Desktop' 'Git setup' '1Password' 'NirTab')
+PATHS=('tasks/Install_BitdefenderAgent_mac.sh' 'tasks/Install_Chrome_mac.sh' 'tasks/Install_GoogleDrive_mac.sh' 'tasks/Install_Slack_mac.sh' 'tools/Create_Admin_User_mac.sh' '' '' 'tasks/Remove_NSight_Agent_mac.sh' '' '' '' '' '' 'tasks/Install_NirTab_mac.sh')
+SELECTED=(1 1 1 1 1 1 1 0 0 0 0 0 0 0)
+RESULTS=('Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional')
 
 toggle() { SELECTED[$1]=$((1 - SELECTED[$1])); }
 
@@ -88,26 +88,34 @@ install_desktop() {
 }
 
 setup_git() {
-    local brew git name email current_name current_email helper
+    local brew git name email host login helper
     install_homebrew || return 1
     brew=$(resolve_brew) || return 1
     "$brew" list --formula git >/dev/null 2>&1 || "$brew" install git || return 1
     git="$("$brew" --prefix git)/bin/git"
     [[ -x "$git" ]] || return 1
-    current_name=$("$git" config --global user.name 2>/dev/null || true)
-    current_email=$("$git" config --global user.email 2>/dev/null || true)
-    read -r -p "Git name [$current_name]: " name || return 1
-    read -r -p "Git email [$current_email]: " email || return 1
-    name=${name:-$current_name}; email=${email:-$current_email}
-    [[ -n "$name" && "$email" == ?*@?*.?* && "$email" != *[[:space:]]* ]] || {
-        echo 'A name and valid email are required; Git identity was not changed.'; return 1;
+    name=$("$git" config --global user.name 2>/dev/null || true)
+    email=$("$git" config --global user.email 2>/dev/null || true)
+    host=$(hostname) || return 1
+    login=$(id -un) || return 1
+    [[ -n "$host" && "$host" != *[!a-zA-Z0-9.-]* && -n "$login" && "$login" != *[!a-zA-Z0-9_.-]* ]] || {
+        echo 'Machine hostname/username cannot form a local Git identity.'; return 1;
     }
-    "$git" config --global user.name "$name" || return 1
-    "$git" config --global user.email "$email" || return 1
+    # Local machine identity, not an invented company or verified GitHub email.
+    if [[ -z "$name" ]]; then
+        name="$host"
+        "$git" config --global user.name "$name" || return 1
+    fi
+    if [[ -z "$email" ]]; then
+        [[ "$host" == *.* ]] || host="$host.local"
+        email="$login@$host"
+        "$git" config --global user.email "$email" || return 1
+    fi
     helper=$("$git" config --global --get-all credential.helper 2>/dev/null || true)
     [[ -n "$helper" ]] || "$git" config --global credential.helper osxkeychain || return 1
     [[ "$("$git" config --global user.name)" == "$name" && "$("$git" config --global user.email)" == "$email" ]] || return 1
     "$git" --version
+    printf 'Git identity: %s <%s>\n' "$name" "$email"
     echo 'Git identity verified. Existing credentials/signing settings preserved; GitHub login is separate.'
 }
 
@@ -123,6 +131,7 @@ run_task() {
             sudo /bin/bash "$WORK/task-$index.sh"; rc=$? ;;
         5) install_homebrew; rc=$? ;;
         6) install_twingate; rc=$? ;;
+        7) sudo /bin/bash "$WORK/task-$index.sh" --no-popup; rc=$? ;;
         8) install_desktop claude; rc=$? ;;
         9) install_desktop chatgpt; rc=$? ;;
         10) install_desktop google-gemini; rc=$? ;;
@@ -132,27 +141,34 @@ run_task() {
     esac
     # POSIX shell exit statuses wrap modulo 256: 1001 -> 233; 1002 -> 234.
     case "$rc" in
-        0) RESULTS[$index]='Done'; return 0 ;;
+        0)
+            RESULTS[$index]='Done'
+            [[ $index != 13 ]] || RESULTS[$index]='Installed - open app and approve permissions'
+            return 0 ;;
         233) RESULTS[$index]='Warning - check output'; return 2 ;;
         *) RESULTS[$index]="Failed (exit $rc)"; return 1 ;;
     esac
 }
 
 run_selected() {
-    local i rc failed=0 count=0
+    local i rc failed=0 count=0 summary='' title='Setup finished'
     for ((i=0; i<${#NAMES[@]}; i++)); do
         [[ ${SELECTED[$i]:-0} == 1 ]] || continue
         if [[ $i == 7 ]] && ! confirm_remove; then
-            RESULTS[$i]='Cancelled'; continue
+            RESULTS[$i]='Cancelled'
+        else
+            count=$((count + 1))
+            printf '\n===== %s =====\n' "${NAMES[$i]}"
+            run_task "$i"; rc=$?
+            if [[ $rc != 0 ]]; then failed=1; fi
         fi
-        count=$((count + 1))
-        printf '\n===== %s =====\n' "${NAMES[$i]}"
-        run_task "$i"; rc=$?
-        if [[ $rc != 0 ]]; then failed=1; fi
         printf '%s: %s\n' "${NAMES[$i]}" "${RESULTS[$i]}" | tee -a "$LOG_FILE"
-        popup "${NAMES[$i]}" "${RESULTS[$i]}. See Terminal for details."
+        summary+="${NAMES[$i]}: ${RESULTS[$i]}"$'\n'
     done
     printf '\nFinished %s selected task(s). Log: %s\n' "$count" "$LOG_FILE"
+    [[ $failed == 0 ]] || title='Setup finished with warnings or failures'
+    [[ $count != 0 ]] || title='No tasks run'
+    popup "$title" "${summary:-No tasks selected.}"$'\n'"Log: $LOG_FILE"
     return "$failed"
 }
 

@@ -42,9 +42,9 @@ Scripts_N-Sight/
 | Platform | Checks | Tasks | Total |
 |----------|--------|-------|-------|
 | Windows  | 30     | 50    | 80    |
-| macOS    | 15     | 21    | 36    |
+| macOS    | 15     | 22    | 37    |
 | Linux    | 6      | 17    | 23    |
-| **Total**| **51** | **88** | **139** |
+| **Total**| **51** | **89** | **140** |
 
 Counts cover tracked checks/tasks only; interactive tools, tests and profiles are excluded.
 
@@ -74,8 +74,10 @@ Use **Up/Down + Space** (or **1-9** for the first nine entries) to select,
 Selected tasks run one at a time, waiting for completion, in this order:
 Bitdefender, Chrome, Google Drive, Slack, Create admin mac, Homebrew, Twingate,
 optional N-sight removal (8), Claude Desktop (9), ChatGPT Desktop (10),
-Gemini Desktop (11), Git setup (12), and 1Password (13).
-A native macOS completion/warning/failure dialog appears after each task; results remain in the menu.
+Gemini Desktop (11), Git setup (12), 1Password (13), and NirTab (14).
+One native macOS summary dialog appears only after the entire selected run finishes,
+including warnings, failures and cancellations. Individual tasks update Terminal
+and the menu without completion popups (including N-sight removal).
 N-sight removal and the new optional tools are off by default. Removal requires
 typing `REMOVE` and preserves Take Control.
 
@@ -88,10 +90,19 @@ unmanaged copies fail safely instead of being overwritten. App signatures and
 Gatekeeper approval are checked after installation. No Dock shortcuts are created.
 Sign-in/licensing remains manual; 1Password vaults are never configured or removed.
 
-Git setup installs Git through Homebrew and prompts for this Mac user's commit
-name/email (Enter preserves existing values). It defaults to macOS Keychain only
-when no global credential helper exists; existing credentials and signing settings
-are preserved. It does not log into GitHub or generate SSH keys.
+Git setup installs Git through Homebrew without identity prompts. Missing Git name
+uses the Mac's hostname; missing email uses `local-user@hostname` (`.local` is added
+for a hostname without a domain). This is a local machine identity, **not** a verified
+GitHub/company email. Existing name/email, credentials and signing settings are
+preserved; macOS Keychain is the default only if no global credential helper exists.
+It does not log into GitHub or generate SSH keys.
+
+NirTab installs the pinned v0.15 universal release from
+[`nirli-439/NirTab`](https://github.com/nirli-439/NirTab), verifies its SHA-256,
+bundle ID and signature, and leaves an existing valid install untouched. Requires
+macOS 14+. The release is self-signed, not notarized: first open and Accessibility/
+Screen Recording approval remain manual through NirTab's Setup Checklist; the tool
+does not bypass Gatekeeper, re-sign NirTab or change the Dock.
 
 This reuses the existing admin creation tool: it uses a predictable date password
 and grants passwordless sudo. The menu warns and requires typing `ADMIN` before
@@ -114,6 +125,7 @@ bash macos/tools/test_onboarding_menu.sh
 bash macos/tools/test_onboarding_extras.sh
 python3 macos/tools/test_slack_install.py
 python3 macos/tools/test_google_drive_setup.py
+python3 macos/tools/test_nirtab_install.py
 ```
 
 ---
