@@ -15,19 +15,18 @@
 #     - Sets ownership to root:wheel with 755 permissions
 #     - Verifies installation after completion
 #     - Clears quarantine attribute for seamless first launch
-#     - ADDS GOOGLE DRIVE ICON TO DOCK for all existing users
-#     - Restarts Dock for logged-in users to apply changes immediately
+#     - Leaves user Dock preferences and shortcuts untouched
 #     - Designed for N-Sight RMM deployment
 #
 #     Installation Details:
 #     - Install Path: /Applications/Google Drive.app (system-wide, all users)
 #     - Ownership: root:wheel
 #     - Permissions: 755 (rwxr-xr-x)
-#     - Dock: Added to all user Docks automatically
+#     - Dock: Never modified; users can pin Drive themselves
 #
 # EXIT CODES:
 #     0    = Success (Google Drive installed successfully)
-#     1001 = Warning (Google Drive already installed)
+#     1001 = Warning (reserved; already installed returns success)
 #     1002 = Critical/Error (Installation failed)
 #
 # EXECUTION:
@@ -37,7 +36,7 @@
 #
 # NOTES:
 #     Author: IT Admin
-#     Version: 1.0
+#     Version: 1.1 - Remove malformed Dock shortcut generation and forced Dock restarts
 #     Requires: Root privileges (sudo)
 #     Platform: macOS 10.15+ (Catalina and later)
 #
@@ -54,7 +53,7 @@ set -o pipefail
 # CONFIGURATION
 # =============================================================================
 readonly SCRIPT_NAME="Install Google Drive macOS (All Users)"
-readonly SCRIPT_VERSION="1.0"
+readonly SCRIPT_VERSION="1.1"
 readonly LOG_DIR="/var/log/nsight"
 readonly LOG_FILE="${LOG_DIR}/GoogleDriveInstall_$(date +%Y%m%d_%H%M%S).log"
 
@@ -388,122 +387,6 @@ write_summary() {
     echo "${status}: ${message}"
 }
 
-add_to_dock_for_user() {
-    local user_home="$1"
-    local username="$2"
-    local dock_plist="${user_home}/Library/Preferences/com.apple.dock.plist"
-    
-    # Skip if no dock plist exists (user never logged in)
-    if [ ! -f "$dock_plist" ]; then
-        log "No Dock plist found for user $username, skipping..."
-        return 0
-    fi
-    
-    # Check if Google Drive is already in the dock
-    if /usr/libexec/PlistBuddy -c "Print :persistent-apps" "$dock_plist" 2>/dev/null | grep -q "Google Drive"; then
-        log "Google Drive already in Dock for user $username"
-        return 0
-    fi
-    
-    log "Adding Google Drive to Dock for user $username..."
-    
-    # Create dock item entry using PlistBuddy
-    local dock_entry="<dict>
-        <key>tile-data</key>
-        <dict>
-            <key>file-data</key>
-            <dict>
-                <key>_CFURLString</key>
-                <string>file://${INSTALL_PATH}/</string>
-                <key>_CFURLStringType</key>
-                <integer>15</integer>
-            </dict>
-            <key>file-label</key>
-            <string>Google Drive</string>
-            <key>file-type</key>
-            <integer>41</integer>
-        </dict>
-        <key>tile-type</key>
-        <string>file-tile</string>
-    </dict>"
-    
-    # Get current count of persistent-apps
-    local app_count
-    app_count=$(/usr/libexec/PlistBuddy -c "Print :persistent-apps" "$dock_plist" 2>/dev/null | grep -c "Dict" || echo "0")
-    
-    # Add the new entry at the end of persistent-apps
-    if /usr/libexec/PlistBuddy -c "Add :persistent-apps:${app_count}:tile-data dict" "$dock_plist" 2>/dev/null; then
-        /usr/libexec/PlistBuddy -c "Add :persistent-apps:${app_count}:tile-data:file-data dict" "$dock_plist" 2>/dev/null
-        /usr/libexec/PlistBuddy -c "Add :persistent-apps:${app_count}:tile-data:file-data:_CFURLString string 'file://${INSTALL_PATH}/'" "$dock_plist" 2>/dev/null
-        /usr/libexec/PlistBuddy -c "Add :persistent-apps:${app_count}:tile-data:file-data:_CFURLStringType integer 15" "$dock_plist" 2>/dev/null
-        /usr/libexec/PlistBuddy -c "Add :persistent-apps:${app_count}:tile-data:file-label string 'Google Drive'" "$dock_plist" 2>/dev/null
-        /usr/libexec/PlistBuddy -c "Add :persistent-apps:${app_count}:tile-data:file-type integer 41" "$dock_plist" 2>/dev/null
-        /usr/libexec/PlistBuddy -c "Add :persistent-apps:${app_count}:tile-type string 'file-tile'" "$dock_plist" 2>/dev/null
-        
-        # Fix ownership of the plist file
-        local uid gid
-        uid=$(stat -f%u "$user_home")
-        gid=$(stat -f%g "$user_home")
-        chown "${uid}:${gid}" "$dock_plist" 2>/dev/null
-        
-        log "Successfully added Google Drive to Dock for user $username"
-        return 0
-    else
-        log "Failed to add Google Drive to Dock for user $username" "WARNING"
-        return 1
-    fi
-}
-
-add_to_dock_all_users() {
-    log "Adding Google Drive to Dock for all users..."
-    
-    local users_dir="/Users"
-    local success_count=0
-    local fail_count=0
-    
-    # Iterate through all user home directories
-    for user_home in "$users_dir"/*; do
-        if [ -d "$user_home" ]; then
-            local username
-            username=$(basename "$user_home")
-            
-            # Skip system directories
-            case "$username" in
-                Shared|.localized|Guest)
-                    continue
-                    ;;
-            esac
-            
-            # Skip if not a real user home directory
-            if [ ! -d "${user_home}/Library" ]; then
-                continue
-            fi
-            
-            if add_to_dock_for_user "$user_home" "$username"; then
-                ((success_count++))
-            else
-                ((fail_count++))
-            fi
-        fi
-    done
-    
-    log "Dock update complete: $success_count users updated, $fail_count failed"
-    
-    # Restart Dock for currently logged-in users to apply changes
-    log "Restarting Dock to apply changes..."
-    
-    # Get list of logged-in users (console users)
-    local logged_in_users
-    logged_in_users=$(who | grep console | awk '{print $1}' | sort -u)
-    
-    for user in $logged_in_users; do
-        log "Restarting Dock for logged-in user: $user"
-        sudo -u "$user" killall Dock 2>/dev/null || true
-    done
-    
-    return 0
-}
-
 # =============================================================================
 # MAIN EXECUTION
 # =============================================================================
@@ -538,10 +421,6 @@ if check_googledrive_installed; then
     log "Path: $INSTALL_PATH"
     log "Install Type: System-wide (all users)"
     
-    # Still add to Dock for all users (ensures new users or users without dock icon get it)
-    log "Ensuring Google Drive is in Dock for all users..."
-    add_to_dock_all_users
-    
     log "=========================================="
     
     echo ""
@@ -553,7 +432,7 @@ if check_googledrive_installed; then
     write_summary "OK" "Google Drive already installed for ALL USERS (v${local_version})"
     echo "Path: $INSTALL_PATH"
     echo "Install Type: System-wide (/Applications)"
-    echo "Dock: Verified/Added to all user Docks"
+    echo "Dock: Unchanged"
     
     exit $EXIT_SUCCESS
 fi
@@ -589,9 +468,6 @@ if ! verify_installation; then
     exit $EXIT_CRITICAL
 fi
 
-# Add Google Drive to Dock for all users
-add_to_dock_all_users
-
 # Get final version info
 final_version=$(get_googledrive_version "$INSTALL_PATH")
 
@@ -612,7 +488,7 @@ echo "Version: $final_version"
 echo "Install Type: System-wide (/Applications)"
 echo "Ownership: root:wheel"
 echo "Permissions: 755 (all users can execute)"
-echo "Dock: Added to all user Docks"
+echo "Dock: Unchanged"
 echo ""
 echo "NOTE: User must sign in to Google Drive after first launch"
 
