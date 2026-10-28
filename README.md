@@ -43,8 +43,8 @@ Scripts_N-Sight/
 |----------|--------|-------|-------|
 | Windows  | 30     | 50    | 80    |
 | macOS    | 15     | 22    | 37    |
-| Linux    | 6      | 17    | 23    |
-| **Total**| **51** | **89** | **140** |
+| Linux    | 7      | 21    | 28    |
+| **Total**| **52** | **93** | **145** |
 
 Counts cover tracked checks/tasks only; interactive tools, tests and profiles are excluded.
 
@@ -138,6 +138,60 @@ bash macos/tools/test_onboarding_launch.sh
 python3 macos/tools/test_slack_install.py
 python3 macos/tools/test_google_drive_setup.py
 python3 macos/tools/test_nirtab_install.py
+```
+
+---
+
+## Interactive Ubuntu onboarding (Terminal)
+
+Run as the logged-in desktop user, **not** with sudo:
+
+```bash
+curl -fSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux/tools/Onboarding_Menu_linux.sh -o "$HOME/Onboarding_Menu_linux.sh" && bash "$HOME/Onboarding_Menu_linux.sh"
+```
+
+Ubuntu **22.04+**; the screen-lock policy requires **GNOME**. Chrome and Slack
+use system Flatpak/Flathub (their availability depends on CPU architecture).
+Use Up/Down + Space, or 1-9/0 for options 1-10; Enter runs selections sequentially.
+All ten are selected by default:
+
+1. Google Chrome
+2. Bitdefender GravityZone (organization package)
+3. GNOME screen lock after 15 minutes (locked policy; new login required)
+4. Git (machine-derived identity; existing identity/credentials stay unchanged)
+5. Slack
+6. Claude Code
+7. Codex CLI
+8. Google Antigravity desktop app
+9. Docker Engine + current Compose plugin
+10. Twingate client
+
+Installers finish before Chrome, Slack and Antigravity launch as the user in an
+existing graphical session. CLI agents are installed/version-checked, not started
+in an interactive login session. Sign-ins remain manual. There is one final
+summary dialog with existing Zenity, otherwise a desktop notification if available,
+with Terminal always showing the results. Logs: `~/.local/state/helfy-onboarding/`
+(or beneath `$XDG_STATE_HOME`).
+
+Docker data is preserved and the user is **not** silently added to the root-equivalent
+`docker` group; use `sudo docker` unless access was already configured. Conflicting
+container packages are not removed automatically. Twingate installs without changing
+network/credentials; configure it afterward with `sudo twingate setup`.
+
+Downloads are staged before execution. System tasks run elevated with a readable
+system-file umask, while menu logs/work files stay private. Claude Code, Codex and
+Antigravity install as the user, not root. Antigravity's GTK/NSS/audio runtimes and
+Python are installed through Ubuntu packages first; the app itself remains user-scoped.
+These interactive onboarding tools are
+separate from unattended N-sight tasks.
+
+Safe regression checks:
+```bash
+bash linux/tools/test_onboarding_menu.sh
+python3 linux/tools/test_desktop_setup.py
+python3 linux/tools/test_bitdefender_existing.py
+python3 linux/tools/test_docker_twingate_install.py
+python3 linux/tools/test_ai_tool_install.py
 ```
 
 ---

@@ -97,7 +97,12 @@ fi
 log "$SCRIPT_NAME v$SCRIPT_VERSION on $(hostname -s) - ${PRETTY_NAME:-unknown} ($(uname -m))"
 
 if already_installed; then
-    finish $EXIT_SUCCESS "OK: Bitdefender GravityZone already installed (v$(pkg_version)) - nothing to do"
+    if ! systemctl is-active --quiet bdsec.service; then
+        systemctl start bdsec.service >> "$LOG_FILE" 2>&1 || true
+        systemctl is-active --quiet bdsec.service || \
+            finish $EXIT_WARNING "WARNING: Bitdefender is registered but bdsec.service is not active - see $INSTALLER_LOG"
+    fi
+    finish $EXIT_SUCCESS "OK: Bitdefender GravityZone already installed (v$(pkg_version)); bdsec.service is active"
 fi
 
 if [[ "${ID:-}" != "ubuntu" && "${ID:-}" != "fedora" && "${ID_LIKE:-}" != *debian* && "${ID_LIKE:-}" != *fedora* && "${ID_LIKE:-}" != *rhel* ]]; then
