@@ -83,8 +83,9 @@ as the technician: Bitdefender UI, Chrome, Drive, Slack, Twingate, Claude, ChatG
 Gemini, 1Password and NirTab. Command-line/admin tasks are not launched. Launch
 requests/failures appear in the final summary; an accepted request does not prove
 first-run setup is complete. macOS may still ask for sign-in or permission approval.
-N-sight removal and the new optional tools are off by default. Removal requires
-typing `REMOVE` and preserves Take Control.
+Claude, ChatGPT, Gemini and NirTab are selected by default, alongside options 1-7.
+N-sight removal, Git setup and 1Password remain optional/off by default. Removal
+requires typing `REMOVE` and preserves Take Control.
 
 Claude, ChatGPT, Google's native Gemini app (`google-gemini`, **not** the unrelated
 `gemini` disk cleaner), and 1Password use official vendor packages through Homebrew

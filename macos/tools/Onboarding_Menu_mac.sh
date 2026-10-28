@@ -5,8 +5,8 @@ set -o pipefail
 BASE_URL=https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main
 NAMES=('Bitdefender' 'Google Chrome' 'Google Drive' 'Slack' 'Create admin mac' 'Homebrew' 'Twingate' 'Remove N-sight agent' 'Claude Desktop' 'ChatGPT Desktop' 'Gemini Desktop' 'Git setup' '1Password' 'NirTab')
 PATHS=('tasks/Install_BitdefenderAgent_mac.sh' 'tasks/Install_Chrome_mac.sh' 'tasks/Install_GoogleDrive_mac.sh' 'tasks/Install_Slack_mac.sh' 'tools/Create_Admin_User_mac.sh' '' '' 'tasks/Remove_NSight_Agent_mac.sh' '' '' '' '' '' 'tasks/Install_NirTab_mac.sh')
-SELECTED=(1 1 1 1 1 1 1 0 0 0 0 0 0 0)
-RESULTS=('Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional')
+SELECTED=(1 1 1 1 1 1 1 0 1 1 1 0 0 1)
+RESULTS=('Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Optional' 'Ready' 'Ready' 'Ready' 'Optional' 'Optional' 'Ready')
 
 # Empty entries are command-line/admin tasks, not launchable GUI apps.
 APPS=('/Applications/Endpoint Security for Mac.app' '/Applications/Google Chrome.app' '/Applications/Google Drive.app' '/Applications/Slack.app' '' '' '/Applications/Twingate.app' '' '/Applications/Claude.app' '/Applications/ChatGPT.app' '/Applications/Gemini.app' '' '/Applications/1Password.app' '/Applications/NirTab.app')

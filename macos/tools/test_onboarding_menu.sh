@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 [[ -f Onboarding_Menu_mac.sh ]] || { echo 'FAIL: onboarding menu missing'; exit 1; }
 source ./Onboarding_Menu_mac.sh
 [[ "${NAMES[*]}" == 'Bitdefender Google Chrome Google Drive Slack Create admin mac Homebrew Twingate Remove N-sight agent Claude Desktop ChatGPT Desktop Gemini Desktop Git setup 1Password NirTab' ]]
-[[ "${SELECTED[*]}" == '1 1 1 1 1 1 1 0 0 0 0 0 0 0' ]]
+[[ "${SELECTED[*]}" == '1 1 1 1 1 1 1 0 1 1 1 0 0 1' ]] || { echo 'FAIL: default selections'; exit 1; }
 toggle 7; [[ ${SELECTED[7]} == 1 ]]; toggle 7
 SELECTED=(1 0 1 0 0 0 1 0 1 1 1 1 1 1)
 CALLS=''
