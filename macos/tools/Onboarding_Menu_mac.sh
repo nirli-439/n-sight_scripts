@@ -8,6 +8,16 @@ PATHS=('tasks/Install_BitdefenderAgent_mac.sh' 'tasks/Install_Chrome_mac.sh' 'ta
 SELECTED=(1 1 1 1 1 1 1 0 0 0 0 0 0 0)
 RESULTS=('Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional' 'Optional')
 
+# Empty entries are command-line/admin tasks, not launchable GUI apps.
+APPS=('/Applications/Endpoint Security for Mac.app' '/Applications/Google Chrome.app' '/Applications/Google Drive.app' '/Applications/Slack.app' '' '' '/Applications/Twingate.app' '' '/Applications/Claude.app' '/Applications/ChatGPT.app' '/Applications/Gemini.app' '' '/Applications/1Password.app' '/Applications/NirTab.app')
+
+launch_app() {
+    [[ -d "$1" && ! -L "$1" ]] || return 1
+    # Absolute app path opens/registers the installed copy as this technician,
+    # never as root. Gatekeeper/TCC prompts remain under macOS control.
+    open -a "$1"
+}
+
 toggle() { SELECTED[$1]=$((1 - SELECTED[$1])); }
 
 popup() {
@@ -152,6 +162,7 @@ run_task() {
 
 run_selected() {
     local i rc failed=0 count=0 summary='' title='Setup finished'
+    local ready=()
     for ((i=0; i<${#NAMES[@]}; i++)); do
         [[ ${SELECTED[$i]:-0} == 1 ]] || continue
         if [[ $i == 7 ]] && ! confirm_remove; then
@@ -160,10 +171,27 @@ run_selected() {
             count=$((count + 1))
             printf '\n===== %s =====\n' "${NAMES[$i]}"
             run_task "$i"; rc=$?
-            if [[ $rc != 0 ]]; then failed=1; fi
+            if [[ $rc != 0 ]]; then
+                failed=1
+            elif [[ -n ${APPS[$i]} ]]; then
+                ready+=("$i")
+            fi
         fi
         printf '%s: %s\n' "${NAMES[$i]}" "${RESULTS[$i]}" | tee -a "$LOG_FILE"
-        summary+="${NAMES[$i]}: ${RESULTS[$i]}"$'\n'
+    done
+    # Launch only this run's successful GUI selections, after ALL installers.
+    for i in ${ready[@]+"${ready[@]}"}; do
+        if launch_app "${APPS[$i]}"; then
+            RESULTS[$i]='Installed - launch requested'
+            [[ $i != 13 ]] || RESULTS[$i]='Launch requested - check menu bar/approve permissions'
+        else
+            RESULTS[$i]='Installed - launch failed; open manually'
+            failed=1
+        fi
+        printf '%s: %s\n' "${NAMES[$i]}" "${RESULTS[$i]}" | tee -a "$LOG_FILE"
+    done
+    for ((i=0; i<${#NAMES[@]}; i++)); do
+        [[ ${SELECTED[$i]:-0} != 1 ]] || summary+="${NAMES[$i]}: ${RESULTS[$i]}"$'\n'
     done
     printf '\nFinished %s selected task(s). Log: %s\n' "$count" "$LOG_FILE"
     [[ $failed == 0 ]] || title='Setup finished with warnings or failures'

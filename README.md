@@ -78,6 +78,11 @@ Gemini Desktop (11), Git setup (12), 1Password (13), and NirTab (14).
 One native macOS summary dialog appears only after the entire selected run finishes,
 including warnings, failures and cancellations. Individual tasks update Terminal
 and the menu without completion popups (including N-sight removal).
+After all installations finish, the tool opens only successfully selected GUI apps
+as the technician: Bitdefender UI, Chrome, Drive, Slack, Twingate, Claude, ChatGPT,
+Gemini, 1Password and NirTab. Command-line/admin tasks are not launched. Launch
+requests/failures appear in the final summary; an accepted request does not prove
+first-run setup is complete. macOS may still ask for sign-in or permission approval.
 N-sight removal and the new optional tools are off by default. Removal requires
 typing `REMOVE` and preserves Take Control.
 
@@ -100,9 +105,11 @@ It does not log into GitHub or generate SSH keys.
 NirTab installs the pinned v0.15 universal release from
 [`nirli-439/NirTab`](https://github.com/nirli-439/NirTab), verifies its SHA-256,
 bundle ID and signature, and leaves an existing valid install untouched. Requires
-macOS 14+. The release is self-signed, not notarized: first open and Accessibility/
-Screen Recording approval remain manual through NirTab's Setup Checklist; the tool
-does not bypass Gatekeeper, re-sign NirTab or change the Dock.
+macOS 14+. NirTab is a **menu-bar app**, not a normal Dock application. It is
+launched at the end when selected and installed successfully. The release is
+self-signed, not notarized: Gatekeeper and Accessibility/Screen Recording approval
+may require manual action through NirTab's Setup Checklist; the tool does not
+bypass Gatekeeper, re-sign NirTab or change the Dock.
 
 This reuses the existing admin creation tool: it uses a predictable date password
 and grants passwordless sudo. The menu warns and requires typing `ADMIN` before
@@ -123,6 +130,7 @@ Safe checks (no installs/removal):
 ```bash
 bash macos/tools/test_onboarding_menu.sh
 bash macos/tools/test_onboarding_extras.sh
+bash macos/tools/test_onboarding_launch.sh
 python3 macos/tools/test_slack_install.py
 python3 macos/tools/test_google_drive_setup.py
 python3 macos/tools/test_nirtab_install.py

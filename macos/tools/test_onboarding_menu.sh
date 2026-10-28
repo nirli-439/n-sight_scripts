@@ -9,6 +9,7 @@ source ./Onboarding_Menu_mac.sh
 toggle 7; [[ ${SELECTED[7]} == 1 ]]; toggle 7
 SELECTED=(1 0 1 0 0 0 1 0 1 1 1 1 1 1)
 CALLS=''
+launch_app() { :; }
 run_task() { CALLS="$CALLS $1"; [[ $1 != 2 ]]; }
 POPUPS=0
 popup() {
@@ -31,9 +32,10 @@ run_selected || true
 (
     source ./Onboarding_Menu_mac.sh
     SELECTED=(1)
+    launch_app() { :; }
     run_task() { RESULTS[$1]=Done; }
     POPUPS=0
-    popup() { POPUPS=$((POPUPS + 1)); [[ "$1" == 'Setup finished' && "$2" == *'Bitdefender: Done'* ]]; }
+    popup() { POPUPS=$((POPUPS + 1)); [[ "$1" == 'Setup finished' && "$2" == *'Bitdefender: Installed - launch requested'* ]]; }
     run_selected
     [[ $POPUPS == 1 ]]
     SELECTED=(0)
