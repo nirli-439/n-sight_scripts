@@ -44,10 +44,11 @@ valid_slack() {
 # --- Root check ---
 [[ $EUID -eq 0 ]] || fail "Root privileges required"
 
-# Install-only: leave any existing item untouched, including broken/symlink apps.
+# Install-only: preserve existing apps/data; repair access only after validation.
 if [[ -e "$APP_PATH" || -L "$APP_PATH" ]]; then
     valid_slack "$APP_PATH" || fail "Existing $APP_PATH is not a verified Slack app; left untouched"
-    ok "Verified Slack already installed at $APP_PATH; Dock unchanged"
+    chmod -R a+rX "$APP_PATH" || fail "Cannot repair Slack access permissions"
+    ok "Verified Slack already installed at $APP_PATH; access permissions repaired; Dock unchanged"
 fi
 
 WORK_DIR=$(mktemp -d "${TMPDIR:-/tmp}/slack-install.XXXXXX") || fail "Cannot create private work directory"
@@ -72,8 +73,9 @@ valid_slack "$src" || fail "Downloaded Slack failed bundle, vendor signature or 
 
 # Atomic reservation refuses any item that appeared during download. No removal or
 # merging with an unrelated app. A failed copy is left for operator inspection.
-mkdir "$APP_PATH" || fail "Cannot reserve $APP_PATH; existing items left untouched"
+mkdir -m 755 "$APP_PATH" || fail "Cannot reserve $APP_PATH; existing items left untouched"
 cp -R "$src/." "$APP_PATH/" || fail "Copy failed; incomplete $APP_PATH left for inspection"
+chmod -R a+rX "$APP_PATH" || fail "Cannot set Slack access permissions"
 valid_slack "$APP_PATH" || fail "Installed Slack failed verification; left for inspection"
 
 # Slack's updater needs a real console user's ownership, not loginwindow/guests.

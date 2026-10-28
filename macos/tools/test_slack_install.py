@@ -65,7 +65,7 @@ for case in ('invalid_existing', 'existing', 'fresh', 'download_fail', 'mount_fa
         events = root / 'events'
         events.touch()
         if case in ('invalid_existing', 'existing'):
-            (apps / 'Slack.app').mkdir()
+            (apps / 'Slack.app').mkdir(mode=0o700)
             (apps / 'Slack.app/sentinel').write_text('preserve')
         code = source.replace('/Applications', str(apps))
         code = code.replace('[[ $EUID -eq 0 ]] || fail "Root privileges required"', ':')
@@ -73,7 +73,7 @@ for case in ('invalid_existing', 'existing', 'fresh', 'download_fail', 'mount_fa
         code = code.replace('# --- Root check ---', stubs + '\n# --- Root check ---')
         env = dict(os.environ, CASE=case, EVENTS=str(events), APPS=str(apps),
                    TMPDIR=temp, CONSOLE_USER='alice' if case == 'user' else 'loginwindow')
-        result = subprocess.run(['/bin/bash'], input=code, text=True,
+        result = subprocess.run(['/bin/bash'], input='umask 077\n'+code, text=True,
                                 capture_output=True, env=env)
         lines = events.read_text().splitlines()
         success = case in ('fresh', 'user', 'existing')
@@ -88,6 +88,8 @@ for case in ('invalid_existing', 'existing', 'fresh', 'download_fail', 'mount_fa
         if case in ('invalid_existing', 'existing'):
             assert (apps / 'Slack.app/sentinel').read_text() == 'preserve'
             assert 'download' not in lines
+        if success:
+            assert (apps/'Slack.app').stat().st_mode & 0o005 == 0o005, (case, 'Slack inaccessible to other users')
         if copied:
             index = next(i for i, line in enumerate(lines) if line.startswith('copy '))
             assert any(line.startswith('spctl ') for line in lines[:index]), lines

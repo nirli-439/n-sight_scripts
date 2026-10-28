@@ -105,7 +105,10 @@ It does not log into GitHub or generate SSH keys.
 
 NirTab installs the pinned v0.15 universal release from
 [`nirli-439/NirTab`](https://github.com/nirli-439/NirTab), verifies its SHA-256,
-bundle ID and signature, and leaves an existing valid install untouched. Requires
+bundle ID, executable and signature. Reruns repair app-bundle read/traverse
+permissions on an existing valid install without replacing it. New app directories
+are explicitly world-readable/traversable even under a restrictive `umask 077`
+(the same fix applies to Slack); private downloads/logs stay private. Requires
 macOS 14+. NirTab is a **menu-bar app**, not a normal Dock application. It is
 launched at the end when selected and installed successfully. The release is
 self-signed, not notarized: Gatekeeper and Accessibility/Screen Recording approval

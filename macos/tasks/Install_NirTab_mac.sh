@@ -13,6 +13,11 @@ fail() { echo "CRITICAL: $*"; exit 1002; }
 valid_app() {
     [[ -d "$1" && ! -L "$1" ]] || return 1
     [[ "$(defaults read "$1/Contents/Info" CFBundleIdentifier 2>/dev/null)" == "$BUNDLE_ID" ]] || return 1
+    local executable
+    executable=$(defaults read "$1/Contents/Info" CFBundleExecutable 2>/dev/null) || return 1
+    [[ "$executable" == NirTab && -f "$1/Contents/MacOS/NirTab" && -x "$1/Contents/MacOS/NirTab" ]] || {
+        echo "NirTab executable missing or not executable: $1/Contents/MacOS/NirTab"; return 1;
+    }
     codesign --verify --deep --strict "$1"
 }
 [[ $EUID -eq 0 ]] || fail "Run as root (sudo)"
@@ -21,7 +26,8 @@ major=${version%%.*}
 [[ "$major" =~ ^[0-9]+$ && "$major" -ge 14 ]] || fail 'NirTab requires macOS 14 or later'
 if [[ -e "$APP_PATH" || -L "$APP_PATH" ]]; then
     valid_app "$APP_PATH" || fail 'Existing NirTab is not a valid signed app; left untouched'
-    echo 'OK: NirTab already installed. Use its Check for Updates menu for updates.'
+    chmod -R a+rX "$APP_PATH" || fail 'Cannot repair NirTab read/execute permissions'
+    echo 'OK: NirTab verified; application access permissions repaired. Use its Check for Updates menu for updates.'
     exit 0
 fi
 WORK=$(mktemp -d "${TMPDIR:-/tmp}/nirtab-install.XXXXXX") || fail 'Cannot create work directory'
@@ -33,8 +39,9 @@ printf '%s  %s\n' "$SHA256" "$WORK/NirTab.zip" | shasum -a 256 -c - || fail 'Rel
 ditto -x -k "$WORK/NirTab.zip" "$WORK/unpacked" || fail 'Archive extraction failed'
 src="$WORK/unpacked/NirTab.app"
 valid_app "$src" || fail 'Downloaded NirTab failed bundle/signature validation'
-mkdir "$APP_PATH" || fail 'Cannot reserve install path; existing items left untouched'
+mkdir -m 755 "$APP_PATH" || fail 'Cannot reserve install path; existing items left untouched'
 ditto "$src" "$APP_PATH" || fail 'Copy failed; incomplete app left for inspection'
+chmod -R a+rX "$APP_PATH" || fail 'Cannot set NirTab read/execute permissions'
 valid_app "$APP_PATH" || fail 'Installed NirTab verification failed'
 echo 'OK: NirTab v0.15 installed. Dock unchanged.'
 echo 'NEXT: Right-click NirTab in Applications > Open, then approve Accessibility and Screen Recording in its Setup Checklist.'
