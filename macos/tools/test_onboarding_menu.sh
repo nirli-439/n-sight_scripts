@@ -4,16 +4,16 @@ set -eu
 cd "$(dirname "$0")"
 [[ -f Onboarding_Menu_mac.sh ]] || { echo 'FAIL: onboarding menu missing'; exit 1; }
 source ./Onboarding_Menu_mac.sh
-[[ "${NAMES[*]}" == 'Bitdefender Google Chrome Google Drive Slack Create admin mac Homebrew Twingate Remove N-sight agent' ]]
-[[ "${SELECTED[*]}" == '1 1 1 1 1 1 1 0' ]]
+[[ "${NAMES[*]}" == 'Bitdefender Google Chrome Google Drive Slack Create admin mac Homebrew Twingate Remove N-sight agent Claude Desktop ChatGPT Desktop Gemini Desktop Git setup 1Password' ]]
+[[ "${SELECTED[*]}" == '1 1 1 1 1 1 1 0 0 0 0 0 0' ]]
 toggle 7; [[ ${SELECTED[7]} == 1 ]]; toggle 7
-SELECTED=(1 0 1 0 0 0 1 0)
+SELECTED=(1 0 1 0 0 0 1 0 1 1 1 1 1)
 CALLS=''
 run_task() { CALLS="$CALLS $1"; [[ $1 != 2 ]]; }
 popup() { :; }
 LOG_FILE=/dev/null
 run_selected && { echo 'FAIL: failure not propagated'; exit 1; }
-[[ "$CALLS" == ' 0 2 6' ]] || { echo "FAIL: order: $CALLS"; exit 1; }
+[[ "$CALLS" == ' 0 2 6 8 9 10 11 12' ]] || { echo "FAIL: order: $CALLS"; exit 1; }
 SELECTED=(0 0 0 0 0 0 0 1)
 confirm_remove() { return 1; }
 CALLS=''

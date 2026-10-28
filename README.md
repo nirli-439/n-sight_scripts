@@ -69,11 +69,29 @@ Download and run as the logged-in technician, **not** with `sudo`:
 curl -fSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tools/Onboarding_Menu_mac.sh -o "$HOME/Downloads/Onboarding_Menu_mac.sh" && bash "$HOME/Downloads/Onboarding_Menu_mac.sh"
 ```
 
-Use **Up/Down + Space** (or **1-8**) to select, **Enter** to run, **q** to quit.
+Use **Up/Down + Space** (or **1-9** for the first nine entries) to select,
+**Enter** to run, **q** to quit. Press **a** to select everything except removal.
 Selected tasks run one at a time, waiting for completion, in this order:
-Bitdefender, Chrome, Google Drive, Slack, Create admin mac, Homebrew, Twingate.
+Bitdefender, Chrome, Google Drive, Slack, Create admin mac, Homebrew, Twingate,
+optional N-sight removal (8), Claude Desktop (9), ChatGPT Desktop (10),
+Gemini Desktop (11), Git setup (12), and 1Password (13).
 A native macOS completion/warning/failure dialog appears after each task; results remain in the menu.
-N-sight removal is option 8, off by default, requires typing `REMOVE`, and preserves Take Control.
+N-sight removal and the new optional tools are off by default. Removal requires
+typing `REMOVE` and preserves Take Control.
+
+Claude, ChatGPT, Google's native Gemini app (`google-gemini`, **not** the unrelated
+`gemini` disk cleaner), and 1Password use official vendor packages through Homebrew
+casks. Homebrew is installed if needed, even when option 6 was not selected.
+Gemini requires Apple Silicon and macOS 15+; Homebrew enforces each app's requirements.
+Existing identical app bundles can be adopted without deleting user data; different
+unmanaged copies fail safely instead of being overwritten. App signatures and
+Gatekeeper approval are checked after installation. No Dock shortcuts are created.
+Sign-in/licensing remains manual; 1Password vaults are never configured or removed.
+
+Git setup installs Git through Homebrew and prompts for this Mac user's commit
+name/email (Enter preserves existing values). It defaults to macOS Keychain only
+when no global credential helper exists; existing credentials and signing settings
+are preserved. It does not log into GitHub or generate SSH keys.
 
 This reuses the existing admin creation tool: it uses a predictable date password
 and grants passwordless sudo. The menu warns and requires typing `ADMIN` before
@@ -86,7 +104,17 @@ Apple-signed vendor package and does not require Homebrew. Sign-ins, system/netw
 extension approvals and Full Disk Access can still require manual approval/MDM.
 This interactive tool is **not** an unattended RMM task.
 
-Safe checks (no installs/removal): `bash macos/tools/test_onboarding_menu.sh`.
+Slack remains option 4. Its installer uses a private download/mount, validates
+Slack's bundle ID, vendor signature and Gatekeeper approval before copying, and
+leaves existing invalid apps untouched. It never edits the Dock or strips quarantine.
+
+Safe checks (no installs/removal):
+```bash
+bash macos/tools/test_onboarding_menu.sh
+bash macos/tools/test_onboarding_extras.sh
+python3 macos/tools/test_slack_install.py
+python3 macos/tools/test_google_drive_setup.py
+```
 
 ---
 
