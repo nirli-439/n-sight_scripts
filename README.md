@@ -43,8 +43,8 @@ Scripts_N-Sight/
 |----------|--------|-------|-------|
 | Windows  | 30     | 50    | 80    |
 | macOS    | 15     | 22    | 37    |
-| Linux    | 7      | 21    | 28    |
-| **Total**| **52** | **93** | **145** |
+| Linux    | 7      | 23    | 30    |
+| **Total**| **52** | **95** | **147** |
 
 Counts cover tracked checks/tasks only; interactive tools, tests and profiles are excluded.
 
@@ -152,8 +152,9 @@ curl -fSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux
 
 Ubuntu **22.04+**; the screen-lock policy requires **GNOME**. Chrome and Slack
 use system Flatpak/Flathub (their availability depends on CPU architecture).
-Use Up/Down + Space, or 1-9/0 for options 1-10; Enter runs selections sequentially.
-All ten are selected by default:
+Use Up/Down + Space (1-9/0 also toggle options 1-10); Enter runs selections
+sequentially. Options 1-12 are selected by default. **Offboarding is never selected
+by default or by the "all" shortcut.** Use arrows to reach options 11-13:
 
 1. Google Chrome
 2. Bitdefender GravityZone (organization package)
@@ -165,8 +166,11 @@ All ten are selected by default:
 8. Google Antigravity desktop app
 9. Docker Engine + current Compose plugin
 10. Twingate client
+11. MySQL Workbench GUI client (Oracle-signed 26.10.0 generic Linux build; Intel/ARM64, no MySQL Server or database changes)
+12. APT update/upgrade + available firmware updates
+13. Offboard selected inactive local users (**optional/destructive account change**)
 
-Installers finish before Chrome, Slack and Antigravity launch as the user in an
+Installers finish before Chrome, Slack, Antigravity and Workbench launch as the user in an
 existing graphical session. CLI agents are installed/version-checked, not started
 in an interactive login session. Sign-ins remain manual. There is one final
 summary dialog with existing Zenity, otherwise a desktop notification if available,
@@ -185,6 +189,23 @@ Python are installed through Ubuntu packages first; the app itself remains user-
 These interactive onboarding tools are
 separate from unattended N-sight tasks.
 
+System maintenance upgrades packages without automatic package removal or reboot,
+preserves existing configuration, and reports held-back updates/reboot requirements.
+Firmware availability depends on vendor/LVFS support and power state. Actual flashing
+requires a separate exact typed confirmation; it is never forced on battery or done
+without a usable confirmation terminal. A reboot may be needed before new firmware
+or a kernel becomes active, so a pending reboot is not reported as fully up to date.
+
+Offboarding protects system/service accounts, the technician passed by the menu,
+and accounts with active processes. It lists eligible **local** users, requires an
+explicit numbered selection and typing `REMOVE alice bob` for exactly those names,
+and rechecks account identity/activity before each removal. It calls `userdel`
+**without** `-r`/`--remove`/`--force`: home folders, mail and their original ownership
+stay in place, as requested. This is **not a factory reset** or disk wipe. Preserve
+encryption recovery keys before removing accounts; kept homes are not a backup, and
+UID reuse can grant access to retained files. SSO/SaaS revocation is separate.
+Read-only preview: `sudo python3 linux/tools/Offboard_Users_linux.py --keep "$USER" --list`.
+
 Safe regression checks:
 ```bash
 bash linux/tools/test_onboarding_menu.sh
@@ -192,6 +213,9 @@ python3 linux/tools/test_desktop_setup.py
 python3 linux/tools/test_bitdefender_existing.py
 python3 linux/tools/test_docker_twingate_install.py
 python3 linux/tools/test_ai_tool_install.py
+python3 linux/tools/test_mysql_workbench_install.py
+python3 linux/tools/test_system_firmware_update.py
+python3 linux/tools/test_offboard_users.py
 ```
 
 ---

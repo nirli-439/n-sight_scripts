@@ -3,13 +3,18 @@
 # Downloads are staged before running. Root tasks get umask 022; logs stay private.
 set -o pipefail
 BASE_URL=https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux
-NAMES=('Google Chrome' 'Bitdefender' 'Screen lock (15 minutes)' 'Git setup' 'Slack' 'Claude Code' 'Codex CLI' 'Antigravity' 'Docker + Compose' 'Twingate')
-PATHS=('tasks/Install_Chrome_linux.sh' 'tasks/Install_Bitdefender_linux.sh' 'tasks/Remediate_ScreenLock_Timeout_linux.sh' '' 'tasks/Install_Slack_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tasks/Install_Docker_linux.sh' 'tasks/Install_Twingate_linux.sh')
-ARGS=('' '' '' '' '' claude-code codex antigravity '' '')
-SELECTED=(1 1 1 1 1 1 1 1 1 1)
-RESULTS=(Ready Ready Ready Ready Ready Ready Ready Ready Ready Ready)
+NAMES=('Google Chrome' 'Bitdefender' 'Screen lock (15 minutes)' 'Git setup' 'Slack' 'Claude Code' 'Codex CLI' 'Antigravity' 'Docker + Compose' 'Twingate' 'MySQL Workbench' 'System + firmware updates' 'Offboard local users')
+PATHS=('tasks/Install_Chrome_linux.sh' 'tasks/Install_Bitdefender_linux.sh' 'tasks/Remediate_ScreenLock_Timeout_linux.sh' '' 'tasks/Install_Slack_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tasks/Install_Docker_linux.sh' 'tasks/Install_Twingate_linux.sh' 'tasks/Install_MySQLWorkbench_linux.sh' 'tasks/Update_System_Firmware_linux.sh' 'tools/Offboard_Users_linux.py')
+ARGS=('' '' '' '' '' claude-code codex antigravity '' '' '' '' '')
+SELECTED=(1 1 1 1 1 1 1 1 1 1 1 1 0)
+RESULTS=(Ready Ready Ready Ready Ready Ready Ready Ready Ready Ready Ready Ready Optional)
 
 toggle() { SELECTED[$1]=$((1 - SELECTED[$1])); }
+select_all() {
+    local i
+    for ((i=0; i<${#NAMES[@]}; i++)); do SELECTED[$i]=1; done
+    SELECTED[12]=0  # Account deletion must never join a normal setup run.
+}
 fetch() {
     curl --proto '=https' --proto-redir '=https' -fSL --retry 3 --connect-timeout 30 --max-time 180 "$1" -o "$2"
 }
@@ -46,11 +51,15 @@ setup_git() {
 }
 
 prepare_tasks() {
-    local i
+    local i file
     for ((i=0; i<${#NAMES[@]}; i++)); do
         [[ ${SELECTED[$i]:-0} == 1 && -n ${PATHS[$i]} ]] || continue
-        fetch "$BASE_URL/${PATHS[$i]}" "$WORK/task-$i.sh" || return 1
-        /bin/bash -n "$WORK/task-$i.sh" || return 1
+        file="$WORK/task-$i.${PATHS[$i]##*.}"
+        fetch "$BASE_URL/${PATHS[$i]}" "$file" || return 1
+        if [[ "$file" == *.py ]]; then
+            command -v python3 >/dev/null 2>&1 || { echo 'Python3 is required for offboarding; install it before running this option.'; return 1; }
+            python3 -c 'import ast,sys; ast.parse(open(sys.argv[1]).read())' "$file" || return 1
+        else /bin/bash -n "$file" || return 1; fi
     done
 }
 
@@ -69,6 +78,7 @@ run_task() {
     local i="$1" rc
     case "$i" in
         3) setup_git; rc=$? ;;
+        12) sudo python3 "$WORK/task-$i.py" --keep "$(id -un)"; rc=$? ;;
         5|6) /bin/bash "$WORK/task-$i.sh" "${ARGS[$i]}"; rc=$? ;;
         7) prepare_antigravity_deps && /bin/bash "$WORK/task-$i.sh" "${ARGS[$i]}"; rc=$? ;;
         *)
@@ -92,6 +102,8 @@ launch_app() {
            nohup flatpak run com.slack.Slack >>"$LOG_DIR/apps.log" 2>&1 </dev/null & ;;
         7) command -v gtk-launch >/dev/null 2>&1 || return 1
            nohup gtk-launch antigravity >>"$LOG_DIR/apps.log" 2>&1 </dev/null & ;;
+        10) command -v mysql-workbench >/dev/null 2>&1 || return 1
+            nohup mysql-workbench >>"$LOG_DIR/apps.log" 2>&1 </dev/null & ;;
         *) return 0 ;;
     esac
     return 0
@@ -106,7 +118,7 @@ run_selected() {
         printf '\n===== %s =====\n' "${NAMES[$i]}"
         run_task "$i"; rc=$?
         if [[ $rc != 0 ]]; then failed=1
-        elif [[ $i == 0 || $i == 4 || $i == 7 ]]; then ready+=("$i"); fi
+        elif [[ $i == 0 || $i == 4 || $i == 7 || $i == 10 ]]; then ready+=("$i"); fi
         printf '%s: %s\n' "${NAMES[$i]}" "${RESULTS[$i]}" | tee -a "$LOG_FILE"
     done
     for i in ${ready[@]+"${ready[@]}"}; do
@@ -134,7 +146,7 @@ menu() {
             [[ $i == "$cursor" ]] && printf '> ' || printf '  '
             printf '[%s] %2s. %-25s %s\n' "$mark" "$((i+1))" "${NAMES[$i]}" "${RESULTS[$i]}"
         done
-        printf '\nUp/Down + Space: select | 1-9/0: toggle 1-10 | a: all\nEnter/r: run selected in order | q: quit\n'
+        printf '\nUp/Down + Space: select | 1-9/0: toggle 1-10 | a: all except offboarding\nEnter/r: run selected in order | q: quit\n'
         IFS= read -rsn1 key || return 0
         case "$key" in
             $'\033') rest=''; IFS= read -rsn2 -t 1 rest || true
@@ -145,7 +157,7 @@ menu() {
             ' ') toggle "$cursor" ;;
             [1-9]) toggle "$((key-1))" ;;
             0) toggle 9 ;;
-            a|A) for ((i=0; i<${#NAMES[@]}; i++)); do SELECTED[$i]=1; done ;;
+            a|A) select_all ;;
             ''|r|R)
                 if prepare_tasks && sudo -v; then run_selected
                 else finish_popup 'Not started' 'Download or administrator authentication failed; queue not run.'; fi
