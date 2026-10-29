@@ -43,8 +43,8 @@ Scripts_N-Sight/
 |----------|--------|-------|-------|
 | Windows  | 30     | 50    | 80    |
 | macOS    | 15     | 22    | 37    |
-| Linux    | 7      | 23    | 30    |
-| **Total**| **52** | **95** | **147** |
+| Linux    | 7      | 24    | 31    |
+| **Total**| **52** | **96** | **148** |
 
 Counts cover tracked checks/tasks only; interactive tools, tests and profiles are excluded.
 
@@ -153,8 +153,8 @@ curl -fSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux
 Ubuntu **22.04+**; the screen-lock policy requires **GNOME**. Chrome and Slack
 use system Flatpak/Flathub (their availability depends on CPU architecture).
 Use Up/Down + Space (1-9/0 also toggle options 1-10); Enter runs selections
-sequentially. Options 1-12 are selected by default. **Offboarding is never selected
-by default or by the "all" shortcut.** Use arrows to reach options 11-13:
+sequentially. Options 1-12 and 14 are selected by default. **Offboarding is never selected
+by default or by the "all" shortcut.** Use arrows to reach options 11-14:
 
 1. Google Chrome
 2. Bitdefender GravityZone (organization package)
@@ -169,6 +169,7 @@ by default or by the "all" shortcut.** Use arrows to reach options 11-13:
 11. MySQL Workbench GUI client (Oracle-signed 26.10.0 generic Linux build; Intel/ARM64, no MySQL Server or database changes)
 12. APT update/upgrade + available firmware updates
 13. Offboard selected inactive local users (**optional/destructive account change**)
+14. Enable SSH (OpenSSH server enabled at boot; existing authentication/host keys/firewall preserved)
 
 Installers finish before Chrome, Slack, Antigravity and Workbench launch as the user in an
 existing graphical session. CLI agents are installed/version-checked, not started
@@ -188,6 +189,12 @@ Antigravity install as the user, not root. Antigravity's GTK/NSS/audio runtimes 
 Python are installed through Ubuntu packages first; the app itself remains user-scoped.
 These interactive onboarding tools are
 separate from unattended N-sight tasks.
+
+SSH installs OpenSSH Server if needed, validates the current configuration, enables
+and starts `ssh.service`, and verifies listeners on configured ports (including
+custom ports). It does not enable root/password login, replace keys/configuration,
+or change firewall rules. Remote reachability still depends on existing network/
+firewall policy. A running systemd host is required.
 
 System maintenance upgrades packages without automatic package removal or reboot,
 preserves existing configuration, and reports held-back updates/reboot requirements.
@@ -216,6 +223,7 @@ python3 linux/tools/test_ai_tool_install.py
 python3 linux/tools/test_mysql_workbench_install.py
 python3 linux/tools/test_system_firmware_update.py
 python3 linux/tools/test_offboard_users.py
+python3 linux/tools/test_enable_ssh.py
 ```
 
 ---

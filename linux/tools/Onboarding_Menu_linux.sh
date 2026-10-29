@@ -3,11 +3,11 @@
 # Downloads are staged before running. Root tasks get umask 022; logs stay private.
 set -o pipefail
 BASE_URL=https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/linux
-NAMES=('Google Chrome' 'Bitdefender' 'Screen lock (15 minutes)' 'Git setup' 'Slack' 'Claude Code' 'Codex CLI' 'Antigravity' 'Docker + Compose' 'Twingate' 'MySQL Workbench' 'System + firmware updates' 'Offboard local users')
-PATHS=('tasks/Install_Chrome_linux.sh' 'tasks/Install_Bitdefender_linux.sh' 'tasks/Remediate_ScreenLock_Timeout_linux.sh' '' 'tasks/Install_Slack_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tasks/Install_Docker_linux.sh' 'tasks/Install_Twingate_linux.sh' 'tasks/Install_MySQLWorkbench_linux.sh' 'tasks/Update_System_Firmware_linux.sh' 'tools/Offboard_Users_linux.py')
-ARGS=('' '' '' '' '' claude-code codex antigravity '' '' '' '' '')
-SELECTED=(1 1 1 1 1 1 1 1 1 1 1 1 0)
-RESULTS=(Ready Ready Ready Ready Ready Ready Ready Ready Ready Ready Ready Ready Optional)
+NAMES=('Google Chrome' 'Bitdefender' 'Screen lock (15 minutes)' 'Git setup' 'Slack' 'Claude Code' 'Codex CLI' 'Antigravity' 'Docker + Compose' 'Twingate' 'MySQL Workbench' 'System + firmware updates' 'Offboard local users' 'Enable SSH')
+PATHS=('tasks/Install_Chrome_linux.sh' 'tasks/Install_Bitdefender_linux.sh' 'tasks/Remediate_ScreenLock_Timeout_linux.sh' '' 'tasks/Install_Slack_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tools/Install_AI_Tool_linux.sh' 'tasks/Install_Docker_linux.sh' 'tasks/Install_Twingate_linux.sh' 'tasks/Install_MySQLWorkbench_linux.sh' 'tasks/Update_System_Firmware_linux.sh' 'tools/Offboard_Users_linux.py' 'tasks/Enable_SSH_linux.sh')
+ARGS=('' '' '' '' '' claude-code codex antigravity '' '' '' '' '' '')
+SELECTED=(1 1 1 1 1 1 1 1 1 1 1 1 0 1)
+RESULTS=(Ready Ready Ready Ready Ready Ready Ready Ready Ready Ready Ready Ready Optional Ready)
 
 toggle() { SELECTED[$1]=$((1 - SELECTED[$1])); }
 select_all() {

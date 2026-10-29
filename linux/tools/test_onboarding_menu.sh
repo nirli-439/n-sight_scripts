@@ -4,18 +4,18 @@ set -euo pipefail
 cd "$(dirname "$0")"
 [[ -f Onboarding_Menu_linux.sh ]] || { echo 'FAIL: Linux menu missing'; exit 1; }
 source ./Onboarding_Menu_linux.sh
-[[ "${NAMES[*]}" == 'Google Chrome Bitdefender Screen lock (15 minutes) Git setup Slack Claude Code Codex CLI Antigravity Docker + Compose Twingate MySQL Workbench System + firmware updates Offboard local users' ]] || exit 1
-[[ "${SELECTED[*]}" == '1 1 1 1 1 1 1 1 1 1 1 1 0' ]] || exit 1
+[[ "${NAMES[*]}" == 'Google Chrome Bitdefender Screen lock (15 minutes) Git setup Slack Claude Code Codex CLI Antigravity Docker + Compose Twingate MySQL Workbench System + firmware updates Offboard local users Enable SSH' ]] || exit 1
+[[ "${SELECTED[*]}" == '1 1 1 1 1 1 1 1 1 1 1 1 0 1' ]] || exit 1
 SELECTED[12]=1; select_all; [[ ${SELECTED[12]} == 0 ]] || exit 1
-SELECTED=(1 1 1 1 1 1 1 1 1 1 1 1 0)
+SELECTED=(1 1 1 1 1 1 1 1 1 1 1 1 0 1)
 EVENTS=''
 LOG_FILE=/dev/null
 export DISPLAY=:test
 run_task() { EVENTS="$EVENTS task-$1"; RESULTS[$1]=Done; [[ $1 != 1 ]]; }
-launch_app() { [[ "$EVENTS" == *task-11* ]] || exit 1; EVENTS="$EVENTS launch-$1"; }
-finish_popup() { [[ "$EVENTS" == *task-11* ]] || exit 1; EVENTS="$EVENTS popup"; }
+launch_app() { [[ "$EVENTS" == *task-13* ]] || exit 1; EVENTS="$EVENTS launch-$1"; }
+finish_popup() { [[ "$EVENTS" == *task-13* ]] || exit 1; EVENTS="$EVENTS popup"; }
 run_selected && { echo 'FAIL: task failure lost'; exit 1; }
-[[ "$EVENTS" == ' task-0 task-1 task-2 task-3 task-4 task-5 task-6 task-7 task-8 task-9 task-10 task-11 launch-0 launch-4 launch-7 launch-10 popup' ]] || { echo "FAIL: wrong sequence $EVENTS"; exit 1; }
+[[ "$EVENTS" == ' task-0 task-1 task-2 task-3 task-4 task-5 task-6 task-7 task-8 task-9 task-10 task-11 task-13 launch-0 launch-4 launch-7 launch-10 popup' ]] || { echo "FAIL: wrong sequence $EVENTS"; exit 1; }
 toggle 9; [[ ${SELECTED[9]} == 0 ]]; toggle 9; [[ ${SELECTED[9]} == 1 ]]
 (
     source ./Onboarding_Menu_linux.sh
