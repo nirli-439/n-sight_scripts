@@ -7,9 +7,10 @@
 # DESCRIPTION:
 #     Uses lsblk FSTYPE and, when present, cryptsetup isLuks. Does not modify disks.
 #
-#     Optional --show-keys: also prints the .txt files in
-#     /home/user/Documents/keys (where Create_Encrypted_User_linux.sh saves
-#     the eCryptfs recovery passphrases) so they are escrowed in N-Sight.
+#     Optional --show-keys: also prints the .txt files in any
+#     /home/*/Documents/keys folder (where Create_Encrypted_User_linux.sh
+#     saves the eCryptfs recovery passphrases, in the home of whichever
+#     admin ran it) so they are escrowed in N-Sight.
 #     WARNING: the passphrases then appear in the N-Sight check output and
 #     history - anyone with dashboard access can read them.
 #
@@ -27,15 +28,15 @@
 # NOTES:
 #     Author: IT Admin
 #     Version: 1.1
-#     Changelog: 1.1 - Add --show-keys to print /home/user/Documents/keys/*.txt.
+#     Changelog: 1.1 - Add --show-keys to print /home/*/Documents/keys/*.txt.
 #     Platform: Linux (Ubuntu/Fedora)
 
 ENCRYPTED_DEVICES=0
 UNENCRYPTED_DEVICES=0
 OUTPUT=""
 
-# --show-keys: print recovery-key text files from this folder
-readonly KEYS_DIR="/home/user/Documents/keys"
+# --show-keys: print recovery-key text files from any admin's keys folder
+readonly KEYS_GLOB="/home/*/Documents/keys"
 readonly KEYS_MAX_CHARS=6000      # keep total output under N-Sight's 10,000 limit
 SHOW_KEYS=false
 for arg in "$@"; do
@@ -46,19 +47,15 @@ done
 
 print_keys() {
     echo ""
-    echo "--- Recovery keys (${KEYS_DIR}) ---"
-    if [[ ! -d "$KEYS_DIR" ]]; then
-        echo "Folder not found (or /home/user is encrypted and locked)."
-        return
-    fi
+    echo "--- Recovery keys (${KEYS_GLOB}) ---"
     local f found=0 out=""
     while IFS= read -r -d '' f; do
         found=$((found + 1))
-        out+="### $(basename "$f") ($(date -r "$f" '+%Y-%m-%d %H:%M' 2>/dev/null))"$'\n'
+        out+="### ${f} ($(date -r "$f" '+%Y-%m-%d %H:%M' 2>/dev/null))"$'\n'
         out+="$(tr -d '\r' < "$f" 2>/dev/null || echo '(unreadable)')"$'\n\n'
-    done < <(find "$KEYS_DIR" -maxdepth 1 -type f -iname '*.txt' -print0 2>/dev/null | sort -z)
+    done < <(find $KEYS_GLOB -maxdepth 1 -type f -iname '*.txt' -print0 2>/dev/null | sort -z)
     if [[ $found -eq 0 ]]; then
-        echo "No .txt files found."
+        echo "No .txt files found (or the keys folder is in an encrypted, locked home)."
         return
     fi
     echo "Files: $found"
