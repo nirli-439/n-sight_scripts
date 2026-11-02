@@ -37,12 +37,13 @@
 #
 # NOTES:
 #     Author: IT Admin
-#     Version: 1.3
+#     Version: 1.4
 #     Requires: Root privileges
 #     Platform: macOS 11+ (Intel & Apple Silicon)
 #     Timeout: set the N-Sight task timeout to 1200s (SetupDownloader pulls the full kit)
 #
 # CHANGELOG:
+#     1.4 - Stage SetupDownloader locally before running (fixes SIGBUS/exit 138 when exec from DMG)
 #     1.3 - Mount at default /Volumes path + run from DMG root; "installed" now requires running daemon (no false OK)
 #     1.2 - Drop hdiutil imageinfo gate (false CRITICAL on 33 MB GZ DMG); log hdiutil errors; auto-accept SLA
 #     1.1 - Status line is now the first line of output (dashboard)
@@ -55,7 +56,7 @@ set -o pipefail
 # CONFIGURATION
 # =============================================================================
 readonly SCRIPT_NAME="Install_BitdefenderAgent_mac"
-readonly SCRIPT_VERSION="1.3"
+readonly SCRIPT_VERSION="1.4"
 readonly LOG_DIR="/var/log/nsight"
 readonly LOG_FILE="${LOG_DIR}/${SCRIPT_NAME}_$(date +%Y%m%d_%H%M%S).log"
 
@@ -179,10 +180,20 @@ if [[ -z "$SETUP_BIN" ]]; then
     finish $EXIT_CRITICAL "CRITICAL: SetupDownloader not found inside the DMG"
 fi
 [[ -f "$MOUNT_POINT/installer.xml" ]] || log "installer.xml not found at DMG root - downloader may still embed config" "WARN"
-log "Running: $SETUP_BIN --silent"
 
-# 5. Run installer silently with a timeout
-cd "$MOUNT_POINT" || finish $EXIT_CRITICAL "CRITICAL: cannot cd to '$MOUNT_POINT'"
+# 5. Stage locally, then run. Executing SetupDownloader straight from the
+# mounted DMG dies with SIGBUS (exit 138, "Bus error: 10") on newer macOS -
+# read-only/quarantined DMG exec mapping. Copy to a writable dir instead.
+cp -R "$MOUNT_POINT/SetupDownloader.app" "$WORK_DIR/" || finish $EXIT_CRITICAL "CRITICAL: failed to copy SetupDownloader.app off the DMG"
+[[ -f "$MOUNT_POINT/installer.xml" ]] && cp "$MOUNT_POINT/installer.xml" "$WORK_DIR/"
+xattr -dr com.apple.quarantine "$WORK_DIR/SetupDownloader.app" 2>/dev/null
+hdiutil detach "$MOUNT_POINT" -force -quiet >/dev/null 2>&1
+MOUNT_POINT=""
+SETUP_BIN="$WORK_DIR/SetupDownloader.app/Contents/MacOS/SetupDownloader"
+log "Running: $SETUP_BIN --silent (staged in $WORK_DIR)"
+
+# 6. Run installer silently with a timeout
+cd "$WORK_DIR" || finish $EXIT_CRITICAL "CRITICAL: cannot cd to '$WORK_DIR'"
 "$SETUP_BIN" --silent >> "$LOG_FILE" 2>&1 &
 pid=$!
 elapsed=0
