@@ -15,9 +15,10 @@
 #     history - anyone with dashboard access can read them.
 #
 #     Exit Codes:
-#     - 0 = OK (every detected disk/partition is LUKS)
+#     - 0 = OK (every detected disk/partition is LUKS, OR no LUKS but
+#               eCryptfs-encrypted user homes are present)
 #     - 1001 = WARNING (mixed encrypted and plaintext)
-#     - 1002 = CRITICAL (lsblk missing, or no encrypted device found)
+#     - 1002 = CRITICAL (lsblk missing, or no encryption of any kind found)
 #
 # EXECUTION:
 #     Linux (local):  sudo bash /path/to/Check_Disk_Encryption.sh
@@ -27,7 +28,9 @@
 #
 # NOTES:
 #     Author: IT Admin
-#     Version: 1.1
+#     Version: 1.2
+#     Changelog: 1.2 - Count eCryptfs-encrypted homes as encrypted when no
+#                      LUKS exists (fleet uses home-folder encryption only).
 #     Changelog: 1.1 - Add --show-keys to print /home/*/Documents/keys/*.txt.
 #     Platform: Linux (Ubuntu/Fedora)
 
@@ -107,14 +110,20 @@ echo -e "$OUTPUT"
 echo "Encrypted devices: $ENCRYPTED_DEVICES"
 echo "Unencrypted devices: $UNENCRYPTED_DEVICES"
 
+# eCryptfs home encryption (this fleet's method): active mounts or locked .Private dirs
+ECRYPTFS_HOMES=$(( $(mount | grep -c " type ecryptfs") + $(ls -d /home/.ecryptfs/*/.Private 2>/dev/null | wc -l) ))
+
 if [ "$ENCRYPTED_DEVICES" -gt 0 ] && [ "$UNENCRYPTED_DEVICES" -eq 0 ]; then
     echo "OK: All detected devices are encrypted."
     RC=0
 elif [ "$ENCRYPTED_DEVICES" -gt 0 ] && [ "$UNENCRYPTED_DEVICES" -gt 0 ]; then
     echo "WARNING: Mixed encryption; some devices are not encrypted."
     RC=1001
+elif [ "$ECRYPTFS_HOMES" -gt 0 ]; then
+    echo "OK: No LUKS, but $ECRYPTFS_HOMES eCryptfs-encrypted home(s) present."
+    RC=0
 else
-    echo "CRITICAL: No encrypted devices detected."
+    echo "CRITICAL: No encryption detected (no LUKS devices, no eCryptfs homes)."
     RC=1002
 fi
 $SHOW_KEYS && print_keys
