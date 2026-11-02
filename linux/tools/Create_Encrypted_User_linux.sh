@@ -10,6 +10,11 @@
 #     (mount) passphrase to a text file.
 #
 # DESCRIPTION:
+#     0. Choose: create a NEW user, or CLONE an existing one. A clone is
+#        named <user>_encrypted (a number is appended if taken:
+#        <user>_encrypted2, _encrypted3, ...), gets the source user's
+#        supplementary groups and a copy of their home, then the copy is
+#        encrypted. The source account is left untouched.
 #     1. Prompts for the new username (validated, must not already exist).
 #     2. Initial password = today's date as DDMMYY (e.g. 28-10-2026 -> 281026).
 #     3. Installs ecryptfs-utils, rsync, lsof if missing (apt).
@@ -126,6 +131,21 @@ ask_username() {
     done
 }
 
+ask_source_user() {   # sets SRC_USER, returns 1 if creating new
+    read -r -p "Clone an existing user? (username, empty = create new): " SRC_USER
+    SRC_USER="${SRC_USER,,}"
+    [[ -z "$SRC_USER" ]] && return 1
+    id "$SRC_USER" >/dev/null 2>&1 || die "User '$SRC_USER' does not exist."
+    [[ "$SRC_USER" == "root" ]] && die "Refusing to clone root."
+    return 0
+}
+
+unique_clone_name() {   # $1 = base user -> prints first free <base>_encrypted[N]
+    local base="$1" name="${1}_encrypted" n=2
+    while id "$name" >/dev/null 2>&1; do name="${base}_encrypted${n}"; ((n++)); done
+    echo "$name"
+}
+
 ask_yes_no() {   # $1 = question, $2 = default (y/n)
     local ans def="${2:-y}" hint="[Y/n]"
     [[ "$def" == "n" ]] && hint="[y/N]"
@@ -142,13 +162,20 @@ check_tty
 check_os
 
 echo "=== Create encrypted user (v${SCRIPT_VERSION}) ==="
-ask_username
+CLONE=0
+if ask_source_user; then
+    CLONE=1
+    NEW_USER=$(unique_clone_name "$SRC_USER")
+else
+    ask_username
+fi
 
 TODAY_LONG=$(date +%d-%m-%Y)
 NEW_PASS=$(date +%d%m%y)
 
 echo ""
 echo "  Username : $NEW_USER"
+[[ $CLONE -eq 1 ]] && echo "  Cloned   : from $SRC_USER (groups + home copy)"
 echo "  Password : $NEW_PASS   (today: $TODAY_LONG)"
 echo "  Groups   : $SUDO_GROUP"
 echo "  Home     : /home/$NEW_USER  (eCryptfs encrypted)"
@@ -162,7 +189,20 @@ install_deps
 # --- 1. Create user -----------------------------------------------------------
 useradd -m -s /bin/bash -c "$NEW_USER" "$NEW_USER" || die "useradd failed for $NEW_USER."
 printf '%s:%s\n' "$NEW_USER" "$NEW_PASS" | chpasswd || { userdel -r "$NEW_USER" 2>/dev/null; die "Setting the password failed."; }
-usermod -aG "$SUDO_GROUP" "$NEW_USER" || warn "Could not add $NEW_USER to $SUDO_GROUP."
+if [[ $CLONE -eq 1 ]]; then
+    SRC_GROUPS=$(id -nG "$SRC_USER" | tr ' ' ',')
+    usermod -aG "${SRC_GROUPS},${SUDO_GROUP}" "$NEW_USER" || warn "Could not copy groups from $SRC_USER."
+    if [[ -d "/home/$SRC_USER" ]]; then
+        info "Copying /home/$SRC_USER -> /home/$NEW_USER ..."
+        # ponytail: if the source home is eCryptfs-encrypted and not mounted,
+        # this copies ciphertext as-is; run while the source user is logged in.
+        rsync -a --exclude='.ecryptfs' --exclude='.Private' "/home/$SRC_USER/" "/home/$NEW_USER/" \
+            && chown -R "$NEW_USER":"$NEW_USER" "/home/$NEW_USER" \
+            && ok "Home copied" || warn "Home copy incomplete - check /home/$NEW_USER before relying on it."
+    fi
+else
+    usermod -aG "$SUDO_GROUP" "$NEW_USER" || warn "Could not add $NEW_USER to $SUDO_GROUP."
+fi
 ok "User $NEW_USER created and added to $SUDO_GROUP"
 
 # --- 2. Encrypt home -----------------------------------------------------------
