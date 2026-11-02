@@ -37,12 +37,13 @@
 #
 # NOTES:
 #     Author: IT Admin
-#     Version: 1.4
+#     Version: 1.5
 #     Requires: Root privileges
 #     Platform: macOS 11+ (Intel & Apple Silicon)
 #     Timeout: set the N-Sight task timeout to 1200s (SetupDownloader pulls the full kit)
 #
 # CHANGELOG:
+#     1.5 - Live progress to stdout (log/tee/heartbeat) - silent runs looked hung and were Ctrl-C'd (exit 130)
 #     1.4 - Stage SetupDownloader locally before running (fixes SIGBUS/exit 138 when exec from DMG)
 #     1.3 - Mount at default /Volumes path + run from DMG root; "installed" now requires running daemon (no false OK)
 #     1.2 - Drop hdiutil imageinfo gate (false CRITICAL on 33 MB GZ DMG); log hdiutil errors; auto-accept SLA
@@ -56,7 +57,7 @@ set -o pipefail
 # CONFIGURATION
 # =============================================================================
 readonly SCRIPT_NAME="Install_BitdefenderAgent_mac"
-readonly SCRIPT_VERSION="1.4"
+readonly SCRIPT_VERSION="1.5"
 readonly LOG_DIR="/var/log/nsight"
 readonly LOG_FILE="${LOG_DIR}/${SCRIPT_NAME}_$(date +%Y%m%d_%H%M%S).log"
 
@@ -84,7 +85,8 @@ readonly BD_APP="/Applications/Endpoint Security for Mac.app"
 log() {
     local level="${2:-INFO}"
     local line="[$(date '+%Y-%m-%d %H:%M:%S')] [$level] $1"
-    echo "$line" >> "$LOG_FILE" 2>/dev/null   # file only - stdout line 1 is the status (finish)
+    echo "$line"                                # live feedback: silent runs look hung
+    echo "$line" >> "$LOG_FILE" 2>/dev/null
 }
 
 cleanup() {
@@ -96,11 +98,10 @@ cleanup() {
 trap cleanup EXIT
 
 finish() {
-    # $1 = exit code, $2 = status line (printed first for the dashboard)
-    echo "$2"
-    log "$2" "RESULT"
+    # $1 = exit code, $2 = status line (printed last, after the streamed log)
+    echo "$2" >> "$LOG_FILE" 2>/dev/null
     echo "Log: $LOG_FILE"
-    tail -n 15 "$LOG_FILE" 2>/dev/null
+    echo "===> $2"
     exit "$1"
 }
 
@@ -147,7 +148,8 @@ fi
 
 # 2. Download
 log "Downloading $DMG_URL"
-if ! curl -fsSL --retry 3 --retry-delay 5 --connect-timeout 30 --max-time 600 -o "$DMG_PATH" "$DMG_URL"; then
+CURL_PROGRESS='-sS'; [[ -t 1 ]] && CURL_PROGRESS='--progress-bar'
+if ! curl -fL $CURL_PROGRESS --retry 3 --retry-delay 5 --connect-timeout 30 --max-time 600 -o "$DMG_PATH" "$DMG_URL"; then
     finish $EXIT_CRITICAL "CRITICAL: Failed to download Bitdefender setup_downloader.dmg (check URL / network)"
 fi
 DMG_SIZE=$(stat -f%z "$DMG_PATH" 2>/dev/null || echo 0)
@@ -194,17 +196,22 @@ log "Running: $SETUP_BIN --silent (staged in $WORK_DIR)"
 
 # 6. Run installer silently with a timeout
 cd "$WORK_DIR" || finish $EXIT_CRITICAL "CRITICAL: cannot cd to '$WORK_DIR'"
-"$SETUP_BIN" --silent >> "$LOG_FILE" 2>&1 &
+"$SETUP_BIN" --silent > "$WORK_DIR/setup.out" 2>&1 &
 pid=$!
+tail -f "$WORK_DIR/setup.out" 2>/dev/null &   # stream installer output live
+tailpid=$!
 elapsed=0
 while kill -0 "$pid" 2>/dev/null; do
     if (( elapsed >= INSTALLER_TIMEOUT )); then
         kill -9 "$pid" 2>/dev/null
         finish $EXIT_CRITICAL "CRITICAL: SetupDownloader timed out after ${INSTALLER_TIMEOUT}s"
     fi
+    (( elapsed % 30 == 0 )) && log "SetupDownloader still running (${elapsed}s) - downloading the full kit takes several minutes"
     sleep 5; (( elapsed += 5 ))
 done
 wait "$pid"; rc=$?
+kill "$tailpid" 2>/dev/null
+cat "$WORK_DIR/setup.out" >> "$LOG_FILE" 2>/dev/null
 log "SetupDownloader exited with code $rc after ${elapsed}s"
 cd / 2>/dev/null
 (( elapsed < 30 )) && log "SetupDownloader finished in <30s - it probably did not download/install the kit" "WARN"
@@ -216,6 +223,7 @@ fi
 # 6. Verify
 waited=0
 until is_installed || (( waited >= VERIFY_TIMEOUT )); do
+    (( waited % 30 == 0 )) && log "Waiting for Bitdefender daemon to start (${waited}s/${VERIFY_TIMEOUT}s)"
     sleep 5; (( waited += 5 ))
 done
 
