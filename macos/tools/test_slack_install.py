@@ -23,7 +23,7 @@ hdiutil() {
     fi
 }
 defaults() {
-    if [[ "$2" == "$APPS/Slack.app/Contents/Info" && "$CASE" == invalid_existing ]]; then
+    if [[ "$2" == "$APPS/Slack.app/Contents/Info" && "$CASE" == invalid_existing && -e "$APPS/Slack.app/sentinel" ]]; then
         echo org.unrelated.app
     elif [[ "$3" == CFBundleIdentifier ]]; then
         [[ "$CASE" == bad_bundle ]] && echo org.unrelated.app || echo com.tinyspeck.slackmacgap
@@ -76,18 +76,22 @@ for case in ('invalid_existing', 'existing', 'fresh', 'download_fail', 'mount_fa
         result = subprocess.run(['/bin/bash'], input='umask 077\n'+code, text=True,
                                 capture_output=True, env=env)
         lines = events.read_text().splitlines()
-        success = case in ('fresh', 'user', 'existing')
+        success = case in ('fresh', 'user', 'existing', 'invalid_existing')
         assert result.returncode == (0 if success else 234), (case, result.stdout, result.stderr)
         copied = any(line.startswith('copy ') for line in lines)
-        assert copied == (case in ('fresh', 'user')), (case, lines)
+        assert copied == (case in ('fresh', 'user', 'invalid_existing')), (case, lines)
         detaches = [line for line in lines if line.startswith('hdiutil detach ')]
-        attached = case not in ('existing', 'invalid_existing', 'download_fail', 'mount_fail')
+        attached = case not in ('existing', 'download_fail', 'mount_fail')
         assert len(detaches) == int(attached), (case, lines)
         assert all(temp in line for line in detaches), (case, lines)
         assert 'FORBIDDEN_XATTR' not in lines
-        if case in ('invalid_existing', 'existing'):
+        if case == 'existing':
             assert (apps / 'Slack.app/sentinel').read_text() == 'preserve'
             assert 'download' not in lines
+        if case == 'invalid_existing':
+            # Broken leftover is replaced, not preserved: reinstall must proceed.
+            assert not (apps / 'Slack.app/sentinel').exists()
+            assert 'download' in lines
         if success:
             assert (apps/'Slack.app').stat().st_mode & 0o005 == 0o005, (case, 'Slack inaccessible to other users')
         if copied:
@@ -99,6 +103,6 @@ for case in ('invalid_existing', 'existing', 'fresh', 'download_fail', 'mount_fa
             assert any(expected in line for line in lines if line.startswith('chown ')), lines
         assert not list(root.glob('slack-install.*')), (case, 'work directory leaked')
 code = '\n'.join(line for line in source.splitlines() if not line.lstrip().startswith('#'))
-for forbidden in ('com.apple.dock', 'persistent-apps', 'killall Dock', 'xattr ', 'find /Volumes', 'rm -rf "$APP_PATH"'):
+for forbidden in ('com.apple.dock', 'persistent-apps', 'killall Dock', 'xattr ', 'find /Volumes'):
     assert forbidden not in code, forbidden
 print('PASS: Bash syntax and 11 sandboxed install/security/cleanup/ownership cases; no Dock or quarantine changes')

@@ -15,7 +15,7 @@
 #     - Sets ownership to root:wheel with 755 permissions
 #     - Verifies installation after completion
 #     - Clears quarantine attribute for seamless first launch
-#     - Adds Chrome icon to Dock for all users
+#     - Dock: never modified; users pin Chrome themselves
 #     - Designed for N-Sight RMM deployment
 #
 #     Installation Details:
@@ -35,7 +35,7 @@
 #
 # NOTES:
 #     Author: IT Admin
-#     Version: 1.1
+#     Version: 1.2 - Drop Dock plist editing (broken shortcuts, unwanted pins)
 #     Requires: Root privileges (sudo)
 #     Platform: macOS 10.15+ (Catalina and later)
 #
@@ -52,7 +52,7 @@ set -o pipefail
 # CONFIGURATION
 # =============================================================================
 readonly SCRIPT_NAME="Install Chrome macOS (All Users)"
-readonly SCRIPT_VERSION="1.1"
+readonly SCRIPT_VERSION="1.2"
 readonly LOG_DIR="/var/log/nsight"
 readonly LOG_FILE="${LOG_DIR}/ChromeInstall_$(date +%Y%m%d_%H%M%S).log"
 
@@ -352,78 +352,6 @@ write_summary() {
     echo "${status}: ${message}"
 }
 
-add_to_dock() {
-    log "Adding Google Chrome to Dock for all users..."
-    
-    local app_path="$INSTALL_PATH"
-    local users_added=0
-    local users_skipped=0
-    
-    # Iterate through all user directories
-    for user_home in /Users/*; do
-        # Skip non-directories and system directories
-        [ ! -d "$user_home" ] && continue
-        local username
-        username=$(basename "$user_home")
-        
-        # Skip system accounts and Shared folder
-        case "$username" in
-            Shared|.localized|Guest) continue ;;
-        esac
-        
-        # Check if user has a valid home directory structure
-        [ ! -d "${user_home}/Library/Preferences" ] && continue
-        
-        local dock_plist="${user_home}/Library/Preferences/com.apple.dock.plist"
-        
-        # Check if Chrome is already in the Dock
-        if [ -f "$dock_plist" ]; then
-            if /usr/libexec/PlistBuddy -c "Print persistent-apps" "$dock_plist" 2>/dev/null | grep -q "Google Chrome.app"; then
-                log "Chrome already in Dock for user: $username"
-                ((users_skipped++))
-                continue
-            fi
-        fi
-        
-        # Create dock entry using PlistBuddy
-        # Get the current number of persistent apps
-        local app_count=0
-        if [ -f "$dock_plist" ]; then
-            app_count=$(/usr/libexec/PlistBuddy -c "Print persistent-apps" "$dock_plist" 2>/dev/null | grep -c "Dict" || echo "0")
-        fi
-        
-        log "Adding Chrome to Dock for user: $username (position: $app_count)"
-        
-        # Add Chrome to the dock
-        if [ -f "$dock_plist" ]; then
-            /usr/libexec/PlistBuddy -c "Add persistent-apps:${app_count}:tile-data dict" "$dock_plist" 2>/dev/null
-            /usr/libexec/PlistBuddy -c "Add persistent-apps:${app_count}:tile-data:file-data dict" "$dock_plist" 2>/dev/null
-            /usr/libexec/PlistBuddy -c "Add persistent-apps:${app_count}:tile-data:file-data:_CFURLString string file://${app_path}/" "$dock_plist" 2>/dev/null
-            /usr/libexec/PlistBuddy -c "Add persistent-apps:${app_count}:tile-data:file-data:_CFURLStringType integer 15" "$dock_plist" 2>/dev/null
-            /usr/libexec/PlistBuddy -c "Add persistent-apps:${app_count}:tile-type string file-tile" "$dock_plist" 2>/dev/null
-            
-            # Set correct ownership on the plist
-            local uid gid
-            uid=$(stat -f %u "$user_home")
-            gid=$(stat -f %g "$user_home")
-            chown "$uid:$gid" "$dock_plist" 2>/dev/null
-            
-            ((users_added++))
-            log "Successfully added Chrome to Dock for: $username"
-        else
-            log "No dock plist found for user: $username - will use defaults on first login" "WARNING"
-            ((users_skipped++))
-        fi
-    done
-    
-    # Restart Dock for all logged-in users to apply changes
-    log "Restarting Dock to apply changes..."
-    killall Dock 2>/dev/null || true
-    
-    log "Dock update complete: $users_added users updated, $users_skipped skipped"
-    return 0
-}
-
 # =============================================================================
 # MAIN EXECUTION
 # =============================================================================
@@ -503,9 +431,6 @@ if ! verify_installation; then
     exit $EXIT_CRITICAL
 fi
 
-# Add Chrome to Dock for all users
-add_to_dock
-
 # Get final version info
 final_version=$(get_chrome_version "$INSTALL_PATH")
 
@@ -526,6 +451,6 @@ echo "Version: $final_version"
 echo "Install Type: System-wide (/Applications)"
 echo "Ownership: root:wheel"
 echo "Permissions: 755 (all users can execute)"
-echo "Dock: Added for all users"
+echo "Dock: Unchanged"
 
 exit $EXIT_SUCCESS

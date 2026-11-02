@@ -44,11 +44,15 @@ valid_slack() {
 # --- Root check ---
 [[ $EUID -eq 0 ]] || fail "Root privileges required"
 
-# Install-only: preserve existing apps/data; repair access only after validation.
+# Preserve a valid existing install; replace a broken one (interrupted copy
+# would otherwise fail every retry forever with "not a verified Slack app").
 if [[ -e "$APP_PATH" || -L "$APP_PATH" ]]; then
-    valid_slack "$APP_PATH" || fail "Existing $APP_PATH is not a verified Slack app; left untouched"
-    chmod -R a+rX "$APP_PATH" || fail "Cannot repair Slack access permissions"
-    ok "Verified Slack already installed at $APP_PATH; access permissions repaired; Dock unchanged"
+    if valid_slack "$APP_PATH"; then
+        chmod -R a+rX "$APP_PATH" || fail "Cannot repair Slack access permissions"
+        ok "Verified Slack already installed at $APP_PATH; access permissions repaired; Dock unchanged"
+    fi
+    log "Existing $APP_PATH failed verification - removing broken install and reinstalling"
+    rm -rf "$APP_PATH" || fail "Cannot remove broken $APP_PATH"
 fi
 
 WORK_DIR=$(mktemp -d "${TMPDIR:-/tmp}/slack-install.XXXXXX") || fail "Cannot create private work directory"

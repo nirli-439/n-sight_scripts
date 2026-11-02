@@ -739,7 +739,7 @@ For **download → mount → copy to `/Applications`** installers, copy the stru
 
 | Reference script | Role |
 | ---------------- | ---- |
-| `macos/tasks/Install_Chrome_mac.sh` | DMG with fixed mount name, `find` fallback, Dock for all users |
+| `macos/tasks/Install_Chrome_mac.sh` | DMG with fixed mount name, `find` fallback, Dock never modified |
 | `macos/tasks/Install_GoogleDrive_mac.sh` | Same, plus `curl` retries / resume, optional PKG fallback, per-user `killall Dock` |
 
 **Standard pipeline (idempotent, N-Sight–safe):**
