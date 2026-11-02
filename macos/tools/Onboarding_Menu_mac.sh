@@ -3,13 +3,13 @@
 # Download to a file and run with bash (NOT sudo); prompts use /dev/tty.
 set -o pipefail
 BASE_URL=https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main
-NAMES=('Bitdefender' 'Google Chrome' 'Google Drive' 'Slack' 'Create admin mac' 'Homebrew' 'Twingate' 'Remove N-sight agent' 'Claude Desktop' 'ChatGPT Desktop' 'Gemini Desktop' 'Git setup' '1Password' 'NirTab')
-PATHS=('tasks/Install_BitdefenderAgent_mac.sh' 'tasks/Install_Chrome_mac.sh' 'tasks/Install_GoogleDrive_mac.sh' 'tasks/Install_Slack_mac.sh' 'tools/Create_Admin_User_mac.sh' '' '' 'tasks/Remove_NSight_Agent_mac.sh' '' '' '' '' '' 'tasks/Install_NirTab_mac.sh')
-SELECTED=(1 1 1 1 1 1 1 0 1 1 1 0 0 1)
-RESULTS=('Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Optional' 'Ready' 'Ready' 'Ready' 'Optional' 'Optional' 'Ready')
+NAMES=('N-sight agent' 'Bitdefender' 'Google Chrome' 'Google Drive' 'Slack' 'Create admin mac' 'Homebrew' 'Twingate' 'Remove N-sight agent' 'Claude Desktop' 'ChatGPT Desktop' 'Gemini Desktop' 'Git setup' '1Password' 'NirTab')
+PATHS=('tasks/Install_NSight_Agent_mac.sh' 'tasks/Install_BitdefenderAgent_mac.sh' 'tasks/Install_Chrome_mac.sh' 'tasks/Install_GoogleDrive_mac.sh' 'tasks/Install_Slack_mac.sh' 'tools/Create_Admin_User_mac.sh' '' '' 'tasks/Remove_NSight_Agent_mac.sh' '' '' '' '' '' 'tasks/Install_NirTab_mac.sh')
+SELECTED=(1 1 1 1 1 1 1 1 0 1 1 1 0 0 1)
+RESULTS=('Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Optional' 'Ready' 'Ready' 'Ready' 'Optional' 'Optional' 'Ready')
 
 # Empty entries are command-line/admin tasks, not launchable GUI apps.
-APPS=('/Applications/Endpoint Security for Mac.app' '/Applications/Google Chrome.app' '/Applications/Google Drive.app' '/Applications/Slack.app' '' '' '/Applications/Twingate.app' '' '/Applications/Claude.app' '/Applications/ChatGPT.app' '/Applications/Gemini.app' '' '/Applications/1Password.app' '/Applications/NirTab.app')
+APPS=('' '/Applications/Endpoint Security for Mac.app' '/Applications/Google Chrome.app' '/Applications/Google Drive.app' '/Applications/Slack.app' '' '' '/Applications/Twingate.app' '' '/Applications/Claude.app' '/Applications/ChatGPT.app' '/Applications/Gemini.app' '' '/Applications/1Password.app' '/Applications/NirTab.app')
 
 launch_app() {
     [[ -d "$1" && ! -L "$1" ]] || return 1
@@ -132,28 +132,28 @@ setup_git() {
 run_task() {
     local index="$1" rc
     case "$index" in
-        4)
+        5)
             printf '\nExisting admin tool uses a predictable date password and grants passwordless sudo.\n'
             printf 'Only continue for a trusted technician account; rotate the password immediately.\n'
             local answer
             read -r -p 'Type ADMIN to run this tool: ' answer
             [[ "$answer" == ADMIN ]] || return 1
             sudo /bin/bash "$WORK/task-$index.sh"; rc=$? ;;
-        5) install_homebrew; rc=$? ;;
-        6) install_twingate; rc=$? ;;
-        7) sudo /bin/bash "$WORK/task-$index.sh" --no-popup; rc=$? ;;
-        8) install_desktop claude; rc=$? ;;
-        9) install_desktop chatgpt; rc=$? ;;
-        10) install_desktop google-gemini; rc=$? ;;
-        11) setup_git; rc=$? ;;
-        12) install_desktop 1password; rc=$? ;;
+        6) install_homebrew; rc=$? ;;
+        7) install_twingate; rc=$? ;;
+        8) sudo /bin/bash "$WORK/task-$index.sh" --no-popup; rc=$? ;;
+        9) install_desktop claude; rc=$? ;;
+        10) install_desktop chatgpt; rc=$? ;;
+        11) install_desktop google-gemini; rc=$? ;;
+        12) setup_git; rc=$? ;;
+        13) install_desktop 1password; rc=$? ;;
         *) sudo /bin/bash "$WORK/task-$index.sh"; rc=$? ;;
     esac
     # POSIX shell exit statuses wrap modulo 256: 1001 -> 233; 1002 -> 234.
     case "$rc" in
         0)
             RESULTS[$index]='Done'
-            [[ $index != 13 ]] || RESULTS[$index]='Installed - open app and approve permissions'
+            [[ $index != 14 ]] || RESULTS[$index]='Installed - open app and approve permissions'
             return 0 ;;
         233) RESULTS[$index]='Warning - check output'; return 2 ;;
         *) RESULTS[$index]="Failed (exit $rc)"; return 1 ;;
@@ -165,7 +165,7 @@ run_selected() {
     local ready=()
     for ((i=0; i<${#NAMES[@]}; i++)); do
         [[ ${SELECTED[$i]:-0} == 1 ]] || continue
-        if [[ $i == 7 ]] && ! confirm_remove; then
+        if [[ $i == 8 ]] && ! confirm_remove; then
             RESULTS[$i]='Cancelled'
         else
             count=$((count + 1))
@@ -183,7 +183,7 @@ run_selected() {
     for i in ${ready[@]+"${ready[@]}"}; do
         if launch_app "${APPS[$i]}"; then
             RESULTS[$i]='Installed - launch requested'
-            [[ $i != 13 ]] || RESULTS[$i]='Launch requested - check menu bar/approve permissions'
+            [[ $i != 14 ]] || RESULTS[$i]='Launch requested - check menu bar/approve permissions'
         else
             RESULTS[$i]='Installed - launch failed; open manually'
             failed=1
@@ -209,7 +209,7 @@ prepare_tasks() {
         fetch "$BASE_URL/macos/${PATHS[$i]}" "$WORK/task-$i.sh" || return 1
         /bin/bash -n "$WORK/task-$i.sh" || return 1
     done
-    if [[ ${SELECTED[5]:-0} == 1 || ${SELECTED[8]:-0} == 1 || ${SELECTED[9]:-0} == 1 || ${SELECTED[10]:-0} == 1 || ${SELECTED[11]:-0} == 1 || ${SELECTED[12]:-0} == 1 ]]; then
+    if [[ ${SELECTED[6]:-0} == 1 || ${SELECTED[9]:-0} == 1 || ${SELECTED[10]:-0} == 1 || ${SELECTED[11]:-0} == 1 || ${SELECTED[12]:-0} == 1 || ${SELECTED[13]:-0} == 1 ]]; then
         fetch "$BASE_URL/macos/tasks/Remediate_Homebrew_Path_mac.sh" "$WORK/homebrew-path.sh" || return 1
     fi
 }
@@ -234,7 +234,7 @@ menu() {
                 esac ;;
             ' ') toggle "$cursor" ;;
             [1-9]) toggle "$((key - 1))" ;;
-            a|A) for ((i=0; i<${#NAMES[@]}; i++)); do SELECTED[$i]=1; done; SELECTED[7]=0 ;;
+            a|A) for ((i=0; i<${#NAMES[@]}; i++)); do SELECTED[$i]=1; done; SELECTED[8]=0 ;;
             ''|r|R)
                 if prepare_tasks && sudo -v; then
                     run_selected

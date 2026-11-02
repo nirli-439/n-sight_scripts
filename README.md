@@ -72,9 +72,10 @@ curl -fSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos
 Use **Up/Down + Space** (or **1-9** for the first nine entries) to select,
 **Enter** to run, **q** to quit. Press **a** to select everything except removal.
 Selected tasks run one at a time, waiting for completion, in this order:
-Bitdefender, Chrome, Google Drive, Slack, Create admin mac, Homebrew, Twingate,
-optional N-sight removal (8), Claude Desktop (9), ChatGPT Desktop (10),
-Gemini Desktop (11), Git setup (12), 1Password (13), and NirTab (14).
+N-sight agent, Bitdefender, Chrome, Google Drive, Slack, Create admin mac,
+Homebrew, Twingate, optional N-sight removal (9), Claude Desktop (10),
+ChatGPT Desktop (11), Gemini Desktop (12), Git setup (13), 1Password (14),
+and NirTab (15).
 One native macOS summary dialog appears only after the entire selected run finishes,
 including warnings, failures and cancellations. Individual tasks update Terminal
 and the menu without completion popups (including N-sight removal).

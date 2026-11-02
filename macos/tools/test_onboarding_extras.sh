@@ -9,12 +9,12 @@ trap 'rm -rf "$TMP"' EXIT
     calls=''
     install_desktop() { calls="$calls $1"; }
     sudo() { echo 'FAIL: desktop installs ran as root'; exit 1; }
-    for i in 8 9 10 12; do run_task "$i"; done
+    for i in 9 10 11 13; do run_task "$i"; done
     [[ "$calls" == ' claude chatgpt google-gemini 1password' ]]
 )
 (
     WORK="$TMP"
-    SELECTED=(0 0 0 0 0 0 0 0 1 1 1 1 1)
+    SELECTED=(0 0 0 0 0 0 0 0 0 1 1 1 1 1)
     fetch() { printf '#!/bin/bash\n' > "$2"; }
     prepare_tasks
     [[ -f "$WORK/homebrew-path.sh" ]]

@@ -1098,7 +1098,7 @@ a script.
 | `Rename_Hostname_mac.sh` | Rename macOS hostname to a specified name. DESCRIPTION: This script renames the macOS hostname by setting: - ComputerName: The "friendly" name shown in Finde... |
 | `Restart_TakeControl_Agent_mac.sh` | Restarts the N-Sight TakeControl (MSP Anywhere) agent process on macOS WITHOUT reinstalling — preserving all existing macOS TCC permissions (Screen Recording... |
 | `Run_Onboarding_Tasks_mac.sh` | Sequentially downloads and executes all essential macOS onboarding scripts straight from the repository for a smooth, single-click setup. DESCRIPTION: This i... |
-| `Scalefusion_PreInstall_NSight_Israel.sh` | Writes settings.ini to /tmp before Scalefusion runs Install.pkg DESCRIPTION: Upload this as the Pre-Install Script in Scalefusion PKG deployment. Runs before... |
+| `Install_NSight_Agent_mac.sh` | Silent install of the N-able N-Sight Mac agent: downloads the site package, writes/uses settings.ini (Israel SITEID=690373), runs installer -pkg, verifies rmmagentd. Replaces the retired Scalefusion pre-install script. |
 | `Set_Chrome_Default_Browser_mac.sh` | Sets Google Chrome as the system-wide default browser for HTTP/HTTPS URLs and HTML files on macOS. DESCRIPTION: This script sets Chrome as the default browse... |
 | `Upgrade_Slack_mac.sh` | Upgrade Slack to the latest version on macOS without user interaction. Designed for deployment via N-Sight RMM. DESCRIPTION: Downloads and installs the lates... |
 
