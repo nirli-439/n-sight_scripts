@@ -100,6 +100,11 @@
       "id": "onedrive-removed",
       "check": "Check_OneDrive_Edge_Copilot_Removed.ps1",
       "task": "Remove_OneDrive.ps1"
+    },
+    {
+      "id": "bitdefender-edr",
+      "check": "Check_Bitdefender_EDR.ps1",
+      "task": "Install_BitdefenderAgent.ps1"
     }
   ]
 }
