@@ -35,7 +35,8 @@ confirm_remove() {
 }
 
 fetch() {
-    curl --proto '=https' --tlsv1.2 -fSL --retry 3 --connect-timeout 30 --max-time 180 "$1" -o "$2"
+    # Cache-buster: raw.githubusercontent CDN lags minutes behind a push ("still old" runs).
+    curl --proto '=https' --tlsv1.2 -fSL --retry 3 --connect-timeout 30 --max-time 180 "$1?t=$(date +%s)" -o "$2"
 }
 
 install_homebrew() {
