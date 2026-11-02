@@ -35,7 +35,7 @@ run_selected || true
     launch_app() { :; }
     run_task() { RESULTS[$1]=Done; }
     POPUPS=0
-    popup() { POPUPS=$((POPUPS + 1)); [[ "$1" == 'Setup finished' && "$2" == *'Bitdefender: Installed - launch requested'* ]]; }
+    popup() { POPUPS=$((POPUPS + 1)); [[ "$1" == 'Setup finished' && "$2" == *'Bitdefender: Done'* ]]; }
     run_selected
     [[ $POPUPS == 1 ]]
     SELECTED=(0)

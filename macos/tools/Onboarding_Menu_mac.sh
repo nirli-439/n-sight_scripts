@@ -8,8 +8,8 @@ PATHS=('tasks/Install_NSight_Agent_mac.sh' 'tasks/Install_BitdefenderAgent_mac.s
 SELECTED=(1 1 1 1 1 1 1 1 0 1 1 1 0 0 1)
 RESULTS=('Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Ready' 'Optional' 'Ready' 'Ready' 'Ready' 'Optional' 'Optional' 'Ready')
 
-# Empty entries are command-line/admin tasks, not launchable GUI apps.
-APPS=('' '/Applications/Endpoint Security for Mac.app' '/Applications/Google Chrome.app' '/Applications/Google Drive.app' '/Applications/Slack.app' '' '' '/Applications/Twingate.app' '' '/Applications/Claude.app' '/Applications/ChatGPT.app' '/Applications/Gemini.app' '' '/Applications/1Password.app' '/Applications/NirTab.app')
+# Empty entries are agents/daemons (no GUI launch needed) or CLI/admin tasks.
+APPS=('' '' '/Applications/Google Chrome.app' '/Applications/Google Drive.app' '/Applications/Slack.app' '' '' '/Applications/Twingate.app' '' '/Applications/Claude.app' '/Applications/ChatGPT.app' '/Applications/Gemini.app' '' '/Applications/1Password.app' '/Applications/NirTab.app')
 
 launch_app() {
     [[ -d "$1" && ! -L "$1" ]] || return 1
