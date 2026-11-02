@@ -71,7 +71,9 @@ curl -fSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos
 
 Use **Up/Down + Space** (or **1-9** for the first nine entries) to select,
 **Enter** to run, **q** to quit. Press **a** to select everything except removal.
-Selected tasks run one at a time, waiting for completion, in this order:
+The N-sight agent item installs from the newest `OSX_AGENT_*_RW.ZIP` in
+`~/Downloads` (download it from the dashboard first - links expire, so no
+baked-in URL). Selected tasks run one at a time, waiting for completion, in this order:
 N-sight agent, Bitdefender, Chrome, Google Drive, Slack, Create admin mac,
 Homebrew, Twingate, optional N-sight removal (9), Claude Desktop (10),
 ChatGPT Desktop (11), Gemini Desktop (12), Git setup (13), 1Password (14),

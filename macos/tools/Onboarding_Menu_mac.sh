@@ -132,6 +132,17 @@ setup_git() {
 run_task() {
     local index="$1" rc
     case "$index" in
+        0)
+            # Dashboard links expire; use the newest RW package the technician downloaded.
+            local pkg
+            pkg=$(ls -t "$HOME"/Downloads/OSX_AGENT*RW*.ZIP 2>/dev/null | head -1)   # single pattern: macOS FS is case-insensitive
+            if [[ -z "$pkg" ]]; then
+                echo 'No OSX_AGENT_*_RW.ZIP in ~/Downloads - download it from N-sight dashboard > Agent > Download Agent first.'
+                rc=1
+            else
+                echo "Using package: $pkg"
+                sudo /bin/bash "$WORK/task-$index.sh" "$pkg"; rc=$?
+            fi ;;
         5)
             printf '\nExisting admin tool uses a predictable date password and grants passwordless sudo.\n'
             printf 'Only continue for a trusted technician account; rotate the password immediately.\n'

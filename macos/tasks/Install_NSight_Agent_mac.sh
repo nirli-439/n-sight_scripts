@@ -9,11 +9,11 @@
 #
 # DESCRIPTION:
 #     - Skips if the agent is already installed and running
-#     - Downloads the site package from PKG_URL (N-Sight dashboard >
-#       Agent > Download Agent > Site Installation Package / Add devices)
-#     - Dashboard download links EXPIRE. If the download fails, copy a fresh
-#       link and either update PKG_URL below or run with:
-#         sudo NSIGHT_PKG_URL='https://...' bash Install_NSight_Agent_mac.sh
+#     - Uses a locally downloaded site package when given (dashboard links
+#       expire, so this is the normal path):
+#         sudo bash Install_NSight_Agent_mac.sh ~/Downloads/OSX_AGENT_..._RW.ZIP
+#       or: sudo NSIGHT_PKG_PATH=/path/to/pkg bash Install_NSight_Agent_mac.sh
+#     - Otherwise downloads from PKG_URL below (or NSIGHT_PKG_URL override)
 #     - Uses the settings.ini bundled in the package; falls back to the
 #       Israel / Helfy Office site ini (SITEID=690373) if the package has none
 #
@@ -43,9 +43,10 @@ readonly EXIT_SUCCESS=0
 readonly EXIT_WARNING=1001
 readonly EXIT_CRITICAL=1002
 
-# Dashboard download link for the Israel/Helfy RW package. EXPIRES - see header.
-PKG_URL="${NSIGHT_PKG_URL:-https://wwweurope1.systemmonitor.eu.com/8fd01afc-a9c1-4dc3-b373-85c866497e3f}"
+# Fallback download link (dashboard links EXPIRE - prefer passing a local file).
+PKG_URL="${NSIGHT_PKG_URL:-}"
 readonly PKG_URL
+PKG_SRC="${NSIGHT_PKG_PATH:-${1:-}}"
 
 readonly WORK_DIR="$(mktemp -d /tmp/nsight.XXXXXX)"
 readonly AGENT_BIN="/usr/local/rmmagent/rmmagentd"
@@ -102,12 +103,19 @@ if is_installed; then
     finish $EXIT_SUCCESS "OK: N-Sight agent already installed and running (PID $(pgrep -x rmmagentd | head -1)) - nothing to do"
 fi
 
-# 1. Download the site package
-log "Downloading $PKG_URL"
-if ! curl -fSL --retry 3 --retry-delay 5 --connect-timeout 30 --max-time 600 -A "Mozilla/5.0" -o "$WORK_DIR/pkg.bin" "$PKG_URL"; then
-    finish $EXIT_CRITICAL "CRITICAL: Failed to download agent package - link expired? Copy a fresh one from the dashboard and set NSIGHT_PKG_URL"
+# 1. Get the site package: local file first, URL download as fallback
+if [[ -n "$PKG_SRC" ]]; then
+    [[ -f "$PKG_SRC" ]] || finish $EXIT_CRITICAL "CRITICAL: package not found: $PKG_SRC"
+    cp "$PKG_SRC" "$WORK_DIR/pkg.bin"
+    log "Using local package: $PKG_SRC"
+elif [[ -n "$PKG_URL" ]]; then
+    log "Downloading $PKG_URL"
+    curl -fSL --retry 3 --retry-delay 5 --connect-timeout 30 --max-time 600 -A "Mozilla/5.0" -o "$WORK_DIR/pkg.bin" "$PKG_URL" \
+        || finish $EXIT_CRITICAL "CRITICAL: download failed - dashboard links expire; download the RW package manually and pass its path"
+else
+    finish $EXIT_CRITICAL "CRITICAL: no agent package - pass the downloaded RW ZIP/PKG path as argument or NSIGHT_PKG_PATH"
 fi
-log "Downloaded $(stat -f%z "$WORK_DIR/pkg.bin") bytes ($(file -b "$WORK_DIR/pkg.bin"))"
+log "Package: $(stat -f%z "$WORK_DIR/pkg.bin") bytes ($(file -b "$WORK_DIR/pkg.bin"))"
 
 # 2. Unpack to find install.pkg (package may be ZIP, PKG or DMG)
 case "$(file -b "$WORK_DIR/pkg.bin")" in
