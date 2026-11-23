@@ -41,7 +41,7 @@ Scripts_N-Sight/
 
 | Platform | Checks | Tasks | Total |
 |----------|--------|-------|-------|
-| Windows  | 30     | 50    | 80    |
+| Windows  | 31     | 52    | 83    |
 | macOS    | 15     | 22    | 37    |
 | Linux    | 7      | 24    | 31    |
 | **Total**| **53** | **98** | **151** |
