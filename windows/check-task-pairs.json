@@ -105,6 +105,11 @@
       "id": "bitdefender-edr",
       "check": "Check_Bitdefender_EDR.ps1",
       "task": "Install_BitdefenderAgent.ps1"
+    },
+    {
+      "id": "windows-optimized",
+      "check": "Check_Windows_Optimized.ps1",
+      "task": "Optimize_Windows_AI_Workstation.ps1"
     }
   ]
 }

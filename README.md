@@ -44,7 +44,7 @@ Scripts_N-Sight/
 | Windows  | 30     | 50    | 80    |
 | macOS    | 15     | 22    | 37    |
 | Linux    | 7      | 24    | 31    |
-| **Total**| **52** | **96** | **148** |
+| **Total**| **53** | **98** | **151** |
 
 Counts cover tracked checks/tasks only; interactive tools, tests and profiles are excluded.
 
@@ -58,6 +58,40 @@ Counts cover tracked checks/tasks only; interactive tools, tests and profiles ar
 - **Linux**: Ubuntu/GNOME focus; use universal `systemd` patterns where possible for portability.
 
 When adding or changing scripts, follow **N-SIGHT_SCRIPT_STANDARDS.md** so behavior and conventions stay consistent.
+
+---
+
+## Interactive Windows onboarding (PowerShell)
+
+1. Download the N-sight **Windows** agent from the dashboard (Download Agent > Windows) into
+   `Downloads` - links expire, so nothing is baked in.
+2. In any PowerShell window (it asks for UAC by itself), or double-click
+   `windows/tools/Onboarding_Menu_windows.cmd`:
+
+```powershell
+irm https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/tools/Onboarding_Menu_windows.ps1 | iex
+```
+
+Plain numbered menu (works in every console): type numbers to toggle (`13 18`, `2-4`),
+`a` all, `n` none, **Enter** runs, `q` quits. Order: N-sight agent, remove McAfee,
+remove consumer bloat, remove OneDrive, Bitdefender, Chrome, Chrome default browser,
+Google Drive, Slack, Twingate, GCPW, Claude Desktop, Claude Code + AI CLIs (optional),
+speed & focus tweaks, hibernate/lid, screen lock, pin desktop apps, OpenSSH (optional).
+
+Every selected task is downloaded fresh (cache-busted) and syntax-checked **before** anything
+runs, then run one at a time with a per-task timeout (a hung installer is killed and the menu
+moves on). At the end Chrome, Slack and Claude are opened as the signed-in user (not as
+admin) and one summary popup is shown. Logs: `C:\logs\<yyyyMMdd>\`.
+
+- `windows/tasks/Install_NSight_Agent.ps1` - newest `*AGENT*.exe/.msi/.zip` in any
+  `C:\Users\*\Downloads` (or `-Path`, `NSIGHT_AGENT_PATH`, `NSIGHT_AGENT_URL`); EXE `/S`,
+  MSI `/qn`; verifies the `Advanced Monitoring Agent` service.
+- `windows/tasks/Optimize_Windows_AI_Workstation.ps1` (+ `Check_Windows_Optimized.ps1`) -
+  winutil-style safe tweaks for a Claude/Chrome laptop: restore point first; telemetry,
+  ads, suggestions, widgets, Copilot, Recall, Bing-in-Start, Game DVR off; best-performance
+  power mode on AC; lighter animations; taskbar cleanup; Chrome Memory Saver, no background
+  mode, "Work" bookmarks (Claude, Gmail, Calendar, Drive); temp cleanup. Never touches
+  updates, Defender/Bitdefender, sign-in, hibernate or screen lock. Undo = the restore point.
 
 ---
 
