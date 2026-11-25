@@ -58,6 +58,7 @@ $Items = @(
     (New-Item2 'Twingate'                  'tasks/Install_Twingate.ps1'                  300)
     (New-Item2 'GCPW (Google sign-in)'     'tasks/Install_GCPW.ps1'                      240)
     (New-Item2 'Claude Desktop'            'tasks/Install_ClaudeDesktop.ps1'             600  $true 'Claude')
+    (New-Item2 'Figma Desktop'             'tasks/Install_Figma.ps1'                     900  $true 'Figma')
     (New-Item2 'Claude Code + AI CLIs'     'tasks/Install_AI_Code_CLIs.ps1'              1200 $false)
     (New-Item2 'Speed & focus tweaks'      'tasks/Optimize_Windows_AI_Workstation.ps1'   900)
     (New-Item2 'Hibernate & lid close'     'tasks/Remediate_Hibernate_LidClose.ps1'      60)

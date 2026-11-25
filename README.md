@@ -75,12 +75,12 @@ irm https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/windows/too
 Plain numbered menu (works in every console): type numbers to toggle (`13 18`, `2-4`),
 `a` all, `n` none, **Enter** runs, `q` quits. Order: N-sight agent, remove McAfee,
 remove consumer bloat, remove OneDrive, Bitdefender, Chrome, Chrome default browser,
-Google Drive, Slack, Twingate, GCPW, Claude Desktop, Claude Code + AI CLIs (optional),
+Google Drive, Slack, Twingate, GCPW, Claude Desktop, Figma Desktop, Claude Code + AI CLIs (optional),
 speed & focus tweaks, hibernate/lid, screen lock, pin desktop apps, OpenSSH (optional).
 
 Every selected task is downloaded fresh (cache-busted) and syntax-checked **before** anything
 runs, then run one at a time with a per-task timeout (a hung installer is killed and the menu
-moves on). At the end Chrome, Slack and Claude are opened as the signed-in user (not as
+moves on). At the end Chrome, Slack, Claude and Figma are opened as the signed-in user (not as
 admin) and one summary popup is shown. Logs: `C:\logs\<yyyyMMdd>\`.
 
 - `windows/tasks/Install_NSight_Agent.ps1` - newest `*AGENT*.exe/.msi/.zip` in any
