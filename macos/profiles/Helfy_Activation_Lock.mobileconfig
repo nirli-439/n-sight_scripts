@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>co.helfy.profile.activation-lock</string>
+	<key>PayloadUUID</key>
+	<string>D11A07EB-EFB0-552C-83DA-7CC7EDF058A5</string>
+	<key>PayloadDisplayName</key>
+	<string>Helfy - No Activation Lock</string>
+	<key>PayloadDescription</key>
+	<string>Company Mac: Find My Mac is disabled so a personal Apple ID can never Activation-Lock it. Handoff off.</string>
+	<key>PayloadOrganization</key>
+	<string>Helfy</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.applicationaccess</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>co.helfy.profile.activation-lock.restrictions</string>
+			<key>PayloadUUID</key>
+			<string>F15F62B4-AF66-525A-A0A0-5613D19CAC78</string>
+			<key>PayloadDisplayName</key>
+			<string>Restrictions</string>
+			<key>allowFindMyDevice</key>
+			<false/>
+			<key>allowActivityContinuation</key>
+			<false/>
+		</dict>
+	</array>
+</dict>
+</plist>

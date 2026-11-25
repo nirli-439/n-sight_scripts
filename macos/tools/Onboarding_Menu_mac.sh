@@ -288,6 +288,20 @@ final_checks() {
     if pgrep -x rmmagentd >/dev/null 2>&1; then echo 'OK   N-sight agent running'; else echo '--   N-sight agent not running'; ok=0; fi
     if pgrep -qf BDLDaemon 2>/dev/null; then echo 'OK   Bitdefender running'; else echo '--   Bitdefender not running'; ok=0; fi
     if fdesetup status 2>/dev/null | grep -q 'On'; then echo 'OK   FileVault on'; else echo '--   FileVault off (GravityZone policy / user)'; fi
+    # Company profiles come from the MDM (macos/profiles/Helfy_*.mobileconfig).
+    if profiles status -type enrollment 2>/dev/null | grep -q 'MDM enrollment: Yes'; then
+        echo 'OK   Enrolled in MDM'
+        local have
+        have=$(/usr/bin/sudo -n /usr/bin/profiles list -all 2>/dev/null | grep -o 'co\.helfy\.profile\.[a-z-]*' | sort -u | wc -l | tr -d ' ')
+        if [[ "${have:-0}" -ge 4 ]]; then echo 'OK   Helfy profiles installed (4)'; else echo "--   Helfy profiles: ${have:-0}/4 installed (MDM not pushed yet?)"; ok=0; fi
+    else
+        echo '--   NOT enrolled in MDM - enroll so the Helfy profiles are pushed'; ok=0
+    fi
+    if system_profiler SPHardwareDataType 2>/dev/null | grep -q 'Activation Lock Status: Enabled'; then
+        echo '--   ACTIVATION LOCK ON - sign out of Find My Mac before handing over'; ok=0
+    else
+        echo 'OK   Activation Lock off'
+    fi
     for ((i=0; i<${#NAMES[@]}; i++)); do
         [[ ${SELECTED[$i]:-0} == 1 && -n ${APPS[$i]} ]] || continue
         if [[ -d ${APPS[$i]} ]]; then echo "OK   ${NAMES[$i]}"; else echo "--   ${NAMES[$i]} missing"; ok=0; fi

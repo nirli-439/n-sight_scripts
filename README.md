@@ -150,6 +150,26 @@ checks** (IA name, agent running, Bitdefender running, FileVault, selected apps 
 and one summary dialog. Not covered on Mac (no equivalent): GCPW, McAfee/OneDrive/bloat
 removal. Sign-ins, system/network extension approvals and Full Disk Access stay manual/MDM.
 
+### Company profiles (pushed by the MDM)
+
+`macos/profiles/Helfy_*.mobileconfig` - upload each one to the MDM as a custom profile and
+assign it to **all Macs**; the MDM installs them silently on enrollment. Rebuild after an
+edit with `python3 -I macos/profiles/build_helfy_profiles.py` (fixed UUIDs, so a re-upload
+replaces the installed profile instead of adding a second one).
+
+| Profile | What it does |
+|---|---|
+| `Helfy_Activation_Lock` | Find My Mac off, so a personal Apple ID can never Activation-Lock the Mac; Handoff off |
+| `Helfy_Security_Baseline` | screen lock 15 min + password at once, firewall + stealth, automatic security updates (no forced macOS upgrades), guest off |
+| `Helfy_Chrome` | same Chrome policies as Windows: Memory Saver, no background mode/promo tabs, "Work" bookmarks |
+| `Helfy_System_Extensions` | Bitdefender (`GUNFMW623Y`) and Twingate (`6GX8KVTR9H`) system extensions load without a user click |
+
+Also in the MDM: Macs added through Apple Business Manager should have "Allow Activation
+Lock" off in the enrollment/prestage settings. Full Disk Access for Bitdefender: use the
+profile GravityZone provides for Mac; for N-sight: `build_nsight_ppcc_mobileconfig.sh`.
+The onboarding final checks report MDM enrollment, how many of the 4 Helfy profiles
+arrived, and Activation Lock status.
+
 The old way still works (menu alone, fetches each task from raw):
 `curl -fSL .../macos/tools/Onboarding_Menu_mac.sh -o ~/Downloads/m.sh && bash ~/Downloads/m.sh`
 

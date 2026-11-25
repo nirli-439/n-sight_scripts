@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>co.helfy.profile.security-baseline</string>
+	<key>PayloadUUID</key>
+	<string>01848E03-7EF7-577A-A0E9-BC5676DA7017</string>
+	<key>PayloadDisplayName</key>
+	<string>Helfy - Security baseline</string>
+	<key>PayloadDescription</key>
+	<string>Screen lock 15 min with password at once, firewall on, automatic security updates, no guest account.</string>
+	<key>PayloadOrganization</key>
+	<string>Helfy</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.screensaver</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>co.helfy.profile.security-baseline.screensaver</string>
+			<key>PayloadUUID</key>
+			<string>F800519D-7220-5103-9DEA-CBC7EEFC4789</string>
+			<key>PayloadDisplayName</key>
+			<string>Screen lock</string>
+			<key>idleTime</key>
+			<integer>900</integer>
+			<key>askForPassword</key>
+			<true/>
+			<key>askForPasswordDelay</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.security.firewall</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>co.helfy.profile.security-baseline.firewall</string>
+			<key>PayloadUUID</key>
+			<string>42DC3E83-0404-58FE-B953-D8C3169C9040</string>
+			<key>PayloadDisplayName</key>
+			<string>Firewall</string>
+			<key>EnableFirewall</key>
+			<true/>
+			<key>EnableStealthMode</key>
+			<true/>
+			<key>BlockAllIncoming</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.SoftwareUpdate</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>co.helfy.profile.security-baseline.updates</string>
+			<key>PayloadUUID</key>
+			<string>22F48F1F-AD70-5265-B233-2B0BE2B2B94A</string>
+			<key>PayloadDisplayName</key>
+			<string>Software Update</string>
+			<key>AutomaticCheckEnabled</key>
+			<true/>
+			<key>AutomaticDownload</key>
+			<true/>
+			<key>CriticalUpdateInstall</key>
+			<true/>
+			<key>ConfigDataInstall</key>
+			<true/>
+			<key>AutomaticallyInstallAppUpdates</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.loginwindow</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>co.helfy.profile.security-baseline.loginwindow</string>
+			<key>PayloadUUID</key>
+			<string>EE39062C-9F6D-569E-ADD1-08BFDA7C2F6F</string>
+			<key>PayloadDisplayName</key>
+			<string>Login window</string>
+			<key>DisableGuestAccount</key>
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>

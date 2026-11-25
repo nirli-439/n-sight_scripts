@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>co.helfy.profile.chrome</string>
+	<key>PayloadUUID</key>
+	<string>AA42D7BE-059A-50BE-8E08-F2DFF67D6805</string>
+	<key>PayloadDisplayName</key>
+	<string>Helfy - Google Chrome</string>
+	<key>PayloadDescription</key>
+	<string>Chrome Memory Saver on, no background mode or promo tabs, Work bookmarks (same as Windows).</string>
+	<key>PayloadOrganization</key>
+	<string>Helfy</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.google.Chrome</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>co.helfy.profile.chrome.policies</string>
+			<key>PayloadUUID</key>
+			<string>87A6B7C3-E8D2-53B9-8331-F8AB4FDB2E89</string>
+			<key>PayloadDisplayName</key>
+			<string>Chrome policies</string>
+			<key>HighEfficiencyModeEnabled</key>
+			<true/>
+			<key>BackgroundModeEnabled</key>
+			<false/>
+			<key>PromotionalTabsEnabled</key>
+			<false/>
+			<key>BookmarkBarEnabled</key>
+			<true/>
+			<key>ManagedBookmarks</key>
+			<array>
+				<dict>
+					<key>toplevel_name</key>
+					<string>Work</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Claude</string>
+					<key>url</key>
+					<string>https://claude.ai</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Gmail</string>
+					<key>url</key>
+					<string>https://mail.google.com</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Calendar</string>
+					<key>url</key>
+					<string>https://calendar.google.com</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Drive</string>
+					<key>url</key>
+					<string>https://drive.google.com</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

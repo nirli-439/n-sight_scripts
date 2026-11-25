@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>co.helfy.profile.system-extensions</string>
+	<key>PayloadUUID</key>
+	<string>D44C77BF-FEF0-5B21-A7F7-62CCBB495D4D</string>
+	<key>PayloadDisplayName</key>
+	<string>Helfy - Approved system extensions</string>
+	<key>PayloadDescription</key>
+	<string>Bitdefender and Twingate system extensions load without asking the user.</string>
+	<key>PayloadOrganization</key>
+	<string>Helfy</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.system-extension-policy</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>co.helfy.profile.system-extensions.policy</string>
+			<key>PayloadUUID</key>
+			<string>F6A52BA8-DAD4-5B99-83A5-853D6AC4FB5B</string>
+			<key>PayloadDisplayName</key>
+			<string>System extensions</string>
+			<key>AllowUserOverrides</key>
+			<true/>
+			<key>AllowedTeamIdentifiers</key>
+			<array>
+				<string>GUNFMW623Y</string>
+				<string>6GX8KVTR9H</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
