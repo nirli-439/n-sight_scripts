@@ -178,6 +178,21 @@ Screen Recording / Input Monitoring cannot be granted by any MDM (Apple rule): t
 **standard user can allow** them with one click, no admin password. Replaces the old
 `build_nsight_ppcc_mobileconfig.*` (it marked Screen Recording "Allowed", which Apple rejects).
 
+### Problem report (feedback for analysis)
+
+Something failed, or the Mac still asks to "Allow" things? On that Mac run:
+
+```bash
+curl -fsSL is.gd/helfyreport | bash
+```
+
+(`is.gd/helfyreport` = raw `macos/tools/collect_report.sh`.) Asks for the admin password once, then
+writes `~/Desktop/Helfy-report-<name>-<time>.zip` (about 1 minute) with: macOS/hardware, MDM
+enrollment + installed profiles, the privacy approvals MDM actually applied, system/network
+extensions, Bitdefender/N-able/MSP Anywhere/Twingate signatures + services, a PPPC builder dry run,
+the last 2 h of privacy/extension prompts, and the onboarding logs. Nothing is uploaded: AirDrop
+the zip to Nir and hand it to Claude ("analyze the Mac report").
+
 **Encryption = Bitdefender GravityZone**, not the MDM: GravityZone turns FileVault on and keeps the
 recovery key in its console. Do not deploy an MDM FileVault profile (two managers conflict).
 

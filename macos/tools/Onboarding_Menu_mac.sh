@@ -349,6 +349,7 @@ run_selected() {
         printf '\nFinal checks:\n%s\n' "$checks" | tee -a "$LOG_FILE"
     fi
     printf '\nFinished %s selected task(s). Log: %s\n' "$count" "$LOG_FILE"
+    printf 'Problem or prompts to report? Run:  curl -fsSL is.gd/helfyreport | bash  (zip on Desktop -> AirDrop to Nir)\n'
     [[ $failed == 0 ]] || title='Setup finished with warnings or failures'
     [[ $count != 0 ]] || title='No tasks run'
     popup "$title" "${summary:-No tasks selected.}${checks:+$'\n'Final checks:$'\n'$checks}"$'\n'"Log: $LOG_FILE"
