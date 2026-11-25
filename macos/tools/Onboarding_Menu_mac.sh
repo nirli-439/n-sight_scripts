@@ -402,7 +402,7 @@ collect_inputs() {
             [[ -z "$AGENT_PKG" ]] || break
             if [[ -z "${AGENT_DL_TRIED:-}" ]]; then
                 AGENT_DL_TRIED=1
-                AGENT_PKG=$(download_agent_pkg | tail -1)
+                AGENT_PKG=$(download_agent_pkg | tail -1 || true)
                 [[ "$AGENT_PKG" != */OSX_AGENT_HELFY_RW.ZIP ]] || { echo "Agent package: $AGENT_PKG"; break; }
                 AGENT_PKG=''
             fi
