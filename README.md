@@ -97,75 +97,57 @@ admin) and one summary popup is shown. Logs: `C:\logs\<yyyyMMdd>\`.
 
 ## Interactive macOS onboarding (Terminal)
 
-Download and run as the logged-in technician, **not** with `sudo`:
+Macs are not imaged: onboarding runs on the Mac as delivered, from one line in
+Terminal, **as the signed-in user, not with `sudo`**:
 
 ```bash
-curl -fSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/tools/Onboarding_Menu_mac.sh -o "$HOME/Downloads/Onboarding_Menu_mac.sh" && bash "$HOME/Downloads/Onboarding_Menu_mac.sh"
+curl -fsSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/onboard.sh | bash
 ```
 
-Use **Up/Down + Space** (or **1-9** for the first nine entries) to select,
-**Enter** to run, **q** to quit. Press **a** to select everything except removal.
-The N-sight agent item installs from the newest `OSX_AGENT_*_RW.ZIP` in
-`~/Downloads` (download it from the dashboard first - links expire, so no
-baked-in URL). Selected tasks run one at a time, waiting for completion, in this order:
-N-sight agent, Bitdefender, Chrome, Google Drive, Slack, Create admin mac,
-Homebrew, Twingate, optional N-sight removal (9), Claude Desktop (10),
-ChatGPT Desktop (11), Gemini Desktop (12), Git setup (13), 1Password (14),
-and NirTab (15).
-One native macOS summary dialog appears only after the entire selected run finishes,
-including warnings, failures and cancellations. Individual tasks update Terminal
-and the menu without completion popups (including N-sight removal).
-After all installations finish, the tool opens only successfully selected GUI apps
-as the technician: Bitdefender UI, Chrome, Drive, Slack, Twingate, Claude, ChatGPT,
-Gemini, 1Password and NirTab. Command-line/admin tasks are not launched. Launch
-requests/failures appear in the final summary; an accepted request does not prove
-first-run setup is complete. macOS may still ask for sign-in or permission approval.
-Claude, ChatGPT, Gemini and NirTab are selected by default, alongside options 1-7.
-N-sight removal, Git setup and 1Password remain optional/off by default. Removal
-requires typing `REMOVE` and preserves Take Control.
+No menu, run the defaults: `... | bash -s -- --auto --name IA-123`
 
-Claude, ChatGPT, Google's native Gemini app (`google-gemini`, **not** the unrelated
-`gemini` disk cleaner), and 1Password use official vendor packages through Homebrew
-casks. Homebrew is installed if needed, even when option 6 was not selected.
-Gemini requires Apple Silicon and macOS 15+; Homebrew enforces each app's requirements.
-Existing identical app bundles can be adopted without deleting user data; different
-unmanaged copies fail safely instead of being overwritten. App signatures and
-Gatekeeper approval are checked after installation. No Dock shortcuts are created.
-Sign-in/licensing remains manual; 1Password vaults are never configured or removed.
+`macos/onboard.sh` (the entry point) waits up to 5 min for internet (Wi-Fi / captive
+portal), fixes a wrong clock (TLS fails otherwise), pins the run to **one commit** and
+downloads the whole repo as one tarball from codeload (no raw-CDN lag, never a mix of old
+and new scripts; per-file raw download is the fallback). The file is one function called
+on its last line, so a cut-off download never runs half a script.
 
-Git setup installs Git through Homebrew without identity prompts. Missing Git name
-uses the Mac's hostname; missing email uses `local-user@hostname` (`.local` is added
-for a hostname without a domain). This is a local machine identity, **not** a verified
-GitHub/company email. Existing name/email, credentials and signing settings are
-preserved; macOS Keychain is the default only if no global credential helper exists.
-It does not log into GitHub or generate SSH keys.
+Before running: N-sight dashboard > Download Agent > Mac, save `OSX_AGENT_*_RW.ZIP` to
+`~/Downloads` (links expire, nothing is baked in; the menu waits for it or lets you skip).
 
-NirTab installs the pinned v0.15 universal release from
-[`nirli-439/NirTab`](https://github.com/nirli-439/NirTab), verifies its SHA-256,
-bundle ID, executable and signature. Reruns repair app-bundle read/traverse
-permissions on an existing valid install without replacing it. New app directories
-are explicitly world-readable/traversable even under a restrictive `umask 077`
-(the same fix applies to Slack); private downloads/logs stay private. Requires
-macOS 14+. NirTab is a **menu-bar app**, not a normal Dock application. It is
-launched at the end when selected and installed successfully. The release is
-self-signed, not notarized: Gatekeeper and Accessibility/Screen Recording approval
-may require manual action through NirTab's Setup Checklist; the tool does not
-bypass Gatekeeper, re-sign NirTab or change the Dock.
+The menu (Up/Down + Space, 1-9, `t` type numbers like `14 21` or `2-5`, `a` all, `n` none,
+Enter runs, `q` quits) asks **every question up front** - asset key, agent ZIP, `ADMIN`,
+`REMOVE` - then one sudo password (kept alive) and the rest runs unattended: every task is
+staged and syntax-checked first, runs one at a time with a **timeout** (a hung installer is
+killed and the queue moves on), the Mac is kept awake (`caffeinate`), all output goes to
+`~/Library/Logs/Helfy/onboarding-*.log` (except the interactive admin tool).
 
-This reuses the existing admin creation tool: it uses a predictable date password
-and grants passwordless sudo. The menu warns and requires typing `ADMIN` before
-running it; rotate that password immediately. Account/SecureToken prompts stay in
-Terminal and are not recorded in the menu's result log.
+Order (same rules as the Windows USB: name before agent, Bitdefender after agent):
 
-Logs: `~/Library/Logs/Helfy/`; individual installer logs remain in `/var/log/nsight/`.
-Homebrew runs as the technician, not root. Twingate uses a pinned, hash-checked,
-Apple-signed vendor package and does not require Homebrew. Sign-ins, system/network
-extension approvals and Full Disk Access can still require manual approval/MDM.
-This interactive tool is **not** an unattended RMM task.
+| # | Item | Default | Notes |
+|---|---|---|---|
+| 1 | Create admin mac | on | interactive; predictable date password + passwordless sudo, needs `ADMIN` |
+| 2 | Computer name (IA-xxx) | on | Jira Assets key; serial shown to look it up; Enter keeps an existing IA name |
+| 3 | N-sight agent | on | newest `OSX_AGENT*RW*.ZIP` in Downloads |
+| 4 | Bitdefender | on | after the agent |
+| 5-8 | Chrome, Chrome default browser, Google Drive, Slack | on | default browser: macOS asks the user to click "Use Google Chrome" |
+| 9-10 | Twingate, Homebrew | on | Twingate = pinned, hash-checked vendor pkg |
+| 11-13 | Claude, ChatGPT, Gemini Desktop | on | Homebrew casks, signature + Gatekeeper checked; skipped if already installed |
+| 14-16 | Claude Code (CLI), Git setup, 1Password | off | Claude Code = official `claude.ai/install.sh` as the user |
+| 17 | NirTab | on | |
+| 18 | Mac settings | on | `Configure_Mac_Defaults_mac.sh`: network time (+Asia/Jerusalem only if still UTC), Hebrew keyboard, file extensions, no recent apps in Dock, battery %, Handoff off |
+| 19 | Power on charger | on | `Remediate_Power_mac.sh`: on AC never system-sleep, display 15 min, wake for network |
+| 20 | Screen lock 15 min | on | existing `Remediate_ScreenLock_Timeout_mac.sh` |
+| 21 | Pin apps to Dock | off | as the user (never root), plist backed up, existing pins kept |
+| 22 | Remove N-sight agent | off | never in "all", needs `REMOVE`, keeps Take Control |
 
-Slack remains option 4. Its installer uses a private download/mount, validates
-Slack's bundle ID, vendor signature and Gatekeeper approval before copying, and
-leaves existing invalid apps untouched. It never edits the Dock or strips quarantine.
+At the end: successfully installed GUI apps are opened as the technician, then **final
+checks** (IA name, agent running, Bitdefender running, FileVault, selected apps present)
+and one summary dialog. Not covered on Mac (no equivalent): GCPW, McAfee/OneDrive/bloat
+removal. Sign-ins, system/network extension approvals and Full Disk Access stay manual/MDM.
+
+The old way still works (menu alone, fetches each task from raw):
+`curl -fSL .../macos/tools/Onboarding_Menu_mac.sh -o ~/Downloads/m.sh && bash ~/Downloads/m.sh`
 
 Safe checks (no installs/removal):
 ```bash

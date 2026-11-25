@@ -6,15 +6,17 @@ source ./Onboarding_Menu_mac.sh
 TMP=$(mktemp -d "${TMPDIR:-/tmp}/onboarding-extras.XXXXXX")
 trap 'rm -rf "$TMP"' EXIT
 (
-    calls=''
-    install_desktop() { calls="$calls $1"; }
-    sudo() { echo 'FAIL: desktop installs ran as root'; exit 1; }
-    for i in 9 10 11 13; do run_task "$i"; done
-    [[ "$calls" == ' claude chatgpt google-gemini 1password' ]]
+    # Tasks run in a background subshell (timeout runner): record calls in a file.
+    install_desktop() { printf ' %s' "$1" >> "$TMP/calls"; }
+    sudo() { echo 'FAIL: desktop installs ran as root'; return 1; }
+    WORK=$TMP; LOG_FILE=/dev/null
+    for i in 10 11 12 15; do run_task "$i"; done
+    [[ "$(cat "$TMP/calls")" == ' claude chatgpt google-gemini 1password' ]]
 )
 (
     WORK="$TMP"
-    SELECTED=(0 0 0 0 0 0 0 0 0 1 1 1 1 1)
+    SELECTED=(0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0)
+    unset ONBOARD_SRC
     fetch() { printf '#!/bin/bash\n' > "$2"; }
     prepare_tasks
     [[ -f "$WORK/homebrew-path.sh" ]]

@@ -3,16 +3,17 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 source ./Onboarding_Menu_mac.sh
-SELECTED=(0 1 1 1 1 0 0 1 0 1 1 1 0 1 1)
+SELECTED=(0 0 0 1 1 0 1 1 1 0 1 1 1 0 0 1 1 0 0 0 0 0)
 LOG_FILE=/dev/null
+final_checks() { :; }
 EVENTS=''
 run_task() {
     EVENTS="$EVENTS task-$1"
     RESULTS[$1]=Done
-    [[ $1 != 3 ]] || { RESULTS[$1]=Failed; return 1; }
+    [[ $1 != 6 ]] || { RESULTS[$1]=Failed; return 1; }
 }
 launch_app() {
-    [[ "$EVENTS" == *' task-14'* ]] || { echo 'FAIL: launched before installs finished'; exit 1; }
+    [[ "$EVENTS" == *' task-16'* ]] || { echo 'FAIL: launched before installs finished'; exit 1; }
     EVENTS="$EVENTS launch-$1"
     [[ "$1" != /Applications/Slack.app ]]
 }
@@ -25,7 +26,7 @@ run_selected && { echo 'FAIL: failure lost'; exit 1; }
 [[ "$EVENTS" == *'launch-/Applications/NirTab.app'* ]]
 [[ "$EVENTS" != *'launch-/Applications/Google Drive.app'* ]]
 [[ "$EVENTS" == *'launch-/Applications/1Password.app'*'launch-/Applications/NirTab.app popup' ]]
-[[ ${RESULTS[4]} == *'launch failed'* ]]
+[[ ${RESULTS[7]} == *'launch failed'* ]]
 (
     source ./Onboarding_Menu_mac.sh
     open() { echo 'FAIL: open called for missing app'; exit 1; }
