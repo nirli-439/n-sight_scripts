@@ -13,6 +13,9 @@ Profiles:
   Helfy_Chrome               same Chrome policies as Windows Optimize_Windows_AI_Workstation
   Helfy_System_Extensions    pre-approve Bitdefender + Twingate system extensions (no user click)
 
+No FileVault profile: Bitdefender GravityZone encryption turns FileVault on and escrows the
+recovery key (Nir, 2026-11-25). Two managers for the same encryption would conflict.
+
 Team IDs verified from the vendors' signed installers (2026-11-25):
   Bitdefender GUNFMW623Y (GravityZone SetupDownloader), Twingate 6GX8KVTR9H (Twingate.pkg).
 """
@@ -103,24 +106,6 @@ PROFILES = {
                 {"name": "Drive", "url": "https://drive.google.com"},
             ],
         })]),
-
-    # FileVault on at the user's next log-in (macOS asks for their password once).
-    # No escrow payload: the recovery key is SHOWN to the user, who must hand it to IT.
-    "Helfy_FileVault": profile(
-        "filevault", "FileVault",
-        "Turns on FileVault at the next log-in and blocks turning it off. Save the recovery key shown to the user.",
-        [
-            payload("com.apple.MCX.FileVault2", "filevault.enable", "FileVault", {
-                "Enable": "On",
-                "Defer": True,
-                "DeferForceAtUserLoginMaxBypassAttempts": 0,
-                "UseRecoveryKey": True,
-                "ShowRecoveryKey": True,
-            }),
-            payload("com.apple.MCX", "filevault.nodisable", "Keep FileVault on", {
-                "dontAllowFDEDisable": True,
-            }),
-        ]),
 
     "Helfy_System_Extensions": profile(
         "system-extensions", "Approved system extensions",

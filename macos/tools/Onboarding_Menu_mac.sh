@@ -289,13 +289,17 @@ final_checks() {
     if [[ "$name" =~ ^IA-[0-9]+$ ]]; then echo "OK   Computer name $name"; else echo "--   Computer name '$name' is not an IA-xxx asset key"; ok=0; fi
     if pgrep -x rmmagentd >/dev/null 2>&1; then echo 'OK   N-sight agent running'; else echo '--   N-sight agent not running'; ok=0; fi
     if pgrep -qf BDLDaemon 2>/dev/null; then echo 'OK   Bitdefender running'; else echo '--   Bitdefender not running'; ok=0; fi
-    if fdesetup status 2>/dev/null | grep -q 'On'; then echo 'OK   FileVault on'; else echo '--   FileVault off (GravityZone policy / user)'; fi
+    # Encryption is owned by Bitdefender GravityZone (it turns FileVault on and escrows the key).
+    if fdesetup status 2>/dev/null | grep -q 'On'; then echo 'OK   FileVault on (GravityZone)'; else echo '--   FileVault off (GravityZone encryption policy)'; fi
     # Company profiles come from the MDM (macos/profiles/Helfy_*.mobileconfig).
     if profiles status -type enrollment 2>/dev/null | grep -q 'MDM enrollment: Yes'; then
         echo 'OK   Enrolled in MDM'
-        local have
-        have=$(/usr/bin/sudo -n /usr/bin/profiles list -all 2>/dev/null | grep -o 'co\.helfy\.profile\.[a-z-]*' | sort -u | wc -l | tr -d ' ')
-        if [[ "${have:-0}" -ge 5 ]]; then echo "OK   Helfy profiles installed (5)"; else echo "--   Helfy profiles: ${have:-0}/5 installed (MDM not pushed yet?)"; ok=0; fi
+        local installed p missing=''
+        installed=$(/usr/bin/sudo -n /usr/bin/profiles list -all 2>/dev/null)
+        for p in activation-lock security-baseline chrome system-extensions; do
+            [[ "$installed" == *"co.helfy.profile.$p"* ]] || missing="$missing $p"
+        done
+        if [[ -z "$missing" ]]; then echo 'OK   Helfy profiles installed (4)'; else echo "--   Helfy profiles missing:$missing (MDM not pushed yet?)"; ok=0; fi
     else
         echo '--   NOT enrolled in MDM - enroll so the Helfy profiles are pushed'; ok=0
     fi
