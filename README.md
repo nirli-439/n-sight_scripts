@@ -101,10 +101,14 @@ Macs are not imaged: onboarding runs on the Mac as delivered, from one line in
 Terminal, **as the signed-in user, not with `sudo`**:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/onboard.sh | bash
+curl -fsSL is.gd/helfymac | bash
 ```
 
-No menu, run the defaults: `... | bash -s -- --auto --name IA-123`
+No menu, run the defaults: `curl -fsSL is.gd/helfymac | bash -s -- --auto --name IA-123`
+
+`is.gd/helfymac` is a public shortlink (cannot be edited or deleted) that redirects to
+`https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/onboard.sh`.
+Use the full URL if is.gd is unreachable or the repo path ever changes.
 
 `macos/onboard.sh` (the entry point) waits up to 5 min for internet (Wi-Fi / captive
 portal), fixes a wrong clock (TLS fails otherwise), pins the run to **one commit** and
