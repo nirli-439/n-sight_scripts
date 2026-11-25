@@ -20,14 +20,14 @@ BASE_URL="${BASE_URL%/}"
 
 # Order follows the Windows USB rules: computer name BEFORE the agent (N-sight
 # registers the name), Bitdefender AFTER the agent, tweaks last, removal never by default.
-NAMES=('Create admin mac' 'Computer name (IA-xxx)' 'N-sight agent' 'Bitdefender' 'Google Chrome' 'Chrome default browser' 'Google Drive' 'Slack' 'Twingate' 'Homebrew' 'Claude Desktop' 'ChatGPT Desktop' 'Gemini Desktop' 'Claude Code (CLI)' 'Git setup' '1Password' 'NirTab' 'Mac settings' 'Power on charger' 'Screen lock 15 min' 'Pin apps to Dock' 'Remove N-sight agent')
-PATHS=('tools/Create_Admin_User_mac.sh' 'tasks/Rename_Hostname_mac.sh' 'tasks/Install_NSight_Agent_mac.sh' 'tasks/Install_BitdefenderAgent_mac.sh' 'tasks/Install_Chrome_mac.sh' '' 'tasks/Install_GoogleDrive_mac.sh' 'tasks/Install_Slack_mac.sh' '' '' '' '' '' '' '' '' 'tasks/Install_NirTab_mac.sh' 'tasks/Configure_Mac_Defaults_mac.sh' 'tasks/Remediate_Power_mac.sh' 'tasks/Remediate_ScreenLock_Timeout_mac.sh' '' 'tasks/Remove_NSight_Agent_mac.sh')
-SELECTED=(1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 1 1 1 1 0 0)
+NAMES=('Create admin mac' 'Computer name (IA-xxx)' 'N-sight agent' 'Bitdefender' 'Google Chrome' 'Chrome default browser' 'Google Drive' 'Slack' 'Twingate' 'Homebrew' 'Claude Desktop' 'ChatGPT Desktop' 'Gemini Desktop' 'Figma Desktop' 'Claude Code (CLI)' 'Git setup' '1Password' 'NirTab' 'Mac settings' 'Power on charger' 'Screen lock 15 min' 'Pin apps to Dock' 'Remove N-sight agent')
+PATHS=('tools/Create_Admin_User_mac.sh' 'tasks/Rename_Hostname_mac.sh' 'tasks/Install_NSight_Agent_mac.sh' 'tasks/Install_BitdefenderAgent_mac.sh' 'tasks/Install_Chrome_mac.sh' '' 'tasks/Install_GoogleDrive_mac.sh' 'tasks/Install_Slack_mac.sh' '' '' '' '' '' '' '' '' '' 'tasks/Install_NirTab_mac.sh' 'tasks/Configure_Mac_Defaults_mac.sh' 'tasks/Remediate_Power_mac.sh' 'tasks/Remediate_ScreenLock_Timeout_mac.sh' '' 'tasks/Remove_NSight_Agent_mac.sh')
+SELECTED=(1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 1 1 1 1 0 0)
 # Seconds before a hung task is killed and the queue moves on (0 = interactive, no limit).
-TIMEOUTS=(0 120 900 1200 900 150 900 900 900 2400 1200 1200 1200 900 900 1200 600 300 60 60 60 300)
+TIMEOUTS=(0 120 900 1200 900 150 900 900 900 2400 1200 1200 1200 1200 900 900 1200 600 300 60 60 60 300)
 # GUI apps opened after the whole queue (empty = agent/CLI/settings task).
-APPS=('' '' '' '' '/Applications/Google Chrome.app' '' '/Applications/Google Drive.app' '/Applications/Slack.app' '/Applications/Twingate.app' '' '/Applications/Claude.app' '/Applications/ChatGPT.app' '/Applications/Gemini.app' '' '' '/Applications/1Password.app' '/Applications/NirTab.app' '' '' '' '' '')
-I_ADMIN=0 I_NAME=1 I_AGENT=2 I_BREW=9 I_NIRTAB=16 I_REMOVE=21
+APPS=('' '' '' '' '/Applications/Google Chrome.app' '' '/Applications/Google Drive.app' '/Applications/Slack.app' '/Applications/Twingate.app' '' '/Applications/Claude.app' '/Applications/ChatGPT.app' '/Applications/Gemini.app' '/Applications/Figma.app' '' '' '/Applications/1Password.app' '/Applications/NirTab.app' '' '' '' '' '')
+I_ADMIN=0 I_NAME=1 I_AGENT=2 I_BREW=9 I_NIRTAB=17 I_REMOVE=22
 RESULTS=()
 for ((_i=0; _i<${#NAMES[@]}; _i++)); do
     if [[ ${SELECTED[$_i]} == 1 ]]; then RESULTS[$_i]='Ready'; else RESULTS[$_i]='Optional'; fi
@@ -116,6 +116,7 @@ install_desktop() {
         claude) app=Claude ;;
         chatgpt) app=ChatGPT ;;
         google-gemini) app=Gemini ;;
+        figma) app=Figma ;;
         1password) app=1Password ;;
         *) echo 'Unsupported desktop app'; return 1 ;;
     esac
@@ -203,7 +204,7 @@ set_chrome_default() {
 pin_dock() {
     # As the technician (the Dock owner), never root: root-written Dock plists broke Docks before.
     local plist="$HOME/Library/Preferences/com.apple.dock.plist" current app enc added=0
-    local list=('/Applications/Google Chrome.app' '/Applications/Slack.app' '/Applications/Claude.app' '/Applications/ChatGPT.app' '/Applications/Gemini.app')
+    local list=('/Applications/Google Chrome.app' '/Applications/Slack.app' '/Applications/Claude.app' '/Applications/ChatGPT.app' '/Applications/Gemini.app' '/Applications/Figma.app')
     [[ -f "$plist" ]] && cp -p "$plist" "$plist.helfy-backup-$(date +%Y%m%d%H%M%S)"
     current=$(/usr/bin/defaults read com.apple.dock persistent-apps 2>/dev/null || true)
     for app in "${list[@]}"; do
@@ -261,10 +262,11 @@ run_task() {
         10) run_timed "$t" install_desktop claude; rc=$? ;;
         11) run_timed "$t" install_desktop chatgpt; rc=$? ;;
         12) run_timed "$t" install_desktop google-gemini; rc=$? ;;
-        13) run_timed "$t" install_claude_code; rc=$? ;;
-        14) run_timed "$t" setup_git; rc=$? ;;
-        15) run_timed "$t" install_desktop 1password; rc=$? ;;
-        20) run_timed "$t" pin_dock; rc=$? ;;
+        13) run_timed "$t" install_desktop figma; rc=$? ;;
+        14) run_timed "$t" install_claude_code; rc=$? ;;
+        15) run_timed "$t" setup_git; rc=$? ;;
+        16) run_timed "$t" install_desktop 1password; rc=$? ;;
+        21) run_timed "$t" pin_dock; rc=$? ;;
         "$I_REMOVE") run_timed "$t" sudo /bin/bash "$task" --no-popup; rc=$? ;;
         *)  run_timed "$t" sudo /bin/bash "$task"; rc=$? ;;
     esac
@@ -465,7 +467,7 @@ prepare_tasks() {
         stage_file "${PATHS[$i]}" "$WORK/task-$i.sh" || { echo "Download failed: ${PATHS[$i]}"; return 1; }
         /bin/bash -n "$WORK/task-$i.sh" || { echo "Syntax error: ${PATHS[$i]}"; return 1; }
     done
-    for i in 9 10 11 12 14 15; do
+    for i in 9 10 11 12 13 15 16; do
         if [[ ${SELECTED[$i]:-0} == 1 ]]; then
             stage_file tasks/Remediate_Homebrew_Path_mac.sh "$WORK/homebrew-path.sh" || return 1
             break

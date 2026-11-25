@@ -136,14 +136,14 @@ Order (same rules as the Windows USB: name before agent, Bitdefender after agent
 | 4 | Bitdefender | on | after the agent |
 | 5-8 | Chrome, Chrome default browser, Google Drive, Slack | on | default browser: macOS asks the user to click "Use Google Chrome" |
 | 9-10 | Twingate, Homebrew | on | Twingate = pinned, hash-checked vendor pkg |
-| 11-13 | Claude, ChatGPT, Gemini Desktop | on | Homebrew casks, signature + Gatekeeper checked; skipped if already installed |
-| 14-16 | Claude Code (CLI), Git setup, 1Password | off | Claude Code = official `claude.ai/install.sh` as the user |
-| 17 | NirTab | on | |
-| 18 | Mac settings | on | `Configure_Mac_Defaults_mac.sh`: network time (+Asia/Jerusalem only if still UTC), Hebrew keyboard, file extensions, no recent apps in Dock, battery %, Handoff off |
-| 19 | Power on charger | on | `Remediate_Power_mac.sh`: on AC never system-sleep, display 15 min, wake for network |
-| 20 | Screen lock 15 min | on | existing `Remediate_ScreenLock_Timeout_mac.sh` |
-| 21 | Pin apps to Dock | off | as the user (never root), plist backed up, existing pins kept |
-| 22 | Remove N-sight agent | off | never in "all", needs `REMOVE`, keeps Take Control |
+| 11-14 | Claude, ChatGPT, Gemini, Figma Desktop | on | Homebrew casks, signature + Gatekeeper checked; skipped if already installed |
+| 15-17 | Claude Code (CLI), Git setup, 1Password | off | Claude Code = official `claude.ai/install.sh` as the user |
+| 18 | NirTab | on | |
+| 19 | Mac settings | on | `Configure_Mac_Defaults_mac.sh`: network time (+Asia/Jerusalem only if still UTC), Hebrew keyboard, file extensions, no recent apps in Dock, battery %, Handoff off |
+| 20 | Power on charger | on | `Remediate_Power_mac.sh`: on AC never system-sleep, display 15 min, wake for network |
+| 21 | Screen lock 15 min | on | existing `Remediate_ScreenLock_Timeout_mac.sh` |
+| 22 | Pin apps to Dock | off | as the user (never root), plist backed up, existing pins kept |
+| 23 | Remove N-sight agent | off | never in "all", needs `REMOVE`, keeps Take Control |
 
 At the end: successfully installed GUI apps are opened as the technician, then **final
 checks** (IA name, agent running, Bitdefender running, FileVault, selected apps present)

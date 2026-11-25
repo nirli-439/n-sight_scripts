@@ -3,7 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 source ./Onboarding_Menu_mac.sh
-SELECTED=(0 0 0 1 1 0 1 1 1 0 1 1 1 0 0 1 1 0 0 0 0 0)
+SELECTED=(0 0 0 1 1 0 1 1 1 0 1 1 1 1 0 0 1 1 0 0 0 0 0)
 LOG_FILE=/dev/null
 final_checks() { :; }
 EVENTS=''
@@ -13,7 +13,7 @@ run_task() {
     [[ $1 != 6 ]] || { RESULTS[$1]=Failed; return 1; }
 }
 launch_app() {
-    [[ "$EVENTS" == *' task-16'* ]] || { echo 'FAIL: launched before installs finished'; exit 1; }
+    [[ "$EVENTS" == *' task-17'* ]] || { echo 'FAIL: launched before installs finished'; exit 1; }
     EVENTS="$EVENTS launch-$1"
     [[ "$1" != /Applications/Slack.app ]]
 }
