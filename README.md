@@ -116,8 +116,8 @@ downloads the whole repo as one tarball from codeload (no raw-CDN lag, never a m
 and new scripts; per-file raw download is the fallback). The file is one function called
 on its last line, so a cut-off download never runs half a script.
 
-Before running: N-sight dashboard > Download Agent > Mac, save `OSX_AGENT_*_RW.ZIP` to
-`~/Downloads` (links expire, nothing is baked in; the menu waits for it or lets you skip).
+N-sight agent: downloaded automatically from the `agents-nsight` Drive folder; a newer
+`OSX_AGENT_*_RW.ZIP` in `~/Downloads` (any letter case, or the folder Safari unzips) wins.
 
 The menu (Up/Down + Space, 1-9, `t` type numbers like `14 21` or `2-5`, `a` all, `n` none,
 Enter runs, `q` quits) asks **every question up front** - asset key, agent ZIP, `ADMIN`,
@@ -170,6 +170,23 @@ Lock" off in the enrollment/prestage settings. Full Disk Access for Bitdefender:
 profile GravityZone provides for Mac; for N-sight: `build_nsight_ppcc_mobileconfig.sh`.
 The onboarding final checks report MDM enrollment, how many of the 5 Helfy profiles
 arrived, and Activation Lock status.
+
+### MDM enrollment (N-sight Device Management for Apple + Apple Business Manager)
+
+- ABM server token **ISR_OCT_2026** uploaded to Device Management for Apple > Auto-enrollment,
+  customer Israel(Helfy). **Expires 25 Nov 2027 - renew before** (ABM > Preferences > MDM server
+  > Download token, upload to the same place), or auto-enrollment stops.
+- In ABM, assign every Mac to that server (Devices > Edit MDM Server); set it as the default for
+  Mac so new purchases go there automatically.
+- Enrollment profile "DMA Default ABM Setup Config": Supervised Yes, MDM payload locked Yes.
+  Recommended: Await device configuration **Yes** (profiles land before the desktop) and Allow
+  Activation Lock **off** (Advanced setup).
+- New or erased Macs enroll in Setup Assistant by themselves. For an already set-up Mac the
+  onboarding runs `sudo profiles renew -type enrollment` before the queue; the user approves
+  "Device Enrollment" in System Settings > General > Device Management. If the Mac is not
+  assigned in ABM it says so and continues.
+- N-sight agent ZIP: Drive folder `agents-nsight` (link-shared). The menu downloads it when no
+  `OSX_AGENT*` file is in Downloads. Update it with Drive > Manage versions (keeps the file ID).
 
 The old way still works (menu alone, fetches each task from raw):
 `curl -fSL .../macos/tools/Onboarding_Menu_mac.sh -o ~/Downloads/m.sh && bash ~/Downloads/m.sh`
