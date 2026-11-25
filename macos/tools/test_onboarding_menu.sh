@@ -36,6 +36,7 @@ run_selected && { echo 'FAIL: failure not propagated'; exit 1; }
     SELECTED=(1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1)
     HOME=$(mktemp -d); mkdir -p "$HOME/Downloads"
     confirm_remove() { return 1; }
+    download_agent_pkg() { return 1; }   # never download the real agent in tests
     scutil() { echo OLD-NAME; }
     serial_number() { echo C02TEST; }
     printf 'ia 12\nno\ns\n' | {

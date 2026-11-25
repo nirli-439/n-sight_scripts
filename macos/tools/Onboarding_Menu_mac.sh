@@ -353,6 +353,25 @@ find_agent_pkg() {
     printf '%s\n' "$f"
 }
 
+# Company Mac agent (site ISRAEL HELFY OFFICE) in Drive folder "agents-nsight", shared by link.
+# To update: in Drive, right-click the ZIP > File information > Manage versions > upload the new
+# ZIP (keeps this ID). Override per run: NSIGHT_AGENT_URL=<url>.
+AGENT_URL="${NSIGHT_AGENT_URL:-https://drive.usercontent.google.com/download?id=1OhjyAdqQUM4DxE8g-pXkhTxoJGmcYUWL&export=download&confirm=t}"
+
+download_agent_pkg() {
+    local dest="$HOME/Downloads/OSX_AGENT_HELFY_RW.ZIP" tmp
+    mkdir -p "$HOME/Downloads" || return 1
+    tmp="$dest.part"
+    echo 'Downloading the N-sight Mac agent from Google Drive...'
+    curl -fsSL "${CURL_RETRY[@]}" --connect-timeout 30 --max-time 900 -o "$tmp" "$AGENT_URL" || { rm -f "$tmp"; return 1; }
+    # Must be a real agent package, not a Drive HTML error/consent page.
+    if /usr/bin/unzip -l "$tmp" 2>/dev/null | grep -qi 'install\.pkg'; then
+        mv -f "$tmp" "$dest" && printf '%s\n' "$dest"
+    else
+        rm -f "$tmp"; echo 'Download is not an N-sight agent ZIP (Drive link changed or not shared?).'; return 1
+    fi
+}
+
 # Every question BEFORE the queue starts, so the technician can walk away after this.
 collect_inputs() {
     local answer current
@@ -381,6 +400,12 @@ collect_inputs() {
             # Dashboard links expire; use the newest RW package the technician downloaded.
             AGENT_PKG=$(find_agent_pkg)
             [[ -z "$AGENT_PKG" ]] || break
+            if [[ -z "${AGENT_DL_TRIED:-}" ]]; then
+                AGENT_DL_TRIED=1
+                AGENT_PKG=$(download_agent_pkg | tail -1)
+                [[ "$AGENT_PKG" != */OSX_AGENT_HELFY_RW.ZIP ]] || { echo "Agent package: $AGENT_PKG"; break; }
+                AGENT_PKG=''
+            fi
             printf '\nNo OSX_AGENT_*_RW.ZIP in ~/Downloads.\nN-sight dashboard > Download Agent > Mac, save to Downloads, then press Enter (s = skip agent): '
             IFS= read -r answer || answer=s   # no terminal input: skip, never loop forever
             if [[ "$answer" == s || "$answer" == S ]]; then
