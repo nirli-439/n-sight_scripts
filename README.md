@@ -165,6 +165,20 @@ replaces the installed profile instead of adding a second one).
 | `Helfy_FileVault` | FileVault on at the user's next log-in, cannot be turned off; the recovery key is shown to the user (no escrow) - IT must save it |
 | `Helfy_System_Extensions` | Bitdefender (`GUNFMW623Y`) and Twingate (`6GX8KVTR9H`) system extensions load without a user click |
 
+**No more "Allow" clicks for Bitdefender, N-sight/MSP Anywhere/Take Control and Twingate:** run
+once on an onboarded Mac where they work, upload the result as **"Helfy - Security apps privacy"**:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/nirli-439/n-sight_scripts/main/macos/profiles/build_helfy_pppc.sh | bash
+```
+
+It reads the real code signatures and writes `~/Desktop/Helfy_Security_Apps_Privacy.mobileconfig`:
+Full Disk Access + Accessibility + PostEvent allowed (Bitdefender, N-able), Bitdefender network
+content filter approved, Twingate VPN configuration approved (Twingate gets no privacy access).
+Screen Recording / Input Monitoring cannot be granted by any MDM (Apple rule): they are set so a
+**standard user can allow** them with one click, no admin password. Replaces the old
+`build_nsight_ppcc_mobileconfig.*` (it marked Screen Recording "Allowed", which Apple rejects).
+
 Also in the MDM: Macs added through Apple Business Manager should have "Allow Activation
 Lock" off in the enrollment/prestage settings. Full Disk Access for Bitdefender: use the
 profile GravityZone provides for Mac; for N-sight: `build_nsight_ppcc_mobileconfig.sh`.
