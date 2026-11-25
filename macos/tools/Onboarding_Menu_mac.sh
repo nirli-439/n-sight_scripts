@@ -339,6 +339,20 @@ serial_number() {
     ioreg -rd1 -c IOPlatformExpertDevice 2>/dev/null | awk -F'"' '/IOPlatformSerialNumber/{print $4; exit}'
 }
 
+# Newest N-sight Mac agent in ~/Downloads: .ZIP/.zip/.pkg in any letter case, or the
+# folder Safari makes when it auto-unzips (zipped back so the installer gets a file).
+find_agent_pkg() {
+    local f
+    f=$(ls -td "$HOME"/Downloads/[Oo][Ss][Xx]_[Aa][Gg][Ee][Nn][Tt]* 2>/dev/null | head -1 || true)
+    [[ -n "$f" ]] || return 0
+    if [[ -d "$f" ]]; then
+        [[ -n "$(find "$f" -maxdepth 3 -name '*.pkg' 2>/dev/null | head -1)" ]] || return 0
+        /usr/bin/ditto -c -k --keepParent "$f" "$f.ZIP" 2>/dev/null || return 0
+        f="$f.ZIP"
+    fi
+    printf '%s\n' "$f"
+}
+
 # Every question BEFORE the queue starts, so the technician can walk away after this.
 collect_inputs() {
     local answer current
@@ -365,7 +379,7 @@ collect_inputs() {
     if [[ ${SELECTED[$I_AGENT]} == 1 ]]; then
         while true; do
             # Dashboard links expire; use the newest RW package the technician downloaded.
-            AGENT_PKG=$(ls -t "$HOME"/Downloads/OSX_AGENT*RW*.ZIP 2>/dev/null | head -1 || true)   # single pattern: FS is case-insensitive
+            AGENT_PKG=$(find_agent_pkg)
             [[ -z "$AGENT_PKG" ]] || break
             printf '\nNo OSX_AGENT_*_RW.ZIP in ~/Downloads.\nN-sight dashboard > Download Agent > Mac, save to Downloads, then press Enter (s = skip agent): '
             IFS= read -r answer || answer=s   # no terminal input: skip, never loop forever
