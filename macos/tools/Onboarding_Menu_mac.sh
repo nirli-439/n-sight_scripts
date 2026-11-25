@@ -293,7 +293,7 @@ final_checks() {
         echo 'OK   Enrolled in MDM'
         local have
         have=$(/usr/bin/sudo -n /usr/bin/profiles list -all 2>/dev/null | grep -o 'co\.helfy\.profile\.[a-z-]*' | sort -u | wc -l | tr -d ' ')
-        if [[ "${have:-0}" -ge 4 ]]; then echo 'OK   Helfy profiles installed (4)'; else echo "--   Helfy profiles: ${have:-0}/4 installed (MDM not pushed yet?)"; ok=0; fi
+        if [[ "${have:-0}" -ge 5 ]]; then echo "OK   Helfy profiles installed (5)"; else echo "--   Helfy profiles: ${have:-0}/5 installed (MDM not pushed yet?)"; ok=0; fi
     else
         echo '--   NOT enrolled in MDM - enroll so the Helfy profiles are pushed'; ok=0
     fi

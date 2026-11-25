@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>co.helfy.profile.filevault</string>
+	<key>PayloadUUID</key>
+	<string>186D5119-7C85-548E-872F-A3C5A11AF903</string>
+	<key>PayloadDisplayName</key>
+	<string>Helfy - FileVault</string>
+	<key>PayloadDescription</key>
+	<string>Turns on FileVault at the next log-in and blocks turning it off. Save the recovery key shown to the user.</string>
+	<key>PayloadOrganization</key>
+	<string>Helfy</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.MCX.FileVault2</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>co.helfy.profile.filevault.enable</string>
+			<key>PayloadUUID</key>
+			<string>7BDF2A24-51A7-58C1-96A8-688CC0686C13</string>
+			<key>PayloadDisplayName</key>
+			<string>FileVault</string>
+			<key>Enable</key>
+			<string>On</string>
+			<key>Defer</key>
+			<true/>
+			<key>DeferForceAtUserLoginMaxBypassAttempts</key>
+			<integer>0</integer>
+			<key>UseRecoveryKey</key>
+			<true/>
+			<key>ShowRecoveryKey</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.MCX</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>co.helfy.profile.filevault.nodisable</string>
+			<key>PayloadUUID</key>
+			<string>2D5DBBA0-281A-50B4-B9E0-5AD25909C88B</string>
+			<key>PayloadDisplayName</key>
+			<string>Keep FileVault on</string>
+			<key>dontAllowFDEDisable</key>
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -104,6 +104,24 @@ PROFILES = {
             ],
         })]),
 
+    # FileVault on at the user's next log-in (macOS asks for their password once).
+    # No escrow payload: the recovery key is SHOWN to the user, who must hand it to IT.
+    "Helfy_FileVault": profile(
+        "filevault", "FileVault",
+        "Turns on FileVault at the next log-in and blocks turning it off. Save the recovery key shown to the user.",
+        [
+            payload("com.apple.MCX.FileVault2", "filevault.enable", "FileVault", {
+                "Enable": "On",
+                "Defer": True,
+                "DeferForceAtUserLoginMaxBypassAttempts": 0,
+                "UseRecoveryKey": True,
+                "ShowRecoveryKey": True,
+            }),
+            payload("com.apple.MCX", "filevault.nodisable", "Keep FileVault on", {
+                "dontAllowFDEDisable": True,
+            }),
+        ]),
+
     "Helfy_System_Extensions": profile(
         "system-extensions", "Approved system extensions",
         "Bitdefender and Twingate system extensions load without asking the user.",
