@@ -476,7 +476,23 @@ run_queue() {
         popup 'Not started' 'Administrator authentication failed. Nothing was changed.'
         return 1
     fi
+    mdm_enroll
     run_selected
+}
+
+# Already-set-up Mac that is assigned to the MDM in Apple Business Manager: ask macOS to
+# enroll now (shows "Device Enrollment" notification -> user approves in System Settings).
+# New/erased Macs enroll by themselves in Setup Assistant. Never blocks the queue.
+mdm_enroll() {
+    profiles status -type enrollment 2>/dev/null | grep -q 'MDM enrollment: Yes' && { echo 'MDM: already enrolled'; return 0; }
+    echo 'MDM: not enrolled - asking Apple Business Manager for this Mac...' | tee -a "$LOG_FILE"
+    if sudo /usr/bin/profiles renew -type enrollment >>"$LOG_FILE" 2>&1; then
+        echo '>>> Click the "Device Enrollment" notification (or System Settings > General > Device Management) and approve.'
+        popup 'Enroll this Mac' 'Approve "Device Enrollment" in System Settings > General > Device Management. The Helfy profiles arrive after that.'
+    else
+        echo 'MDM: this Mac is not assigned to the Helfy MDM server in Apple Business Manager - assign it there, then re-run.' | tee -a "$LOG_FILE"
+    fi
+    return 0
 }
 
 type_numbers() {
