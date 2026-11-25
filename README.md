@@ -131,7 +131,7 @@ Order (same rules as the Windows USB: name before agent, Bitdefender after agent
 | # | Item | Default | Notes |
 |---|---|---|---|
 | 1 | Create admin mac | on | interactive; predictable date password + passwordless sudo, needs `ADMIN` |
-| 2 | Computer name (IA-xxx) | on | Jira Assets key; serial shown to look it up; Enter keeps an existing IA name |
+| 2 | Computer name (IA-xxx) | on | automatic from `macos/assets/mac-asset-map.tsv` (hashed serials, no plain serials); asks only if the serial is not in it |
 | 3 | N-sight agent | on | newest `OSX_AGENT*RW*.ZIP` in Downloads |
 | 4 | Bitdefender | on | after the agent |
 | 5-8 | Chrome, Chrome default browser, Google Drive, Slack | on | default browser: macOS asks the user to click "Use Google Chrome" |
@@ -187,6 +187,10 @@ arrived, and Activation Lock status.
   assigned in ABM it says so and continues.
 - N-sight agent ZIP: Drive folder `agents-nsight` (link-shared). The menu downloads it when no
   `OSX_AGENT*` file is in Downloads. Update it with Drive > Manage versions (keeps the file ID).
+
+**New Mac added in Jira Assets?** Refresh the map, otherwise onboarding asks for the IA key:
+export the Apple laptops (not Disposed) to the local-only `~/Downloads/mac-onboarding/asset-map.csv`
+(`Serial,AssetKey`), run `python3 -I macos/tools/build_mac_asset_map.py`, commit + push.
 
 The old way still works (menu alone, fetches each task from raw):
 `curl -fSL .../macos/tools/Onboarding_Menu_mac.sh -o ~/Downloads/m.sh && bash ~/Downloads/m.sh`

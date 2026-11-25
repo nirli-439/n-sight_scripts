@@ -37,6 +37,7 @@ run_selected && { echo 'FAIL: failure not propagated'; exit 1; }
     HOME=$(mktemp -d); mkdir -p "$HOME/Downloads"
     confirm_remove() { return 1; }
     download_agent_pkg() { return 1; }   # never download the real agent in tests
+    lookup_asset_key() { :; }            # serial not in the map -> prompt path
     scutil() { echo OLD-NAME; }
     serial_number() { echo C02TEST; }
     printf 'ia 12\nno\ns\n' | {
@@ -75,6 +76,18 @@ run_selected && { echo 'FAIL: failure not propagated'; exit 1; }
     # Snapshot staging (onboard.sh): copies from ONBOARD_SRC, never downloads.
     ONBOARD_SRC=$(cd ../.. && pwd)
     prepare_tasks; [[ -s "$WORK/task-3.sh" ]]
+    rm -rf "$WORK"; exit 0
+)
+# Asset map: the Mac's own serial resolves to its IA key; unknown serial -> empty (prompt).
+(
+    source ./Onboarding_Menu_mac.sh
+    WORK=$(mktemp -d); ONBOARD_SRC=$(cd ../.. && pwd)
+    fetch() { return 1; }   # offline: use the snapshot copy
+    serial_number() { echo L6741JHG6W; }
+    [[ "$(lookup_asset_key)" == IA-3771 ]] || { echo 'FAIL: asset lookup'; exit 1; }
+    serial_number() { echo NOTAREALSERIAL; }
+    [[ -z "$(lookup_asset_key)" ]] || { echo 'FAIL: unknown serial'; exit 1; }
+    grep -q L6741JHG6W ../assets/mac-asset-map.tsv && { echo 'FAIL: plain serial in public map'; exit 1; }
     rm -rf "$WORK"; exit 0
 )
 # Chrome default-browser detection parses LaunchServices output.

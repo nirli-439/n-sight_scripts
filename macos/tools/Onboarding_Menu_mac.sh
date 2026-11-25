@@ -386,13 +386,30 @@ download_agent_pkg() {
     fi
 }
 
+# IA key for this Mac from macos/assets/mac-asset-map.tsv (sha256 of 'helfy-mac:'+serial, so
+# the public file holds no serials). Latest map from GitHub first (a Mac added to Jira after the
+# run started still resolves), then the onboard.sh snapshot.
+lookup_asset_key() {
+    local serial hash map="$WORK/mac-asset-map.tsv"
+    serial=$(serial_number | tr -cd '[:alnum:]' | tr '[:lower:]' '[:upper:]')
+    [[ -n "$serial" ]] || return 0
+    hash=$(printf 'helfy-mac:%s' "$serial" | /usr/bin/shasum -a 256 | awk '{print $1}')
+    fetch "$BASE_URL/macos/assets/mac-asset-map.tsv" "$map" >/dev/null 2>&1 \
+        || { [[ -n "${ONBOARD_SRC:-}" ]] && cp "$ONBOARD_SRC/macos/assets/mac-asset-map.tsv" "$map" 2>/dev/null; } || return 0
+    awk -F'\t' -v h="$hash" '$1==h && $2 ~ /^IA-[0-9]+$/ {print $2; exit}' "$map"
+}
+
 # Every question BEFORE the queue starts, so the technician can walk away after this.
 collect_inputs() {
     local answer current
     if [[ ${SELECTED[$I_NAME]} == 1 ]]; then
         current=$(scutil --get ComputerName 2>/dev/null)
         if [[ -z "$NEW_NAME" ]]; then
-            printf '\nComputer name = Jira Assets key (N-sight syncs on it).\n'
+            NEW_NAME=$(lookup_asset_key)
+            [[ -z "$NEW_NAME" ]] || printf '\nJira Assets: this Mac (serial %s) is %s\n' "$(serial_number)" "$NEW_NAME"
+        fi
+        if [[ -z "$NEW_NAME" ]]; then
+            printf '\nComputer name = Jira Assets key (N-sight syncs on it). This serial is not in the asset map yet.\n'
             printf 'Serial: %s   Current name: %s\n' "$(serial_number)" "$current"
             if [[ "$current" =~ ^IA-[0-9]+$ ]]; then
                 read -r -p "Asset key [Enter = keep $current]: " answer || answer=''
